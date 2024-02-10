@@ -50,17 +50,15 @@
                 <span th:text="${ingredient.name}">INGREDIENT</span><br/>
             </div>
             <br>
-            <h4 style="color: red">
+            <h3 style="color: red">
                 <span th:if="${#fields.hasErrors('ingredients')}" th:errors="*{ingredients}">Ingredient Error</span>
-            </h4>
+            </h3>
         </div>
     </div>
     <div>
         <h3>Name your taco creation:</h3>
         <input type="text" th:field="*{name}"/>
-
-            <span style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span>
-
+        <span style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span>
         <br/>
         <button>Submit Your Taco</button>
     </div>
