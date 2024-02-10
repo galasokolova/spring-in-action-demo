@@ -42,7 +42,7 @@ public class JdbcOrderRepository implements OrderRepository {
                                 order.getPlacedAt()));
         GeneratedKeyHolder keyHolder = new GeneratedKeyHolder();
         jdbcOperations.update(psc, keyHolder);
-        long orderId = Objects.requireNonNull(keyHolder.getKey()).longValue();
+        long orderId = keyHolder.getKey().longValue();
         order.setId(orderId);
         List<Taco> tacos = order.getTacos();
         int i=0;
