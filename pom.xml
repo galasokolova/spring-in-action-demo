@@ -17,7 +17,19 @@
         <java.version>17</java.version>
     </properties>
     <dependencies>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb-reactive</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>de.flapdoodle.embed</groupId>
+            <artifactId>de.flapdoodle.embed.mongo</artifactId>
+            <version>4.6.3</version>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -61,18 +73,7 @@
             <artifactId>commons-configuration</artifactId>
             <version>1.9</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-cassandra</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-cassandra</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-cassandra-reactive</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-test</artifactId>
@@ -86,7 +87,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
 <!--                    Change the name of the package to point out which main class is to be run-->
-                    <mainClass>demo.ch_4_cassandra.TacoApplicationCh4Cassandra</mainClass>
+                    <mainClass>demo.ch_4_mongodb.TacoApplicationCh4MongoDB</mainClass>
                 </configuration>
             </plugin>
         </plugins>

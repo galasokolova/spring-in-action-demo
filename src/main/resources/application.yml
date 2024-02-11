@@ -1,11 +1,9 @@
 spring:
-  cassandra:
-    keyspace-name: taco_cloud
-    contact-points: 127.0.0.1
-    schema-action: recreate
-    local-datacenter: datacenter1
-    port: 9042
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
   main:
     allow-bean-definition-overriding: true
 #    Change the name of the package to point out which main class is to be run
-    sources: demo.ch_4_cassandra.TacoApplicationCh4Cassandra
+    sources: demo.ch_4_mongodb.TacoApplicationCh4MongoDB
