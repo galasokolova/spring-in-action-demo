@@ -1,9 +1,9 @@
-package demo.ch_3_jpa.data;
+package demo.ch_4_cassandra.data;
 
-
-import demo.ch_3_jpa.entity.TacoOrder;
+import demo.ch_4_cassandra.entity.TacoOrder;
 import org.springframework.data.repository.CrudRepository;
 
-public interface OrderRepository extends CrudRepository<TacoOrder, Long> {
+import java.util.UUID;
 
+public interface OrderRepository extends CrudRepository<TacoOrder, UUID> {
 }

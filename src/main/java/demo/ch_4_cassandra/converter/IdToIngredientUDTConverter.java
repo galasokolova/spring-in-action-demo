@@ -1,21 +1,24 @@
 package demo.ch_4_cassandra.converter;
 
-import demo.ch_3_jpa.data.IngredientRepository;
-import demo.ch_3_jpa.entity.Ingredient;
-import org.springframework.beans.factory.annotation.Autowired;
+import demo.ch_4_cassandra.data.IngredientRepository;
+import demo.ch_4_cassandra.entity.IngredientUDT;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 
 @Component
-public class IngredientByIdConverter implements Converter<String, Ingredient> {
-    private final IngredientRepository ingredientRepo;
-    @Autowired
-    public IngredientByIdConverter(IngredientRepository ingredientRepo) {
-        this.ingredientRepo = ingredientRepo;
+public class IdToIngredientUDTConverter implements Converter<String, IngredientUDT> {
+
+    private final IngredientRepository ingredientRepository;
+
+    public IdToIngredientUDTConverter(IngredientRepository ingredientRepository) {
+        this.ingredientRepository = ingredientRepository;
     }
+
     @Override
-    public Ingredient convert(@NonNull String id) {
-        return ingredientRepo.findById(id).orElse(null);
+    public IngredientUDT convert(@NonNull String id) {
+        return ingredientRepository.findById(id)
+                .map(i -> new IngredientUDT(i.getName(), i.getType()))
+                .orElse(null);
     }
 }

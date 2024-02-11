@@ -1,28 +1,11 @@
 spring:
-  devtools:
-    restart:
-      enabled: true
-  datasource:
-    generate-unique-name: false
-    name: tacocloud
-    url: jdbc:h2:mem:tacocloud
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
-  sql:
-    init:
-      mode: always
-      schema-locations: classpath:schema.sql
-      data-locations: classpath:data.sql
-  jpa:
-    hibernate:
-      ddl-auto: none # Turning off auto-creation of the scheme JPA/Hibernate
-    show-sql: true
+  cassandra:
+    keyspace-name: taco_cloud
+    contact-points: 127.0.0.1
+    schema-action: recreate
+    local-datacenter: datacenter1
+    port: 9042
   main:
     allow-bean-definition-overriding: true
 #    Change the name of the package to point out which main class is to be run
-    sources: demo.ch_3_jpa.TacoApplicationCh3JPA
+    sources: demo.ch_4_cassandra.TacoApplicationCh4Cassandra
