@@ -1,4 +1,4 @@
-package demo.ch_3_jpa.entity;
+package demo.ch_4_cassandra.entity;
 
 import jakarta.persistence.Column;
 import lombok.Data;
