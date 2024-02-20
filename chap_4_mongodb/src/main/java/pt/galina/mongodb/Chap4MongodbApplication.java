@@ -10,14 +10,14 @@ import org.springframework.context.annotation.Bean;
 
 /**
   Start MongoDB:
- $ docker run --name my-mongo-container -p 27017:27017 -d mongo:latest
+ $ docker run --rm --name my-mongo-container -p 27017:27017 -d mongo:latest
  */
 
 @SpringBootApplication
-public class TacoApplicationMongoDB {
+public class Chap4MongodbApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TacoApplicationMongoDB.class, args);
+        SpringApplication.run(Chap4MongodbApplication.class, args);
     }
 
     @Bean
