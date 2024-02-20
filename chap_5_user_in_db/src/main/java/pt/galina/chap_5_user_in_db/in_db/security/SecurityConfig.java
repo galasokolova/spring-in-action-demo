@@ -8,6 +8,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+
+
 @Configuration
 public class SecurityConfig{
 
@@ -19,8 +21,8 @@ public class SecurityConfig{
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
          http
-                 .authorizeHttpRequests(
-                         (authz) -> authz
+                 .authorizeHttpRequests(             //instead of the method authorizeRequests which is deprecated (page 125 part 5.3.1)
+                         authz -> authz
                                  .requestMatchers("/design", "/orders")
                                  .hasRole("USER")
                                  .requestMatchers("/", "/**").permitAll()
