@@ -24,10 +24,10 @@ import org.springframework.context.annotation.Bean;
  */
 
 @SpringBootApplication
-public class TacoApplicationCassandra {
+public class Chap4CassandraApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TacoApplicationCassandra.class, args);
+        SpringApplication.run(Chap4CassandraApplication.class, args);
     }
 
     @Bean

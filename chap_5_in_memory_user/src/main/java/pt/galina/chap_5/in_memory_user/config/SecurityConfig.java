@@ -30,11 +30,9 @@ public class SecurityConfig {
     @Bean
     public UserDetailsService userDetailsService(PasswordEncoder encoder) {
         List<UserDetails> usersList = new ArrayList<>();
-        usersList.add(new User(
-                "buzz", encoder.encode("password"),
+        usersList.add(new User("buzz", encoder.encode("password"),
                 List.of(new SimpleGrantedAuthority("ROLE_USER"))));
-        usersList.add(new User(
-                "woody", encoder.encode("password"),
+        usersList.add(new User("woody", encoder.encode("password"),
                 List.of(new SimpleGrantedAuthority("ROLE_USER"))));
         return new InMemoryUserDetailsManager(usersList);
     }

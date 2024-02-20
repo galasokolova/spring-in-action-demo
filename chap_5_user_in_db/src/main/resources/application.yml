@@ -1,0 +1,25 @@
+spring:
+  devtools:
+    restart:
+      enabled: true
+  datasource:
+    generate-unique-name: false
+    name: tacocloud
+    url: jdbc:h2:mem:tacocloud
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
+  jpa:
+    hibernate:
+      ddl-auto: none # Turning off auto-creation of the scheme JPA/Hibernate
+    show-sql: true
+
