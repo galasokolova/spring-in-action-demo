@@ -1,8 +1,8 @@
 package pt.galina.mongodb;
 
-import pt.galina.mongodb.ch_4.data.IngredientRepository;
-import pt.galina.mongodb.ch_4.entity.Ingredient;
-import pt.galina.mongodb.ch_4.entity.Ingredient.Type;
+import pt.galina.mongodb.data.IngredientRepository;
+import pt.galina.mongodb.entity.Ingredient;
+import pt.galina.mongodb.entity.Ingredient.Type;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
