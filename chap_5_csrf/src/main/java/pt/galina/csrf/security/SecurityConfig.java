@@ -1,4 +1,4 @@
-package pt.galina.in_db.security;
+package pt.galina.csrf.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,7 +21,7 @@ public class SecurityConfig{
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
          http
-                 .authorizeHttpRequests(             //instead of the method authorizeRequests which is deprecated (page 125 part 5.3.1)
+                 .authorizeHttpRequests(
                          authz -> authz
                                  .requestMatchers("/design", "/orders")
                                  .hasRole("USER")
@@ -29,8 +29,12 @@ public class SecurityConfig{
                  ).formLogin(form -> form
                          .loginPage("/login"))
                  .logout(logout -> logout.logoutSuccessUrl("/").permitAll());
-        // this code disables protection from csrf attacks, it's very dangerous to include it !!!
-        // until it is excluded you may not leave the page /design by clicking the button "submit"
+
+// "If you’re using Spring MVC’s JSP tag library or Thymeleaf with the Spring Security dialect,
+// you needn’t even bother explicitly including a hidden field. The hidden field will
+//be rendered automatically for you." -  (page 134 part 5.3.4 "Spring in Action")
+
+        //the following code disables protection from csrf attacks, and it's very dangerous to include it !!!
 //                 .csrf(AbstractHttpConfigurer::disable)
          return http.build();
     }
