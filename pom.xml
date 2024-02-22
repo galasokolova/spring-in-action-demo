@@ -29,6 +29,7 @@
         <module>chap_5_in_memory_user</module>
         <module>chap_5_user_in_db</module>
         <module>chap_5_oauth2_client</module>
+        <module>chap_5_csrf</module>
         <module>shared-resources</module>
     </modules>
 
