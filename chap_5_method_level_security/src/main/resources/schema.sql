@@ -8,8 +8,8 @@ create table if not exists Taco_Order (
                                           cc_number varchar(16) not null,
                                           cc_expiration varchar(5) not null,
                                           cc_cvv varchar(3) not null,
-                                          placed_at timestamp not null
-
+                                          placed_at timestamp not null,
+                                          user_id bigint
 
 );
 create table if not exists Taco (
@@ -44,4 +44,9 @@ create table if not exists users (
                                     state varchar(50) not null,
                                     zip varchar(20) not null,
                                     phone_number varchar(20) not null
+);
+create table if not exists admin (
+                                     id bigint auto_increment primary key,
+                                     username varchar(50) not null,
+                                     password varchar(255) not null
 );

@@ -1,4 +1,4 @@
-package pt.galina.in_db.entity.user;
+package pt.galina.method_level_security.entity.admin;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -10,6 +10,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.io.Serial;
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
@@ -17,8 +18,8 @@ import java.util.List;
 @Data
 @NoArgsConstructor(access= AccessLevel.PROTECTED, force=true)
 @RequiredArgsConstructor
-@Table(name = "users")
-public class User implements UserDetails {
+@Table(name = "admin")
+public class Admin implements UserDetails {
     @Serial
     private static final long serialVersionUID = 1L;
     @Id
@@ -29,34 +30,27 @@ public class User implements UserDetails {
     private final String username;
     @Column(name = "password")
     private final String password;
-    @Column(name = "fullname")
-    private final String fullname;
-    @Column(name = "street")
-    private final String street;
-    @Column(name = "city")
-    private final String city;
-    @Column(name = "state")
-    private final String state;
-    @Column(name = "zip")
-    private final String zip;
-    @Column(name = "phone_number")
-    private final String phoneNumber;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+        return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"));
     }
+
     @Override
     public boolean isAccountNonExpired() {
         return true;
     }
+
     @Override
     public boolean isAccountNonLocked() {
         return true;
     }
+
     @Override
     public boolean isCredentialsNonExpired() {
         return true;
     }
+
     @Override
     public boolean isEnabled() {
         return true;
