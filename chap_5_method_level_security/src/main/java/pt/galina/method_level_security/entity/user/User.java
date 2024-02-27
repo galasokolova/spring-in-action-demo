@@ -1,4 +1,4 @@
-package pt.galina.in_db.entity.user;
+package pt.galina.method_level_security.entity.user;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;

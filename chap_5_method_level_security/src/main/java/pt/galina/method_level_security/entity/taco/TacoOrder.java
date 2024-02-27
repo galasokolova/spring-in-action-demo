@@ -1,4 +1,4 @@
-package pt.galina.in_db.entity.taco;
+package pt.galina.method_level_security.entity.taco;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Digits;
@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;
+import pt.galina.method_level_security.entity.user.User;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -61,6 +62,8 @@ public class TacoOrder implements Serializable {
     @Digits(integer=3, fraction=0, message="Invalid CVV")
     private String ccCVV;
 
+    @ManyToOne
+    private User user;
 
     @ManyToMany(targetEntity=Taco.class)
     private final List<Taco> tacos = new ArrayList<>();
