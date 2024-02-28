@@ -45,6 +45,3 @@ create table if not exists users (
                                     zip varchar(20) not null,
                                     phone_number varchar(20) not null
 );
-
-
-
