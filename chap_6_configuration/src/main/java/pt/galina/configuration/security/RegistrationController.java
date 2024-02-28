@@ -1,4 +1,4 @@
-package pt.galina.in_db.security;
+package pt.galina.configuration.security;
 
 import org.jetbrains.annotations.NotNull;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pt.galina.in_db.entity.user.UserRepository;
+import pt.galina.configuration.entity.user.UserRepository;
 
 @Controller
 @RequestMapping("/register")

@@ -4,10 +4,14 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-
+import pt.galina.in_db.entity.user.User;
+import pt.galina.in_db.entity.user.UserRepository;
 
 
 @Configuration
@@ -18,6 +22,10 @@ public class SecurityConfig{
         return new BCryptPasswordEncoder();
     }
 
+
+
+
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
          http
@@ -25,13 +33,19 @@ public class SecurityConfig{
                          authz -> authz
                                  .requestMatchers("/design", "/orders")
                                  .hasRole("USER")
-                                 .requestMatchers("/", "/**").permitAll()
-                 ).formLogin(form -> form
-                         .loginPage("/login"))
-                 .logout(logout -> logout.logoutSuccessUrl("/").permitAll());
-        // this code disables protection from csrf attacks, it's very dangerous to include it !!!
-        // until it is excluded you may not leave the page /design by clicking the button "submit"
-//                 .csrf(AbstractHttpConfigurer::disable)
+                                 .anyRequest().permitAll()
+                 )
+                 .formLogin(
+                         form -> form
+                         .loginPage("/login")
+                 )
+                 .logout(logout -> logout.logoutSuccessUrl("/").permitAll())
+                 .headers(
+                         httpSecurityHeadersConfigurer -> httpSecurityHeadersConfigurer
+                                 .frameOptions(
+                                         HeadersConfigurer.FrameOptionsConfig::sameOrigin)
+                 );
+
          return http.build();
     }
 }

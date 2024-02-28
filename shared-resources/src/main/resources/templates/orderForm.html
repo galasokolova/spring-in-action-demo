@@ -8,13 +8,13 @@
 </head>
 
 <body>
-<form method="POST" th:action="@{/orders}" th:object="${tacoOrder}">
+<form method="POST" th:action="@{/orders}" th:object="${order}">
     <h1>Order your taco creations!</h1>
     <img th:src="@{/images/TacoCloud.png}" alt="TacoImage"/>
     <h3>Your tacos in this order:</h3>
     <a th:href="@{/design}" id="another">Design another taco</a><br/>
     <ul>
-        <li th:each="taco : ${tacoOrder.tacos}">
+        <li th:each="taco : ${order.tacos}">
             <span th:text="${taco.name}">taco name</span>
         </li>
     </ul>

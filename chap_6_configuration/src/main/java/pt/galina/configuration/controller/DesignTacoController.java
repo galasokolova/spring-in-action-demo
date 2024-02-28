@@ -1,4 +1,4 @@
-package pt.galina.in_db.controller;
+package pt.galina.configuration.controller;
 
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -7,14 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
-import pt.galina.in_db.data.IngredientRepository;
-import pt.galina.in_db.data.TacoRepository;
-import pt.galina.in_db.entity.taco.Ingredient;
-import pt.galina.in_db.entity.taco.Ingredient.Type;
-import pt.galina.in_db.entity.taco.Taco;
-import pt.galina.in_db.entity.taco.TacoOrder;
-import pt.galina.in_db.entity.user.User;
-import pt.galina.in_db.entity.user.UserRepository;
+import pt.galina.configuration.data.IngredientRepository;
+import pt.galina.configuration.entity.taco.Ingredient;
+import pt.galina.configuration.entity.taco.Ingredient.Type;
+import pt.galina.configuration.entity.taco.Taco;
+import pt.galina.configuration.entity.taco.TacoOrder;
+import pt.galina.configuration.entity.user.User;
+import pt.galina.configuration.entity.user.UserRepository;
 
 import java.security.Principal;
 import java.util.List;
@@ -23,21 +22,17 @@ import java.util.stream.StreamSupport;
 @Slf4j
 @Controller
 @RequestMapping("/design")
-@SessionAttributes("order")
+@SessionAttributes("tacoOrder")
 public class DesignTacoController {
     private final IngredientRepository ingredientRepo;
 
-    private TacoRepository tacoRepo;
-
-    private UserRepository userRepo;
+    private final UserRepository userRepo;
 
     @Autowired
     public DesignTacoController(
             IngredientRepository ingredientRepo,
-            TacoRepository tacoRepo,
             UserRepository userRepo) {
         this.ingredientRepo = ingredientRepo;
-        this.tacoRepo = tacoRepo;
         this.userRepo = userRepo;
     }
 
@@ -53,7 +48,7 @@ public class DesignTacoController {
         }
     }
 
-    @ModelAttribute(name = "order")
+    @ModelAttribute(name = "tacoOrder")
     public TacoOrder order() {
         return new TacoOrder();
     }
@@ -83,15 +78,11 @@ public class DesignTacoController {
             model.addAttribute("errors", errors);
             return "design";
         }
-
-        // adding Taco to TacoOrder
         order.addTaco(taco);
-
-        // persisting TacoOrder in session
-        model.addAttribute("order", order);
 
         return "redirect:/orders/current";
     }
+
     private List<Ingredient> filterByType(List<Ingredient> ingredients, Ingredient.Type type) {
         return ingredients
                 .stream()
