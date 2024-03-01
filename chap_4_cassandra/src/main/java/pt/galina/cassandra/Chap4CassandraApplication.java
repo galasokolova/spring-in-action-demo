@@ -11,6 +11,8 @@ import org.springframework.context.annotation.Bean;
  1. Start Cassandra:
  docker run --rm -d --name cassandra --hostname cassandra -p 9042:9042 cassandra
 
+   1.1 (Wait for 30-40 seconds or so)
+
  2.Open cqlsh:
  docker exec -it cassandra cqlsh
 

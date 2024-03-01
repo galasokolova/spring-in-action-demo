@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 import pt.galina.in_db.data.IngredientRepository;
 import pt.galina.in_db.data.TacoRepository;
 import pt.galina.in_db.entity.taco.Ingredient;
@@ -23,7 +24,7 @@ import java.util.stream.StreamSupport;
 @Slf4j
 @Controller
 @RequestMapping("/design")
-@SessionAttributes("order")
+@SessionAttributes("tacoOrder")
 public class DesignTacoController {
     private final IngredientRepository ingredientRepo;
 
@@ -53,7 +54,7 @@ public class DesignTacoController {
         }
     }
 
-    @ModelAttribute(name = "order")
+    @ModelAttribute(name = "tacoOrder")
     public TacoOrder order() {
         return new TacoOrder();
     }
@@ -70,14 +71,16 @@ public class DesignTacoController {
     }
 
     @GetMapping
-    public String showDesignForm() {
+    public String showDesignForm(Model model) {
+//        model.addAttribute("tacoOrder", new TacoOrder());
+
         return "design";
     }
 
     @PostMapping
-    public String processTaco(
+    public String processTaco(SessionStatus sessionStatus,
             @Valid Taco taco, Errors errors,
-            @ModelAttribute TacoOrder order, Model model) {
+                              @ModelAttribute TacoOrder order, Model model) {
 
         if (errors.hasErrors()) {
             model.addAttribute("errors", errors);
@@ -89,6 +92,8 @@ public class DesignTacoController {
 
         // persisting TacoOrder in session
         model.addAttribute("order", order);
+
+
 
         return "redirect:/orders/current";
     }

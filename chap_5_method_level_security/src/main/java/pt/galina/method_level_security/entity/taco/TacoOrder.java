@@ -22,7 +22,7 @@ public class TacoOrder implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
@@ -65,6 +65,7 @@ public class TacoOrder implements Serializable {
     @ManyToOne
     private User user;
 
+
     @ManyToMany(targetEntity=Taco.class)
     private final List<Taco> tacos = new ArrayList<>();
 
@@ -72,3 +73,4 @@ public class TacoOrder implements Serializable {
         this.tacos.add(taco);
     }
 }
+

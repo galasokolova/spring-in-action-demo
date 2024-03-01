@@ -11,8 +11,8 @@
     <groupId>pt.galina</groupId>
     <artifactId>chap_5_method_level_security</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>chap_5_method_level_secutity</name>
-    <description>chap_5_method_level_secutity</description>
+    <name>chap_5_method_level_security</name>
+    <description>chap_5_method_level_security</description>
     <properties>
         <java.version>17</java.version>
     </properties>
