@@ -15,11 +15,10 @@ import pt.galina.in_db.entity.user.User;
 @Slf4j
 @Controller
 @RequestMapping("/orders")
-@SessionAttributes("order")
+@SessionAttributes("tacoOrder")
 public class OrderController {
 
-    private OrderRepository orderRepo;
-
+    private final OrderRepository orderRepo;
     public OrderController(OrderRepository orderRepo) {
         this.orderRepo = orderRepo;
     }
@@ -48,19 +47,12 @@ public class OrderController {
 
     @PostMapping
     public String processOrder(@Valid TacoOrder order, Errors errors,
-                               SessionStatus sessionStatus,
-                               @AuthenticationPrincipal User user) {
-
+                               SessionStatus sessionStatus) {
         if (errors.hasErrors()) {
             return "orderForm";
         }
-
-        order.setUser(user);
-
         orderRepo.save(order);
         sessionStatus.setComplete();
-
         return "redirect:/";
     }
-
 }

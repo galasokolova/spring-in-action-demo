@@ -29,7 +29,7 @@ spring:
           facebook:
             client-id: # your client-id
             client-secret: # your client-secret
-            redirect-uri: # http://localhost:8080/oauth2/code/facebook
+            redirect-uri: http://localhost:8080/oauth2/code/facebook
             scope:
               - email
               - public_profile

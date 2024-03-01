@@ -1,12 +1,11 @@
-package pt.galina.method_level_security.security;
+package pt.galina.method_level_security.entity.user;
 
 import lombok.Data;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import pt.galina.method_level_security.entity.user.User;
 
 @Data
-public class RegistrationForm {
+public class UserRegistrationForm {
     private String username;
     private String password;
     private String fullname;

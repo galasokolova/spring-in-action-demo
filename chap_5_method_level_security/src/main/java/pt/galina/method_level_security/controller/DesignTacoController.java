@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.SessionStatus;
 import pt.galina.method_level_security.data.IngredientRepository;
 import pt.galina.method_level_security.entity.taco.Ingredient;
 import pt.galina.method_level_security.entity.taco.Ingredient.Type;
@@ -26,7 +27,7 @@ import java.util.stream.StreamSupport;
 public class DesignTacoController {
     private final IngredientRepository ingredientRepo;
 
-    private final UserRepository userRepo;
+    private UserRepository userRepo;
 
     @Autowired
     public DesignTacoController(
@@ -65,24 +66,32 @@ public class DesignTacoController {
     }
 
     @GetMapping
-    public String showDesignForm() {
+    public String showDesignForm(Model model) {
+//        model.addAttribute("tacoOrder", new TacoOrder());
+
         return "design";
     }
 
     @PostMapping
-    public String processTaco(
-            @Valid Taco taco, Errors errors,
-            @ModelAttribute TacoOrder order, Model model) {
+    public String processTaco(SessionStatus sessionStatus,
+                              @Valid Taco taco, Errors errors,
+                              @ModelAttribute TacoOrder order, Model model) {
 
         if (errors.hasErrors()) {
             model.addAttribute("errors", errors);
             return "design";
         }
+
+        // adding Taco to TacoOrder
         order.addTaco(taco);
+
+        // persisting TacoOrder in session
+        model.addAttribute("order", order);
+
+
 
         return "redirect:/orders/current";
     }
-
     private List<Ingredient> filterByType(List<Ingredient> ingredients, Ingredient.Type type) {
         return ingredients
                 .stream()

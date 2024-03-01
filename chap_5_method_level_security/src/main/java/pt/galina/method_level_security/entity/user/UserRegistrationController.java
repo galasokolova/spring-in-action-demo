@@ -1,4 +1,4 @@
-package pt.galina.method_level_security.security;
+package pt.galina.method_level_security.entity.user;
 
 import org.jetbrains.annotations.NotNull;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -6,15 +6,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pt.galina.method_level_security.entity.user.UserRepository;
 
 @Controller
 @RequestMapping("/register")
-public class RegistrationController {
+public class UserRegistrationController {
     private final UserRepository userRepo;
     private final PasswordEncoder passwordEncoder;
-    public RegistrationController(
-            UserRepository userRepo, PasswordEncoder passwordEncoder) {
+    public UserRegistrationController(UserRepository userRepo,
+                                      PasswordEncoder passwordEncoder) {
         this.userRepo = userRepo;
         this.passwordEncoder = passwordEncoder;
     }
@@ -23,7 +22,7 @@ public class RegistrationController {
         return "registration";
     }
     @PostMapping
-    public String processRegistration(@NotNull RegistrationForm form) {
+    public String processRegistration(@NotNull UserRegistrationForm form) {
         userRepo.save(form.toUser(passwordEncoder));
         return "redirect:/login";
     }

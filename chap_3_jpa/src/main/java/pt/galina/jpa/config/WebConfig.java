@@ -1,4 +1,4 @@
-package pt.galina.method_level_security.config;
+package pt.galina.jpa.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;

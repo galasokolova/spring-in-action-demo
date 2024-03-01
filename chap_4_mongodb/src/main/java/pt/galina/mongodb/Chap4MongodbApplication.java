@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 
 /**
   Start MongoDB:
- $ docker run --rm --name my-mongo-container -p 27017:27017 -d mongo:latest
+ docker run --rm --name my-mongo-container -p 27017:27017 -d mongo:latest
  */
 
 @SpringBootApplication
