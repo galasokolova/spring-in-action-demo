@@ -1,4 +1,4 @@
-package pt.galina.configuration.config;
+package pt.galina.finetunung_configuration.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;

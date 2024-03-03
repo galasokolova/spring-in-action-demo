@@ -1,11 +1,11 @@
-package pt.galina.configuration.converter;
+package pt.galina.finetunung_configuration.converter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
-import pt.galina.configuration.data.IngredientRepository;
-import pt.galina.configuration.entity.taco.Ingredient;
+import pt.galina.finetunung_configuration.data.IngredientRepository;
+import pt.galina.finetunung_configuration.entity.taco.Ingredient;
 
 
 @Component

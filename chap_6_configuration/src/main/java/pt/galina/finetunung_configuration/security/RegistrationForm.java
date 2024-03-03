@@ -1,9 +1,9 @@
-package pt.galina.configuration.security;
+package pt.galina.finetunung_configuration.security;
 
 import lombok.Data;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import pt.galina.configuration.entity.user.User;
+import pt.galina.finetunung_configuration.entity.user.User;
 
 @Data
 public class RegistrationForm {

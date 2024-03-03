@@ -1,4 +1,4 @@
-package pt.galina.configuration.entity.taco;
+package pt.galina.finetunung_configuration.entity.taco;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Digits;
@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;
+import pt.galina.finetunung_configuration.entity.user.User;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -21,7 +22,7 @@ public class TacoOrder implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
@@ -60,6 +61,9 @@ public class TacoOrder implements Serializable {
     @Column(name = "cc_cvv")
     @Digits(integer=3, fraction=0, message="Invalid CVV")
     private String ccCVV;
+
+    @ManyToOne
+    private User user;
 
 
     @ManyToMany(targetEntity= Taco.class)

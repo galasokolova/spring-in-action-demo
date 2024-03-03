@@ -1,4 +1,4 @@
-package pt.galina.configuration.entity.taco;
+package pt.galina.finetunung_configuration.entity.taco;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;

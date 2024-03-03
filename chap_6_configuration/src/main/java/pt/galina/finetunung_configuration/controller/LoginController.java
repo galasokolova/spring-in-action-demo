@@ -1,4 +1,4 @@
-package pt.galina.configuration.controller;
+package pt.galina.finetunung_configuration.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

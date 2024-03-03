@@ -9,7 +9,6 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import pt.galina.in_db.data.IngredientRepository;
-import pt.galina.in_db.data.TacoRepository;
 import pt.galina.in_db.entity.taco.Ingredient;
 import pt.galina.in_db.entity.taco.Ingredient.Type;
 import pt.galina.in_db.entity.taco.Taco;
@@ -27,18 +26,13 @@ import java.util.stream.StreamSupport;
 @SessionAttributes("tacoOrder")
 public class DesignTacoController {
     private final IngredientRepository ingredientRepo;
-
-    private TacoRepository tacoRepo;
-
     private UserRepository userRepo;
 
     @Autowired
     public DesignTacoController(
             IngredientRepository ingredientRepo,
-            TacoRepository tacoRepo,
             UserRepository userRepo) {
         this.ingredientRepo = ingredientRepo;
-        this.tacoRepo = tacoRepo;
         this.userRepo = userRepo;
     }
 
@@ -72,8 +66,6 @@ public class DesignTacoController {
 
     @GetMapping
     public String showDesignForm(Model model) {
-//        model.addAttribute("tacoOrder", new TacoOrder());
-
         return "design";
     }
 

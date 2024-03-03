@@ -1,4 +1,4 @@
-package pt.galina.configuration.entity.user;
+package pt.galina.finetunung_configuration.entity.user;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;

@@ -1,4 +1,4 @@
-package pt.galina.configuration.controller;
+package pt.galina.finetunung_configuration.controller;
 
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -7,13 +7,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
-import pt.galina.configuration.data.IngredientRepository;
-import pt.galina.configuration.entity.taco.Ingredient;
-import pt.galina.configuration.entity.taco.Ingredient.Type;
-import pt.galina.configuration.entity.taco.Taco;
-import pt.galina.configuration.entity.taco.TacoOrder;
-import pt.galina.configuration.entity.user.User;
-import pt.galina.configuration.entity.user.UserRepository;
+import org.springframework.web.bind.support.SessionStatus;
+import pt.galina.finetunung_configuration.data.IngredientRepository;
+import pt.galina.finetunung_configuration.entity.taco.Ingredient;
+import pt.galina.finetunung_configuration.entity.taco.Ingredient.Type;
+import pt.galina.finetunung_configuration.entity.taco.Taco;
+import pt.galina.finetunung_configuration.entity.taco.TacoOrder;
+import pt.galina.finetunung_configuration.entity.user.User;
+import pt.galina.finetunung_configuration.entity.user.UserRepository;
 
 import java.security.Principal;
 import java.util.List;
@@ -25,8 +26,7 @@ import java.util.stream.StreamSupport;
 @SessionAttributes("tacoOrder")
 public class DesignTacoController {
     private final IngredientRepository ingredientRepo;
-
-    private final UserRepository userRepo;
+    private UserRepository userRepo;
 
     @Autowired
     public DesignTacoController(
@@ -41,7 +41,7 @@ public class DesignTacoController {
         List<Ingredient> ingredients = StreamSupport
                 .stream(ingredientRepo.findAll().spliterator(), false)
                 .toList();
-        Type[] types = Ingredient.Type.values();
+        Type[] types = Type.values();
         for (Type type : types) {
             model.addAttribute(type.toString().toLowerCase(),
                     filterByType(ingredients, type));
@@ -65,25 +65,33 @@ public class DesignTacoController {
     }
 
     @GetMapping
-    public String showDesignForm() {
+    public String showDesignForm(Model model) {
+//        model.addAttribute("tacoOrder", new TacoOrder());
+
         return "design";
     }
 
     @PostMapping
-    public String processTaco(
+    public String processTaco(SessionStatus sessionStatus,
             @Valid Taco taco, Errors errors,
-            @ModelAttribute TacoOrder order, Model model) {
+                              @ModelAttribute TacoOrder order, Model model) {
 
         if (errors.hasErrors()) {
             model.addAttribute("errors", errors);
             return "design";
         }
+
+        // adding Taco to TacoOrder
         order.addTaco(taco);
+
+        // persisting TacoOrder in session
+        model.addAttribute("order", order);
+
+
 
         return "redirect:/orders/current";
     }
-
-    private List<Ingredient> filterByType(List<Ingredient> ingredients, Ingredient.Type type) {
+    private List<Ingredient> filterByType(List<Ingredient> ingredients, Type type) {
         return ingredients
                 .stream()
                 .filter(x -> x.getType().equals(type))

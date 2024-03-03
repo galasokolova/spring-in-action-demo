@@ -28,7 +28,7 @@ public class AdminRegistrationController {
     @PostMapping
     public String processAdminRegistration(@ModelAttribute AdminRegistrationForm form) {
         adminRepository.save(form.toUser(passwordEncoder));
-        return "redirect:/login";
+        return "redirect:/admin";
     }
 }
 
