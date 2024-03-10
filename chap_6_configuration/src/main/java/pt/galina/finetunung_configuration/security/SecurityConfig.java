@@ -2,6 +2,7 @@ package pt.galina.finetunung_configuration.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.HeadersConfigurer;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -34,8 +35,13 @@ public class SecurityConfig{
                          httpSecurityHeadersConfigurer -> httpSecurityHeadersConfigurer
                                  .frameOptions(
                                          HeadersConfigurer.FrameOptionsConfig::sameOrigin)
+
+                 ).requiresChannel(
+                         channelRequestMatcherRegistry -> channelRequestMatcherRegistry
+                                 .anyRequest().requiresSecure()
                  );
 
          return http.build();
     }
+
 }

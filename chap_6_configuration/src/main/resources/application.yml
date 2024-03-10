@@ -1,3 +1,13 @@
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-store: classpath:keystore.jks
+    key-store-password: letmein
+    key-password: letmein
+    key-store-type: PKCS12
+    key-alias: mycert
+
 spring:
   devtools:
     restart:
@@ -22,4 +32,13 @@ spring:
     hibernate:
       ddl-auto: none # Turning off auto-creation of the scheme JPA/Hibernate
     show-sql: true
+  rsocket:
+    server:
+      port: 8444 # rsocket port has to be different from server port
+      ssl:
+        key-store: "classpath:keystore.jks"
+        key-store-password: "letmein"
+        key-password: "letmein"
+        key-store-type: PKCS12
+
 

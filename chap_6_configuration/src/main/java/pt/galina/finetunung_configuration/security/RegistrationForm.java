@@ -1,7 +1,6 @@
 package pt.galina.finetunung_configuration.security;
 
 import lombok.Data;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import pt.galina.finetunung_configuration.entity.user.User;
 
@@ -15,7 +14,7 @@ public class RegistrationForm {
     private String state;
     private String zip;
     private String phone;
-    public User toUser(@NotNull PasswordEncoder passwordEncoder) {
+    public User toUser(PasswordEncoder passwordEncoder) {
         return new User(
                 username,
                 passwordEncoder.encode(password),

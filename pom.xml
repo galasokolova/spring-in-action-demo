@@ -17,6 +17,7 @@
     <description>spring-in -action-demo</description>
     <properties>
         <java.version>17</java.version>
+
     </properties>
 
     <modules>
@@ -33,8 +34,8 @@
         <module>chap_5_method_level_security</module>
         <module>chap_6_configuration</module>
         <module>shared-resources</module>
-    </modules>
 
+    </modules>
 
 
 </project>
