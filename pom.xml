@@ -33,6 +33,7 @@
         <module>chap_5_csrf</module>
         <module>chap_5_method_level_security</module>
         <module>chap_6_configuration</module>
+        <module>chap_6_config_logging</module>
         <module>shared-resources</module>
 
     </modules>
