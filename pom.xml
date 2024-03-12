@@ -35,6 +35,7 @@
         <module>chap_6_configuration</module>
         <module>chap_6_config_logging</module>
         <module>chap_6_config_profile</module>
+        <module>chap_7_restful_controller</module>
         <module>shared-resources</module>
 
     </modules>
