@@ -1,0 +1,21 @@
+spring:
+  devtools:
+    restart:
+      enabled: true
+  datasource:
+    name: tacoclouddev
+    generate-unique-name: false
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username:
+    password:
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+logging:
+  level:
+    root: debug
