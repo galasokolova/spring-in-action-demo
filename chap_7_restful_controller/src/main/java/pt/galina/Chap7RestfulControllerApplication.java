@@ -6,16 +6,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Profile;
-import pt.galina.config_profile.data.IngredientRepository;
-import pt.galina.config_profile.entity.taco.Ingredient;
-import pt.galina.config_profile.entity.taco.Ingredient.Type;
+import pt.galina.rest_controller.data.IngredientRepository;
+import pt.galina.rest_controller.entity.taco.Ingredient;
+import pt.galina.rest_controller.entity.taco.Ingredient.Type;
 
 @SpringBootApplication
-@ConfigurationPropertiesScan("pt.galina.config_profile.config")
-public class Chap6ConfigProfileApplication {
+@ConfigurationPropertiesScan("pt.galina.rest_controller.config")
+public class Chap7RestfulControllerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Chap6ConfigProfileApplication.class, args);
+        SpringApplication.run(Chap7RestfulControllerApplication.class, args);
     }
 
     @Bean
@@ -37,5 +37,6 @@ public class Chap6ConfigProfileApplication {
             }
         };
     }
+
 
 }
