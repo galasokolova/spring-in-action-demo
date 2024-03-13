@@ -35,7 +35,7 @@ public class Chap7RestfulControllerApplication {
     @Profile("!prod")
     public CommandLineRunner dataLoader(IngredientRepository repo, ObjectMapper objectMapper) {
         return args -> {
-            InputStream inputStream = resourceLoader.getResource("classpath:data.json").getInputStream();
+            InputStream inputStream = resourceLoader.getResource("classpath:ingredient.json").getInputStream();
             List<Ingredient> ingredients = objectMapper.readValue(inputStream, new TypeReference<List<Ingredient>>() {});
             repo.saveAll(ingredients);
         };
