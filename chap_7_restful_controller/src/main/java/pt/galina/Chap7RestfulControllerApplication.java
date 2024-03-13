@@ -37,6 +37,4 @@ public class Chap7RestfulControllerApplication {
             }
         };
     }
-
-
 }
