@@ -109,7 +109,7 @@ Caused by: org.springframework.dao.IncorrectResultSizeDataAccessException: Query
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.4.jar:6.1.4]
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:220) ~[spring-aop-6.1.4.jar:6.1.4]
 	at jdk.proxy4/jdk.proxy4.$Proxy163.findByUsername(Unknown Source) ~[na:na]
-	at pt.galina.rest_controller.entity.user.UserRepositoryDetailsService.lambda$userDetailsService$0(UserRepositoryDetailsService.java:14) ~[classes/:na]
+	at pt.galina.rest_controller.service.UserRepositoryDetailsService.lambda$userDetailsService$0(UserRepositoryDetailsService.java:14) ~[classes/:na]
 	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:103) ~[spring-security-core-6.2.2.jar:6.2.2]
 	... 92 common frames omitted
 Caused by: org.hibernate.NonUniqueResultException: Query did not return a unique result: 2 results were returned
@@ -247,7 +247,7 @@ Caused by: org.springframework.dao.IncorrectResultSizeDataAccessException: Query
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.4.jar:6.1.4]
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:220) ~[spring-aop-6.1.4.jar:6.1.4]
 	at jdk.proxy4/jdk.proxy4.$Proxy163.findByUsername(Unknown Source) ~[na:na]
-	at pt.galina.rest_controller.entity.user.UserRepositoryDetailsService.lambda$userDetailsService$0(UserRepositoryDetailsService.java:14) ~[classes/:na]
+	at pt.galina.rest_controller.service.UserRepositoryDetailsService.lambda$userDetailsService$0(UserRepositoryDetailsService.java:14) ~[classes/:na]
 	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:103) ~[spring-security-core-6.2.2.jar:6.2.2]
 	... 92 common frames omitted
 Caused by: org.hibernate.NonUniqueResultException: Query did not return a unique result: 3 results were returned
@@ -385,7 +385,7 @@ Caused by: org.springframework.dao.IncorrectResultSizeDataAccessException: Query
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.4.jar:6.1.4]
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:220) ~[spring-aop-6.1.4.jar:6.1.4]
 	at jdk.proxy4/jdk.proxy4.$Proxy163.findByUsername(Unknown Source) ~[na:na]
-	at pt.galina.rest_controller.entity.user.UserRepositoryDetailsService.lambda$userDetailsService$0(UserRepositoryDetailsService.java:14) ~[classes/:na]
+	at pt.galina.rest_controller.service.UserRepositoryDetailsService.lambda$userDetailsService$0(UserRepositoryDetailsService.java:14) ~[classes/:na]
 	at org.springframework.security.authentication.dao.DaoAuthenticationProvider.retrieveUser(DaoAuthenticationProvider.java:103) ~[spring-security-core-6.2.2.jar:6.2.2]
 	... 92 common frames omitted
 Caused by: org.hibernate.NonUniqueResultException: Query did not return a unique result: 4 results were returned
@@ -432,3 +432,5 @@ Caused by: org.hibernate.NonUniqueResultException: Query did not return a unique
 2024-03-13T21:16:13.292Z  WARN 13588 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
 2024-03-13T21:21:12.215Z  WARN 26016 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2024-03-13T21:21:47.971Z  WARN 26016 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
+2024-03-14T00:16:36.092Z  WARN 17384 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-14T00:17:35.441Z  WARN 17384 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]
