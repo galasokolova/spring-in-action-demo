@@ -37,8 +37,8 @@
         <module>chap_6_config_profile</module>
         <module>chap_7_restful_controller</module>
         <module>chap_7_spring_data_rest</module>
+        <module>chap_8_oauth2</module>
         <module>shared-resources</module>
-
     </modules>
 
 
