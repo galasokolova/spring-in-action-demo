@@ -6,7 +6,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import pt.galina.oath2_auth_server.entity.user.User;
 
 @Data
-public class RegistrationForm {
+public class UserRegistrationForm {
     private String username;
     private String password;
     private String fullname;

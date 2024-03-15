@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pt.galina.oath2_auth_server.data.UserRepository;
-import pt.galina.oath2_auth_server.security.RegistrationForm;
+import pt.galina.oath2_auth_server.security.UserRegistrationForm;
 
 @Controller
 @RequestMapping("/register")
@@ -24,7 +24,7 @@ public class RegistrationController {
         return "registration";
     }
     @PostMapping
-    public String processRegistration(@NotNull RegistrationForm form) {
+    public String processRegistration(@NotNull UserRegistrationForm form) {
         userRepo.save(form.toUser(passwordEncoder));
         return "redirect:/login";
     }

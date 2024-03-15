@@ -11,7 +11,7 @@ spring:
       path: /h2-console
   data:
     rest:
-      base-path: /data-api
+      base-path: /api
   integration:
     management:
       default-logging-enabled: true

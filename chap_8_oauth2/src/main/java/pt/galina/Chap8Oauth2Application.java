@@ -2,6 +2,7 @@ package pt.galina;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -23,7 +24,7 @@ authorization server
 public class Chap8Oauth2Application {
 
 	private final ResourceLoader resourceLoader;
-
+	@Autowired
     public Chap8Oauth2Application(ResourceLoader resourceLoader) {
         this.resourceLoader = resourceLoader;
     }

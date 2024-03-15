@@ -1,5 +1,6 @@
 package pt.galina.oath2_auth_server.client;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 import pt.galina.oath2_auth_server.entity.taco.Ingredient;
@@ -7,6 +8,7 @@ import pt.galina.oath2_auth_server.entity.taco.Ingredient;
 @Component
 public class IngredientClient {
     private final RestTemplate rest;
+    @Autowired
     public IngredientClient(RestTemplate rest) {
         this.rest = rest;
     }
