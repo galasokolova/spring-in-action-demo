@@ -1,0 +1,36 @@
+spring:
+  devtools:
+    restart:
+      enabled: true
+  datasource:
+    generate-unique-name: false
+    name: tacocloud
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  data:
+    rest:
+      base-path: /api
+  integration:
+    management:
+      default-logging-enabled: true
+
+logging:
+  file:
+    name: chap_oauth2/TacoCloudOAuth2.log
+  logback:
+    rolling policy:
+      file-name-pattern: TacoCloudOAuth2-%d{yyyy-MM-dd}.%i.log
+  level:
+    root: warn
+    org.springframework.security: warn
+
+taco:
+  orders:
+    page-size: 10
+---
+
+spring:
+  profiles:
+    active: dev

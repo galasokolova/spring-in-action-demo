@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Register Admin</h1>
+<img th:src="@{/images/TacoCloud.png}"/>
+<form th:method="POST" th:action="@{/adminReg}" id="registerForm">
+    <label th:for="username">Username: </label>
+    <input type="text" name="username"/><br/>
+    <label th:for="password">Password: </label>
+    <input type="password" name="password"/><br/>
+    <label th:for="confirm">Confirm password: </label>
+    <input type="password" name="confirm"/><br/>
+
+    <input type="submit" value="Register Admin"/>
+</form>
+</body>
+</html>
