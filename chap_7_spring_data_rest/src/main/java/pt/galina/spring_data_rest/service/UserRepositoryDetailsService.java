@@ -9,7 +9,7 @@ import pt.galina.spring_data_rest.entity.user.User;
 
 @Service
 public class UserRepositoryDetailsService{
-        @Bean
+    @Bean
     public UserDetailsService userDetailsService(UserRepository userRepo) {
         return username -> {
             User user = userRepo.findByUsername(username);
