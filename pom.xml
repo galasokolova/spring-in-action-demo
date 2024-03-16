@@ -38,6 +38,7 @@
         <module>chap_7_restful_controller</module>
         <module>chap_7_spring_data_rest</module>
         <module>chap_8_oauth2</module>
+        <module>chap_8_spring_authorization_server</module>
         <module>shared-resources</module>
     </modules>
 
