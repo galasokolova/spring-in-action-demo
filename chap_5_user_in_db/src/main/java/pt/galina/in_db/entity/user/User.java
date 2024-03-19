@@ -17,7 +17,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor(access= AccessLevel.PROTECTED, force=true)
 @RequiredArgsConstructor
-@Table(name = "users")
+@Table(name = "user")
 public class User implements UserDetails {
     @Serial
     private static final long serialVersionUID = 1L;
