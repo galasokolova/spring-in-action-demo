@@ -11,6 +11,15 @@ import pt.galina.auth_server.user.User;
 
 /*
 http://localhost:9000/oauth2/authorize?response_type=code&client_id=taco-admin-client&redirect_uri=http://127.0.0.1:9090/login/oauth2/code/taco-admin-client&scope=writeIngredients+deleteIngredients
+
+
+$ curl localhost:9000/oauth2/token \
+ -H"Content-type: application/x-www-form-urlencoded" \
+ -d"grant_type=authorization_code" \
+ -d"redirect_uri=http://127.0.0.1:9090/login/oauth2/code/taco-admin-client" \
+ -d"code=$code" \
+ -u taco-admin-client:secret
+
  */
 @SpringBootApplication
 public class Chap8AuthorizationServerApplication {
