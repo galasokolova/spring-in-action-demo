@@ -2,9 +2,6 @@ server:
   port: 9000
 
 spring:
-  devtools:
-    restart:
-      enabled: true
   datasource:
     url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE
     generate-unique-name: false
@@ -36,6 +33,9 @@ spring:
                 - "openid"
             require-authorization-consent: true
 
+  jmx:
+    enabled: false
+
 logging:
   file:
     name: chap_8_authorization_server/TacoCloudOAuth2Server.log
@@ -43,5 +43,5 @@ logging:
     rolling policy:
       file-name-pattern: TacoCloudOAuth2Server-%d{yyyy-MM-dd}.%i.log
   level:
-    root: warn
-    org.springframework.security: warn
+    root: debug
+    org.springframework.security: debug

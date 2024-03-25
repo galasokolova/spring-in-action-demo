@@ -1,6 +1,5 @@
 package pt.galina.spring_data_rest.controller;
 
-import org.jetbrains.annotations.NotNull;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +23,7 @@ public class RegistrationController {
         return "registration";
     }
     @PostMapping
-    public String processRegistration(@NotNull RegistrationForm form) {
+    public String processRegistration(RegistrationForm form) {
         userRepo.save(form.toUser(passwordEncoder));
         return "redirect:/login";
     }

@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import pt.galina.auth_server.user.TacoUserRepository;
+import pt.galina.auth_server.user.UserRepository;
 
 @Configuration
 @EnableWebSecurity
@@ -29,7 +29,7 @@ public class SecurityConfig {
 		return http.build();
 	}
 	@Bean
-	public UserDetailsService userDetailsService(TacoUserRepository tacoUserRepository) {
+	public UserDetailsService userDetailsService(UserRepository tacoUserRepository) {
 		return tacoUserRepository::findByUsername;
 	}
 

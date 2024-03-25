@@ -65,6 +65,7 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(
                         authz -> authz
+                                .requestMatchers("/h2-console/**").permitAll()
                                 .requestMatchers("/admin/**")
                                 .hasRole("ADMIN")
                                 .requestMatchers("/design", "/orders")
@@ -79,3 +80,15 @@ public class SecurityConfig {
         return http.build();
     }
 }
+/*
+http
+    .authorizeRequests()
+        .antMatchers("/h2-console/**").permitAll()
+        .and()
+    .csrf()
+        .ignoringAntMatchers("/h2-console/**")
+        .and()
+    .headers()
+        .frameOptions()
+        .sameOrigin();
+ */

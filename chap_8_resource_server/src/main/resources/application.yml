@@ -1,0 +1,35 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:9000/oauth2/jwks
+  datasource:
+    generate-unique-name: false
+    name: tacocloud
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  data:
+    rest:
+      base-path: /api
+  integration:
+    management:
+      default-logging-enabled: true
+
+logging:
+  file:
+    name: resource_server/TacoCloudResourceServer.log
+  logback:
+    rolling policy:
+      file-name-pattern: TacoCloudResourceServer-%d{yyyy-MM-dd}.%i.log
+  level:
+    root: debug
+    org.springframework.security: debug
+
+server:
+  tomcat:
+    max-http-header-size: 64KB
+
+

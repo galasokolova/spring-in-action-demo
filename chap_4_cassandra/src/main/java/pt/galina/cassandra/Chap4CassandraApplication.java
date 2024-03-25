@@ -19,7 +19,7 @@ import org.springframework.context.annotation.Bean;
  3. Create KEYSPACE "taco_cloud":
  CREATE KEYSPACE IF NOT EXISTS taco_cloud WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
 
- 4. Open app on localhost:8080/design
+ 4. Open taco_app on localhost:8080/design
 
  5. Stop Cassandra:
  docker stop cassandra

@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.2.2</version>
+        <version>3.2.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -39,6 +39,7 @@
         <module>chap_7_spring_data_rest</module>
         <module>chap_8_oauth2</module>
         <module>chap_8_authorization_server</module>
+        <module>chap_8_resource_server</module>
         <module>shared-resources</module>
     </modules>
 
