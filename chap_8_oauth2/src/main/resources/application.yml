@@ -1,7 +1,7 @@
 spring:
-  devtools:
-    restart:
-      enabled: true
+#  devtools:
+#    restart:
+#      enabled: true
   datasource:
     generate-unique-name: false
     name: tacocloud

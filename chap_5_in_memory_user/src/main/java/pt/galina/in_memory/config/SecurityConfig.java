@@ -26,10 +26,6 @@ public class SecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    /*
-     The in-memory user details service is convenient for testing purposes or for very simple applications.
-     */
-
     @Bean
     public UserDetailsService userDetailsService(PasswordEncoder encoder) {
         List<UserDetails> usersList = new ArrayList<>();

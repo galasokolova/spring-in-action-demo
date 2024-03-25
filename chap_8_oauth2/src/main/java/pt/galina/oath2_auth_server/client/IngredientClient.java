@@ -14,7 +14,7 @@ public class IngredientClient {
     }
 
     public Ingredient getIngredientById(String ingredientId) {
-        return rest.getForObject("http://localhost:8080/data-api/ingredients/{id}",
+        return rest.getForObject("http://localhost:8080/api/ingredients/{id}",
                 Ingredient.class,
                 ingredientId);
     }
@@ -48,18 +48,18 @@ public class IngredientClient {
      */
 
     public void updateIngredient(Ingredient ingredient) {
-        rest.put("http://localhost:8080/data-api/ingredients/{id}",
+        rest.put("http://localhost:8080/api/ingredients/{id}",
                 ingredient,
                 ingredient.getId());
     }
 
     public void deleteIngredient(Ingredient ingredient) {
-        rest.delete("http://localhost:8080/data-api/ingredients/{id}",
+        rest.delete("http://localhost:8080/api/ingredients/{id}",
                 ingredient.getId());
     }
 
     public Ingredient createIngredient(Ingredient ingredient) {
-        return rest.postForObject("http://localhost:8080/data-api/ingredients",
+        return rest.postForObject("http://localhost:8080/api/ingredients",
                 ingredient, Ingredient.class);
     }
 
