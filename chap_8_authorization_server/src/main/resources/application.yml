@@ -38,7 +38,7 @@ spring:
 
 logging:
   file:
-    name: chap_8_authorization_server/TacoCloudOAuth2Server.log
+    name: chap_8_authorization_server/auth_server_log/TacoCloudOAuth2Server.log
   logback:
     rolling policy:
       file-name-pattern: TacoCloudOAuth2Server-%d{yyyy-MM-dd}.%i.log

@@ -37,6 +37,12 @@ $ curl http://localhost:8080/api/ingredients \
  -H "Content-type: application/json" \
  -d "{\"id\":\"SHMP\", \"name\":\"Coconut Shrimp\", \"type\":\"PROTEIN\"}" \
  -H "Authorization: Bearer "
+
+ curl localhost:9000/oauth2/token \
+-H "Content-type: application/x-www-form-urlencoded" \
+-d "grant_type=refresh_token&refresh_token=<refresh_token>" \
+-u taco-admin-client:secret
+
  */
 @SpringBootApplication
 public class Chap8ResourceServerApplication {
