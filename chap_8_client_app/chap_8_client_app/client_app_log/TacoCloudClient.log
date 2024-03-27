@@ -1,0 +1,913 @@
+2024-03-26T15:26:41.999Z  WARN 6848 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderController' defined in file [C:\Users\soglg\IdeaProjects\spring-in-action-demo\chap_8_client_app\target\classes\pt\galina\client_app\controller\OrderController.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'taco.orders-pt.galina.client_app.config.OrderProps': Could not bind properties to 'OrderProps' : prefix=taco.orders, ignoreInvalidFields=false, ignoreUnknownFields=true
+2024-03-26T15:26:42.053Z ERROR 6848 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Binding to target org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'taco.orders' to pt.galina.client_app.config.OrderProps failed:
+
+    Property: taco.orders.pageSize
+    Value: "0"
+    Reason: must be between 1 and 25
+
+
+Action:
+
+Update your application's configuration
+
+2024-03-26T15:26:42.059Z  WARN 6848 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] to prepare test instance [pt.galina.client_app.Chap8ClientAppApplicationTests@4af0ae2c]
+
+java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@1d3bf0af testClass = pt.galina.client_app.Chap8ClientAppApplicationTests, locations = [], classes = [pt.galina.client_app.Chap8ClientAppApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@b62d79, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e096385, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@29d89d5d, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@662b4c69, org.springframework.boot.test.context.SpringBootTestAnnotation@ad4807d9], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:180) ~[spring-test-6.1.5.jar:6.1.5]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130) ~[spring-test-6.1.5.jar:6.1.5]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:191) ~[spring-test-6.1.5.jar:6.1.5]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:130) ~[spring-test-6.1.5.jar:6.1.5]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260) ~[spring-test-6.1.5.jar:6.1.5]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:163) ~[spring-test-6.1.5.jar:6.1.5]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:378) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:383) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:378) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179) ~[na:na]
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310) ~[na:na]
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735) ~[na:na]
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:377) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:290) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:289) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:279) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at java.base/java.util.Optional.orElseGet(Optional.java:364) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:278) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57) ~[junit5-rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38) ~[junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11) ~[idea_rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55) ~[junit-rt.jar:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderController' defined in file [C:\Users\soglg\IdeaProjects\spring-in-action-demo\chap_8_client_app\target\classes\pt\galina\client_app\controller\OrderController.class]: Unsatisfied dependency expressed through constructor parameter 1: Error creating bean with name 'taco.orders-pt.galina.client_app.config.OrderProps': Could not bind properties to 'OrderProps' : prefix=taco.orders, ignoreInvalidFields=false, ignoreUnknownFields=true
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:795) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:237) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1355) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1192) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:975) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:962) ~[spring-context-6.1.5.jar:6.1.5]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.5.jar:6.1.5]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.test.context.SpringBootContextLoader.lambda$loadContext$3(SpringBootContextLoader.java:137) ~[spring-boot-test-3.2.4.jar:3.2.4]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:58) ~[spring-core-6.1.5.jar:6.1.5]
+	at org.springframework.util.function.ThrowingSupplier.get(ThrowingSupplier.java:46) ~[spring-core-6.1.5.jar:6.1.5]
+	at org.springframework.boot.SpringApplication.withHook(SpringApplication.java:1454) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.test.context.SpringBootContextLoader$ContextLoaderHook.run(SpringBootContextLoader.java:553) ~[spring-boot-test-3.2.4.jar:3.2.4]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:137) ~[spring-boot-test-3.2.4.jar:3.2.4]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:108) ~[spring-boot-test-3.2.4.jar:3.2.4]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:225) ~[spring-test-6.1.5.jar:6.1.5]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:152) ~[spring-test-6.1.5.jar:6.1.5]
+	... 72 common frames omitted
+Caused by: org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'taco.orders-pt.galina.client_app.config.OrderProps': Could not bind properties to 'OrderProps' : prefix=taco.orders, ignoreInvalidFields=false, ignoreUnknownFields=true
+	at org.springframework.boot.context.properties.ConstructorBound.from(ConstructorBound.java:47) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.context.properties.ConfigurationPropertiesBeanRegistrar.lambda$createBeanDefinition$1(ConfigurationPropertiesBeanRegistrar.java:97) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.obtainInstanceFromSupplier(AbstractAutowireCapableBeanFactory.java:1257) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.obtainInstanceFromSupplier(DefaultListableBeanFactory.java:951) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.obtainFromSupplier(AbstractAutowireCapableBeanFactory.java:1217) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1161) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:562) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1443) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1353) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:904) ~[spring-beans-6.1.5.jar:6.1.5]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:782) ~[spring-beans-6.1.5.jar:6.1.5]
+	... 96 common frames omitted
+Caused by: org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'taco.orders' to pt.galina.client_app.config.OrderProps
+	at org.springframework.boot.context.properties.bind.Binder.handleBindError(Binder.java:391) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:354) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:339) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.context.properties.bind.Binder.bindOrCreate(Binder.java:331) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.context.properties.bind.Binder.bindOrCreate(Binder.java:316) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.context.properties.ConfigurationPropertiesBinder.bindOrCreate(ConfigurationPropertiesBinder.java:101) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.context.properties.ConstructorBound.from(ConstructorBound.java:44) ~[spring-boot-3.2.4.jar:3.2.4]
+	... 112 common frames omitted
+Caused by: org.springframework.boot.context.properties.bind.validation.BindValidationException: Binding validation errors on taco.orders
+   - Field error in object 'taco.orders' on field 'pageSize': rejected value [0]; codes [Min.taco.orders.pageSize,Min.pageSize,Min.int,Min]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [taco.orders.pageSize,pageSize]; arguments []; default message [pageSize],1]; default message [must be between 1 and 25]
+	at org.springframework.boot.context.properties.bind.validation.ValidationBindHandler.validateAndPush(ValidationBindHandler.java:141) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.context.properties.bind.validation.ValidationBindHandler.validate(ValidationBindHandler.java:114) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.context.properties.bind.validation.ValidationBindHandler.onFinish(ValidationBindHandler.java:105) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.context.properties.bind.Binder.handleBindResult(Binder.java:377) ~[spring-boot-3.2.4.jar:3.2.4]
+	at org.springframework.boot.context.properties.bind.Binder.bind(Binder.java:351) ~[spring-boot-3.2.4.jar:3.2.4]
+	... 117 common frames omitted
+
+2024-03-26T15:26:42.088Z  WARN 6848 --- [main] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] to prepare test instance [pt.galina.client_app.Chap8ClientAppApplicationTests@e74300b]
+
+java.lang.IllegalStateException: ApplicationContext failure threshold (1) exceeded: skipping repeated attempt to load context for [WebMergedContextConfiguration@1d3bf0af testClass = pt.galina.client_app.Chap8ClientAppApplicationTests, locations = [], classes = [pt.galina.client_app.Chap8ClientAppApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceDescriptors = [], propertySourceProperties = ["org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true"], contextCustomizers = [org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@b62d79, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@4e096385, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@29d89d5d, org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@1f, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizer@662b4c69, org.springframework.boot.test.context.SpringBootTestAnnotation@ad4807d9], resourceBasePath = "src/main/webapp", contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:145) ~[spring-test-6.1.5.jar:6.1.5]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:130) ~[spring-test-6.1.5.jar:6.1.5]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:191) ~[spring-test-6.1.5.jar:6.1.5]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:130) ~[spring-test-6.1.5.jar:6.1.5]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:260) ~[spring-test-6.1.5.jar:6.1.5]
+	at org.springframework.test.context.junit.jupiter.SpringExtension.postProcessTestInstance(SpringExtension.java:163) ~[spring-test-6.1.5.jar:6.1.5]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$10(ClassBasedTestDescriptor.java:378) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.executeAndMaskThrowable(ClassBasedTestDescriptor.java:383) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$invokeTestInstancePostProcessors$11(ClassBasedTestDescriptor.java:378) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179) ~[na:na]
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1625) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509) ~[na:na]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499) ~[na:na]
+	at java.base/java.util.stream.StreamSpliterators$WrappingSpliterator.forEachRemaining(StreamSpliterators.java:310) ~[na:na]
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:735) ~[na:na]
+	at java.base/java.util.stream.Streams$ConcatSpliterator.forEachRemaining(Streams.java:734) ~[na:na]
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.invokeTestInstancePostProcessors(ClassBasedTestDescriptor.java:377) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$instantiateAndPostProcessTestInstance$6(ClassBasedTestDescriptor.java:290) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.instantiateAndPostProcessTestInstance(ClassBasedTestDescriptor.java:289) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$4(ClassBasedTestDescriptor.java:279) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at java.base/java.util.Optional.orElseGet(Optional.java:364) ~[na:na]
+	at org.junit.jupiter.engine.descriptor.ClassBasedTestDescriptor.lambda$testInstancesProvider$5(ClassBasedTestDescriptor.java:278) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.execution.TestInstancesProvider.getTestInstances(TestInstancesProvider.java:31) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$prepare$0(TestMethodTestDescriptor.java:106) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:105) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.prepare(TestMethodTestDescriptor.java:69) ~[junit-jupiter-engine-5.10.2.jar:5.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$prepare$2(NodeTestTask.java:123) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.prepare(NodeTestTask.java:123) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:90) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511) ~[na:na]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54) ~[junit-platform-engine-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:63) ~[junit-platform-launcher-1.10.2.jar:1.10.2]
+	at com.intellij.junit5.JUnit5IdeaTestRunner.startRunnerWithArgs(JUnit5IdeaTestRunner.java:57) ~[junit5-rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater$1.execute(IdeaTestRunner.java:38) ~[junit-rt.jar:na]
+	at com.intellij.rt.execution.junit.TestsRepeater.repeat(TestsRepeater.java:11) ~[idea_rt.jar:na]
+	at com.intellij.rt.junit.IdeaTestRunner$Repeater.startRunnerWithArgs(IdeaTestRunner.java:35) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:232) ~[junit-rt.jar:na]
+	at com.intellij.rt.junit.JUnitStarter.main(JUnitStarter.java:55) ~[junit-rt.jar:na]
+
+2024-03-26T16:31:33.092Z DEBUG 15788 --- [background-preinit] org.jboss.logging                        : Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2024-03-26T16:31:33.104Z DEBUG 15788 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : Trying to load META-INF/validation.xml for XML based Validator configuration.
+2024-03-26T16:31:33.106Z DEBUG 15788 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via TCCL
+2024-03-26T16:31:33.107Z DEBUG 15788 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2024-03-26T16:31:33.108Z DEBUG 15788 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : No META-INF/validation.xml found. Using annotation based configuration only.
+2024-03-26T16:31:33.116Z DEBUG 15788 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Found jakarta.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+2024-03-26T16:31:33.117Z DEBUG 15788 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+2024-03-26T16:31:33.131Z  INFO 15788 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Starting Chap8ClientAppApplicationTests using Java 17.0.10 with PID 15788 (started by Galina in C:\Users\soglg\IdeaProjects\spring-in-action-demo\chap_8_client_app)
+2024-03-26T16:31:33.131Z DEBUG 15788 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-26T16:31:33.132Z  INFO 15788 --- [main] p.g.c.Chap8ClientAppApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2024-03-26T16:31:33.133Z DEBUG 15788 --- [main] o.s.boot.SpringApplication               : Loading source class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T16:31:33.149Z DEBUG 15788 --- [background-preinit] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
+2024-03-26T16:31:33.181Z DEBUG 15788 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@c8b96ec
+2024-03-26T16:31:33.202Z DEBUG 15788 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2024-03-26T16:31:33.215Z DEBUG 15788 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2024-03-26T16:31:33.248Z DEBUG 15788 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor'
+2024-03-26T16:31:33.257Z DEBUG 15788 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2024-03-26T16:31:33.260Z DEBUG 15788 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2024-03-26T16:31:33.261Z DEBUG 15788 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor'
+2024-03-26T16:31:33.263Z DEBUG 15788 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2024-03-26T16:31:33.265Z DEBUG 15788 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2024-03-26T16:31:33.266Z DEBUG 15788 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2024-03-26T16:31:33.269Z DEBUG 15788 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2024-03-26T16:31:33.272Z DEBUG 15788 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2024-03-26T16:31:33.273Z DEBUG 15788 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+2024-03-26T16:31:33.273Z DEBUG 15788 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2024-03-26T16:31:33.273Z DEBUG 15788 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2024-03-26T16:31:33.273Z DEBUG 15788 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2024-03-26T16:31:33.274Z DEBUG 15788 --- [main] o.s.u.c.s.UiApplicationContextUtils      : Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@1eea9d2d]
+2024-03-26T16:31:33.276Z DEBUG 15788 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'chap8ClientAppApplicationTests'
+2024-03-26T16:31:33.293Z DEBUG 15788 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483647
+2024-03-26T16:31:33.294Z DEBUG 15788 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Successfully started bean 'springBootLoggingLifecycle'
+2024-03-26T16:31:33.305Z  INFO 15788 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Started Chap8ClientAppApplicationTests in 0.608 seconds (process running for 1.625)
+2024-03-26T16:31:33.310Z DEBUG 15788 --- [main] o.s.boot.devtools.restart.Restarter      : Creating new Restarter for thread Thread[main,5,main]
+2024-03-26T16:31:33.553Z DEBUG 15788 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1, failureCount = 0]
+2024-03-26T16:31:33.553Z DEBUG 15788 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T16:31:34.653Z DEBUG 15788 --- [main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T16:31:34.654Z DEBUG 15788 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 1, missCount = 1, failureCount = 0]
+2024-03-26T16:31:34.659Z DEBUG 15788 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 2, missCount = 1, failureCount = 0]
+2024-03-26T16:31:34.672Z DEBUG 15788 --- [main] sContextBeforeModesTestExecutionListener : Before test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T16:31:34.678Z DEBUG 15788 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 3, missCount = 1, failureCount = 0]
+2024-03-26T16:31:34.679Z DEBUG 15788 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 4, missCount = 1, failureCount = 0]
+2024-03-26T16:31:34.753Z DEBUG 15788 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 5, missCount = 1, failureCount = 0]
+2024-03-26T16:31:34.782Z DEBUG 15788 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 6, missCount = 1, failureCount = 0]
+2024-03-26T16:31:34.784Z DEBUG 15788 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 7, missCount = 1, failureCount = 0]
+2024-03-26T16:31:34.784Z DEBUG 15788 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 8, missCount = 1, failureCount = 0]
+2024-03-26T16:31:34.786Z DEBUG 15788 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 9, missCount = 1, failureCount = 0]
+2024-03-26T16:31:34.787Z DEBUG 15788 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 10, missCount = 1, failureCount = 0]
+2024-03-26T16:31:34.788Z DEBUG 15788 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 11, missCount = 1, failureCount = 0]
+2024-03-26T16:31:34.789Z DEBUG 15788 --- [main] .c.s.DirtiesContextTestExecutionListener : After test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T16:31:34.789Z DEBUG 15788 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Resetting RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T16:31:34.816Z DEBUG 15788 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 12, missCount = 1, failureCount = 0]
+2024-03-26T16:31:34.816Z DEBUG 15788 --- [main] .c.s.DirtiesContextTestExecutionListener : After test class: class [Chap8ClientAppApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T16:31:34.822Z DEBUG 15788 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@c8b96ec, started on Tue Mar 26 16:31:33 WET 2024
+2024-03-26T16:31:34.825Z DEBUG 15788 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147483647
+2024-03-26T16:31:34.826Z DEBUG 15788 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Bean 'springBootLoggingLifecycle' completed its stop procedure
+2024-03-26T16:54:02.190Z DEBUG 13348 --- [background-preinit] org.jboss.logging                        : Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2024-03-26T16:54:02.206Z DEBUG 13348 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : Trying to load META-INF/validation.xml for XML based Validator configuration.
+2024-03-26T16:54:02.207Z DEBUG 13348 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via TCCL
+2024-03-26T16:54:02.208Z DEBUG 13348 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2024-03-26T16:54:02.209Z DEBUG 13348 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : No META-INF/validation.xml found. Using annotation based configuration only.
+2024-03-26T16:54:02.216Z DEBUG 13348 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Found jakarta.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+2024-03-26T16:54:02.218Z DEBUG 13348 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+2024-03-26T16:54:02.231Z  INFO 13348 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Starting Chap8ClientAppApplicationTests using Java 17.0.10 with PID 13348 (started by Galina in C:\Users\soglg\IdeaProjects\spring-in-action-demo\chap_8_client_app)
+2024-03-26T16:54:02.232Z DEBUG 13348 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-26T16:54:02.233Z  INFO 13348 --- [main] p.g.c.Chap8ClientAppApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2024-03-26T16:54:02.234Z DEBUG 13348 --- [main] o.s.boot.SpringApplication               : Loading source class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T16:54:02.258Z DEBUG 13348 --- [background-preinit] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
+2024-03-26T16:54:02.284Z DEBUG 13348 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@c8b96ec
+2024-03-26T16:54:02.301Z DEBUG 13348 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2024-03-26T16:54:02.314Z DEBUG 13348 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2024-03-26T16:54:02.350Z DEBUG 13348 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor'
+2024-03-26T16:54:02.360Z DEBUG 13348 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2024-03-26T16:54:02.363Z DEBUG 13348 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2024-03-26T16:54:02.365Z DEBUG 13348 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor'
+2024-03-26T16:54:02.367Z DEBUG 13348 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2024-03-26T16:54:02.370Z DEBUG 13348 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2024-03-26T16:54:02.375Z DEBUG 13348 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2024-03-26T16:54:02.377Z DEBUG 13348 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2024-03-26T16:54:02.378Z DEBUG 13348 --- [main] o.s.u.c.s.UiApplicationContextUtils      : Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@1eea9d2d]
+2024-03-26T16:54:02.380Z DEBUG 13348 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'chap8ClientAppApplicationTests'
+2024-03-26T16:54:02.383Z DEBUG 13348 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2024-03-26T16:54:02.384Z DEBUG 13348 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+2024-03-26T16:54:02.384Z DEBUG 13348 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2024-03-26T16:54:02.384Z DEBUG 13348 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2024-03-26T16:54:02.385Z DEBUG 13348 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2024-03-26T16:54:02.395Z DEBUG 13348 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483647
+2024-03-26T16:54:02.396Z DEBUG 13348 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Successfully started bean 'springBootLoggingLifecycle'
+2024-03-26T16:54:02.407Z  INFO 13348 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Started Chap8ClientAppApplicationTests in 0.631 seconds (process running for 1.715)
+2024-03-26T16:54:02.412Z DEBUG 13348 --- [main] o.s.boot.devtools.restart.Restarter      : Creating new Restarter for thread Thread[main,5,main]
+2024-03-26T16:54:02.682Z DEBUG 13348 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1, failureCount = 0]
+2024-03-26T16:54:02.683Z DEBUG 13348 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T16:54:03.786Z DEBUG 13348 --- [main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T16:54:03.787Z DEBUG 13348 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 1, missCount = 1, failureCount = 0]
+2024-03-26T16:54:03.791Z DEBUG 13348 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 2, missCount = 1, failureCount = 0]
+2024-03-26T16:54:03.803Z DEBUG 13348 --- [main] sContextBeforeModesTestExecutionListener : Before test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T16:54:03.809Z DEBUG 13348 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 3, missCount = 1, failureCount = 0]
+2024-03-26T16:54:03.809Z DEBUG 13348 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 4, missCount = 1, failureCount = 0]
+2024-03-26T16:54:03.888Z DEBUG 13348 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 5, missCount = 1, failureCount = 0]
+2024-03-26T16:54:03.915Z DEBUG 13348 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 6, missCount = 1, failureCount = 0]
+2024-03-26T16:54:03.917Z DEBUG 13348 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 7, missCount = 1, failureCount = 0]
+2024-03-26T16:54:03.917Z DEBUG 13348 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 8, missCount = 1, failureCount = 0]
+2024-03-26T16:54:03.919Z DEBUG 13348 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 9, missCount = 1, failureCount = 0]
+2024-03-26T16:54:03.921Z DEBUG 13348 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 10, missCount = 1, failureCount = 0]
+2024-03-26T16:54:03.922Z DEBUG 13348 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 11, missCount = 1, failureCount = 0]
+2024-03-26T16:54:03.923Z DEBUG 13348 --- [main] .c.s.DirtiesContextTestExecutionListener : After test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T16:54:03.923Z DEBUG 13348 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Resetting RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T16:54:03.946Z DEBUG 13348 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 12, missCount = 1, failureCount = 0]
+2024-03-26T16:54:03.946Z DEBUG 13348 --- [main] .c.s.DirtiesContextTestExecutionListener : After test class: class [Chap8ClientAppApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T16:54:03.953Z DEBUG 13348 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@c8b96ec, started on Tue Mar 26 16:54:02 WET 2024
+2024-03-26T16:54:03.955Z DEBUG 13348 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147483647
+2024-03-26T16:54:03.956Z DEBUG 13348 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Bean 'springBootLoggingLifecycle' completed its stop procedure
+2024-03-26T16:55:18.502Z DEBUG 25016 --- [background-preinit] org.jboss.logging                        : Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2024-03-26T16:55:18.512Z DEBUG 25016 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : Trying to load META-INF/validation.xml for XML based Validator configuration.
+2024-03-26T16:55:18.514Z DEBUG 25016 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via TCCL
+2024-03-26T16:55:18.514Z DEBUG 25016 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2024-03-26T16:55:18.515Z DEBUG 25016 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : No META-INF/validation.xml found. Using annotation based configuration only.
+2024-03-26T16:55:18.523Z DEBUG 25016 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Found jakarta.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+2024-03-26T16:55:18.524Z DEBUG 25016 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+2024-03-26T16:55:18.538Z  INFO 25016 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Starting Chap8ClientAppApplicationTests using Java 17.0.10 with PID 25016 (started by Galina in C:\Users\soglg\IdeaProjects\spring-in-action-demo\chap_8_client_app)
+2024-03-26T16:55:18.539Z DEBUG 25016 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-26T16:55:18.540Z  INFO 25016 --- [main] p.g.c.Chap8ClientAppApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2024-03-26T16:55:18.541Z DEBUG 25016 --- [main] o.s.boot.SpringApplication               : Loading source class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T16:55:18.554Z DEBUG 25016 --- [background-preinit] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
+2024-03-26T16:55:18.580Z DEBUG 25016 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@4cc61eb1
+2024-03-26T16:55:18.598Z DEBUG 25016 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2024-03-26T16:55:18.614Z DEBUG 25016 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2024-03-26T16:55:18.648Z DEBUG 25016 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor'
+2024-03-26T16:55:18.657Z DEBUG 25016 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2024-03-26T16:55:18.660Z DEBUG 25016 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2024-03-26T16:55:18.662Z DEBUG 25016 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2024-03-26T16:55:18.662Z DEBUG 25016 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor'
+2024-03-26T16:55:18.663Z DEBUG 25016 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2024-03-26T16:55:18.665Z DEBUG 25016 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2024-03-26T16:55:18.668Z DEBUG 25016 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2024-03-26T16:55:18.668Z DEBUG 25016 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+2024-03-26T16:55:18.668Z DEBUG 25016 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2024-03-26T16:55:18.668Z DEBUG 25016 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2024-03-26T16:55:18.668Z DEBUG 25016 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2024-03-26T16:55:18.669Z DEBUG 25016 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2024-03-26T16:55:18.673Z DEBUG 25016 --- [main] o.s.u.c.s.UiApplicationContextUtils      : Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@4d4960c8]
+2024-03-26T16:55:18.674Z DEBUG 25016 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'chap8ClientAppApplicationTests'
+2024-03-26T16:55:18.691Z DEBUG 25016 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483647
+2024-03-26T16:55:18.692Z DEBUG 25016 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Successfully started bean 'springBootLoggingLifecycle'
+2024-03-26T16:55:18.702Z  INFO 25016 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Started Chap8ClientAppApplicationTests in 0.658 seconds (process running for 1.781)
+2024-03-26T16:55:18.707Z DEBUG 25016 --- [main] o.s.boot.devtools.restart.Restarter      : Creating new Restarter for thread Thread[main,5,main]
+2024-03-26T16:55:18.958Z DEBUG 25016 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@33abde31 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1, failureCount = 0]
+2024-03-26T16:55:18.958Z DEBUG 25016 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T16:55:20.129Z DEBUG 25016 --- [main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T16:55:20.130Z DEBUG 25016 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@33abde31 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 1, missCount = 1, failureCount = 0]
+2024-03-26T16:55:20.134Z DEBUG 25016 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@33abde31 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 2, missCount = 1, failureCount = 0]
+2024-03-26T16:55:20.149Z DEBUG 25016 --- [main] sContextBeforeModesTestExecutionListener : Before test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T16:55:20.156Z DEBUG 25016 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@33abde31 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 3, missCount = 1, failureCount = 0]
+2024-03-26T16:55:20.157Z DEBUG 25016 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@33abde31 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 4, missCount = 1, failureCount = 0]
+2024-03-26T16:55:20.261Z DEBUG 25016 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@33abde31 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 5, missCount = 1, failureCount = 0]
+2024-03-26T16:55:20.303Z DEBUG 25016 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@33abde31 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 6, missCount = 1, failureCount = 0]
+2024-03-26T16:55:20.307Z DEBUG 25016 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@33abde31 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 7, missCount = 1, failureCount = 0]
+2024-03-26T16:55:20.307Z DEBUG 25016 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@33abde31 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 8, missCount = 1, failureCount = 0]
+2024-03-26T16:55:20.310Z DEBUG 25016 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@33abde31 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 9, missCount = 1, failureCount = 0]
+2024-03-26T16:55:20.311Z DEBUG 25016 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@33abde31 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 10, missCount = 1, failureCount = 0]
+2024-03-26T16:55:20.318Z DEBUG 25016 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@33abde31 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 11, missCount = 1, failureCount = 0]
+2024-03-26T16:55:20.319Z DEBUG 25016 --- [main] .c.s.DirtiesContextTestExecutionListener : After test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T16:55:20.319Z DEBUG 25016 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Resetting RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T16:55:20.352Z DEBUG 25016 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@33abde31 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 12, missCount = 1, failureCount = 0]
+2024-03-26T16:55:20.353Z DEBUG 25016 --- [main] .c.s.DirtiesContextTestExecutionListener : After test class: class [Chap8ClientAppApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T16:55:20.361Z DEBUG 25016 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@4cc61eb1, started on Tue Mar 26 16:55:18 WET 2024
+2024-03-26T16:55:20.367Z DEBUG 25016 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147483647
+2024-03-26T16:55:20.368Z DEBUG 25016 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Bean 'springBootLoggingLifecycle' completed its stop procedure
+2024-03-26T16:57:08.379Z DEBUG 17336 --- [background-preinit] org.jboss.logging                        : Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2024-03-26T16:57:08.389Z DEBUG 17336 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : Trying to load META-INF/validation.xml for XML based Validator configuration.
+2024-03-26T16:57:08.391Z DEBUG 17336 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via TCCL
+2024-03-26T16:57:08.392Z DEBUG 17336 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2024-03-26T16:57:08.392Z DEBUG 17336 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : No META-INF/validation.xml found. Using annotation based configuration only.
+2024-03-26T16:57:08.402Z DEBUG 17336 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Found jakarta.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+2024-03-26T16:57:08.403Z DEBUG 17336 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+2024-03-26T16:57:08.407Z  INFO 17336 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Starting Chap8ClientAppApplicationTests using Java 17.0.10 with PID 17336 (started by Galina in C:\Users\soglg\IdeaProjects\spring-in-action-demo\chap_8_client_app)
+2024-03-26T16:57:08.408Z DEBUG 17336 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-26T16:57:08.409Z  INFO 17336 --- [main] p.g.c.Chap8ClientAppApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2024-03-26T16:57:08.410Z DEBUG 17336 --- [main] o.s.boot.SpringApplication               : Loading source class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T16:57:08.434Z DEBUG 17336 --- [background-preinit] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
+2024-03-26T16:57:08.449Z DEBUG 17336 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2d0566ba
+2024-03-26T16:57:08.465Z DEBUG 17336 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2024-03-26T16:57:08.478Z DEBUG 17336 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2024-03-26T16:57:08.507Z DEBUG 17336 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor'
+2024-03-26T16:57:08.517Z DEBUG 17336 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2024-03-26T16:57:08.521Z DEBUG 17336 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2024-03-26T16:57:08.524Z DEBUG 17336 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor'
+2024-03-26T16:57:08.525Z DEBUG 17336 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2024-03-26T16:57:08.528Z DEBUG 17336 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2024-03-26T16:57:08.533Z DEBUG 17336 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2024-03-26T16:57:08.539Z DEBUG 17336 --- [main] o.s.u.c.s.UiApplicationContextUtils      : Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@1a5b8489]
+2024-03-26T16:57:08.541Z DEBUG 17336 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2024-03-26T16:57:08.541Z DEBUG 17336 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'chap8ClientAppApplicationTests'
+2024-03-26T16:57:08.551Z DEBUG 17336 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2024-03-26T16:57:08.551Z DEBUG 17336 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+2024-03-26T16:57:08.551Z DEBUG 17336 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2024-03-26T16:57:08.552Z DEBUG 17336 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2024-03-26T16:57:08.552Z DEBUG 17336 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2024-03-26T16:57:08.561Z DEBUG 17336 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483647
+2024-03-26T16:57:08.562Z DEBUG 17336 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Successfully started bean 'springBootLoggingLifecycle'
+2024-03-26T16:57:08.575Z  INFO 17336 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Started Chap8ClientAppApplicationTests in 0.656 seconds (process running for 2.3)
+2024-03-26T16:57:08.581Z DEBUG 17336 --- [main] o.s.boot.devtools.restart.Restarter      : Creating new Restarter for thread Thread[main,5,main]
+2024-03-26T16:57:08.874Z DEBUG 17336 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1, failureCount = 0]
+2024-03-26T16:57:08.875Z DEBUG 17336 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T16:57:10.071Z DEBUG 17336 --- [main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T16:57:10.071Z DEBUG 17336 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 1, missCount = 1, failureCount = 0]
+2024-03-26T16:57:10.074Z DEBUG 17336 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 2, missCount = 1, failureCount = 0]
+2024-03-26T16:57:10.084Z DEBUG 17336 --- [main] sContextBeforeModesTestExecutionListener : Before test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T16:57:10.090Z DEBUG 17336 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 3, missCount = 1, failureCount = 0]
+2024-03-26T16:57:10.090Z DEBUG 17336 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 4, missCount = 1, failureCount = 0]
+2024-03-26T16:57:10.162Z DEBUG 17336 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 5, missCount = 1, failureCount = 0]
+2024-03-26T19:29:53.751Z DEBUG 17336 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 6, missCount = 1, failureCount = 0]
+2024-03-26T19:29:53.753Z DEBUG 17336 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 7, missCount = 1, failureCount = 0]
+2024-03-26T19:29:53.754Z DEBUG 17336 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 8, missCount = 1, failureCount = 0]
+2024-03-26T19:29:53.757Z DEBUG 17336 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 9, missCount = 1, failureCount = 0]
+2024-03-26T19:29:53.758Z DEBUG 17336 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 10, missCount = 1, failureCount = 0]
+2024-03-26T19:29:53.759Z DEBUG 17336 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 11, missCount = 1, failureCount = 0]
+2024-03-26T19:29:53.759Z DEBUG 17336 --- [main] .c.s.DirtiesContextTestExecutionListener : After test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T19:29:53.759Z DEBUG 17336 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Resetting RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T19:29:53.776Z DEBUG 17336 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 12, missCount = 1, failureCount = 0]
+2024-03-26T19:29:53.777Z DEBUG 17336 --- [main] .c.s.DirtiesContextTestExecutionListener : After test class: class [Chap8ClientAppApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T19:29:53.782Z DEBUG 17336 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@2d0566ba, started on Tue Mar 26 16:57:08 WET 2024
+2024-03-26T19:29:53.784Z DEBUG 17336 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147483647
+2024-03-26T19:29:53.785Z DEBUG 17336 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Bean 'springBootLoggingLifecycle' completed its stop procedure
+2024-03-26T19:47:58.628Z DEBUG 1972 --- [background-preinit] org.jboss.logging                        : Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2024-03-26T19:47:58.638Z DEBUG 1972 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : Trying to load META-INF/validation.xml for XML based Validator configuration.
+2024-03-26T19:47:58.639Z DEBUG 1972 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via TCCL
+2024-03-26T19:47:58.640Z DEBUG 1972 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2024-03-26T19:47:58.641Z DEBUG 1972 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : No META-INF/validation.xml found. Using annotation based configuration only.
+2024-03-26T19:47:58.652Z DEBUG 1972 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Found jakarta.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+2024-03-26T19:47:58.654Z DEBUG 1972 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+2024-03-26T19:47:58.667Z  INFO 1972 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Starting Chap8ClientAppApplicationTests using Java 17.0.10 with PID 1972 (started by Galina in C:\Users\soglg\IdeaProjects\spring-in-action-demo\chap_8_client_app)
+2024-03-26T19:47:58.667Z DEBUG 1972 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-26T19:47:58.668Z  INFO 1972 --- [main] p.g.c.Chap8ClientAppApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2024-03-26T19:47:58.669Z DEBUG 1972 --- [main] o.s.boot.SpringApplication               : Loading source class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T19:47:58.686Z DEBUG 1972 --- [background-preinit] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
+2024-03-26T19:47:58.724Z DEBUG 1972 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@c8b96ec
+2024-03-26T19:47:58.747Z DEBUG 1972 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2024-03-26T19:47:58.763Z DEBUG 1972 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2024-03-26T19:47:58.796Z DEBUG 1972 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor'
+2024-03-26T19:47:58.805Z DEBUG 1972 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2024-03-26T19:47:58.808Z DEBUG 1972 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2024-03-26T19:47:58.809Z DEBUG 1972 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor'
+2024-03-26T19:47:58.809Z DEBUG 1972 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2024-03-26T19:47:58.810Z DEBUG 1972 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2024-03-26T19:47:58.812Z DEBUG 1972 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2024-03-26T19:47:58.816Z DEBUG 1972 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2024-03-26T19:47:58.816Z DEBUG 1972 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+2024-03-26T19:47:58.816Z DEBUG 1972 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2024-03-26T19:47:58.817Z DEBUG 1972 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2024-03-26T19:47:58.817Z DEBUG 1972 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2024-03-26T19:47:58.817Z DEBUG 1972 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2024-03-26T19:47:58.820Z DEBUG 1972 --- [main] o.s.u.c.s.UiApplicationContextUtils      : Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@1eea9d2d]
+2024-03-26T19:47:58.822Z DEBUG 1972 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'chap8ClientAppApplicationTests'
+2024-03-26T19:47:58.838Z DEBUG 1972 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483647
+2024-03-26T19:47:58.839Z DEBUG 1972 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Successfully started bean 'springBootLoggingLifecycle'
+2024-03-26T19:47:58.848Z  INFO 1972 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Started Chap8ClientAppApplicationTests in 0.709 seconds (process running for 1.824)
+2024-03-26T19:47:58.852Z DEBUG 1972 --- [main] o.s.boot.devtools.restart.Restarter      : Creating new Restarter for thread Thread[main,5,main]
+2024-03-26T19:47:59.069Z DEBUG 1972 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1, failureCount = 0]
+2024-03-26T19:47:59.070Z DEBUG 1972 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T19:48:00.182Z DEBUG 1972 --- [main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T19:48:00.184Z DEBUG 1972 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 1, missCount = 1, failureCount = 0]
+2024-03-26T19:48:00.189Z DEBUG 1972 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 2, missCount = 1, failureCount = 0]
+2024-03-26T19:48:00.202Z DEBUG 1972 --- [main] sContextBeforeModesTestExecutionListener : Before test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T19:48:00.208Z DEBUG 1972 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 3, missCount = 1, failureCount = 0]
+2024-03-26T19:48:00.209Z DEBUG 1972 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 4, missCount = 1, failureCount = 0]
+2024-03-26T19:48:00.307Z DEBUG 1972 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 5, missCount = 1, failureCount = 0]
+2024-03-26T19:48:00.351Z DEBUG 1972 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 6, missCount = 1, failureCount = 0]
+2024-03-26T19:48:00.353Z DEBUG 1972 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 7, missCount = 1, failureCount = 0]
+2024-03-26T19:48:00.353Z DEBUG 1972 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 8, missCount = 1, failureCount = 0]
+2024-03-26T19:48:00.355Z DEBUG 1972 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 9, missCount = 1, failureCount = 0]
+2024-03-26T19:48:00.357Z DEBUG 1972 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 10, missCount = 1, failureCount = 0]
+2024-03-26T19:48:00.358Z DEBUG 1972 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 11, missCount = 1, failureCount = 0]
+2024-03-26T19:48:00.359Z DEBUG 1972 --- [main] .c.s.DirtiesContextTestExecutionListener : After test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T19:48:00.360Z DEBUG 1972 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Resetting RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T19:48:00.384Z DEBUG 1972 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 12, missCount = 1, failureCount = 0]
+2024-03-26T19:48:00.385Z DEBUG 1972 --- [main] .c.s.DirtiesContextTestExecutionListener : After test class: class [Chap8ClientAppApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T19:48:00.390Z DEBUG 1972 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@c8b96ec, started on Tue Mar 26 19:47:58 WET 2024
+2024-03-26T19:48:00.394Z DEBUG 1972 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147483647
+2024-03-26T19:48:00.395Z DEBUG 1972 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Bean 'springBootLoggingLifecycle' completed its stop procedure
+2024-03-26T19:50:40.083Z DEBUG 22372 --- [background-preinit] org.jboss.logging                        : Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2024-03-26T19:50:40.093Z DEBUG 22372 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : Trying to load META-INF/validation.xml for XML based Validator configuration.
+2024-03-26T19:50:40.094Z DEBUG 22372 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via TCCL
+2024-03-26T19:50:40.095Z DEBUG 22372 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2024-03-26T19:50:40.096Z DEBUG 22372 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : No META-INF/validation.xml found. Using annotation based configuration only.
+2024-03-26T19:50:40.104Z DEBUG 22372 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Found jakarta.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+2024-03-26T19:50:40.105Z DEBUG 22372 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+2024-03-26T19:50:40.123Z  INFO 22372 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Starting Chap8ClientAppApplicationTests using Java 17.0.10 with PID 22372 (started by Galina in C:\Users\soglg\IdeaProjects\spring-in-action-demo\chap_8_client_app)
+2024-03-26T19:50:40.125Z DEBUG 22372 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-26T19:50:40.126Z  INFO 22372 --- [main] p.g.c.Chap8ClientAppApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2024-03-26T19:50:40.127Z DEBUG 22372 --- [main] o.s.boot.SpringApplication               : Loading source class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T19:50:40.138Z DEBUG 22372 --- [background-preinit] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
+2024-03-26T19:50:40.173Z DEBUG 22372 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6d1310f6
+2024-03-26T19:50:40.190Z DEBUG 22372 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2024-03-26T19:50:40.205Z DEBUG 22372 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2024-03-26T19:50:40.236Z DEBUG 22372 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor'
+2024-03-26T19:50:40.245Z DEBUG 22372 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2024-03-26T19:50:40.248Z DEBUG 22372 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2024-03-26T19:50:40.251Z DEBUG 22372 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor'
+2024-03-26T19:50:40.253Z DEBUG 22372 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2024-03-26T19:50:40.255Z DEBUG 22372 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2024-03-26T19:50:40.257Z DEBUG 22372 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2024-03-26T19:50:40.260Z DEBUG 22372 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2024-03-26T19:50:40.264Z DEBUG 22372 --- [main] o.s.u.c.s.UiApplicationContextUtils      : Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@baf1bb3]
+2024-03-26T19:50:40.264Z DEBUG 22372 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2024-03-26T19:50:40.264Z DEBUG 22372 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+2024-03-26T19:50:40.264Z DEBUG 22372 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2024-03-26T19:50:40.265Z DEBUG 22372 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2024-03-26T19:50:40.265Z DEBUG 22372 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2024-03-26T19:50:40.265Z DEBUG 22372 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'chap8ClientAppApplicationTests'
+2024-03-26T19:50:40.281Z DEBUG 22372 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483647
+2024-03-26T19:50:40.282Z DEBUG 22372 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Successfully started bean 'springBootLoggingLifecycle'
+2024-03-26T19:50:40.292Z  INFO 22372 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Started Chap8ClientAppApplicationTests in 0.674 seconds (process running for 1.817)
+2024-03-26T19:50:40.297Z DEBUG 22372 --- [main] o.s.boot.devtools.restart.Restarter      : Creating new Restarter for thread Thread[main,5,main]
+2024-03-26T19:50:40.530Z DEBUG 22372 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@7a799159 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1, failureCount = 0]
+2024-03-26T19:50:40.531Z DEBUG 22372 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T19:50:41.716Z DEBUG 22372 --- [main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T19:50:41.717Z DEBUG 22372 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@7a799159 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 1, missCount = 1, failureCount = 0]
+2024-03-26T19:50:41.720Z DEBUG 22372 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@7a799159 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 2, missCount = 1, failureCount = 0]
+2024-03-26T19:50:41.730Z DEBUG 22372 --- [main] sContextBeforeModesTestExecutionListener : Before test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T19:50:41.736Z DEBUG 22372 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@7a799159 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 3, missCount = 1, failureCount = 0]
+2024-03-26T19:50:41.737Z DEBUG 22372 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@7a799159 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 4, missCount = 1, failureCount = 0]
+2024-03-26T19:50:41.818Z DEBUG 22372 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@7a799159 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 5, missCount = 1, failureCount = 0]
+2024-03-26T19:50:41.841Z  INFO 22372 --- [main] p.g.c.service.RestIngredientService      : RestTemplate is set: restTemplate
+2024-03-26T19:50:41.848Z DEBUG 22372 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@7a799159 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 6, missCount = 1, failureCount = 0]
+2024-03-26T19:50:41.850Z DEBUG 22372 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@7a799159 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 7, missCount = 1, failureCount = 0]
+2024-03-26T19:50:41.850Z DEBUG 22372 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@7a799159 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 8, missCount = 1, failureCount = 0]
+2024-03-26T19:50:41.852Z DEBUG 22372 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@7a799159 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 9, missCount = 1, failureCount = 0]
+2024-03-26T19:50:41.854Z DEBUG 22372 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@7a799159 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 10, missCount = 1, failureCount = 0]
+2024-03-26T19:50:41.855Z DEBUG 22372 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@7a799159 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 11, missCount = 1, failureCount = 0]
+2024-03-26T19:50:41.856Z DEBUG 22372 --- [main] .c.s.DirtiesContextTestExecutionListener : After test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T19:50:41.857Z DEBUG 22372 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Resetting RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T19:50:41.881Z DEBUG 22372 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@7a799159 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 12, missCount = 1, failureCount = 0]
+2024-03-26T19:50:41.882Z DEBUG 22372 --- [main] .c.s.DirtiesContextTestExecutionListener : After test class: class [Chap8ClientAppApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T19:50:41.889Z DEBUG 22372 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@6d1310f6, started on Tue Mar 26 19:50:40 WET 2024
+2024-03-26T19:50:41.892Z DEBUG 22372 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147483647
+2024-03-26T19:50:41.893Z DEBUG 22372 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Bean 'springBootLoggingLifecycle' completed its stop procedure
+2024-03-26T19:55:00.194Z DEBUG 10500 --- [background-preinit] org.jboss.logging                        : Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2024-03-26T19:55:00.207Z DEBUG 10500 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : Trying to load META-INF/validation.xml for XML based Validator configuration.
+2024-03-26T19:55:00.209Z DEBUG 10500 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via TCCL
+2024-03-26T19:55:00.210Z DEBUG 10500 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2024-03-26T19:55:00.210Z DEBUG 10500 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : No META-INF/validation.xml found. Using annotation based configuration only.
+2024-03-26T19:55:00.219Z DEBUG 10500 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Found jakarta.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+2024-03-26T19:55:00.221Z DEBUG 10500 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+2024-03-26T19:55:00.239Z  INFO 10500 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Starting Chap8ClientAppApplicationTests using Java 17.0.10 with PID 10500 (started by Galina in C:\Users\soglg\IdeaProjects\spring-in-action-demo\chap_8_client_app)
+2024-03-26T19:55:00.240Z DEBUG 10500 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-26T19:55:00.241Z  INFO 10500 --- [main] p.g.c.Chap8ClientAppApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2024-03-26T19:55:00.242Z DEBUG 10500 --- [main] o.s.boot.SpringApplication               : Loading source class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T19:55:00.261Z DEBUG 10500 --- [background-preinit] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
+2024-03-26T19:55:00.297Z DEBUG 10500 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@2d0566ba
+2024-03-26T19:55:00.326Z DEBUG 10500 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2024-03-26T19:55:00.344Z DEBUG 10500 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2024-03-26T19:55:00.379Z DEBUG 10500 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor'
+2024-03-26T19:55:00.388Z DEBUG 10500 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2024-03-26T19:55:00.392Z DEBUG 10500 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2024-03-26T19:55:00.394Z DEBUG 10500 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor'
+2024-03-26T19:55:00.396Z DEBUG 10500 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2024-03-26T19:55:00.399Z DEBUG 10500 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2024-03-26T19:55:00.404Z DEBUG 10500 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2024-03-26T19:55:00.404Z DEBUG 10500 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2024-03-26T19:55:00.409Z DEBUG 10500 --- [main] o.s.u.c.s.UiApplicationContextUtils      : Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@1a5b8489]
+2024-03-26T19:55:00.410Z DEBUG 10500 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'chap8ClientAppApplicationTests'
+2024-03-26T19:55:00.411Z DEBUG 10500 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2024-03-26T19:55:00.412Z DEBUG 10500 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+2024-03-26T19:55:00.412Z DEBUG 10500 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2024-03-26T19:55:00.412Z DEBUG 10500 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2024-03-26T19:55:00.412Z DEBUG 10500 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2024-03-26T19:55:00.428Z DEBUG 10500 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483647
+2024-03-26T19:55:00.428Z DEBUG 10500 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Successfully started bean 'springBootLoggingLifecycle'
+2024-03-26T19:55:00.440Z  INFO 10500 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Started Chap8ClientAppApplicationTests in 0.746 seconds (process running for 2.179)
+2024-03-26T19:55:00.446Z DEBUG 10500 --- [main] o.s.boot.devtools.restart.Restarter      : Creating new Restarter for thread Thread[main,5,main]
+2024-03-26T19:55:00.726Z DEBUG 10500 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1, failureCount = 0]
+2024-03-26T19:55:00.726Z DEBUG 10500 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T19:55:01.926Z DEBUG 10500 --- [main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T19:55:01.927Z DEBUG 10500 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 1, missCount = 1, failureCount = 0]
+2024-03-26T19:55:01.929Z DEBUG 10500 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 2, missCount = 1, failureCount = 0]
+2024-03-26T19:55:01.939Z DEBUG 10500 --- [main] sContextBeforeModesTestExecutionListener : Before test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T19:55:01.943Z DEBUG 10500 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 3, missCount = 1, failureCount = 0]
+2024-03-26T19:55:01.943Z DEBUG 10500 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 4, missCount = 1, failureCount = 0]
+2024-03-26T19:55:02.008Z DEBUG 10500 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 5, missCount = 1, failureCount = 0]
+2024-03-26T19:55:02.027Z  INFO 10500 --- [main] p.g.c.service.RestIngredientService      : RestTemplate is set: restTemplate
+2024-03-26T20:03:51.213Z DEBUG 10500 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 6, missCount = 1, failureCount = 0]
+2024-03-26T20:03:51.216Z DEBUG 10500 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 7, missCount = 1, failureCount = 0]
+2024-03-26T20:03:51.216Z DEBUG 10500 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 8, missCount = 1, failureCount = 0]
+2024-03-26T20:03:51.218Z DEBUG 10500 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 9, missCount = 1, failureCount = 0]
+2024-03-26T20:03:51.219Z DEBUG 10500 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 10, missCount = 1, failureCount = 0]
+2024-03-26T20:03:51.220Z DEBUG 10500 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 11, missCount = 1, failureCount = 0]
+2024-03-26T20:03:51.221Z DEBUG 10500 --- [main] .c.s.DirtiesContextTestExecutionListener : After test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T20:03:51.221Z DEBUG 10500 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Resetting RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T20:03:51.239Z DEBUG 10500 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@4c9e38 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 12, missCount = 1, failureCount = 0]
+2024-03-26T20:03:51.240Z DEBUG 10500 --- [main] .c.s.DirtiesContextTestExecutionListener : After test class: class [Chap8ClientAppApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T20:03:51.245Z DEBUG 10500 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@2d0566ba, started on Tue Mar 26 19:55:00 WET 2024
+2024-03-26T20:03:51.248Z DEBUG 10500 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147483647
+2024-03-26T20:03:51.248Z DEBUG 10500 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Bean 'springBootLoggingLifecycle' completed its stop procedure
+2024-03-26T20:03:56.365Z DEBUG 8952 --- [background-preinit] org.jboss.logging                        : Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2024-03-26T20:03:56.374Z DEBUG 8952 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : Trying to load META-INF/validation.xml for XML based Validator configuration.
+2024-03-26T20:03:56.375Z DEBUG 8952 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via TCCL
+2024-03-26T20:03:56.376Z DEBUG 8952 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2024-03-26T20:03:56.377Z DEBUG 8952 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : No META-INF/validation.xml found. Using annotation based configuration only.
+2024-03-26T20:03:56.383Z DEBUG 8952 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Found jakarta.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+2024-03-26T20:03:56.384Z DEBUG 8952 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+2024-03-26T20:03:56.395Z  INFO 8952 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Starting Chap8ClientAppApplicationTests using Java 17.0.10 with PID 8952 (started by Galina in C:\Users\soglg\IdeaProjects\spring-in-action-demo\chap_8_client_app)
+2024-03-26T20:03:56.395Z DEBUG 8952 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-26T20:03:56.396Z  INFO 8952 --- [main] p.g.c.Chap8ClientAppApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2024-03-26T20:03:56.397Z DEBUG 8952 --- [main] o.s.boot.SpringApplication               : Loading source class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T20:03:56.409Z DEBUG 8952 --- [background-preinit] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
+2024-03-26T20:03:56.433Z DEBUG 8952 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@58dea0a5
+2024-03-26T20:03:56.450Z DEBUG 8952 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2024-03-26T20:03:56.462Z DEBUG 8952 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2024-03-26T20:03:56.491Z DEBUG 8952 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor'
+2024-03-26T20:03:56.502Z DEBUG 8952 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2024-03-26T20:03:56.503Z DEBUG 8952 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2024-03-26T20:03:56.504Z DEBUG 8952 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2024-03-26T20:03:56.506Z DEBUG 8952 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor'
+2024-03-26T20:03:56.507Z DEBUG 8952 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2024-03-26T20:03:56.509Z DEBUG 8952 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2024-03-26T20:03:56.509Z DEBUG 8952 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+2024-03-26T20:03:56.509Z DEBUG 8952 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2024-03-26T20:03:56.509Z DEBUG 8952 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2024-03-26T20:03:56.509Z DEBUG 8952 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2024-03-26T20:03:56.509Z DEBUG 8952 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2024-03-26T20:03:56.513Z DEBUG 8952 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2024-03-26T20:03:56.518Z DEBUG 8952 --- [main] o.s.u.c.s.UiApplicationContextUtils      : Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@47c64cfe]
+2024-03-26T20:03:56.519Z DEBUG 8952 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'chap8ClientAppApplicationTests'
+2024-03-26T20:03:56.535Z DEBUG 8952 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483647
+2024-03-26T20:03:56.535Z DEBUG 8952 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Successfully started bean 'springBootLoggingLifecycle'
+2024-03-26T20:03:56.545Z  INFO 8952 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Started Chap8ClientAppApplicationTests in 0.635 seconds (process running for 1.726)
+2024-03-26T20:03:56.550Z DEBUG 8952 --- [main] o.s.boot.devtools.restart.Restarter      : Creating new Restarter for thread Thread[main,5,main]
+2024-03-26T20:03:56.818Z DEBUG 8952 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@bb095 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1, failureCount = 0]
+2024-03-26T20:03:56.819Z DEBUG 8952 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T20:03:57.985Z DEBUG 8952 --- [main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T20:03:57.985Z DEBUG 8952 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@bb095 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 1, missCount = 1, failureCount = 0]
+2024-03-26T20:03:57.989Z DEBUG 8952 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@bb095 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 2, missCount = 1, failureCount = 0]
+2024-03-26T20:03:58.004Z DEBUG 8952 --- [main] sContextBeforeModesTestExecutionListener : Before test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T20:03:58.009Z DEBUG 8952 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@bb095 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 3, missCount = 1, failureCount = 0]
+2024-03-26T20:03:58.010Z DEBUG 8952 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@bb095 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 4, missCount = 1, failureCount = 0]
+2024-03-26T20:03:58.085Z DEBUG 8952 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@bb095 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 5, missCount = 1, failureCount = 0]
+2024-03-26T20:03:58.110Z  INFO 8952 --- [main] p.g.c.service.RestIngredientService      : RestTemplate is set: restTemplate
+2024-03-26T20:03:58.117Z DEBUG 8952 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@bb095 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 6, missCount = 1, failureCount = 0]
+2024-03-26T20:03:58.119Z DEBUG 8952 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@bb095 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 7, missCount = 1, failureCount = 0]
+2024-03-26T20:03:58.120Z DEBUG 8952 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@bb095 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 8, missCount = 1, failureCount = 0]
+2024-03-26T20:03:58.122Z DEBUG 8952 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@bb095 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 9, missCount = 1, failureCount = 0]
+2024-03-26T20:03:58.124Z DEBUG 8952 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@bb095 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 10, missCount = 1, failureCount = 0]
+2024-03-26T20:03:58.126Z DEBUG 8952 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@bb095 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 11, missCount = 1, failureCount = 0]
+2024-03-26T20:03:58.127Z DEBUG 8952 --- [main] .c.s.DirtiesContextTestExecutionListener : After test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T20:03:58.128Z DEBUG 8952 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Resetting RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T20:03:58.152Z DEBUG 8952 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@bb095 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 12, missCount = 1, failureCount = 0]
+2024-03-26T20:03:58.153Z DEBUG 8952 --- [main] .c.s.DirtiesContextTestExecutionListener : After test class: class [Chap8ClientAppApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T20:03:58.160Z DEBUG 8952 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@58dea0a5, started on Tue Mar 26 20:03:56 WET 2024
+2024-03-26T20:03:58.163Z DEBUG 8952 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147483647
+2024-03-26T20:03:58.165Z DEBUG 8952 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Bean 'springBootLoggingLifecycle' completed its stop procedure
+2024-03-26T20:14:17.101Z DEBUG 21580 --- [background-preinit] org.jboss.logging                        : Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2024-03-26T20:14:17.109Z DEBUG 21580 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : Trying to load META-INF/validation.xml for XML based Validator configuration.
+2024-03-26T20:14:17.110Z DEBUG 21580 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via TCCL
+2024-03-26T20:14:17.111Z DEBUG 21580 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2024-03-26T20:14:17.112Z DEBUG 21580 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : No META-INF/validation.xml found. Using annotation based configuration only.
+2024-03-26T20:14:17.119Z DEBUG 21580 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Found jakarta.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+2024-03-26T20:14:17.120Z DEBUG 21580 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+2024-03-26T20:14:17.133Z  INFO 21580 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Starting Chap8ClientAppApplicationTests using Java 17.0.10 with PID 21580 (started by Galina in C:\Users\soglg\IdeaProjects\spring-in-action-demo\chap_8_client_app)
+2024-03-26T20:14:17.134Z DEBUG 21580 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-26T20:14:17.135Z  INFO 21580 --- [main] p.g.c.Chap8ClientAppApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2024-03-26T20:14:17.135Z DEBUG 21580 --- [main] o.s.boot.SpringApplication               : Loading source class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T20:14:17.147Z DEBUG 21580 --- [background-preinit] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
+2024-03-26T20:14:17.174Z DEBUG 21580 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@c8b96ec
+2024-03-26T20:14:17.197Z DEBUG 21580 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2024-03-26T20:14:17.211Z DEBUG 21580 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2024-03-26T20:14:17.243Z DEBUG 21580 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor'
+2024-03-26T20:14:17.253Z DEBUG 21580 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2024-03-26T20:14:17.255Z DEBUG 21580 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2024-03-26T20:14:17.257Z DEBUG 21580 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor'
+2024-03-26T20:14:17.259Z DEBUG 21580 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2024-03-26T20:14:17.260Z DEBUG 21580 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2024-03-26T20:14:17.262Z DEBUG 21580 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2024-03-26T20:14:17.264Z DEBUG 21580 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2024-03-26T20:14:17.268Z DEBUG 21580 --- [main] o.s.u.c.s.UiApplicationContextUtils      : Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@1eea9d2d]
+2024-03-26T20:14:17.269Z DEBUG 21580 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2024-03-26T20:14:17.269Z DEBUG 21580 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+2024-03-26T20:14:17.269Z DEBUG 21580 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2024-03-26T20:14:17.269Z DEBUG 21580 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2024-03-26T20:14:17.269Z DEBUG 21580 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2024-03-26T20:14:17.270Z DEBUG 21580 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'chap8ClientAppApplicationTests'
+2024-03-26T20:14:17.287Z DEBUG 21580 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483647
+2024-03-26T20:14:17.288Z DEBUG 21580 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Successfully started bean 'springBootLoggingLifecycle'
+2024-03-26T20:14:17.299Z  INFO 21580 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Started Chap8ClientAppApplicationTests in 0.565 seconds (process running for 1.609)
+2024-03-26T20:14:17.305Z DEBUG 21580 --- [main] o.s.boot.devtools.restart.Restarter      : Creating new Restarter for thread Thread[main,5,main]
+2024-03-26T20:14:17.572Z DEBUG 21580 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1, failureCount = 0]
+2024-03-26T20:14:17.573Z DEBUG 21580 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T20:14:18.724Z DEBUG 21580 --- [main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T20:14:18.724Z DEBUG 21580 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 1, missCount = 1, failureCount = 0]
+2024-03-26T20:14:18.728Z DEBUG 21580 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 2, missCount = 1, failureCount = 0]
+2024-03-26T20:14:18.739Z DEBUG 21580 --- [main] sContextBeforeModesTestExecutionListener : Before test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T20:14:18.745Z DEBUG 21580 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 3, missCount = 1, failureCount = 0]
+2024-03-26T20:14:18.746Z DEBUG 21580 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 4, missCount = 1, failureCount = 0]
+2024-03-26T20:14:18.824Z DEBUG 21580 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 5, missCount = 1, failureCount = 0]
+2024-03-26T20:14:18.846Z DEBUG 21580 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 6, missCount = 1, failureCount = 0]
+2024-03-26T20:14:18.848Z DEBUG 21580 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 7, missCount = 1, failureCount = 0]
+2024-03-26T20:14:18.849Z DEBUG 21580 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 8, missCount = 1, failureCount = 0]
+2024-03-26T20:14:18.852Z DEBUG 21580 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 9, missCount = 1, failureCount = 0]
+2024-03-26T20:14:18.853Z DEBUG 21580 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 10, missCount = 1, failureCount = 0]
+2024-03-26T20:14:18.854Z DEBUG 21580 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 11, missCount = 1, failureCount = 0]
+2024-03-26T20:14:18.855Z DEBUG 21580 --- [main] .c.s.DirtiesContextTestExecutionListener : After test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T20:14:18.855Z DEBUG 21580 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Resetting RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T20:14:18.875Z DEBUG 21580 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6075b2d3 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 12, missCount = 1, failureCount = 0]
+2024-03-26T20:14:18.875Z DEBUG 21580 --- [main] .c.s.DirtiesContextTestExecutionListener : After test class: class [Chap8ClientAppApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T20:14:18.882Z DEBUG 21580 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@c8b96ec, started on Tue Mar 26 20:14:17 WET 2024
+2024-03-26T20:14:18.884Z DEBUG 21580 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147483647
+2024-03-26T20:14:18.885Z DEBUG 21580 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Bean 'springBootLoggingLifecycle' completed its stop procedure
+2024-03-26T20:17:51.834Z DEBUG 20812 --- [background-preinit] org.jboss.logging                        : Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2024-03-26T20:17:51.846Z DEBUG 20812 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : Trying to load META-INF/validation.xml for XML based Validator configuration.
+2024-03-26T20:17:51.848Z DEBUG 20812 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via TCCL
+2024-03-26T20:17:51.849Z DEBUG 20812 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2024-03-26T20:17:51.849Z DEBUG 20812 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : No META-INF/validation.xml found. Using annotation based configuration only.
+2024-03-26T20:17:51.857Z DEBUG 20812 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Found jakarta.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+2024-03-26T20:17:51.859Z DEBUG 20812 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+2024-03-26T20:17:51.872Z  INFO 20812 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Starting Chap8ClientAppApplicationTests using Java 17.0.10 with PID 20812 (started by Galina in C:\Users\soglg\IdeaProjects\spring-in-action-demo\chap_8_client_app)
+2024-03-26T20:17:51.873Z DEBUG 20812 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-26T20:17:51.874Z  INFO 20812 --- [main] p.g.c.Chap8ClientAppApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2024-03-26T20:17:51.874Z DEBUG 20812 --- [main] o.s.boot.SpringApplication               : Loading source class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T20:17:51.886Z DEBUG 20812 --- [background-preinit] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
+2024-03-26T20:17:51.913Z DEBUG 20812 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@c8b96ec
+2024-03-26T20:17:51.933Z DEBUG 20812 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2024-03-26T20:17:51.944Z DEBUG 20812 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2024-03-26T20:17:51.975Z DEBUG 20812 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor'
+2024-03-26T20:17:51.983Z DEBUG 20812 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2024-03-26T20:17:51.986Z DEBUG 20812 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2024-03-26T20:17:51.988Z DEBUG 20812 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor'
+2024-03-26T20:17:51.989Z DEBUG 20812 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2024-03-26T20:17:51.991Z DEBUG 20812 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2024-03-26T20:17:51.993Z DEBUG 20812 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2024-03-26T20:17:51.995Z DEBUG 20812 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2024-03-26T20:17:51.998Z DEBUG 20812 --- [main] o.s.u.c.s.UiApplicationContextUtils      : Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@1eea9d2d]
+2024-03-26T20:17:51.998Z DEBUG 20812 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2024-03-26T20:17:51.999Z DEBUG 20812 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+2024-03-26T20:17:51.999Z DEBUG 20812 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2024-03-26T20:17:51.999Z DEBUG 20812 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2024-03-26T20:17:51.999Z DEBUG 20812 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2024-03-26T20:17:51.999Z DEBUG 20812 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'chap8ClientAppApplicationTests'
+2024-03-26T20:17:52.014Z DEBUG 20812 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483647
+2024-03-26T20:17:52.015Z DEBUG 20812 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Successfully started bean 'springBootLoggingLifecycle'
+2024-03-26T20:17:52.026Z  INFO 20812 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Started Chap8ClientAppApplicationTests in 0.603 seconds (process running for 1.639)
+2024-03-26T20:17:52.031Z DEBUG 20812 --- [main] o.s.boot.devtools.restart.Restarter      : Creating new Restarter for thread Thread[main,5,main]
+2024-03-26T20:17:52.290Z DEBUG 20812 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@551de37d size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1, failureCount = 0]
+2024-03-26T20:17:52.291Z DEBUG 20812 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T20:17:53.347Z DEBUG 20812 --- [main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T20:17:53.347Z DEBUG 20812 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@551de37d size = 1, maxSize = 32, parentContextCount = 0, hitCount = 1, missCount = 1, failureCount = 0]
+2024-03-26T20:17:53.352Z DEBUG 20812 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@551de37d size = 1, maxSize = 32, parentContextCount = 0, hitCount = 2, missCount = 1, failureCount = 0]
+2024-03-26T20:17:53.365Z DEBUG 20812 --- [main] sContextBeforeModesTestExecutionListener : Before test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T20:17:53.371Z DEBUG 20812 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@551de37d size = 1, maxSize = 32, parentContextCount = 0, hitCount = 3, missCount = 1, failureCount = 0]
+2024-03-26T20:17:53.371Z DEBUG 20812 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@551de37d size = 1, maxSize = 32, parentContextCount = 0, hitCount = 4, missCount = 1, failureCount = 0]
+2024-03-26T20:17:53.455Z DEBUG 20812 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@551de37d size = 1, maxSize = 32, parentContextCount = 0, hitCount = 5, missCount = 1, failureCount = 0]
+2024-03-26T20:17:53.475Z  INFO 20812 --- [main] p.g.c.service.RestIngredientService      : RestTemplate is set: restTemplate
+2024-03-26T20:17:53.481Z DEBUG 20812 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@551de37d size = 1, maxSize = 32, parentContextCount = 0, hitCount = 6, missCount = 1, failureCount = 0]
+2024-03-26T20:17:53.483Z DEBUG 20812 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@551de37d size = 1, maxSize = 32, parentContextCount = 0, hitCount = 7, missCount = 1, failureCount = 0]
+2024-03-26T20:17:53.483Z DEBUG 20812 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@551de37d size = 1, maxSize = 32, parentContextCount = 0, hitCount = 8, missCount = 1, failureCount = 0]
+2024-03-26T20:17:53.484Z DEBUG 20812 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@551de37d size = 1, maxSize = 32, parentContextCount = 0, hitCount = 9, missCount = 1, failureCount = 0]
+2024-03-26T20:17:53.485Z DEBUG 20812 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@551de37d size = 1, maxSize = 32, parentContextCount = 0, hitCount = 10, missCount = 1, failureCount = 0]
+2024-03-26T20:17:53.487Z DEBUG 20812 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@551de37d size = 1, maxSize = 32, parentContextCount = 0, hitCount = 11, missCount = 1, failureCount = 0]
+2024-03-26T20:17:53.488Z DEBUG 20812 --- [main] .c.s.DirtiesContextTestExecutionListener : After test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T20:17:53.488Z DEBUG 20812 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Resetting RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T20:17:53.513Z DEBUG 20812 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@551de37d size = 1, maxSize = 32, parentContextCount = 0, hitCount = 12, missCount = 1, failureCount = 0]
+2024-03-26T20:17:53.513Z DEBUG 20812 --- [main] .c.s.DirtiesContextTestExecutionListener : After test class: class [Chap8ClientAppApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T20:17:53.519Z DEBUG 20812 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@c8b96ec, started on Tue Mar 26 20:17:51 WET 2024
+2024-03-26T20:17:53.522Z DEBUG 20812 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147483647
+2024-03-26T20:17:53.523Z DEBUG 20812 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Bean 'springBootLoggingLifecycle' completed its stop procedure
+2024-03-26T20:39:08.368Z DEBUG 1464 --- [background-preinit] org.jboss.logging                        : Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2024-03-26T20:39:08.377Z DEBUG 1464 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : Trying to load META-INF/validation.xml for XML based Validator configuration.
+2024-03-26T20:39:08.378Z DEBUG 1464 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via TCCL
+2024-03-26T20:39:08.379Z DEBUG 1464 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2024-03-26T20:39:08.379Z DEBUG 1464 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : No META-INF/validation.xml found. Using annotation based configuration only.
+2024-03-26T20:39:08.387Z DEBUG 1464 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Found jakarta.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+2024-03-26T20:39:08.388Z DEBUG 1464 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+2024-03-26T20:39:08.403Z  INFO 1464 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Starting Chap8ClientAppApplicationTests using Java 17.0.10 with PID 1464 (started by Galina in C:\Users\soglg\IdeaProjects\spring-in-action-demo\chap_8_client_app)
+2024-03-26T20:39:08.404Z DEBUG 1464 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-26T20:39:08.405Z  INFO 1464 --- [main] p.g.c.Chap8ClientAppApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2024-03-26T20:39:08.406Z DEBUG 1464 --- [main] o.s.boot.SpringApplication               : Loading source class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T20:39:08.416Z DEBUG 1464 --- [background-preinit] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
+2024-03-26T20:39:08.439Z DEBUG 1464 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@5949eba8
+2024-03-26T20:39:08.462Z DEBUG 1464 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2024-03-26T20:39:08.481Z DEBUG 1464 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2024-03-26T20:39:08.514Z DEBUG 1464 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor'
+2024-03-26T20:39:08.523Z DEBUG 1464 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2024-03-26T20:39:08.526Z DEBUG 1464 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2024-03-26T20:39:08.528Z DEBUG 1464 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor'
+2024-03-26T20:39:08.529Z DEBUG 1464 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2024-03-26T20:39:08.530Z DEBUG 1464 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2024-03-26T20:39:08.532Z DEBUG 1464 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2024-03-26T20:39:08.536Z DEBUG 1464 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2024-03-26T20:39:08.537Z DEBUG 1464 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2024-03-26T20:39:08.537Z DEBUG 1464 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+2024-03-26T20:39:08.538Z DEBUG 1464 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2024-03-26T20:39:08.538Z DEBUG 1464 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2024-03-26T20:39:08.538Z DEBUG 1464 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2024-03-26T20:39:08.541Z DEBUG 1464 --- [main] o.s.u.c.s.UiApplicationContextUtils      : Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@6d91790b]
+2024-03-26T20:39:08.542Z DEBUG 1464 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'chap8ClientAppApplicationTests'
+2024-03-26T20:39:08.571Z DEBUG 1464 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483647
+2024-03-26T20:39:08.572Z DEBUG 1464 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Successfully started bean 'springBootLoggingLifecycle'
+2024-03-26T20:39:08.586Z  INFO 1464 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Started Chap8ClientAppApplicationTests in 0.587 seconds (process running for 1.597)
+2024-03-26T20:39:08.591Z DEBUG 1464 --- [main] o.s.boot.devtools.restart.Restarter      : Creating new Restarter for thread Thread[main,5,main]
+2024-03-26T20:39:08.837Z DEBUG 1464 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@5560bcdf size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1, failureCount = 0]
+2024-03-26T20:39:08.837Z DEBUG 1464 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T20:39:09.910Z DEBUG 1464 --- [main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T20:39:09.911Z DEBUG 1464 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@5560bcdf size = 1, maxSize = 32, parentContextCount = 0, hitCount = 1, missCount = 1, failureCount = 0]
+2024-03-26T20:39:09.915Z DEBUG 1464 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@5560bcdf size = 1, maxSize = 32, parentContextCount = 0, hitCount = 2, missCount = 1, failureCount = 0]
+2024-03-26T20:39:09.928Z DEBUG 1464 --- [main] sContextBeforeModesTestExecutionListener : Before test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T20:39:09.934Z DEBUG 1464 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@5560bcdf size = 1, maxSize = 32, parentContextCount = 0, hitCount = 3, missCount = 1, failureCount = 0]
+2024-03-26T20:39:09.935Z DEBUG 1464 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@5560bcdf size = 1, maxSize = 32, parentContextCount = 0, hitCount = 4, missCount = 1, failureCount = 0]
+2024-03-26T20:39:10.012Z DEBUG 1464 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@5560bcdf size = 1, maxSize = 32, parentContextCount = 0, hitCount = 5, missCount = 1, failureCount = 0]
+2024-03-26T20:39:10.040Z DEBUG 1464 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@5560bcdf size = 1, maxSize = 32, parentContextCount = 0, hitCount = 6, missCount = 1, failureCount = 0]
+2024-03-26T20:39:10.042Z DEBUG 1464 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@5560bcdf size = 1, maxSize = 32, parentContextCount = 0, hitCount = 7, missCount = 1, failureCount = 0]
+2024-03-26T20:39:10.042Z DEBUG 1464 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@5560bcdf size = 1, maxSize = 32, parentContextCount = 0, hitCount = 8, missCount = 1, failureCount = 0]
+2024-03-26T20:39:10.043Z DEBUG 1464 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@5560bcdf size = 1, maxSize = 32, parentContextCount = 0, hitCount = 9, missCount = 1, failureCount = 0]
+2024-03-26T20:39:10.045Z DEBUG 1464 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@5560bcdf size = 1, maxSize = 32, parentContextCount = 0, hitCount = 10, missCount = 1, failureCount = 0]
+2024-03-26T20:39:10.047Z DEBUG 1464 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@5560bcdf size = 1, maxSize = 32, parentContextCount = 0, hitCount = 11, missCount = 1, failureCount = 0]
+2024-03-26T20:39:10.048Z DEBUG 1464 --- [main] .c.s.DirtiesContextTestExecutionListener : After test method: class [Chap8ClientAppApplicationTests], method [testFindAll], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T20:39:10.048Z DEBUG 1464 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Resetting RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T20:39:10.073Z DEBUG 1464 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@5560bcdf size = 1, maxSize = 32, parentContextCount = 0, hitCount = 12, missCount = 1, failureCount = 0]
+2024-03-26T20:39:10.074Z DEBUG 1464 --- [main] .c.s.DirtiesContextTestExecutionListener : After test class: class [Chap8ClientAppApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T20:39:10.080Z DEBUG 1464 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@5949eba8, started on Tue Mar 26 20:39:08 WET 2024
+2024-03-26T20:39:10.083Z DEBUG 1464 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147483647
+2024-03-26T20:39:10.084Z DEBUG 1464 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Bean 'springBootLoggingLifecycle' completed its stop procedure
+2024-03-26T20:59:43.815Z DEBUG 22796 --- [background-preinit] org.jboss.logging                        : Logging Provider: org.jboss.logging.Slf4jLoggerProvider found via system property
+2024-03-26T20:59:43.823Z DEBUG 22796 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : Trying to load META-INF/validation.xml for XML based Validator configuration.
+2024-03-26T20:59:43.824Z DEBUG 22796 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via TCCL
+2024-03-26T20:59:43.824Z DEBUG 22796 --- [background-preinit] o.h.v.i.xml.config.ResourceLoaderHelper  : Trying to load META-INF/validation.xml via Hibernate Validator's class loader
+2024-03-26T20:59:43.824Z DEBUG 22796 --- [background-preinit] o.h.v.i.xml.config.ValidationXmlParser   : No META-INF/validation.xml found. Using annotation based configuration only.
+2024-03-26T20:59:43.830Z DEBUG 22796 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Found jakarta.persistence.Persistence on classpath containing 'getPersistenceUtil'. Assuming JPA 2 environment. Trying to instantiate JPA aware TraversableResolver
+2024-03-26T20:59:43.831Z DEBUG 22796 --- [background-preinit] o.h.v.i.e.resolver.TraversableResolvers  : Instantiated JPA aware TraversableResolver of type org.hibernate.validator.internal.engine.resolver.JPATraversableResolver.
+2024-03-26T20:59:43.844Z  INFO 22796 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Starting Chap8ClientAppApplicationTests using Java 17.0.10 with PID 22796 (started by Galina in C:\Users\soglg\IdeaProjects\spring-in-action-demo\chap_8_client_app)
+2024-03-26T20:59:43.845Z DEBUG 22796 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-03-26T20:59:43.845Z  INFO 22796 --- [main] p.g.c.Chap8ClientAppApplicationTests     : No active profile set, falling back to 1 default profile: "default"
+2024-03-26T20:59:43.846Z DEBUG 22796 --- [main] o.s.boot.SpringApplication               : Loading source class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T20:59:43.861Z DEBUG 22796 --- [background-preinit] .h.v.m.ResourceBundleMessageInterpolator : Loaded expression factory via original TCCL
+2024-03-26T20:59:43.889Z DEBUG 22796 --- [main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@d816dde
+2024-03-26T20:59:43.909Z DEBUG 22796 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2024-03-26T20:59:43.922Z DEBUG 22796 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory'
+2024-03-26T20:59:43.952Z DEBUG 22796 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor'
+2024-03-26T20:59:43.961Z DEBUG 22796 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2024-03-26T20:59:43.965Z DEBUG 22796 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2024-03-26T20:59:43.966Z DEBUG 22796 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.boot.test.mock.mockito.MockitoPostProcessor$SpyPostProcessor'
+2024-03-26T20:59:43.967Z DEBUG 22796 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2024-03-26T20:59:43.970Z DEBUG 22796 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000252: Using org.hibernate.validator.internal.engine.DefaultPropertyNodeNameProvider as property node name provider.
+2024-03-26T20:59:43.970Z DEBUG 22796 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2024-03-26T20:59:43.974Z DEBUG 22796 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'org.springframework.context.annotation.internalPersistenceAnnotationProcessor'
+2024-03-26T20:59:43.977Z DEBUG 22796 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.messageinterpolation.ResourceBundleMessageInterpolator as ValidatorFactory-scoped message interpolator.
+2024-03-26T20:59:43.977Z DEBUG 22796 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.resolver.JPATraversableResolver as ValidatorFactory-scoped traversable resolver.
+2024-03-26T20:59:43.977Z DEBUG 22796 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.util.ExecutableParameterNameProvider as ValidatorFactory-scoped parameter name provider.
+2024-03-26T20:59:43.977Z DEBUG 22796 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.DefaultClockProvider as ValidatorFactory-scoped clock provider.
+2024-03-26T20:59:43.977Z DEBUG 22796 --- [background-preinit] .i.e.ValidatorFactoryConfigurationHelper : HV000234: Using org.hibernate.validator.internal.engine.scripting.DefaultScriptEvaluatorFactory as ValidatorFactory-scoped script evaluator factory.
+2024-03-26T20:59:43.978Z DEBUG 22796 --- [main] o.s.u.c.s.UiApplicationContextUtils      : Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@4463d9d3]
+2024-03-26T20:59:43.979Z DEBUG 22796 --- [main] o.s.b.f.s.DefaultListableBeanFactory     : Creating shared instance of singleton bean 'chap8ClientAppApplicationTests'
+2024-03-26T20:59:43.994Z DEBUG 22796 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Starting beans in phase -2147483647
+2024-03-26T20:59:43.994Z DEBUG 22796 --- [main] o.s.c.support.DefaultLifecycleProcessor  : Successfully started bean 'springBootLoggingLifecycle'
+2024-03-26T20:59:44.006Z  INFO 22796 --- [main] p.g.c.Chap8ClientAppApplicationTests     : Started Chap8ClientAppApplicationTests in 0.634 seconds (process running for 1.65)
+2024-03-26T20:59:44.011Z DEBUG 22796 --- [main] o.s.boot.devtools.restart.Restarter      : Creating new Restarter for thread Thread[main,5,main]
+2024-03-26T20:59:44.255Z DEBUG 22796 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6079cf5 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 0, missCount = 1, failureCount = 0]
+2024-03-26T20:59:44.256Z DEBUG 22796 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Setting up MockHttpServletRequest, MockHttpServletResponse, ServletWebRequest, and RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T20:59:44.266Z DEBUG 22796 --- [main] DependencyInjectionTestExecutionListener : Performing dependency injection for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T20:59:44.267Z DEBUG 22796 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6079cf5 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 1, missCount = 1, failureCount = 0]
+2024-03-26T20:59:44.268Z DEBUG 22796 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6079cf5 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 2, missCount = 1, failureCount = 0]
+2024-03-26T20:59:44.271Z DEBUG 22796 --- [main] sContextBeforeModesTestExecutionListener : Before test method: class [Chap8ClientAppApplicationTests], method [contextLoads], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T20:59:44.273Z DEBUG 22796 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6079cf5 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 3, missCount = 1, failureCount = 0]
+2024-03-26T20:59:44.274Z DEBUG 22796 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6079cf5 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 4, missCount = 1, failureCount = 0]
+2024-03-26T20:59:45.105Z DEBUG 22796 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6079cf5 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 5, missCount = 1, failureCount = 0]
+2024-03-26T20:59:45.110Z DEBUG 22796 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6079cf5 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 6, missCount = 1, failureCount = 0]
+2024-03-26T20:59:45.111Z DEBUG 22796 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6079cf5 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 7, missCount = 1, failureCount = 0]
+2024-03-26T20:59:45.111Z DEBUG 22796 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6079cf5 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 8, missCount = 1, failureCount = 0]
+2024-03-26T20:59:45.112Z DEBUG 22796 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6079cf5 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 9, missCount = 1, failureCount = 0]
+2024-03-26T20:59:45.112Z DEBUG 22796 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6079cf5 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 10, missCount = 1, failureCount = 0]
+2024-03-26T20:59:45.113Z DEBUG 22796 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6079cf5 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 11, missCount = 1, failureCount = 0]
+2024-03-26T20:59:45.114Z DEBUG 22796 --- [main] .c.s.DirtiesContextTestExecutionListener : After test method: class [Chap8ClientAppApplicationTests], method [contextLoads], class annotated with @DirtiesContext [false] with mode [null], method annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T20:59:45.114Z DEBUG 22796 --- [main] o.s.t.c.w.ServletTestExecutionListener   : Resetting RequestContextHolder for test class pt.galina.client_app.Chap8ClientAppApplicationTests
+2024-03-26T20:59:45.121Z DEBUG 22796 --- [main] org.springframework.test.context.cache   : Spring test ApplicationContext cache statistics: [DefaultContextCache@6079cf5 size = 1, maxSize = 32, parentContextCount = 0, hitCount = 12, missCount = 1, failureCount = 0]
+2024-03-26T20:59:45.121Z DEBUG 22796 --- [main] .c.s.DirtiesContextTestExecutionListener : After test class: class [Chap8ClientAppApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
+2024-03-26T20:59:45.125Z DEBUG 22796 --- [SpringApplicationShutdownHook] o.s.w.c.s.GenericWebApplicationContext   : Closing org.springframework.web.context.support.GenericWebApplicationContext@d816dde, started on Tue Mar 26 20:59:43 WET 2024
+2024-03-26T20:59:45.126Z DEBUG 22796 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147483647
+2024-03-26T20:59:45.128Z DEBUG 22796 --- [SpringApplicationShutdownHook] o.s.c.support.DefaultLifecycleProcessor  : Bean 'springBootLoggingLifecycle' completed its stop procedure
