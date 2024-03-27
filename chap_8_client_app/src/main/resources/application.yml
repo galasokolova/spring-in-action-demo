@@ -9,18 +9,21 @@ spring:
             client-secret: secret
             authorization-grant-type: authorization_code
             redirect-uri: "http://127.0.0.1:9090/login/oauth2/code/{registrationId}"
+#            redirect-uri: "http://127.0.0.1:9090/login/oauth2/code/taco-admin-client"
             scope:
-              - writeIngredients,deleteIngredients,openid
+              - writeIngredients
+              - deleteIngredients
+              - openid
 
         provider:
           tacocloud:
             issuer-uri: http://authserver:9000
 #  The following lines are necessary only if the authorization server differs from the default values (page 206, chapter 8 "Spring in Action")
-            authorization-uri: http://authserver:9000/oauth2/authorize
-            token-uri: http://authserver:9000/oauth2/token
-            jwk-set-uri: http://authserver:9000/oauth2/jwks
-            user-info-uri: http://authserver:9000/userinfo
-            user-name-attribute: sub
+#            authorization-uri: http://authserver:9000/oauth2/authorize
+#            token-uri: http://authserver:9000/oauth2/token
+#            jwk-set-uri: http://authserver:9000/oauth2/jwks
+#            user-info-uri: http://authserver:9000/userinfo
+#            user-name-attribute: sub
 
   datasource:
     generate-unique-name: false
@@ -43,9 +46,14 @@ logging:
     rolling policy:
       file-name-pattern: TacoCloudClient-%d{yyyy-MM-dd}.%i.log
   level:
-    root: warn
-    org.springframework.security: warn
+    root: debug
+    org.springframework.security: debug
 
+taco:
+  orders:
+    page-size: 10
 #server:
 #  tomcat:
 #    max-http-response-header-size: 64KB
+server:
+  port: 9090
