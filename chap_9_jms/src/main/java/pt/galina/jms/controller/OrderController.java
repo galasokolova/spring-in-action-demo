@@ -1,21 +1,19 @@
-package pt.galina.client_app.controller;
+package pt.galina.jms.controller;
 
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
-import pt.galina.client_app.config.OrderProps;
-import pt.galina.client_app.data.OrderRepository;
-import pt.galina.client_app.data.UserRepository;
-import pt.galina.client_app.entity.taco.TacoOrder;
-import pt.galina.client_app.entity.user.User;
+import pt.galina.jms.config.OrderProps;
+import pt.galina.jms.data.OrderRepository;
+import pt.galina.jms.entity.taco.TacoOrder;
+import pt.galina.jms.entity.user.User;
 
 
 @Slf4j
@@ -34,34 +32,24 @@ public class OrderController {
     @GetMapping("/current")
     public String orderForm(@AuthenticationPrincipal User user,
                             @ModelAttribute TacoOrder order) {
-
-        if (user != null) {
-            if (order.getDeliveryName() == null) {
-                order.setDeliveryName(user.getFullname()); //todo User is null
-            }
-            if (order.getDeliveryStreet() == null) {
-                order.setDeliveryStreet(user.getStreet());
-            }
-            if (order.getDeliveryCity() == null) {
-                order.setDeliveryCity(user.getCity());
-            }
-            if (order.getDeliveryState() == null) {
-                order.setDeliveryState(user.getState());
-            }
-            if (order.getDeliveryZip() == null) {
-                order.setDeliveryZip(user.getZip());
-            }
-        } else {
-            order.setDeliveryName("");
-            order.setDeliveryStreet("");
-            order.setDeliveryCity("");
-            order.setDeliveryState("");
-            order.setDeliveryZip("");
+        if (order.getDeliveryName() == null) {
+            order.setDeliveryName(user.getFullname());
+        }
+        if (order.getDeliveryStreet() == null) {
+            order.setDeliveryStreet(user.getStreet());
+        }
+        if (order.getDeliveryCity() == null) {
+            order.setDeliveryCity(user.getCity());
+        }
+        if (order.getDeliveryState() == null) {
+            order.setDeliveryState(user.getState());
+        }
+        if (order.getDeliveryZip() == null) {
+            order.setDeliveryZip(user.getZip());
         }
 
         return "orderForm";
     }
-
 
     @PostMapping
     public String processOrder(@Valid TacoOrder order,
@@ -82,6 +70,7 @@ public class OrderController {
         return "redirect:/orders/orderList";
     }
 
+
     @GetMapping("/orderList")
     public String ordersForUser(
             @AuthenticationPrincipal User user,
@@ -94,6 +83,5 @@ public class OrderController {
 
         return "orderList";
     }
-
 
 }

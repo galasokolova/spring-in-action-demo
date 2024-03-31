@@ -15,11 +15,6 @@ spring:
       default-logging-enabled: true
 
 logging:
-  file:
-    name: chap_7_restful_controller/TacoCloudRESTful.log
-  logback:
-    rolling policy:
-      file-name-pattern: TacoCloudRESTful-%d{yyyy-MM-dd}.%i.log
   level:
     root: warn
     org.springframework.security: warn

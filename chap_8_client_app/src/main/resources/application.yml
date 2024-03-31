@@ -40,11 +40,6 @@ spring:
       default-logging-enabled: true
 
 logging:
-  file:
-    name: chap_8_client_app/client_app_log/TacoCloudClient.log
-  logback:
-    rolling policy:
-      file-name-pattern: TacoCloudClient-%d{yyyy-MM-dd}.%i.log
   level:
     root: debug
     org.springframework.security: debug

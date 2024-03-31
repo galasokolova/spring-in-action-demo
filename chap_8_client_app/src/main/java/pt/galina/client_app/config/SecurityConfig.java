@@ -8,6 +8,8 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.client.OAuth2AuthorizedClient;
@@ -15,6 +17,8 @@ import org.springframework.security.oauth2.client.OAuth2AuthorizedClientService;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.context.annotation.RequestScope;
+import pt.galina.client_app.data.UserRepository;
+import pt.galina.client_app.entity.user.User;
 import pt.galina.client_app.service.IngredientService;
 import pt.galina.client_app.service.RestIngredientService;
 
@@ -33,7 +37,6 @@ public class SecurityConfig {
                 .oauth2Login(
                         httpSecurityOAuth2LoginConfigurer ->
                                 httpSecurityOAuth2LoginConfigurer.loginPage("/oauth2/authorization/taco-admin-client")
-//                                        .defaultSuccessUrl("http://localhost:9090/")
                 )
                 .oauth2Client(Customizer.withDefaults());
 
