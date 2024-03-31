@@ -19,14 +19,9 @@ spring:
       default-logging-enabled: true
 
 logging:
-  file:
-    name: chap_8_resource_server/resource_server_log/TacoCloudResourceServer.log
-  logback:
-    rolling policy:
-      file-name-pattern: TacoCloudResourceServer-%d{yyyy-MM-dd}.%i.log
   level:
-    root: debug
-    org.springframework.security: debug
+    root: warn
+    org.springframework.security: warn
 
 server:
   tomcat:

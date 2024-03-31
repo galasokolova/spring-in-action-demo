@@ -2,6 +2,7 @@ package pt.galina.resource_server;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -48,6 +49,7 @@ $ curl http://localhost:8080/api/ingredients \
 public class Chap8ResourceServerApplication {
     private final UserRepository userRepo;
     private final PasswordEncoder encoder;
+
     public Chap8ResourceServerApplication(UserRepository userRepo, PasswordEncoder encoder) {
         this.userRepo = userRepo;
         this.encoder = encoder;
