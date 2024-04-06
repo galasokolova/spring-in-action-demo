@@ -1,3 +1,4 @@
+
 spring:
   artemis:
     broker-url: tcp://localhost:61616
@@ -6,26 +7,20 @@ spring:
   jms:
     template:
       default-destination: tacocloud.order.queue
-
-  devtools:
-    restart:
-      enabled: true
-
-  data:
-    rest:
-      base-path: /api
+    listener:
+      min-concurrency: 1
+      max-concurrency: 10
   integration:
     management:
       default-logging-enabled: true
+  profiles:
+    active: jms-listener
 
+# spring.profiles.active=jms-listener
 logging:
   level:
-    root: info
-    org.springframework.security: info
-
-taco:
-  orders:
-    page-size: 10
+    root: debug
+    org.springframework.security: debug
 
 server:
-  port: 8080
+  port: 8081

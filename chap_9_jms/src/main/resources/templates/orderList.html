@@ -24,20 +24,14 @@
                 </span><br/>
             </li>
         </ul>
-    </li>
-</ul>
-
-<ul>
-    <li th:each="order : ${orders}">
-        <!-- Остальные данные заказа -->
         <form th:action="@{/api/orders/send/{orderId}(orderId=${order.id})}" method="post">
             <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
             <button type="submit">Send Order</button>
         </form>
     </li>
 </ul>
-
-
+</body>
+</html>
 <form method="POST" th:action="@{/logout}" id="logoutForm">
     <input type="submit" value="Logout"/>
 </form>

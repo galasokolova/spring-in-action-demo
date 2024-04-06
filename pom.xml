@@ -42,7 +42,8 @@
         <module>chap_8_resource_server</module>
         <module>chap_8_client_app</module>
         <module>chap_9_jms</module>
-        <module>chap_9_taco_kitchen</module>
+        <module>chap_9_jms_push_listener</module>
+        <module>chap_9_jms_pull_receiver</module>
 
         <module>shared-resources</module>
     </modules>
