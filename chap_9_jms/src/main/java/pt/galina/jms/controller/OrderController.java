@@ -14,6 +14,7 @@ import pt.galina.jms.config.OrderProps;
 import pt.galina.jms.data.OrderRepository;
 import pt.galina.jms.entity.taco.TacoOrder;
 import pt.galina.jms.entity.user.User;
+import pt.galina.jms.message.JmsOrderMessagingService;
 
 
 @Slf4j
@@ -24,29 +25,22 @@ public class OrderController {
 
     private final OrderRepository orderRepo;
     private final OrderProps orderProps;
-    public OrderController(OrderRepository orderRepo, OrderProps orderProps) {
+
+    private final JmsOrderMessagingService messagingService;
+    public OrderController(OrderRepository orderRepo, OrderProps orderProps, JmsOrderMessagingService messagingService) {
         this.orderRepo = orderRepo;
         this.orderProps = orderProps;
+        this.messagingService = messagingService;
     }
 
     @GetMapping("/current")
     public String orderForm(@AuthenticationPrincipal User user,
                             @ModelAttribute TacoOrder order) {
-        if (order.getDeliveryName() == null) {
-            order.setDeliveryName(user.getFullname());
-        }
-        if (order.getDeliveryStreet() == null) {
-            order.setDeliveryStreet(user.getStreet());
-        }
-        if (order.getDeliveryCity() == null) {
-            order.setDeliveryCity(user.getCity());
-        }
-        if (order.getDeliveryState() == null) {
-            order.setDeliveryState(user.getState());
-        }
-        if (order.getDeliveryZip() == null) {
-            order.setDeliveryZip(user.getZip());
-        }
+        setNameIfNull(user, order);
+        setStreetIfNull(user, order);
+        setCityIfNull(user, order);
+        setStateIfNull(user, order);
+        setZipIfNull(user, order);
 
         return "orderForm";
     }
@@ -57,31 +51,59 @@ public class OrderController {
                                SessionStatus sessionStatus,
                                @AuthenticationPrincipal User user) {
 
-        log.debug("Processing order: {}", order);
-
         if (errors.hasErrors()) {
-            log.debug("Validation errors: {}", errors);
             return "orderForm";
         }
         order.setUser(user);
         orderRepo.save(order);
         sessionStatus.setComplete();
-        log.debug("Order processed successfully, redirecting to /orderList");
         return "redirect:/orders/orderList";
     }
-
 
     @GetMapping("/orderList")
     public String ordersForUser(
             @AuthenticationPrincipal User user,
-            Model model){
+            Model model) {
         Pageable pageable = PageRequest.of(0, orderProps.getPageSize());
 
         model.addAttribute(
                 "orders",
-                orderRepo.findByUserOrderByPlacedAtDesc(user, pageable));
+                orderRepo.findByUserOrderByPlacedAtDesc(user, pageable)
+        );
 
         return "orderList";
     }
+
+    private static void setZipIfNull(User user, TacoOrder order) {
+        if (order.getDeliveryZip() == null) {
+            order.setDeliveryZip(user.getZip());
+        }
+    }
+
+    private static void setStateIfNull(User user, TacoOrder order) {
+        if (order.getDeliveryState() == null) {
+            order.setDeliveryState(user.getState());
+        }
+    }
+
+    private static void setCityIfNull(User user, TacoOrder order) {
+        if (order.getDeliveryCity() == null) {
+            order.setDeliveryCity(user.getCity());
+        }
+    }
+
+    private static void setStreetIfNull(User user, TacoOrder order) {
+        if (order.getDeliveryStreet() == null) {
+            order.setDeliveryStreet(user.getStreet());
+        }
+    }
+
+    private static void setNameIfNull(User user, TacoOrder order) {
+        if (order.getDeliveryName() == null) {
+            order.setDeliveryName(user.getFullname());
+        }
+    }
+
+
 
 }

@@ -1,4 +1,4 @@
-package pt.galina.jms.entity.taco;
+package pt.galina.taco_kitchen.entity.taco;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @AllArgsConstructor
-@NoArgsConstructor()
+@NoArgsConstructor(access=AccessLevel.PROTECTED, force=true)
 public class Ingredient {
     @Id
     private String id;

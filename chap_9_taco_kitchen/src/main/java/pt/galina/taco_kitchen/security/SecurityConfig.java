@@ -1,4 +1,4 @@
-package pt.galina.jms.security;
+package pt.galina.taco_kitchen.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,13 +17,17 @@ public class SecurityConfig{
         return new BCryptPasswordEncoder();
     }
 
+
+
+
+
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
          http
-                 .authorizeHttpRequests(             //instead of the method authorizeRequests which is deprecated (page 125 part 5.3.1)
+                 .authorizeHttpRequests(
                          authz -> authz
-                                 .requestMatchers("/design", "/orders", "/orders/orderList")
-                                 .hasRole("USER")
+//                                 .requestMatchers("/design", "/orders", "/orders/orderList")
+//                                 .hasRole("USER")
                                  .anyRequest().permitAll()
                  )
                  .formLogin(
