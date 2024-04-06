@@ -1,21 +1,17 @@
-package pt.galina.jms.config;
+package pt.galina.taco_kitchen.message.pull_message_model;
 
-import jakarta.jms.Destination;
-import org.apache.activemq.artemis.jms.client.ActiveMQQueue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jms.support.converter.MappingJackson2MessageConverter;
-import pt.galina.jms.entity.taco.TacoOrder;
+import org.springframework.jms.support.converter.MessageType;
+import pt.galina.taco_kitchen.dto.TacoOrderDTO;
+import pt.galina.taco_kitchen.entity.taco.TacoOrder;
 
 import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
-public class MessagingConfig {
-    @Bean
-    public Destination orderQueue() {
-        return new ActiveMQQueue("tacocloud.order.queue");
-    }
+public class JmsConfig {
 
     @Bean
     public MappingJackson2MessageConverter messageConverter() {
@@ -23,7 +19,7 @@ public class MessagingConfig {
         messageConverter.setTypeIdPropertyName("_typeId");
 
         Map<String, Class<?>> typeIdMappings = new HashMap<>();
-        typeIdMappings.put("order", TacoOrder.class);
+        typeIdMappings.put("order", TacoOrderDTO.class);
         messageConverter.setTypeIdMappings(typeIdMappings);
 
         return messageConverter;
