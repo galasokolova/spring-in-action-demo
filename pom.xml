@@ -44,6 +44,9 @@
         <module>chap_9_jms</module>
         <module>chap_9_jms_push_listener</module>
         <module>chap_9_jms_pull_receiver</module>
+        <module>chap_9_rabbitmq</module>
+        <module>chap_9_rabbitmq_push_listener</module>
+        <module>chap_9_artemis</module>
 
         <module>shared-resources</module>
     </modules>
