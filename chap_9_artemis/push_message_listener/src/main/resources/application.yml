@@ -1,0 +1,26 @@
+spring:
+  artemis:
+    broker-url: tcp://artemis:61616
+    user: admin
+    password: admin
+
+  jms:
+    template:
+      default-destination: tacocloud.order.queue
+    listener:
+      min-concurrency: 1
+      max-concurrency: 10
+  integration:
+    management:
+      default-logging-enabled: true
+  profiles:
+    active: jms-listener
+
+# spring.profiles.active=jms-listener
+logging:
+  level:
+    root: warn
+    org.springframework.security: warn
+
+server:
+  port: 8081

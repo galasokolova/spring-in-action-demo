@@ -1,0 +1,17 @@
+spring:
+  rabbitmq:
+    host: rabbit-name
+    port: 5672
+    template:
+      exchange: tacocloud.order
+      routing-key: kitchen.central
+  integration:
+    management:
+      default-logging-enabled: true
+logging:
+  level:
+    root: debug
+    org.springframework.security: debug
+
+server:
+  port: 8081
