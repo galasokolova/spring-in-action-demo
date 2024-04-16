@@ -6,16 +6,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pt.galina.message_sender.data.OrderRepository;
-import pt.galina.message_sender.dto.TacoDTO;
 import pt.galina.message_sender.dto.TacoOrderDTO;
-import pt.galina.message_sender.entity.taco.Ingredient;
 import pt.galina.message_sender.entity.taco.TacoOrder;
-import pt.galina.message_sender.message.JmsOrderMessagingService;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping(path = "/api/orders")
@@ -46,9 +40,6 @@ public class OrderApiController {
         log.info("Order with ID {} has been sent", orderId);
 
         messagingService.convertAndSendOrder(order);
-        // Здесь можно внести изменения в заказ перед его возвратом, например, обновить статус на "Отправлено" или добавить время отправки.
-        // Эти изменения нужно применять к order, затем сохранять через repo.save(order)ВАЖНО: любые изменения в заказе отразить и в DTO, которое возвращается
-
         return new ResponseEntity<>(orderDTO, HttpStatus.OK);
     }
 }

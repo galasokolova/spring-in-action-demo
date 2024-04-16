@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
-import pt.galina.message_sender.entity.taco.Ingredient;
-import pt.galina.message_sender.entity.taco.TacoOrder;
 
 import java.util.ArrayList;
 import java.util.Date;

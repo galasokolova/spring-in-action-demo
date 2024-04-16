@@ -47,6 +47,7 @@
         <module>chap_9_rabbitmq</module>
         <module>chap_9_rabbitmq_push_listener</module>
         <module>chap_9_artemis</module>
+        <module>chap_9_rabbit_push_message</module>
 
         <module>shared-resources</module>
     </modules>
