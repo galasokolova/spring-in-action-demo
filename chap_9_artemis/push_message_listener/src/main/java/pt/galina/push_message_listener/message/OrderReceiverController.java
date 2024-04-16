@@ -25,10 +25,10 @@ public class OrderReceiverController {
 
         if (!allReceivedOrders.isEmpty()) {
             model.addAttribute("orders", allReceivedOrders);
-            return "receivedOrder"; // имя шаблона Thymeleaf для отображения всех заказов
+            return "receivedOrder";
         } else {
             log.info("No orders have been received");
-            return "noOrderFound"; // предполагаем, что страница noOrdersFound.html существует для ситуации, когда заказы не были получены
+            return "noOrderFound";
         }
     }
 }

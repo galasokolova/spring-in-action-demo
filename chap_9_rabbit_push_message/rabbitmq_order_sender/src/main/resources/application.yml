@@ -1,0 +1,30 @@
+spring:
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    template:
+      default-receive-queue: "tacocloud.order.queue"
+      routing-key: "tacocloud.order"
+      exchange: "tacocloud.orders"
+  data:
+    rest:
+      base-path: /api
+  integration:
+    management:
+      default-logging-enabled: true
+  jpa:
+    open-in-view: true
+logging:
+  level:
+    root: warn
+    org.springframework.security: warn
+
+taco:
+  orders:
+    page-size: 10
+
+server:
+  port: 8080

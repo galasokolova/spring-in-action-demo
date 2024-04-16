@@ -26,11 +26,9 @@ public class OrderController {
     private final OrderRepository orderRepo;
     private final OrderProps orderProps;
 
-    private final JmsOrderMessagingService messagingService;
-    public OrderController(OrderRepository orderRepo, OrderProps orderProps, JmsOrderMessagingService messagingService) {
+    public OrderController(OrderRepository orderRepo, OrderProps orderProps) {
         this.orderRepo = orderRepo;
         this.orderProps = orderProps;
-        this.messagingService = messagingService;
     }
 
     @GetMapping("/current")
