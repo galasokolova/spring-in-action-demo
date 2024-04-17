@@ -9,18 +9,18 @@ services:
       ARTEMIS_USERNAME: admin
       ARTEMIS_PASSWORD: admin
 
-  jms_message_sender:
+  jms_sender:
     build:
-      context: ./jms_message_sender
+      context: ./jms_sender
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
     depends_on:
       - artemis
 
-  push_message_listener:
+  jms_receiver:
     build:
-      context: ./push_message_listener
+      context: ./jms_receiver
       dockerfile: Dockerfile
     ports:
       - "8081:8081"
