@@ -1,0 +1,28 @@
+version: '4.29.0'
+services:
+  artemis:
+    image: vromero/activemq-artemis
+    ports:
+      - "8161:8161" # Management Console
+      - "61616:61616" # JMS
+    environment:
+      ARTEMIS_USERNAME: admin
+      ARTEMIS_PASSWORD: admin
+
+  jms_order_sender:
+    build:
+      context: ./jms_order_sender
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - artemis
+
+  push_order_receiver:
+    build:
+      context: ./push_order_receiver
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+    depends_on:
+      - artemis
