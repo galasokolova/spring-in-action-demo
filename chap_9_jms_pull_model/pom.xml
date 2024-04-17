@@ -35,7 +35,6 @@
 	</dependencies>
 
 	<modules>
-		<module>jms_shared_resources</module>
 		<module>jms_sender</module>
 		<module>jms_receiver</module>
 	</modules>
