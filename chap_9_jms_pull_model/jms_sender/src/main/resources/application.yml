@@ -1,0 +1,29 @@
+spring:
+  artemis:
+    broker-url: tcp://artemis:61616
+#    broker-url: tcp://localhost:61616    without Docker
+    user: admin
+    password: admin
+
+  jms:
+    template:
+      default-destination: tacocloud.order.queue
+
+  data:
+    rest:
+      base-path: /api
+  integration:
+    management:
+      default-logging-enabled: true
+
+logging:
+  level:
+    root: warn
+    org.springframework.security: warn
+
+taco:
+  orders:
+    page-size: 10
+
+server:
+  port: 8080
