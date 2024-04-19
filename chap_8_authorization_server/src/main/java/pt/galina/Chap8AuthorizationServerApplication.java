@@ -1,6 +1,5 @@
 package pt.galina;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -32,7 +31,6 @@ public class Chap8AuthorizationServerApplication {
         this.userRepo = userRepo;
         this.encoder = encoder;
     }
-//
 
     public static void main(String[] args) {
         SpringApplication.run(Chap8AuthorizationServerApplication.class, args);

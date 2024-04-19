@@ -20,19 +20,18 @@ import java.util.List;
 
 @SpringBootApplication
 @ConfigurationPropertiesScan("pt.galina.client_app.config")
-public class Chap8ClientAppApplication {
+public class ClientAppApplication {
 
     private final UserRepository userRepo;
     private final PasswordEncoder encoder;
 
-    public Chap8ClientAppApplication(UserRepository userRepo, PasswordEncoder encoder) {
+    public ClientAppApplication(UserRepository userRepo, PasswordEncoder encoder) {
         this.userRepo = userRepo;
         this.encoder = encoder;
     }
 
     public static void main(String[] args) {
-        SpringApplication.run(Chap8ClientAppApplication.class, args);
-
+        SpringApplication.run(ClientAppApplication.class, args);
     }
 
     @Bean
@@ -63,10 +62,11 @@ public class Chap8ClientAppApplication {
     public CommandLineRunner ingredientDataLoader(IngredientRepository ingredientRepo, ResourceLoader resourceLoader, ObjectMapper objectMapper) {
         return args -> {
             try (InputStream inputStream = resourceLoader.getResource("classpath:ingredient.json").getInputStream()) {
-                List<Ingredient> ingredients = objectMapper.readValue(inputStream, new TypeReference<List<Ingredient>>() {
+                List<Ingredient> ingredients = objectMapper.readValue(inputStream, new TypeReference<>() {
                 });
                 ingredientRepo.saveAll(ingredients);
             }
         };
     }
+
 }
