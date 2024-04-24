@@ -5,7 +5,6 @@ import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import pt.galina.rabbitmq_order_sender.dto.TacoDTO;
 import pt.galina.rabbitmq_order_sender.dto.TacoOrderDTO;
 import pt.galina.rabbitmq_order_sender.entity.taco.Ingredient;

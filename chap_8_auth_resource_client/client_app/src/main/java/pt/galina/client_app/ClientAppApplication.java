@@ -70,3 +70,11 @@ public class ClientAppApplication {
     }
 
 }
+
+/*
+   Run chap_8_auth_resource_client in Docker:
+1. $ cd chap_8_auth_resource_client
+2. $ docker-compose up --build
+3. localhost:9090
+
+ */

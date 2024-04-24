@@ -1,0 +1,19 @@
+spring:
+
+  integration:
+    management:
+      default-logging-enabled: false
+  jpa:
+    open-in-view: false
+logging:
+  file:
+    name: chap_9_kafka_demo/TacoCloud.log
+  logback:
+    rolling policy:
+      file-name-pattern: TacoCloud-%d{yyyy-MM-dd}.%i.log
+  level:
+    org.springframework.kafka: TRACE
+
+server:
+  port: 8081
+
