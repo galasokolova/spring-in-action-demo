@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 
 @Service
 public class KafkaOrderMessagingService implements OrderMessagingService {
+
     private final KafkaTemplate<String, TacoOrderDTO> kafkaTemplate;
 
     @Autowired

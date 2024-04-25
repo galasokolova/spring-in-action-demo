@@ -1,7 +1,11 @@
 FROM openjdk:17
 
-WORKDIR /app
+COPY ./target/kafka_listener-0.0.1-SNAPSHOT.jar /app/kafka_listener.jar
 
-COPY target/*.jar app.jar
+COPY ./scripts/entrypoint.sh /scripts/entrypoint.sh
+COPY ./scripts/wait-for-it.sh /scripts/wait-for-it.sh
 
-CMD ["java", "-jar", "app.jar"]
+RUN chmod +x /scripts/entrypoint.sh
+RUN chmod +x /scripts/wait-for-it.sh
+
+ENTRYPOINT ["/scripts/entrypoint.sh"]

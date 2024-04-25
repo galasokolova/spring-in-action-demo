@@ -1,4 +1,5 @@
 version: '4.29.0'
+
 services:
   zookeeper:
     image: bitnami/zookeeper:latest
@@ -8,6 +9,8 @@ services:
       - ALLOW_ANONYMOUS_LOGIN=yes
     volumes:
       - zookeeper_data:/bitnami
+    networks:
+      - backend_network
 
   kafka:
     image: bitnami/kafka:latest
@@ -21,7 +24,8 @@ services:
       - kafka_data:/bitnami
     depends_on:
       - zookeeper
-
+    networks:
+      - backend_network
 
   kafka_producer:
     build:
@@ -31,6 +35,8 @@ services:
       - "8080:8080"
     depends_on:
       - kafka
+    networks:
+      - backend_network
 
   kafka_listener:
     build:
@@ -40,11 +46,13 @@ services:
       - "8081:8081"
     depends_on:
       - kafka
+    networks:
+      - backend_network
 
 volumes:
   kafka_data:
   zookeeper_data:
 
 networks:
-  default:
+  backend_network:
     driver: bridge
