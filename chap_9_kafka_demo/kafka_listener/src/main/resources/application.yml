@@ -1,5 +1,13 @@
 spring:
-
+  kafka:
+    consumer:
+      bootstrap-servers: kafka:9092
+      group-id: tacocloud-listeners
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+    properties:
+      spring.json.trusted.packages: '*'
   integration:
     management:
       default-logging-enabled: false
@@ -7,12 +15,13 @@ spring:
     open-in-view: false
 logging:
   file:
-    name: chap_9_kafka_demo/TacoCloud.log
+    name: chap_9_kafka_demo/kafka_listener/TacoCloud.log
   logback:
     rolling policy:
       file-name-pattern: TacoCloud-%d{yyyy-MM-dd}.%i.log
   level:
-    org.springframework.kafka: TRACE
+    root: warn
+    org.springframework.kafka: warn
 
 server:
   port: 8081

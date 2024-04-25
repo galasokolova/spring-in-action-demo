@@ -1,16 +1,12 @@
 package pt.galina.kafka_listener.message;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import pt.galina.kafka_listener.dto.TacoOrderDTO;
 
-@Component
+@Service
 public class OrderListener {
-    private static final Logger log = LoggerFactory.getLogger(KafkaTopicConfig.class);
-
     private final KitchenUI ui;
 
     @Autowired
@@ -18,9 +14,8 @@ public class OrderListener {
         this.ui = ui;
     }
 
-    @KafkaListener (topics="tacocloud.orders.topic" )
+    @KafkaListener (topics="tacocloud.orders.topic", groupId = "tacocloud-listeners")
     public void handle(TacoOrderDTO orderDTO) {
-        log.info(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Received order: {}", orderDTO);
         ui.displayOrder(orderDTO);
     }
 }
