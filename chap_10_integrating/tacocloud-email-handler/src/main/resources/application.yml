@@ -1,0 +1,7 @@
+tacocloud:
+  email:
+    host: imap.gmail.com
+    mailbox: INBOX
+    username: testmail29007@gmail.com
+    password: mbyt lgwj uldb nqrx
+    poll-rate: 10000
