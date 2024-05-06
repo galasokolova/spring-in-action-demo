@@ -3,5 +3,24 @@ tacocloud:
     host: imap.gmail.com
     mailbox: INBOX
     username: testmail29007@gmail.com
-    password: mbyt lgwj uldb nqrx
-    poll-rate: 10000
+    password: ukpk pnvh wvly wlnh
+#    password: mixofletters777
+    poll-rate: 30000
+    port: 993
+
+
+management:
+  health:
+    mail:
+      enabled: false
+#  api:
+#    url: http://localhost:8080/orders/fromEmail
+
+spring:
+  main:
+    web-application-type: none
+
+logging:
+  level:
+    org.springframework.integration: trace
+    javax.mail: trace
