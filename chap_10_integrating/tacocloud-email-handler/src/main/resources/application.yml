@@ -1,10 +1,9 @@
 tacocloud:
   email:
-    host: imap.gmail.com
-    mailbox: INBOX
-    username: testmail29007@gmail.com
-    password: ukpk pnvh wvly wlnh
-#    password: mixofletters777
+    host: "imap.gmail.com"
+    mailbox: "INBOX"
+    username: "testmail29007"
+    password: "ukpk pnvh wvly wlnh"
     poll-rate: 30000
     port: 993
 
@@ -22,5 +21,5 @@ spring:
 
 logging:
   level:
-    org.springframework.integration: trace
-    javax.mail: trace
+    org.springframework.integration: debug
+    jakarta.mail: debug

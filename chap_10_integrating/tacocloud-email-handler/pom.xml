@@ -44,11 +44,13 @@
             <artifactId>commons-text</artifactId>
             <version>1.10.0</version>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/com.sun.mail/jakarta.mail -->
         <dependency>
-            <groupId>org.eclipse.angus</groupId>
+            <groupId>com.sun.mail</groupId>
             <artifactId>jakarta.mail</artifactId>
+            <version>2.0.1</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>

@@ -9,8 +9,12 @@ import org.springframework.stereotype.Component;
 @Data
 @Component
 @ConfigurationProperties(prefix = "tacocloud.email")
-@Slf4j  // Аннотация Lombok для логирования
+@Slf4j
 public class EmailProperties {
+
+    public EmailProperties() {
+        log.info("Creating EmailProperties bean");
+    }
 
     private String username;
     private String password;
@@ -20,8 +24,8 @@ public class EmailProperties {
     private long pollRate = 30000;
 
     public String getImapUrl() {
-//        String safePassword = password.replace(" ", "%20");  // Заменяем пробелы на %20
-        String url = String.format("imaps://%s:%s@%s/%s", username, password, host, mailbox);
+        String safePassword = password.replace(" ", "%20");  // Заменяем пробелы на %20
+        String url = String.format("imaps://%s:%s@%s/%s", this.username, safePassword, this.host, this.mailbox);
         log.info("{}Generated IMAP URL: {}", "❗ ".repeat(3), url);  // Логирование сформированного URL
         return url;
     }
