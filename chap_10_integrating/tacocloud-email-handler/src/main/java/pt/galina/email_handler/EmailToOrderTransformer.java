@@ -21,8 +21,14 @@ import pt.galina.email_handler.taco.Taco;
 @Component
 public class EmailToOrderTransformer extends AbstractMailMessageTransformer<EmailOrder> {
 
-    private static final Logger log = LoggerFactory.getLogger(EmailToOrderTransformer.class);
+    private final Logger log = LoggerFactory.getLogger(EmailToOrderTransformer.class);
     private static final String SUBJECT_KEYWORDS = "TACO ORDER";
+    private final EmailProperties emailProperties;
+
+    public EmailToOrderTransformer(EmailProperties emailProperties) {
+        this.emailProperties = emailProperties;
+        log.info("EmailToOrderTransformer created {} ", emailProperties);
+    }
 
     @Override
     protected AbstractIntegrationMessageBuilder<EmailOrder> doTransform(Message mailMessage) {
@@ -31,6 +37,8 @@ public class EmailToOrderTransformer extends AbstractMailMessageTransformer<Emai
     }
 
     private EmailOrder processPayload(Message mailMessage) {
+
+
         try {
             String subject = mailMessage.getSubject();
             if (subject.toUpperCase().contains(SUBJECT_KEYWORDS)) {
@@ -69,7 +77,7 @@ public class EmailToOrderTransformer extends AbstractMailMessageTransformer<Emai
                 order.addTaco(taco);
             }
         }
-        log.info("\uD83D\uDE0E \uD83D\uDE0E \uD83D\uDE0E \uD83D\uDE0E \uD83D\uDE0E "+"Parsed Email Order: {}", order);  // Выводим информацию о заказе в лог
+        log.info("Parsed Email Order: {}", order);
         return order;
     }
 
@@ -80,7 +88,7 @@ public class EmailToOrderTransformer extends AbstractMailMessageTransformer<Emai
             if (LevenshteinDistance.getDefaultInstance().apply(ucIngredientName, ingredientNameUpper) < 3
                     || ucIngredientName.contains(ingredientNameUpper)
                     || ingredientNameUpper.contains(ucIngredientName)) {
-                log.info("\uD83D\uDE0E \uD83D\uDE0E \uD83D\uDE0E \uD83D\uDE0E "+"Parsed Email Order: {}", ingredient.getId());
+                log.info("Parsed Email Order : {}", ingredient.getId());
                 return ingredient.getId();
             }
         }
