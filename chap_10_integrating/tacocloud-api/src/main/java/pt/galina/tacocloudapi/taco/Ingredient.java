@@ -1,4 +1,4 @@
-package pt.galina.email_handler.taco;
+package pt.galina.tacocloudapi.taco;
 
 import jakarta.persistence.Id;
 import lombok.AccessLevel;

@@ -1,10 +1,10 @@
-package pt.galina.tacocloudapp;
+package pt.galina.kitchenservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class TacocloudAppApplicationTests {
+class KitchenServiceApplicationTests {
 
     @Test
     void contextLoads() {

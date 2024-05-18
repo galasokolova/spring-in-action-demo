@@ -1,8 +1,7 @@
-package pt.galina.email_handler;
+package pt.galina.email_handler.email_message;
 
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 

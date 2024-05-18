@@ -1,9 +1,8 @@
-package pt.galina.email_handler.taco;
+package pt.galina.tacocloudapi.taco;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -13,7 +12,7 @@ public class Taco {
 
     private Integer id;
     private String name;
-    private List<String> ingredients = new ArrayList<>(); // Initialize to avoid null
+    private List<String> ingredients;
 
     public Taco(String name) {
         this.name = name;
@@ -21,9 +20,5 @@ public class Taco {
 
     public void setIngredientCodes(List<String> ingredientCodes) {
         this.ingredients = ingredientCodes;
-    }
-
-    public List<String> getIngredientCodes() {
-        return ingredients;
     }
 }
