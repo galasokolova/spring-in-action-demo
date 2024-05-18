@@ -1,4 +1,4 @@
-package pt.galina.email_handler;
+package pt.galina.email_handler.email_message;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

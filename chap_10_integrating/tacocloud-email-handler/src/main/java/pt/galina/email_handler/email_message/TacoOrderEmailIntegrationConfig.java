@@ -1,17 +1,19 @@
-package pt.galina.email_handler;
+package pt.galina.email_handler.email_message;
 
-import jakarta.mail.*;
+import jakarta.mail.Message;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.integration.core.GenericHandler;
 import org.springframework.integration.dsl.IntegrationFlow;
 import org.springframework.integration.dsl.Pollers;
+import org.springframework.integration.handler.LoggingHandler;
 import org.springframework.integration.mail.ImapMailReceiver;
 import org.springframework.integration.mail.dsl.Mail;
 
 import java.util.Properties;
+import java.util.concurrent.Executors;
+
 @Configuration
 public class TacoOrderEmailIntegrationConfig {
 
@@ -25,23 +27,18 @@ public class TacoOrderEmailIntegrationConfig {
 
     @Bean
     public IntegrationFlow tacoOrderEmailFlow(ImapMailReceiver imapMailReceiver,
-                                              EmailToOrderTransformer  emailToOrderTransformer,
-                                              OrderSubmitMessageHandler  orderSubmitHandler) {
-        log.info("IntegrationFlow:  Getting password authentication {}", emailProperties.getPassword());
+                                              EmailToOrderTransformer emailToOrderTransformer,
+                                              OrderSubmitMessageHandler orderSubmitHandler) {
         return IntegrationFlow
                 .from(Mail.imapInboundAdapter(imapMailReceiver),
-                        e -> e
-                                .poller( Pollers.fixedDelay(emailProperties.getPollRate()))
-                )
-                .handle((GenericHandler<Message>) (message, headers) -> {
-
-                    log.info("Received message: {}", message);
-                    return null;
-                })
+                        e -> e.poller(Pollers.fixedDelay(emailProperties.getPollRate())))
                 .transform(emailToOrderTransformer)
                 .handle(orderSubmitHandler)
+                .log(LoggingHandler.Level.INFO, "⏩⏩⏩Processed Message")  // Логирование для отладки
                 .get();
     }
+
+
 
     @Bean
     public ImapMailReceiver imapMailReceiver() {
@@ -50,9 +47,9 @@ public class TacoOrderEmailIntegrationConfig {
         Properties javaMailProperties = getJavaMailProperties();
 
         receiver.setJavaMailProperties(javaMailProperties);
-        receiver.setShouldMarkMessagesAsRead(true);
+//        receiver.setShouldMarkMessagesAsRead(true);
         receiver.setShouldDeleteMessages(false);
-        log.info("imapMailReceiver():  Getting password authentication {}", emailProperties.getPassword());
+        log.info("⏩⏩⏩imapMailReceiver():  Getting password authentication {}", emailProperties.getPassword());
 
         // No need to create a new session here
 

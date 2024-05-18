@@ -1,4 +1,4 @@
-package pt.galina.email_handler;
+package pt.galina.email_handler.email_message;
 
 import org.springframework.integration.core.GenericHandler;
 import org.springframework.messaging.MessageHeaders;

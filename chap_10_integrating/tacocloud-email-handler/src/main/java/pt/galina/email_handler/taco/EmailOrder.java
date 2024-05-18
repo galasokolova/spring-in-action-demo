@@ -13,4 +13,15 @@ public class EmailOrder {
     public void addTaco(Taco taco) {
         this. tacos.add(taco);
     }
+
+    public Taco findTacoByName(String tacoName) {
+        if (tacos != null) {  // Проверка на null
+            for (Taco taco : tacos) {
+                if (taco != null && taco.getName().equalsIgnoreCase(tacoName)) {
+                    return taco;
+                }
+            }
+        }
+        return null;
+    }
 }
