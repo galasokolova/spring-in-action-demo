@@ -23,9 +23,9 @@ public class EmailProperties {
     private long pollRate = 30000;
 
     public String getImapUrl() {
-        String safePassword = password.replace(" ", "%20");  // Заменяем пробелы на %20
+        String safePassword = password.replace(" ", "%20");
         String url = String.format("imaps://%s:%s@%s/%s", this.username, safePassword, this.host, this.mailbox);
-        log.info("{}Generated IMAP URL: {}", "❗ ".repeat(3), url);  // Логирование сформированного URL
+        log.info("{}Generated IMAP URL: {}", "❗ ".repeat(3), url);
         return url;
     }
 }
