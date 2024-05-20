@@ -18,6 +18,7 @@ import pt.galina.email_handler.taco.EmailOrder;
 import pt.galina.email_handler.taco.Ingredient;
 import pt.galina.email_handler.taco.Taco;
 
+
 @Component
 public class EmailToOrderTransformer extends AbstractMailMessageTransformer<EmailOrder> {
 
@@ -26,13 +27,11 @@ public class EmailToOrderTransformer extends AbstractMailMessageTransformer<Emai
 
     @Override
     protected AbstractIntegrationMessageBuilder<EmailOrder> doTransform(Message mailMessage) {
-        log.debug("⏩⏩⏩Starting to transform the email message with subject: {}", getMailSubject(mailMessage));
         EmailOrder tacoOrder = processPayload(mailMessage);
         if (tacoOrder == null) {
-            log.error("⏩⏩⏩Failed to process the email into an order. EmailOrder is null.");
             throw new IllegalStateException("Failed to process the email into an order.");
         }
-        log.debug("⏩⏩⏩Successfully transformed the email message into an order");
+        log.debug("⏩Successfully transformed the email message into an order");
         return MessageBuilder.withPayload(tacoOrder);
     }
 
@@ -40,17 +39,16 @@ public class EmailToOrderTransformer extends AbstractMailMessageTransformer<Emai
         try {
             Folder folder = mailMessage.getFolder();
             if (folder != null && !folder.isOpen()) {
-                log.info("⏩⏩⏩⏩⏩⏩Opening folder as it is not open");
                 folder.open(Folder.READ_WRITE);
             }
 
             EmailOrder order = getOrder(mailMessage, folder);
             if (order != null) return order;
         } catch (MessagingException | IOException e) {
-            log.error("⏩⏩⏩⏩⏩⏩Error in processPayload: {}", e.getMessage(), e);
+            log.error("⏩Error in processPayload: {}", e.getMessage(), e);
         }
 
-        return null; // Возвращаем null, если заказ не был создан
+        return null;
     }
 
     private EmailOrder getOrder(Message mailMessage, Folder folder) throws MessagingException, IOException {
@@ -61,18 +59,18 @@ public class EmailToOrderTransformer extends AbstractMailMessageTransformer<Emai
         String subject = cachedMessage.getSubject(); // Используем cachedMessage
         if (subject != null && subject.toUpperCase().contains(SUBJECT_KEYWORDS)) {
             String email = ((InternetAddress) cachedMessage.getFrom()[0]).getAddress();
-            String content = EmailContentExtractor.getTextFromMessage(cachedMessage); // Используем cachedMessage
+            String content = EmailContentExtractor.getTextFromMessage(cachedMessage);
 
             if (content != null && !content.isEmpty()) {
                 EmailOrder order = parseEmailToOrder(email, content);
-                log.debug("⏩⏩⏩Parsed Email Order: {}", order); // Логируем заказ перед закрытием папки
+                log.debug("⏩Parsed Email Order: {}", order);
 
-                if (folder != null && folder.isOpen()) { // Закрываем папку только после обработки
+                if (folder != null && folder.isOpen()) {
                     try {
-                        log.info("⏩⏩⏩⏩⏩⏩Closing folder");
+                        log.info("⏩Closing folder");
                         folder.close(false);
                     } catch (MessagingException e) {
-                        log.error("⏩⏩⏩⏩⏩⏩Error closing folder: {}", e.getMessage(), e);
+                        log.error("⏩Error closing folder: {}", e.getMessage(), e);
                     }
                 }
 
@@ -104,7 +102,7 @@ public class EmailToOrderTransformer extends AbstractMailMessageTransformer<Emai
                 // Проверка на дубликаты тако
                 Taco existingTaco = order.findTacoByName(tacoName);
                 if (existingTaco != null) {
-                    existingTaco.getIngredientCodes().addAll(ingredientCodes); // Добавляем ингредиенты к существующему тако
+                    existingTaco.getIngredientCodes().addAll(ingredientCodes);
                 } else {
                     Taco taco = new Taco(tacoName);
                     taco.setIngredientCodes(ingredientCodes);
@@ -129,14 +127,6 @@ public class EmailToOrderTransformer extends AbstractMailMessageTransformer<Emai
         return null;
     }
 
-    private String getMailSubject(Message mailMessage) {
-        try {
-            return mailMessage.getSubject();
-        } catch (MessagingException e) {
-            log.error("⏩⏩⏩Error getting mail subject: {}", e.getMessage(), e);
-            return "⏩⏩⏩Unknown";
-        }
-    }
 
     private static final Ingredient[] ALL_INGREDIENTS = {
             new Ingredient("FLTO", "FLOUR TORTILLA"),

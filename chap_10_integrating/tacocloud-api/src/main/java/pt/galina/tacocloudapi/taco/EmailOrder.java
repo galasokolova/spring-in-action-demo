@@ -1,9 +1,8 @@
 package pt.galina.tacocloudapi.taco;
 
-import lombok.Data;
-
 import java.util.ArrayList;
 import java.util.List;
+import lombok.Data;
 
 @Data
 public class EmailOrder {
@@ -13,5 +12,16 @@ public class EmailOrder {
 
     public void addTaco(Taco taco) {
         this. tacos.add(taco);
+    }
+
+    public Taco findTacoByName(String tacoName) {
+        if (tacos != null) {
+            for (Taco taco : tacos) {
+                if (taco != null && taco.getName().equalsIgnoreCase(tacoName)) {
+                    return taco;
+                }
+            }
+        }
+        return null;
     }
 }

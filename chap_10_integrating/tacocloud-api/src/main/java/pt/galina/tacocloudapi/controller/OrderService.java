@@ -1,25 +1,21 @@
 package pt.galina.tacocloudapi.controller;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 import pt.galina.tacocloudapi.taco.EmailOrder;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class OrderService {
 
-    private final RestTemplate restTemplate;
+    private final List<EmailOrder> orders = new ArrayList<>();
 
-    public OrderService(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
+    public void saveOrder(EmailOrder emailOrder) {
+        orders.add(emailOrder);
     }
 
-    public void processEmailOrder(EmailOrder emailOrder) {
-        // Логика обработки заказа из электронной почты
-        sendOrderToMainApplication(emailOrder);
-    }
-
-    private void sendOrderToMainApplication(EmailOrder emailOrder) {
-        String mainApplicationUrl = "http://localhost:8080/orders";
-        restTemplate.postForObject(mainApplicationUrl, emailOrder, Void.class);
+    public List<EmailOrder> getAllOrders() {
+        return orders;
     }
 }
