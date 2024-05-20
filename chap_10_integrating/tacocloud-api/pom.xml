@@ -86,6 +86,13 @@
             <groupId>org.springframework.integration</groupId>
             <artifactId>spring-integration-jpa</artifactId>
         </dependency>
+
+
+        <dependency>
+            <groupId>pt.galina</groupId>
+            <artifactId>taco-model</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
     <build>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Taco Orders</title>
+  <style>
+    body { font-family: sans-serif; }
+    .order { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+    .taco { margin-bottom: 5px; }
+  </style>
+</head>
+<body>
+<h1>Taco Orders</h1>
+<div id="orders"></div>
+
+<script>
+  function fetchOrders() {
+    fetch('/api/orders') // GET-запрос для получения заказов
+            .then(response => {
+              if (!response.ok) {
+                throw new Error('Network response was not ok.');
+              }
+              return response.json();
+            })
+            .then(orders => {
+              const ordersDiv = document.getElementById('orders');
+              ordersDiv.innerHTML = ''; // Очищаем предыдущие заказы
+
+              if (orders.length === 0) {
+                ordersDiv.innerHTML = '<p>No orders yet.</p>';
+                return;
+              }
+
+              orders.forEach(order => {
+                const orderDiv = document.createElement('div');
+                orderDiv.classList.add('order');
+                orderDiv.innerHTML = `<h2>Order from ${order.email}</h2>`;
+
+                order.tacos.forEach(taco => {
+                  const tacoDiv = document.createElement('div');
+                  tacoDiv.classList.add('taco');
+                  tacoDiv.innerHTML = `<h3>${taco.name}</h3><p>${taco.ingredients.join(', ')}</p>`;
+                  orderDiv.appendChild(tacoDiv);
+                });
+
+                ordersDiv.appendChild(orderDiv);
+              });
+            })
+            .catch(error => {
+              console.error('Error fetching orders:', error);
+              const ordersDiv = document.getElementById('orders');
+              ordersDiv.innerHTML = '<p>Error loading orders. Please try again later.</p>';
+            });
+  }
+
+  fetchOrders(); // Загружаем заказы при загрузке страницы
+  setInterval(fetchOrders, 5000); // Обновляем заказы каждые 5 секунд
+</script>
+</body>
+</html>
