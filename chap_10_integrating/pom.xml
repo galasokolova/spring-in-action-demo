@@ -35,7 +35,6 @@
     <modules>
         <module>tacocloud-api</module>
         <module>tacocloud-email-handler</module>
-        <module>kitchen-service</module>
     </modules>
 
     <build>
