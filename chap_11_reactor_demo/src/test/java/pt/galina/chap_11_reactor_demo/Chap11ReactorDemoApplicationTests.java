@@ -1,13 +1,13 @@
-package pt.galina.kitchenservice;
+package pt.galina.chap_11_reactor_demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class KitchenServiceApplicationTests {
+class Chap11ReactorDemoApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }

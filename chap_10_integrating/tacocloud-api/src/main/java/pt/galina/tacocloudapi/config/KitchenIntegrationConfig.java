@@ -6,6 +6,10 @@ import org.springframework.http.HttpMethod;
 import org.springframework.integration.dsl.IntegrationFlow;
 import org.springframework.integration.http.dsl.Http;
 
+/*
+This class is for sending orders to main app after handling them in tacocloud-api, f.ex. to kitchen-service
+ */
+
 @Configuration
 public class KitchenIntegrationConfig {
 
