@@ -14,14 +14,18 @@ import java.util.List;
 
 class CombinationServiceImplTest {
     private final CombinationService combinationService = new CombinationServiceImpl();
+    List <String> characterFlux = List.of("Garfield", "Kojak", "Barbossa");
+    List <String> foodFlux = List.of("Lasagna", "Lollipops", "Apples");
+    List <String> slowList = List.of("tortoise", "snail", "sloth");
+    List <String> fastList = List.of("hare", "cheetah", "squirrel");
 
     @Test
     void mergeFluxes() {
         VirtualTimeScheduler.getOrSet(); //  VirtualTimeScheduler to handle time in the test
 
         Flux<String> mergedFlux = combinationService.mergeFluxes(
-                List.of("Garfield", "Kojak", "Barbossa"),
-                List.of("Lasagna", "Lollipops", "Apples"),
+                characterFlux,
+                foodFlux,
                 500L,
                 250L,
                 500L
@@ -46,9 +50,6 @@ class CombinationServiceImplTest {
 
     @Test
     void zipFluxes() {
-        List <String> characterFlux = List.of("Garfield", "Kojak", "Barbossa");
-        List <String> foodFlux = List.of("Lasagna", "Lollipops", "Apples");
-
         Flux <Tuple2<String, String>> zippedFlux = combinationService.zipFluxes(characterFlux, foodFlux);
 
         StepVerifier.create(zippedFlux)
@@ -60,29 +61,21 @@ class CombinationServiceImplTest {
 
     @Test
     void zipFluxesToObject() {
-        List <String> characterFlux = List.of("Garfield", "Kojak", "Barbossa");
-        List <String> foodFlux = List.of("Lasagna", "Lollipops", "Apples");
-
         Flux <String> zippedFlux =  combinationService.zipFluxesToObject(characterFlux, foodFlux);
         StepVerifier.create(zippedFlux)
                 .expectNext("Garfield eats Lasagna")
-                . expectNext ("Kojak eats Lollipops")
-                . expectNext ("Barbossa eats Apples")
+                .expectNext ("Kojak eats Lollipops")
+                .expectNext ("Barbossa eats Apples")
                 .verifyComplete();
     }
 
     @Test
     void firstWithSignalFlux() {
-        Flux <String> slowFlux = Flux
-                .just("tortoise", "snail", "sloth")
-                .delaySubscription(Duration.ofMillis(100)); //slowFlux will publish the 1st element with delay 100ms after subscription
-        Flux <String> fastFlux = Flux.just("hare", "cheetah", "squirrel"); //new Flux will ignore it and publish only fastFlux
-
-        Flux <String> firstFlux = Flux. firstWithSignal(slowFlux, fastFlux) ;
+        Flux <String> firstFlux = combinationService.firstWithSignalFlux(slowList, fastList);
         StepVerifier.create(firstFlux)
                 .expectNext("hare")
-                . expectNext ("cheetah")
-                . expectNext ("squirrel")
+                .expectNext ("cheetah")
+                .expectNext ("squirrel")
                 .verifyComplete();
     }
 
