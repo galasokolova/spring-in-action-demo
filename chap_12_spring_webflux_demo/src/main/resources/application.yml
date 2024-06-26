@@ -1,0 +1,19 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+
+  integration:
+    management:
+      default-logging-enabled: true
+
+logging:
+  level:
+    root: warn
+    org.springframework.security: warn
+
+taco:
+  orders:
+    page-size: 10
+
