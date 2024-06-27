@@ -12,42 +12,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
-import pt.galina.spring_webflux_demo.data.IngredientRepository;
 import pt.galina.spring_webflux_demo.data.UserRepository;
-import pt.galina.spring_webflux_demo.entity.taco.Ingredient;
-import pt.galina.spring_webflux_demo.entity.taco.Ingredient.Type;
 import pt.galina.spring_webflux_demo.entity.taco.Taco;
 import pt.galina.spring_webflux_demo.entity.taco.TacoOrder;
 import pt.galina.spring_webflux_demo.entity.user.User;
 import reactor.core.publisher.Mono;
 
 import java.security.Principal;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Slf4j
 @Controller
 @RequestMapping("/design")
 @SessionAttributes("tacoOrder")
 public class DesignTacoController {
-    private final IngredientRepository ingredientRepo;
     private final UserRepository userRepo;
 
     @Autowired
-    public DesignTacoController(IngredientRepository ingredientRepo, UserRepository userRepo) {
-        this.ingredientRepo = ingredientRepo;
+    public DesignTacoController(UserRepository userRepo) {
         this.userRepo = userRepo;
-    }
-
-    @ModelAttribute
-    public Mono<Void> addIngredientsToModel(Model model) {
-        return ingredientRepo.findAll().collectList().doOnNext(ingredients -> {
-            Type[] types = Type.values();
-            for (Type type : types) {
-                model.addAttribute(type.toString().toLowerCase(),
-                        filterByType(ingredients, type));
-            }
-        }).then();
     }
 
     @ModelAttribute(name = "tacoOrder")
@@ -87,11 +69,5 @@ public class DesignTacoController {
         sessionStatus.setComplete();
 
         return Mono.just("redirect:/orders/current");
-    }
-
-    private List<Ingredient> filterByType(List<Ingredient> ingredients, Type type) {
-        return ingredients.stream()
-                .filter(x -> x.getType().equals(type))
-                .collect(Collectors.toList());
     }
 }

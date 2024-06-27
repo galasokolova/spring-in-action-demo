@@ -4,18 +4,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
-import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
-import org.springframework.web.server.ServerWebExchange;
+import pt.galina.spring_webflux_demo.data.IngredientRepository;
 import pt.galina.spring_webflux_demo.data.TacoRepository;
+import pt.galina.spring_webflux_demo.entity.taco.Ingredient;
 import pt.galina.spring_webflux_demo.entity.taco.Taco;
 import reactor.core.publisher.Mono;
 
 import java.net.URI;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -26,10 +26,12 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 public class RouterFunctionConfig {
 
     private final TacoRepository tacoRepo;
+    private final IngredientRepository ingredientRepo;
 
     @Autowired
-    public RouterFunctionConfig(TacoRepository tacoRepo) {
+    public RouterFunctionConfig(TacoRepository tacoRepo, IngredientRepository ingredientRepo) {
         this.tacoRepo = tacoRepo;
+        this.ingredientRepo = ingredientRepo;
     }
 
     @Bean
@@ -57,9 +59,21 @@ public class RouterFunctionConfig {
     }
 
     public Mono<ServerResponse> design(ServerRequest request) {
-        Map<String, Object> model = new HashMap<>();
-        model.put("taco", new Taco()); // Ensure Taco object is present in model
-        // Add any additional model attributes if needed
-        return ServerResponse.ok().contentType(MediaType.TEXT_HTML).render("design", model);
+        return ingredientRepo.findAll().collectList().flatMap(ingredients -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("taco", new Taco());
+            model.put("wrap", filterByType(ingredients, Ingredient.Type.WRAP));
+            model.put("protein", filterByType(ingredients, Ingredient.Type.PROTEIN));
+            model.put("cheese", filterByType(ingredients, Ingredient.Type.CHEESE));
+            model.put("veggies", filterByType(ingredients, Ingredient.Type.VEGGIES));
+            model.put("sauce", filterByType(ingredients, Ingredient.Type.SAUCE));
+            return ServerResponse.ok().contentType(MediaType.TEXT_HTML).render("design", model);
+        });
+    }
+
+    private List<Ingredient> filterByType(List<Ingredient> ingredients, Ingredient.Type type) {
+        return ingredients.stream()
+                .filter(x -> x.getType().equals(type))
+                .toList();
     }
 }
