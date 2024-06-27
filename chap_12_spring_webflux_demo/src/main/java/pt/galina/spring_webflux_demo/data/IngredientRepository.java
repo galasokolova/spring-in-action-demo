@@ -6,3 +6,4 @@ import pt.galina.spring_webflux_demo.entity.taco.Ingredient;
 public interface IngredientRepository extends ReactiveMongoRepository<Ingredient, String> {
 }
 
+

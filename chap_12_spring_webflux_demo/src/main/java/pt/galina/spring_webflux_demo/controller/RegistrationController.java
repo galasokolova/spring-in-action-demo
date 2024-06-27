@@ -1,6 +1,7 @@
 package pt.galina.spring_webflux_demo.controller;
 
-import org.springframework.http.HttpStatus;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,13 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pt.galina.spring_webflux_demo.data.UserRepository;
 import pt.galina.spring_webflux_demo.security.RegistrationForm;
 import reactor.core.publisher.Mono;
-import org.springframework.web.server.ServerWebExchange;
-
-import java.net.URI;
 
 @Controller
 @RequestMapping("/register")
 public class RegistrationController {
+    private static final Logger log = LoggerFactory.getLogger(RegistrationController.class);
     private final UserRepository userRepo;
     private final PasswordEncoder passwordEncoder;
 
@@ -30,12 +29,12 @@ public class RegistrationController {
     }
 
     @PostMapping
-    public Mono<String> processRegistration(RegistrationForm form, ServerWebExchange exchange) {
+    public Mono<String> processRegistration(RegistrationForm form) {
+        log.info("\uD83D\uDC7D Processing registration for user: {}", form.getUsername());
+
         return userRepo.save(form.toUser(passwordEncoder))
-                .then(Mono.defer(() -> {
-                    exchange.getResponse().setStatusCode(HttpStatus.FOUND);
-                    exchange.getResponse().getHeaders().setLocation(URI.create("/login"));
-                    return Mono.just("redirect:/login");
-                }));
+                .doOnSuccess(user -> log.info("\uD83D\uDE0E Saved user: {}", user))
+                .then(Mono.just("redirect:/login"));
     }
 }
+

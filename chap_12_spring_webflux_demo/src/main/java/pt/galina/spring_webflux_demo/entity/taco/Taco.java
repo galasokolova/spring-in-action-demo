@@ -16,7 +16,7 @@ import java.util.List;
 public class Taco {
 
     @Id
-    private String id; // String вместо Long, так как MongoDB использует ObjectId
+    private String id;
 
     @NotNull
     @Size(min = 5, message = "Name must be at least 5 characters long")

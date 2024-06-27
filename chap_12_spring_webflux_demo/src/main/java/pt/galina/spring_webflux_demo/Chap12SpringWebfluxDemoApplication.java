@@ -20,7 +20,7 @@ import java.io.InputStream;
 import java.util.List;
 
 @SpringBootApplication
-@ConfigurationPropertiesScan("pt.galina.spring_webflux_demo.config") // Assuming you're using this package for OrderProps
+@ConfigurationPropertiesScan("pt.galina.spring_webflux_demo.config")
 public class Chap12SpringWebfluxDemoApplication {
     private static final Logger log = LoggerFactory.getLogger(Chap12SpringWebfluxDemoApplication.class);
 
@@ -35,16 +35,15 @@ public class Chap12SpringWebfluxDemoApplication {
     }
 
     @Bean
-    public CommandLineRunner dataLoader(IngredientRepository ingredientRepo, TacoRepository tacoRepo, ObjectMapper objectMapper) { // Используем TacoRepository и IngredientRepository
+    public CommandLineRunner dataLoader(IngredientRepository ingredientRepo, ObjectMapper objectMapper) {
         return args -> {
             try (InputStream inputStream = resourceLoader.getResource("classpath:ingredient.json").getInputStream()) {
                 List<Ingredient> ingredients = objectMapper.readValue(inputStream, new TypeReference<>() {});
-                Flux.fromIterable(ingredients) // Преобразуем List в Flux
-                        .flatMap(ingredientRepo::save) // Сохраняем каждый ингредиент асинхронно
-                        .thenMany(ingredientRepo.findAll()) // После сохранения получаем все ингредиенты
-                        .subscribe(ingredient -> log.info("Saved ingredient: {}", ingredient));
+                ingredientRepo.saveAll(ingredients)
+                        .thenMany(ingredientRepo.findAll())
+                        .subscribe(ingredient -> log.info("⏩⏩⏩ Saved ingredient: {}", ingredient));
             } catch (IOException e) {
-                log.error("Failed to load ingredients", e);
+                log.error("⏩⏩⏩ Failed to load ingredients", e);
             }
         };
     }

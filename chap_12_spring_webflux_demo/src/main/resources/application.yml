@@ -3,15 +3,15 @@ spring:
     mongodb:
       host: localhost
       port: 27017
-
+      database: tacoDB
   integration:
     management:
       default-logging-enabled: true
 
 logging:
   level:
-    root: warn
-    org.springframework.security: warn
+    root: info
+    org.springframework.security: info
 
 taco:
   orders:

@@ -6,7 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import pt.galina.spring_webflux_demo.data.IngredientRepository;
 import pt.galina.spring_webflux_demo.data.UserRepository;
@@ -15,7 +19,6 @@ import pt.galina.spring_webflux_demo.entity.taco.Ingredient.Type;
 import pt.galina.spring_webflux_demo.entity.taco.Taco;
 import pt.galina.spring_webflux_demo.entity.taco.TacoOrder;
 import pt.galina.spring_webflux_demo.entity.user.User;
-import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.security.Principal;
@@ -31,9 +34,7 @@ public class DesignTacoController {
     private final UserRepository userRepo;
 
     @Autowired
-    public DesignTacoController(
-            IngredientRepository ingredientRepo,
-            UserRepository userRepo) {
+    public DesignTacoController(IngredientRepository ingredientRepo, UserRepository userRepo) {
         this.ingredientRepo = ingredientRepo;
         this.userRepo = userRepo;
     }
@@ -62,11 +63,12 @@ public class DesignTacoController {
     @ModelAttribute(name = "user")
     public Mono<User> user(Principal principal) {
         String username = principal.getName();
-        return userRepo.findByUsername(username);
+        return userRepo.findByUsername(username).cast(User.class);
     }
 
     @GetMapping
     public String showDesignForm(Model model) {
+        log.info("Showing design form");
         return "design";
     }
 
@@ -80,18 +82,15 @@ public class DesignTacoController {
             return Mono.just("design");
         }
 
-        // adding Taco to TacoOrder
         order.addTaco(taco);
-
-        // persisting TacoOrder in session
         model.addAttribute("order", order);
+        sessionStatus.setComplete();
 
         return Mono.just("redirect:/orders/current");
     }
 
     private List<Ingredient> filterByType(List<Ingredient> ingredients, Type type) {
-        return ingredients
-                .stream()
+        return ingredients.stream()
                 .filter(x -> x.getType().equals(type))
                 .collect(Collectors.toList());
     }
