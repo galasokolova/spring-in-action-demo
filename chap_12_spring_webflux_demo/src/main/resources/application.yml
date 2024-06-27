@@ -1,0 +1,19 @@
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: tacoDB
+  integration:
+    management:
+      default-logging-enabled: true
+
+logging:
+  level:
+    root: info
+    org.springframework.security: info
+
+taco:
+  orders:
+    page-size: 10
+

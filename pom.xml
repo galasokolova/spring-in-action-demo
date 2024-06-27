@@ -48,6 +48,7 @@
         <module>chap_9_kafka_demo</module>
         <module>chap_10_integrating</module>
         <module>chap_11_reactor_demo</module>
+        <module>chap_12_spring_webflux_demo</module>
 
         <module>shared-resources</module>
     </modules>

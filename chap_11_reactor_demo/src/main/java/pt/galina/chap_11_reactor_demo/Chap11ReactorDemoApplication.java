@@ -27,9 +27,8 @@ public class Chap11ReactorDemoApplication {
 		TransformationService transformationService = context.getBean(TransformationService.class);
 		LogicService logicService = context.getBean(LogicService.class);
 
-		// Creation  --------------------------------------------------------------------------------------------------------------
 
-		log.info("Creation --------------------------------------------------------");
+		log.info("Creation methods demo ---------------------------------------------------------------------------------------------");
 		creationService.createAFluxFromArray(new String[]{"Apple", "Orange", "Grape", "Banana", "Strawberry"})
 				.subscribe(fruit -> log.info("⏩ fromArray(Array) : {}", fruit));
 		creationService.createAFluxFromIterable(List.of("Apple", "Orange", "Grape", "Banana", "Strawberry"))
@@ -42,8 +41,7 @@ public class Chap11ReactorDemoApplication {
 		Utils.sleep(6000); // 6 sec delay to wait until interval() prints 5 first elements
 
 
-		// Combination --------------------------------------------------------------------------------------------------------------
-		log.info("Combination --------------------------------------------------------");
+		log.info("Combination methods demo ---------------------------------------------------------------------------------------------");
 		combinationService.mergeFluxes(
 				List.of("Garfield", "Kojak", "Barbossa"),
 				List.of("Lasagna", "Lollipops", "Apples"),
@@ -69,8 +67,7 @@ public class Chap11ReactorDemoApplication {
 		).subscribe(f -> log.info("firstWithSignal() ->>> \uD83D\uDC06: {} ",  f));
 
 
-		// Transformation --------------------------------------------------------------------------------------------------------------
-		log.info("Transformation --------------------------------------------------------");
+		log.info("Transformation methods demo----------------------------------------------------------------------------------------");
 
 		transformationService.skipAFew(
 				List.of("one", "two", "skip a few", "ninety nine", "one hundred"),
@@ -127,14 +124,13 @@ public class Chap11ReactorDemoApplication {
 		transformationService.collectMap("aardvark", "elephant", "koala", "eagle", "kangaroo")
 				.subscribe(f -> log.info("\uD83D\uDDDD \uD83D\uDD12 collectMap() : {}", f));
 
-		//Logic --------------------------------------------------------------------------------------------------------------
-		log.info("Logic --------------------------------------------------------");
+		log.info("Logic methods demo -------------------------------------------------------------------------------------------");
 
 		logicService.all("a", "aardvark", "elephant", "koala", "eagle", "kangaroo")
-				.subscribe(f -> log.info("☑️ all contain A : {}", f));
+				.subscribe(f -> log.info("☑️ all() contain A : {}", f));
 
 		logicService.any("w", "aardvark", "elephant", "koala", "eagle", "kangaroo")
-				.subscribe(f -> log.info("☑️ any contain W : {}", f));
+				.subscribe(f -> log.info("☑️ any() contain W : {}", f));
 
 	}
 
