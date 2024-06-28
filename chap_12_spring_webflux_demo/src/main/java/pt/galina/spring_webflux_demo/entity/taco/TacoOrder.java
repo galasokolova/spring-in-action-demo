@@ -12,7 +12,9 @@ import pt.galina.spring_webflux_demo.entity.user.User;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;@Data
+import java.util.List;
+
+@Data
 @Document
 public class TacoOrder {
     @Id

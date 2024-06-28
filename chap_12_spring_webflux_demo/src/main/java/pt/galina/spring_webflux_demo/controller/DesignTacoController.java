@@ -25,6 +25,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.security.Principal;
+import java.util.List;
 
 @Slf4j
 @Controller
@@ -46,13 +47,13 @@ public class DesignTacoController {
     }
 
     @ModelAttribute(name = "tacoOrder")
-    public TacoOrderDTO order() {
-        return new TacoOrderDTO();
+    public TacoOrder order() {
+        return new TacoOrder();
     }
 
     @ModelAttribute(name = "taco")
-    public TacoDTO taco() {
-        return new TacoDTO();
+    public Taco taco() {
+        return new Taco();
     }
 
     @ModelAttribute(name = "user")
@@ -62,7 +63,7 @@ public class DesignTacoController {
     }
 
     @GetMapping
-    public String showDesignForm(Model model) {
+    public String showDesignForm(Model model, @ModelAttribute TacoOrder tacoOrder) {
         log.info("Showing design form");
         return "design";
     }
@@ -75,12 +76,15 @@ public class DesignTacoController {
             return Mono.just("design");
         }
 
-        return tacoConverter.toEntity(tacoDTO)
+        return Flux.fromIterable(tacoDTO.getIngredients()) // Предполагается, что это список строковых идентификаторов
+                .flatMap(ingredientRepo::findById) // Используем метод findById(String id)
+                .collectList()
+                .flatMap(ingredients -> tacoConverter.toEntity(tacoDTO, ingredients))
                 .flatMap(taco -> tacoOrderConverter.toEntity(orderDTO)
-                        .flatMap(order -> {
+                        .map(order -> {
                             order.addTaco(taco);
                             sessionStatus.setComplete();
-                            return Mono.just("redirect:/orders/current");
+                            return "redirect:/orders/current";
                         }));
     }
 }

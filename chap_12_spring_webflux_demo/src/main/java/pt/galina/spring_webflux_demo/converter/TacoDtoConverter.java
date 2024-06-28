@@ -9,6 +9,7 @@ import pt.galina.spring_webflux_demo.entity.taco.Taco;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
@@ -45,5 +46,13 @@ public class TacoDtoConverter {
                     taco.setIngredients(ingredients);
                     return taco;
                 });
+    }
+
+    public Mono<Taco> toEntity(TacoDTO dto, List<Ingredient> ingredients) {
+        Taco taco = new Taco();
+        taco.setId(dto.getId());
+        taco.setName(dto.getName());
+        taco.setIngredients(ingredients);
+        return Mono.just(taco);
     }
 }
