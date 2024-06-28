@@ -64,7 +64,7 @@
     </label>
     <br/>
 
-    <h3>Here’s how I’ll pay...</h3>
+    <h3>Here's how I'll pay...</h3>
 
     <label th:for="ccNumber">Credit Card #: </label>
     <label>
@@ -73,8 +73,8 @@
               th:if="${#fields.hasErrors('ccNumber')}"
               th:errors="*{ccNumber}">CC Num Error</span>
     </label>
-
     <br/>
+
     <label th:for="ccExpiration">Expiration: </label>
     <label>
         <input type="text" th:field="*{ccExpiration}"/>
@@ -92,6 +92,7 @@
           th:if="${#fields.hasErrors('ccCVV')}"
           th:errors="*{ccCVV}">CC CVV Error</span>
     <br/>
+
     <input type="submit" value="Submit Order"/>
 </form>
 </body>
