@@ -73,9 +73,11 @@ public class DesignTacoController {
                                     @ModelAttribute TacoOrderDTO orderDTO, SessionStatus sessionStatus, Model model) {
         if (errors.hasErrors()) {
             model.addAttribute("errors", errors);
+            log.error("Validation errors: {}", errors);
             return Mono.just("design");
         }
 
+        log.info("Processing taco: {}", tacoDTO);
         return Flux.fromIterable(tacoDTO.getIngredients()) // Предполагается, что это список строковых идентификаторов
                 .flatMap(ingredientRepo::findById) // Используем метод findById(String id)
                 .collectList()
@@ -83,8 +85,9 @@ public class DesignTacoController {
                 .flatMap(taco -> tacoOrderConverter.toEntity(orderDTO)
                         .map(order -> {
                             order.addTaco(taco);
-                            sessionStatus.setComplete();
+//                            sessionStatus.setComplete();
                             return "redirect:/orders/current";
                         }));
     }
 }
+

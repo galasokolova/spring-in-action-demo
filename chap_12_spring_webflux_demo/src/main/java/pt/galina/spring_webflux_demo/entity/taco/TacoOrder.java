@@ -50,7 +50,7 @@ public class TacoOrder {
     @DBRef
     private User user;
 
-
+    @DBRef
     private List<Taco> tacos = new ArrayList<>();
 
     public void addTaco(Taco taco) {
