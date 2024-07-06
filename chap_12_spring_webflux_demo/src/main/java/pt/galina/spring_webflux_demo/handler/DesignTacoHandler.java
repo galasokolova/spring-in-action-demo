@@ -48,7 +48,7 @@ public class DesignTacoHandler {
                     taco.setName(formData.getFirst("name"));
                     taco.setIngredients(formData.get("ingredients").stream()
                             .map(id -> new Ingredient(id, null, null))
-                            .collect(Collectors.toList()));
+                            .toList());
 
                     return tacoService.save(taco)  // Создание нового тако
                             .flatMap(savedTaco -> addToOrder(savedTaco, request))  // Добавление тако в заказ

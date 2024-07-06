@@ -32,7 +32,7 @@ public class RegistrationHandler {
     }
 
     public Mono<ServerResponse> processRegistration(ServerRequest request) {
-        return request.body(BodyExtractors.toFormData())
+        return request.formData()
                 .flatMap(formData -> {
                     String username = formData.toSingleValueMap().get("username");
                     String password = formData.toSingleValueMap().get("password");
