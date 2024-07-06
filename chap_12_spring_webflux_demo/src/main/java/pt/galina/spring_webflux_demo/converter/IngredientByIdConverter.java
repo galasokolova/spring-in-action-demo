@@ -1,7 +1,6 @@
 package pt.galina.spring_webflux_demo.converter;
 
 import org.springframework.core.convert.converter.Converter;
-import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 import pt.galina.spring_webflux_demo.data.IngredientRepository;
 import pt.galina.spring_webflux_demo.entity.taco.Ingredient;
@@ -15,7 +14,7 @@ public class IngredientByIdConverter implements Converter<String, Ingredient> {
     }
 
     @Override
-    public Ingredient convert(@NonNull String id) {
-        return ingredientRepo.findById(id).block(); // Преобразование Mono в Ingredient с использованием .block()
+    public Ingredient convert(String id) {
+        return ingredientRepo.findById(id).block();
     }
 }

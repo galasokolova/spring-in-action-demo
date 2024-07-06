@@ -4,6 +4,7 @@ import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.constraints.CreditCardNumber;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Slf4j
 @Data
 @Document
 public class TacoOrder {
@@ -54,8 +56,13 @@ public class TacoOrder {
     private List<Taco> tacos = new ArrayList<>();
 
     public void addTaco(Taco taco) {
+        if (this.tacos == null) {
+            this.tacos = new ArrayList<>();
+        }
         this.tacos.add(taco);
+        log.info("Added taco to order: {}", taco);
     }
+
 
     void placedAt() {
         this.placedAt = new Date();
