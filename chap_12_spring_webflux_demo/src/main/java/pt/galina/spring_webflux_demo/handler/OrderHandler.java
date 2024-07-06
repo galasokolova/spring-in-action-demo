@@ -26,8 +26,7 @@ public class OrderHandler {
 
     public Mono<ServerResponse> showOrderForm(ServerRequest request) {
         // Получает текущую сессию
-        return request
-                .session()
+        return request.session()
                 .flatMap(session -> {
                     // Получает контекст безопасности и извлекает аутентификацию
                     Mono<Authentication> authenticationMono = ReactiveSecurityContextHolder.getContext()
@@ -41,8 +40,7 @@ public class OrderHandler {
                         TacoOrder existingOrder = session.getAttribute("tacoOrder");
 
                         // Находит или создает заказ для пользователя
-                        return tacoOrderService
-                                .findOrCreateOrder(username, existingOrder)
+                        return tacoOrderService.findOrCreateOrder(username, existingOrder)
                                 .flatMap(order -> {
                                     // Если существующего заказа нет, сохраняет новый заказ в сессии
                                     if (existingOrder == null) {

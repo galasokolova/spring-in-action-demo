@@ -7,6 +7,8 @@ import pt.galina.spring_webflux_demo.entity.taco.Ingredient;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.List;
+
 @Service
 public class IngredientService {
 
@@ -31,5 +33,9 @@ public class IngredientService {
 
     public Mono<Void> deleteById(String id) {
         return ingredientRepository.deleteById(id);
+    }
+
+    public Flux<Ingredient> findAllById(List<String> ids) {
+        return ingredientRepository.findAllById(ids);
     }
 }

@@ -46,13 +46,17 @@ public class DesignTacoHandler {
                 .flatMap(formData -> {
                     Taco taco = new Taco();
                     taco.setName(formData.getFirst("name"));
-                    taco.setIngredients(formData.get("ingredients").stream()
-                            .map(id -> new Ingredient(id, null, null))
-                            .toList());
 
-                    return tacoService.save(taco)  // Создание нового тако
-                            .flatMap(savedTaco -> addToOrder(savedTaco, request))  // Добавление тако в заказ
-                            .flatMap(order -> ServerResponse.ok().contentType(MediaType.TEXT_HTML).render("orderForm", Map.of("tacoOrder", order)));  // Перенаправление на страницу оформления заказа
+                    // Извлечение ингредиентов по их идентификаторам
+                    List<String> ingredientIds = formData.get("ingredients");
+                    return ingredientService.findAllById(ingredientIds)
+                            .collectList()
+                            .flatMap(ingredients -> {
+                                taco.setIngredients(ingredients);
+                                return tacoService.save(taco);
+                            })
+                            .flatMap(savedTaco -> addToOrder(savedTaco, request))
+                            .flatMap(order -> ServerResponse.ok().contentType(MediaType.TEXT_HTML).render("orderForm", Map.of("tacoOrder", order)));
                 });
     }
 
