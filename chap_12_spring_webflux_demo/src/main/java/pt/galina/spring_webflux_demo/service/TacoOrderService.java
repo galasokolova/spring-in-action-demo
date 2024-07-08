@@ -1,14 +1,19 @@
 package pt.galina.spring_webflux_demo.service;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import pt.galina.spring_webflux_demo.data.OrderRepository;
 import pt.galina.spring_webflux_demo.data.UserRepository;
 import pt.galina.spring_webflux_demo.entity.taco.TacoOrder;
+import pt.galina.spring_webflux_demo.entity.user.User;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.Date;
+
+@Slf4j
 @Service
 public class TacoOrderService {
 
@@ -22,9 +27,12 @@ public class TacoOrderService {
     }
 
     public Mono<TacoOrder> findOrCreateOrder(String username, TacoOrder existingOrder) {
+        log.info("🔍 findOrCreateOrder called with username: {}", username);
         return userRepository.findByUsername(username)
                 .flatMap(user -> {
+                    log.info("🔍 Found user: {}", user);
                     TacoOrder order = existingOrder != null ? existingOrder : new TacoOrder();
+                    order.setUser(user);
                     if (order.getDeliveryName() == null) {
                         order.setDeliveryName(user.getFullname());
                     }
@@ -40,24 +48,35 @@ public class TacoOrderService {
                     if (order.getDeliveryZip() == null) {
                         order.setDeliveryZip(user.getZip());
                     }
+                    log.info("⏩⏩⏩ Autofilled order: {}", order);
                     return Mono.just(order);
                 });
     }
 
-    public Mono<TacoOrder> processOrder(String username, TacoOrder order) {
+
+    public Flux<TacoOrder> findOrdersForUser(String username, int pageSize) {
+        log.info("\uD83C\uDF1F Finding orders for user: {}", username);
         return userRepository.findByUsername(username)
-                .flatMap(user -> {
-                    order.setUser(user);
-                    return orderRepository.save(order);
+                .flatMapMany(user -> {
+                    log.info("\uD83C\uDF1F User found: {}", user);
+                    return orderRepository.findByUserOrderByPlacedAtDesc(user, PageRequest.of(0, pageSize))
+                            .doOnNext(order -> log.info("\uD83C\uDF1F Found order: {}", order));
                 });
     }
 
-    public Flux<TacoOrder> findOrdersForUser(String username, int pageSize) {
-        return userRepository.findByUsername(username)
-                .flatMapMany(user -> orderRepository.findByUserOrderByPlacedAtDesc(user, PageRequest.of(0, pageSize)));
+    public Mono<TacoOrder> processOrder(String username, TacoOrder order) {
+        return findOrCreateOrder(username, order)
+                .flatMap(orderToSave -> {
+                    orderToSave.placedAt();
+                    log.info("▶️▶️▶️Processing order: {}", orderToSave);
+                    return save(orderToSave);
+                });
     }
 
     public Mono<TacoOrder> save(TacoOrder order) {
-        return orderRepository.save(order);
+        return orderRepository.save(order)
+                .doOnSuccess(savedOrder -> log.info("🌟🌟🌟 Saved order: {}", savedOrder))
+                .doOnError(error -> log.error("❌❌❌ Failed to save order: {}", error.getMessage()));
     }
+
 }

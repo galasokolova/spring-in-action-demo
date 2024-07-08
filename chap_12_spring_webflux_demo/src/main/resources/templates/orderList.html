@@ -11,6 +11,7 @@
 
 <ul>
     <li th:each="order : ${orders}">
+        <span th:text="${order.id}">Order ID</span>:
         <span th:text="${order.placedAt}">DATE</span> -
         <span th:text="${order.deliveryName}">NAME</span>
         <ul>

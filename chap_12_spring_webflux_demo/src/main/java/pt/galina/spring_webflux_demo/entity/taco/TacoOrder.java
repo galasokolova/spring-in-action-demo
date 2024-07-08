@@ -17,7 +17,7 @@ import java.util.List;
 
 @Slf4j
 @Data
-@Document
+@Document(collection = "tacoOrder")
 public class TacoOrder {
     @Id
     private String id;
@@ -64,7 +64,7 @@ public class TacoOrder {
     }
 
 
-    void placedAt() {
+    public void placedAt() {
         this.placedAt = new Date();
     }
 }

@@ -45,8 +45,7 @@ public class RouterFunctionConfig {
 
     private RouterFunction<ServerResponse> designTacoRoutes() {
         return route(GET("/design"), designTacoHandler::showDesignForm)
-                .andRoute(POST("/design"), designTacoHandler::processTaco)
-                .andRoute(GET("/orders/current"), orderHandler::showOrderForm);
+                .andRoute(POST("/design"), designTacoHandler::processTaco);
     }
 
     private RouterFunction<ServerResponse> orderRoutes() {
