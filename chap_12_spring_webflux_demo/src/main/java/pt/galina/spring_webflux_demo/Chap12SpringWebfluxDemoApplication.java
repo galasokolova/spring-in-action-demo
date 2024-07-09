@@ -31,6 +31,7 @@ public class Chap12SpringWebfluxDemoApplication {
     }
 
     public static void main(String[] args) {
+
         SpringApplication.run(Chap12SpringWebfluxDemoApplication.class, args);
     }
 
@@ -41,7 +42,7 @@ public class Chap12SpringWebfluxDemoApplication {
                 List<Ingredient> ingredients = objectMapper.readValue(inputStream, new TypeReference<>() {});
                 ingredientRepo.saveAll(ingredients)
                         .thenMany(ingredientRepo.findAll())
-                        .subscribe(ingredient -> log.info("⏩⏩⏩ Saved ingredient: {}", ingredient));
+                        .subscribe();
             } catch (IOException e) {
                 log.error("⏩⏩⏩ Failed to load ingredients", e);
             }

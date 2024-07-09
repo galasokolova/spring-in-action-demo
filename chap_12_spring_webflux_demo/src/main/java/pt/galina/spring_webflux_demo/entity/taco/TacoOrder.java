@@ -4,23 +4,24 @@ import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.constraints.CreditCardNumber;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import pt.galina.spring_webflux_demo.entity.user.User;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
+@Slf4j
 @Data
-@Document
+@Document(collection = "tacoOrder")
 public class TacoOrder {
     @Id
     private String id;
 
-    private Date placedAt;
+    private LocalDateTime placedAt;
 
     @NotBlank(message="Delivery name is required")
     private String deliveryName;
@@ -47,17 +48,19 @@ public class TacoOrder {
     @Digits(integer=3, fraction=0, message="Invalid CVV")
     private String ccCVV;
 
-    @DBRef
     private User user;
-
 
     private List<Taco> tacos = new ArrayList<>();
 
     public void addTaco(Taco taco) {
+        if (this.tacos == null) {
+            this.tacos = new ArrayList<>();
+        }
         this.tacos.add(taco);
+        log.info("Added taco to order: {}", taco);
     }
 
-    void placedAt() {
-        this.placedAt = new Date();
+    public void placedAt() {
+        this.placedAt = LocalDateTime.now();
     }
 }

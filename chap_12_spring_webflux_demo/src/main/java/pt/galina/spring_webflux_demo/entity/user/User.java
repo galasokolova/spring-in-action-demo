@@ -1,6 +1,7 @@
 package pt.galina.spring_webflux_demo.entity.user;
 
 import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
@@ -16,6 +17,7 @@ import java.util.List;
 @Data
 @Document(collection = "users")
 @NoArgsConstructor(access = AccessLevel.PROTECTED, force = true)
+@AllArgsConstructor
 public class User implements UserDetails {
     @Id
     private String id;
@@ -65,4 +67,5 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
 }

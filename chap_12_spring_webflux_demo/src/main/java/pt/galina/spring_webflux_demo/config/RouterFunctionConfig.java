@@ -1,79 +1,66 @@
 package pt.galina.spring_webflux_demo.config;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.server.RouterFunction;
-import org.springframework.web.reactive.function.server.ServerRequest;
+import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerResponse;
-import pt.galina.spring_webflux_demo.data.IngredientRepository;
-import pt.galina.spring_webflux_demo.data.TacoRepository;
-import pt.galina.spring_webflux_demo.entity.taco.Ingredient;
-import pt.galina.spring_webflux_demo.entity.taco.Taco;
-import reactor.core.publisher.Mono;
+import pt.galina.spring_webflux_demo.handler.DesignTacoHandler;
+import pt.galina.spring_webflux_demo.handler.OrderHandler;
+import pt.galina.spring_webflux_demo.handler.RegistrationHandler;
+import pt.galina.spring_webflux_demo.handler.UserHandler;
 
-import java.net.URI;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-
-import static org.springframework.web.reactive.function.server.RequestPredicates.*;
+import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
+import static org.springframework.web.reactive.function.server.RequestPredicates.POST;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @Configuration
 public class RouterFunctionConfig {
 
-    private final TacoRepository tacoRepo;
-    private final IngredientRepository ingredientRepo;
+    private final DesignTacoHandler designTacoHandler;
+    private final OrderHandler orderHandler;
+    private final RegistrationHandler registrationHandler;
+    private final UserHandler userHandler;
 
-    @Autowired
-    public RouterFunctionConfig(TacoRepository tacoRepo, IngredientRepository ingredientRepo) {
-        this.tacoRepo = tacoRepo;
-        this.ingredientRepo = ingredientRepo;
+    public RouterFunctionConfig(DesignTacoHandler designTacoHandler,
+                                OrderHandler orderHandler,
+                                RegistrationHandler registrationHandler,
+                                UserHandler userHandler) {
+        this.designTacoHandler = designTacoHandler;
+        this.orderHandler = orderHandler;
+        this.registrationHandler = registrationHandler;
+        this.userHandler = userHandler;
     }
 
     @Bean
     public RouterFunction<ServerResponse> routerFunction() {
-        return route(GET("/api/tacos").and(queryParam("recent", Objects::nonNull)), this::recent)
-                .andRoute(POST("/api/tacos"), this::postTaco)
-                .andRoute(GET("/"), this::home)
-                .andRoute(GET("/design"), this::design);
+        return route()
+                .add(designTacoRoutes())
+                .add(orderRoutes())
+                .add(registrationRoutes())
+                .add(userRoutes())
+                .build();
     }
 
-    public Mono<ServerResponse> recent(ServerRequest request) {
-        return ServerResponse.ok()
-                .body(tacoRepo.findAll().take(10), Taco.class);
+    private RouterFunction<ServerResponse> designTacoRoutes() {
+        return route(GET("/design"), designTacoHandler::showDesignForm)
+                .andRoute(POST("/design"), designTacoHandler::processTaco);
     }
 
-    public Mono<ServerResponse> postTaco(ServerRequest request) {
-        return request.bodyToMono(Taco.class)
-                .flatMap(tacoRepo::save)
-                .flatMap(savedTaco -> ServerResponse.created(URI.create("http://localhost:8080/api/tacos/" + savedTaco.getId()))
-                        .bodyValue(savedTaco));
+    private RouterFunction<ServerResponse> orderRoutes() {
+        return route(GET("/orders/current"), orderHandler::showOrderForm)
+                .andRoute(POST("/orders"), orderHandler::processOrder)
+                .andRoute(GET("/orders/orderList"), orderHandler::ordersForUser);
     }
 
-    public Mono<ServerResponse> home(ServerRequest request) {
-        return ServerResponse.ok().contentType(MediaType.TEXT_HTML).render("home");
+    private RouterFunction<ServerResponse> registrationRoutes() {
+        return route(POST("/register"), registrationHandler::processRegistration)
+                .andRoute(GET("/register"), request -> ServerResponse.ok().contentType(MediaType.TEXT_HTML).render("registration"))
+                .andRoute(GET("/login"), request -> ServerResponse.ok().contentType(MediaType.TEXT_HTML).render("login"));
     }
 
-    public Mono<ServerResponse> design(ServerRequest request) {
-        return ingredientRepo.findAll().collectList().flatMap(ingredients -> {
-            Map<String, Object> model = new HashMap<>();
-            model.put("taco", new Taco());
-            model.put("wrap", filterByType(ingredients, Ingredient.Type.WRAP));
-            model.put("protein", filterByType(ingredients, Ingredient.Type.PROTEIN));
-            model.put("cheese", filterByType(ingredients, Ingredient.Type.CHEESE));
-            model.put("veggies", filterByType(ingredients, Ingredient.Type.VEGGIES));
-            model.put("sauce", filterByType(ingredients, Ingredient.Type.SAUCE));
-            return ServerResponse.ok().contentType(MediaType.TEXT_HTML).render("design", model);
-        });
-    }
-
-    private List<Ingredient> filterByType(List<Ingredient> ingredients, Ingredient.Type type) {
-        return ingredients.stream()
-                .filter(x -> x.getType().equals(type))
-                .toList();
+    private RouterFunction<ServerResponse> userRoutes() {
+        return route(GET("/users"), userHandler::listUsers);
     }
 }

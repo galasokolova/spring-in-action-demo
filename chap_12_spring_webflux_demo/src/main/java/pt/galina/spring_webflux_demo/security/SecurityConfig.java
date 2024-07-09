@@ -22,16 +22,19 @@ public class SecurityConfig {
 
     private static final Logger log = LoggerFactory.getLogger(SecurityConfig.class);
 
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
+
     @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
         return http
                 .authorizeExchange(exchanges -> exchanges
-                        .pathMatchers("/design", "/orders").authenticated()
+                        .pathMatchers("/design", "/orders").hasRole("USER")
+                        .pathMatchers("/api/**").permitAll()
                         .anyExchange().permitAll()
                 )
                 .formLogin(form -> form
