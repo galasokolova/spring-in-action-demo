@@ -7,12 +7,11 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.hibernate.validator.constraints.CreditCardNumber;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import pt.galina.spring_webflux_demo.entity.user.User;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Slf4j
@@ -22,7 +21,7 @@ public class TacoOrder {
     @Id
     private String id;
 
-    private Date placedAt;
+    private LocalDateTime placedAt;
 
     @NotBlank(message="Delivery name is required")
     private String deliveryName;
@@ -49,10 +48,8 @@ public class TacoOrder {
     @Digits(integer=3, fraction=0, message="Invalid CVV")
     private String ccCVV;
 
-    @DBRef
     private User user;
 
-    @DBRef
     private List<Taco> tacos = new ArrayList<>();
 
     public void addTaco(Taco taco) {
@@ -63,8 +60,7 @@ public class TacoOrder {
         log.info("Added taco to order: {}", taco);
     }
 
-
     public void placedAt() {
-        this.placedAt = new Date();
+        this.placedAt = LocalDateTime.now();
     }
 }

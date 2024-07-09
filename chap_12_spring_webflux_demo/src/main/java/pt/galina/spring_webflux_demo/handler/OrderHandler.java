@@ -13,6 +13,7 @@ import pt.galina.spring_webflux_demo.entity.taco.TacoOrder;
 import pt.galina.spring_webflux_demo.service.TacoOrderService;
 import reactor.core.publisher.Mono;
 
+import java.net.URI;
 import java.util.Map;
 
 @Slf4j
@@ -25,7 +26,6 @@ public class OrderHandler {
     public OrderHandler(TacoOrderService tacoOrderService) {
         this.tacoOrderService = tacoOrderService;
     }
-
 
     public Mono<ServerResponse> showOrderForm(ServerRequest request) {
         return request.session()
@@ -51,7 +51,6 @@ public class OrderHandler {
                 });
     }
 
-
     public Mono<ServerResponse> processOrder(ServerRequest request) {
         return request.session()
                 .flatMap(session -> {
@@ -69,13 +68,11 @@ public class OrderHandler {
                             .flatMap(savedOrder -> {
                                 session.getAttributes().remove("tacoOrder");
                                 return ServerResponse
-                                        .ok()
-                                        .contentType(MediaType.TEXT_HTML)
-                                        .render("orderList", Map.of("order", savedOrder));
+                                        .seeOther(URI.create("/orders/orderList"))
+                                        .build();
                             });
                 });
     }
-
 
     public Mono<ServerResponse> ordersForUser(ServerRequest request) {
         return request.principal()
@@ -89,6 +86,4 @@ public class OrderHandler {
                                     .render("orderList", Map.of("orders", orders));
                         }));
     }
-
-
 }

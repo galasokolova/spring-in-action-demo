@@ -5,6 +5,6 @@ import pt.galina.spring_webflux_demo.entity.taco.Taco;
 import reactor.core.publisher.Flux;
 
 public interface TacoRepository extends ReactiveMongoRepository<Taco, String> {
-    Flux<Taco> findAllByOrderByCreatedAtDesc(); // Метод для получения тако в порядке убывания даты создания
+    Flux<Taco> findAllByOrderByCreatedAtDesc();
 }
 

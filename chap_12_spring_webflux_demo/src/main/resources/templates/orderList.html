@@ -18,8 +18,8 @@
             <li th:each="taco : ${order.tacos}">
                 <span th:text="${taco.name}"></span> :
                 <span th:each="ingredient : ${taco.ingredients}">
-              <span th:text="${ingredient.name}">INGREDIENT</span>,
-            </span>
+                  <span th:text="${ingredient.name}">INGREDIENT</span>,
+                </span>
             </li>
         </ul>
     </li>

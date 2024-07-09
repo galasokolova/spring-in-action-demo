@@ -7,11 +7,8 @@ import org.springframework.stereotype.Service;
 import pt.galina.spring_webflux_demo.data.OrderRepository;
 import pt.galina.spring_webflux_demo.data.UserRepository;
 import pt.galina.spring_webflux_demo.entity.taco.TacoOrder;
-import pt.galina.spring_webflux_demo.entity.user.User;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
-import java.util.Date;
 
 @Slf4j
 @Service
@@ -55,14 +52,13 @@ public class TacoOrderService {
 
 
     public Flux<TacoOrder> findOrdersForUser(String username, int pageSize) {
-        log.info("\uD83C\uDF1F Finding orders for user: {}", username);
+        log.info("🔍 Finding orders for user: {}", username);
         return userRepository.findByUsername(username)
-                .flatMapMany(user -> {
-                    log.info("\uD83C\uDF1F User found: {}", user);
-                    return orderRepository.findByUserOrderByPlacedAtDesc(user, PageRequest.of(0, pageSize))
-                            .doOnNext(order -> log.info("\uD83C\uDF1F Found order: {}", order));
-                });
+                .flatMapMany(user -> orderRepository.findByUserOrderByPlacedAtDesc(user, PageRequest.of(0, pageSize))
+                        .doOnNext(order -> log.info("🔍 Found order: {}", order)));
     }
+
+
 
     public Mono<TacoOrder> processOrder(String username, TacoOrder order) {
         return findOrCreateOrder(username, order)
