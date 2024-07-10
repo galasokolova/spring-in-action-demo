@@ -22,7 +22,6 @@
 
     <modules>
         <module>chap1</module>
-        <module>chap_1</module>
         <module>chap_2</module>
         <module>chap_3_jdbc</module>
         <module>chap_3_jpa</module>
