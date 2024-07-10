@@ -1,14 +1,13 @@
-package pt.galina.ch_1;
+package pt.galina.chap1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TacoCloudApplication1 {
+public class Chap1Application {
 
     public static void main(String[] args) {
-
-        SpringApplication.run(TacoCloudApplication1.class, args);
+        SpringApplication.run(Chap1Application.class, args);
     }
 
 }

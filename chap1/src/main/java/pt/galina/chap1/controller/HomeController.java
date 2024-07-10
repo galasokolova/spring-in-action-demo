@@ -1,4 +1,4 @@
-package pt.galina.ch_1.controller;
+package pt.galina.chap1.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
