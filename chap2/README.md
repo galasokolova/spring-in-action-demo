@@ -1,4 +1,6 @@
-## Taco Cloud - Chapter 1: Basic Setup and Introduction to Spring Boot
+## Taco Cloud - Chapter 2: 
+* Presenting model data in the browser
+* Processing and validating form input
 
 ### Build and run the project:
 ```bash
