@@ -23,7 +23,7 @@
     <modules>
         <module>chap1</module>
         <module>chap2</module>
-        <module>chap_3_jdbc</module>
+        <module>chap3-jdbc</module>
         <module>chap_3_jpa</module>
         <module>chap_4_cassandra</module>
         <module>chap_4_mongodb</module>
