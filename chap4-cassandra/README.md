@@ -1,24 +1,24 @@
-## Taco Cloud - Chapter 4: 
-*  Working with Cassandra
+## Taco Cloud - Chapter 4: Cassandra DB
 
 ### Prerequisites
 - Docker
 
-### Setting Up Cassandra and DataStax Studio
+### Setting Up Cassandra DB
 
 #### Step 1: Start Cassandra in Docker:
-``` bash
+```bash
 docker run --rm -d --name cassandra --hostname cassandra -p 9042:9042 cassandra
 ```
 #### Step 1.1: (Wait for 30-40 seconds or so)
 
 #### Step 2: Open cqlsh:
-``` bash
+```bash
 docker exec -it cassandra cqlsh
 ```
 
 #### Step 3: Create KEYSPACE "taco_cloud":
-``` bash
+Once you are in the CQLSH shell, execute the following CQL command to create the keyspace:
+```sql
  CREATE KEYSPACE IF NOT EXISTS taco_cloud WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
 ```
 
@@ -34,7 +34,7 @@ Open a web browser and navigate to http://localhost:8080 to access the running a
 To design a taco, manually navigate to http://localhost:8080/design.
 
 ### Stop Cassandra container:
-``` bash
+```bash
 docker stop cassandra
 ```
 
