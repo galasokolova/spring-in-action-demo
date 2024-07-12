@@ -7,7 +7,7 @@ import pt.galina.chap4cassandra.entity.TacoUDT;
 
 import java.util.List;
 
-public class TacoUDRUtils {
+public class TacoUDTUtils {
 
     public static TacoUDT toTacoUDT(Taco taco) {
         return new TacoUDT(taco.getName(), taco.getIngredients());
@@ -15,7 +15,7 @@ public class TacoUDRUtils {
 
     public static List<IngredientUDT> toIngredientUDTs(List<Ingredient> ingredients) {
         return ingredients.stream()
-                .map(TacoUDRUtils::toIngredientUDT)
+                .map(TacoUDTUtils::toIngredientUDT)
                 .toList();
     }
 

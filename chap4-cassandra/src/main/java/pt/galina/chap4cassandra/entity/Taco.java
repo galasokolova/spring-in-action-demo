@@ -9,7 +9,7 @@ import org.springframework.data.cassandra.core.cql.PrimaryKeyType;
 import org.springframework.data.cassandra.core.mapping.Column;
 import org.springframework.data.cassandra.core.mapping.PrimaryKeyColumn;
 import org.springframework.data.cassandra.core.mapping.Table;
-import pt.galina.chap4cassandra.converter.TacoUDRUtils;
+import pt.galina.chap4cassandra.converter.TacoUDTUtils;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -36,6 +36,6 @@ public class Taco {
     private List<IngredientUDT> ingredients = new ArrayList<>();
 
     public void addIngredient(Ingredient ingredient) {
-        this.ingredients.add(TacoUDRUtils.toIngredientUDT(ingredient));
+        this.ingredients.add(TacoUDTUtils.toIngredientUDT(ingredient));
     }
 }
