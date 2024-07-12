@@ -26,7 +26,7 @@
         <module>chap3-jdbc</module>
         <module>chap3-jpa</module>
         <module>chap4-cassandra</module>
-        <module>chap_4_mongodb</module>
+        <module>chap4-mongodb</module>
         <module>chap_5_in_memory_user</module>
         <module>chap_5_user_in_db</module>
         <module>chap_5_oauth2_client</module>

@@ -1,5 +1,4 @@
-## Taco Cloud - Chapter 3: 
-* Creating Spring Data JDBC repositories
+## Taco Cloud - Chapter 3: Spring Data JDBC
 
 ### Build and run the project:
 ```bash

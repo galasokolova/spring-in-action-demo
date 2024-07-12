@@ -1,5 +1,4 @@
-## Taco Cloud - Chapter 3: 
-* Adding Spring Data JPA
+## Taco Cloud - Chapter 3: Spring Data JPA
 
 ### Build and run the project:
 ```bash
