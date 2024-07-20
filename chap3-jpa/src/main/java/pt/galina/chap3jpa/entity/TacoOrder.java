@@ -5,8 +5,6 @@ import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
-import lombok.ToString;
-import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.validator.constraints.CreditCardNumber;
 
 import java.io.Serial;
@@ -18,17 +16,17 @@ import java.util.List;
 @Data
 @Entity(name = "Taco_Order")
 public class TacoOrder implements Serializable {
+
     @Serial
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
     @Column(name = "placed_at")
-    @CreationTimestamp
-    private Date placedAt;
+    private Date placedAt = new Date();
 
     @Column(name = "delivery_Name")
     @NotBlank(message="Delivery name is required")
@@ -63,13 +61,8 @@ public class TacoOrder implements Serializable {
     @Digits(integer=3, fraction=0, message="Invalid CVV")
     private String ccCVV;
 
-    /**
-     * The @ToString.Exclude annotation is used to prevent a potential StackOverflowError
-     * caused by recursive calls between Taco and TacoOrder in the generated toString() method.
-     */
     @OneToMany(mappedBy = "tacoOrder", cascade = CascadeType.ALL)
-    @ToString.Exclude
-    private List<Taco> tacos = new ArrayList<>();
+    private final List<Taco> tacos = new ArrayList<>();
 
     public void addTaco(Taco taco) {
         taco.setTacoOrder(this);

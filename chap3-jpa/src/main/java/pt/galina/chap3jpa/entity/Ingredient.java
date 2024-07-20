@@ -7,7 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Entity
+@Entity(name = "Ingredient")
 @AllArgsConstructor
 @NoArgsConstructor(access=AccessLevel.PROTECTED, force=true)
 public class Ingredient {

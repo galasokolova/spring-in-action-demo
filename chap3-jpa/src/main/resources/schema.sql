@@ -15,8 +15,7 @@ create table if not exists Taco (
                                     id identity,
                                     name varchar(50) not null,
                                     taco_order_id bigint not null,
-                                    created_at timestamp not null,
-                                    constraint fk_taco_order foreign key (taco_order_id) references Taco_Order(id)
+                                    created_at timestamp not null
 );
 
 create table if not exists Ingredient (
@@ -27,8 +26,20 @@ create table if not exists Ingredient (
 );
 
 create table if not exists Ingredient_Ref (
-                                              ingredient_id varchar(4) not null,
-                                              taco_id bigint not null,
-                                              constraint fk_ingredient foreign key (ingredient_id) references Ingredient(id),
-                                              constraint fk_taco foreign key (taco_id) references Taco(id)
+                                              ingredient varchar(4) not null,
+                                              taco bigint not null
 );
+
+create table if not exists taco_ingredients (
+                                                taco_id bigint not null,
+                                                ingredients_id varchar(4) not null,
+                                                primary key (taco_id, ingredients_id),
+                                                foreign key (taco_id) references Taco(id),
+                                                foreign key (ingredients_id) references Ingredient(id)
+);
+
+alter table Taco
+    add foreign key (taco_order_id) references Taco_Order(id);
+
+alter table Ingredient_Ref
+    add foreign key (ingredient) references Ingredient(id);

@@ -5,7 +5,6 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.ToString;
-import org.hibernate.annotations.CreationTimestamp;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,7 +15,8 @@ import java.util.List;
 public class Taco {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @NotNull
@@ -24,28 +24,25 @@ public class Taco {
     @Column(name = "name")
     private String name;
 
-    @ManyToOne
-    @JoinColumn(name = "taco_order_id")
-    private TacoOrder tacoOrder;
-
-    @Column(name = "created_at")
-    @CreationTimestamp
-    private Date createdAt;
-
-    /**
-     * The @ToString.Exclude annotation is used to prevent a potential StackOverflowError
-     * caused by recursive calls between Taco and TacoOrder in the generated toString() method.
-     */
     @Size(min=1, message="You must choose at least 1 ingredient")
-    @ToString.Exclude
     @ManyToMany
     @JoinTable(
-            name = "Ingredient_Ref",
+            name = "taco_ingredients",
             joinColumns = @JoinColumn(name = "taco_id"),
-            inverseJoinColumns = @JoinColumn(name = "ingredient_id"))
+            inverseJoinColumns = @JoinColumn(name = "ingredients_id")
+    )
     private List<Ingredient> ingredients = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "taco_order_id")
+    @ToString.Exclude
+    private TacoOrder tacoOrder;
+
+    private Date createdAt = new Date();
 
     public void addIngredient(Ingredient ingredient) {
         this.ingredients.add(ingredient);
     }
 }
+
+
