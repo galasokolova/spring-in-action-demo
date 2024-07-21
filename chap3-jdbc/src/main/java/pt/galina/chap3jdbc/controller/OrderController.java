@@ -19,7 +19,7 @@ import pt.galina.chap3jdbc.entity.TacoOrder;
 @SessionAttributes("tacoOrder")
 public class OrderController {
 
-    private OrderRepository orderRepo;
+    private final OrderRepository orderRepo;
     public OrderController(OrderRepository orderRepo) {
         this.orderRepo = orderRepo;
     }

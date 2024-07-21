@@ -27,10 +27,10 @@
         <module>chap3-jpa</module>
         <module>chap4-cassandra</module>
         <module>chap4-mongodb</module>
+        <module>chap5-csrf-demo</module>
         <module>chap_5_in_memory_user</module>
         <module>chap_5_user_in_db</module>
         <module>chap_5_oauth2_client</module>
-        <module>chap_5_csrf</module>
         <module>chap_5_method_level_security</module>
         <module>chap_6_configuration</module>
         <module>chap_6_config_logging</module>
