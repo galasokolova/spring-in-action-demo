@@ -7,21 +7,13 @@ spring:
     name: tacocloud
     url: jdbc:h2:mem:tacocloud
     username: sa
-    password:
+    password: password
     driver-class-name: org.h2.Driver
   h2:
     console:
       enabled: true
       path: /h2-console
-  sql:
-    init:
-      mode: always
-      schema-locations: classpath:schema.sql
-      data-locations: classpath:data.sql
-  jpa:
-    hibernate:
-      ddl-auto: none # Turning off auto-creation of the scheme JPA/Hibernate
-    show-sql: true
+
   security:
     oauth2:
       client:
@@ -29,8 +21,20 @@ spring:
           facebook:
             client-id: # your client-id
             client-secret: # your client-secret
-            redirect-uri: http://localhost:8080/oauth2/code/facebook
+            redirect-uri: "{baseUrl}/login/oauth2/code/facebook"
             scope:
               - email
               - public_profile
-
+          google:
+            client-id: # your client-id
+            client-secret: # your client-secret
+            redirect-uri: "{baseUrl}/login/oauth2/code/google"
+            scope:
+              - email
+              - profile
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/auth
+            token-uri: https://oauth2.googleapis.com/token
+            user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+            user-name-attribute: sub

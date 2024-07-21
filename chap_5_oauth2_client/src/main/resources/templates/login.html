@@ -17,7 +17,13 @@
     <p>New here? Click
        <a th:href="@{/register}">here</a> to register.</p>
 
-    <a th:href="@{/oauth2/authorization/facebook}">Sign in with Facebook</a><br/>
+    <div>
+      <a href="/oauth2/authorization/google">Login with Google</a>
+    </div>
+    <div>
+      <a href="/oauth2/authorization/facebook">Login with Facebook</a>
+    </div>
+
     <form method="POST" th:action="@{/logout}"><br/>
       <input type="submit" value="Logout"/>
     </form><br/>

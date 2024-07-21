@@ -63,8 +63,7 @@ public class SecurityConfig {
                                            UserRepository userRepository,
                                            AdminRepository adminRepository) throws Exception {
         http
-                .authorizeHttpRequests(
-                        authz -> authz
+                .authorizeHttpRequests(authz -> authz
                                 .requestMatchers("/admin/**")
                                 .hasRole("ADMIN")
                                 .requestMatchers("/design", "/orders")

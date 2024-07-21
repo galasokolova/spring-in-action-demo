@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;
+import pt.galina.oauth2_client.entity.user.User;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -21,7 +22,7 @@ public class TacoOrder implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
@@ -61,10 +62,20 @@ public class TacoOrder implements Serializable {
     @Digits(integer=3, fraction=0, message="Invalid CVV")
     private String ccCVV;
 
-    @ManyToMany(targetEntity= Taco.class)
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @OneToMany(cascade = CascadeType.ALL)
     private final List<Taco> tacos = new ArrayList<>();
 
     public void addTaco(Taco taco) {
         this.tacos.add(taco);
     }
+
+    @PrePersist
+    void placedAt() {
+        this.placedAt = new Date();
+    }
 }
+

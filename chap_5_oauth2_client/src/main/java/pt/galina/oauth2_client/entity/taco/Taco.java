@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -14,7 +15,7 @@ import java.util.List;
 public class Taco {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
@@ -24,10 +25,21 @@ public class Taco {
     private String name;
 
     @Size(min=1, message="You must choose at least 1 ingredient")
-    @ManyToMany()
+    @ManyToMany
     private List<Ingredient> ingredients = new ArrayList<>();
 
-    private Date createdAt = new Date();
+    @ManyToOne
+    @JoinColumn(name = "taco_order")
+    @ToString.Exclude
+    private TacoOrder tacoOrder;
+
+    @Column(name = "created_at")
+    private Date createdAt;
+
+    @PrePersist
+    void createdAt() {
+        this.createdAt = new Date();
+    }
 
     public void addIngredient(Ingredient ingredient) {
         this.ingredients.add(ingredient);
