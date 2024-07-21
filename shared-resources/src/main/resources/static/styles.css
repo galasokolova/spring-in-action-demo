@@ -18,6 +18,17 @@ div.ingredient-group {
   clear: both;
 }
 
+img {
+    width: 430px;
+    height: 350px;
+}
+
+.home-image {
+    width: 720px;
+    height: 611px;
+}
+
+
 *, *:after, *:before {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
