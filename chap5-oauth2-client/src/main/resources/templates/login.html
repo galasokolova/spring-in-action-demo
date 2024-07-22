@@ -3,7 +3,7 @@
       xmlns:th="http://www.thymeleaf.org">
   <head>
     <title>Taco Cloud</title>
-    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <link rel="stylesheet" th:href="@{css/styles.css}" />
   </head>
 
   <body>
@@ -17,6 +17,16 @@
     <p>New here? Click
        <a th:href="@{/register}">here</a> to register.</p>
 
+    <div>
+      <a href="/oauth2/authorization/google">Login with Google</a>
+    </div>
+    <div>
+      <a href="/oauth2/authorization/facebook">Login with Facebook</a>
+    </div>
+
+    <form method="POST" th:action="@{/logout}"><br/>
+      <input type="submit" value="Logout"/>
+    </form><br/>
 
     <form method="POST" th:action="@{/login}" id="loginForm">
       <label for="username">Username: </label>

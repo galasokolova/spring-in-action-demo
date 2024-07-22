@@ -7,7 +7,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>3.3.1</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
 
     <groupId>pt.galina</groupId>
@@ -29,8 +29,8 @@
         <module>chap4-mongodb</module>
         <module>chap5-csrf-demo</module>
         <module>chap5-method-level-security</module>
+        <module>chap5-oauth2-client</module>
         <module>chap_5_user_in_db</module>
-        <module>chap_5_oauth2_client</module>
         <module>chap_6_configuration</module>
         <module>chap_6_config_logging</module>
         <module>chap_6_config_profile</module>

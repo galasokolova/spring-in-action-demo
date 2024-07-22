@@ -1,9 +1,0 @@
-#spring:
-#  data:
-#    mongodb:
-#      host: localhost
-#      port: 27017
-#  main:
-#    allow-bean-definition-overriding: true
-#    Change the name of the package to point out which main class is to be run
-#    sources: demo.ch_4_mongodb.TacoApplicationCh4MongoDB

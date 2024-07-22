@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Taco Cloud</title>
-    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <link rel="stylesheet" th:href="@{css/styles.css}" />
 </head>
+
 <body>
 <h1>Register</h1>
+
 <img th:src="@{/images/TacoCloud.png}"/>
+
 <form th:method="POST" th:action="@{/register}" id="registerForm">
+
     <label th:for="username">Username: </label>
     <input type="text" name="username"/><br/>
     <label th:for="password">Password: </label>
@@ -26,6 +31,7 @@
     <input type="text" name="zip"/><br/>
     <label th:for="phone">Phone: </label>
     <input type="text" name="phone"/><br/>
+
     <input type="submit" value="Register"/>
 </form>
 </body>

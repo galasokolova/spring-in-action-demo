@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Roles</title>
+</head>
+<body>
+<h1>User Roles</h1>
+<ul>
+    <li th:each="role : ${roles}" th:text="${role}"></li>
+</ul>
+</body>
+</html>
