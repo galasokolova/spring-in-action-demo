@@ -13,18 +13,16 @@ import java.util.Collections;
 @Service
 public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
 
+    private final DefaultOAuth2UserService delegate = new DefaultOAuth2UserService();
+
     @Override
     public OAuth2User loadUser(OAuth2UserRequest userRequest) {
-        DefaultOAuth2UserService delegate = new DefaultOAuth2UserService();
         OAuth2User oAuth2User = delegate.loadUser(userRequest);
-
-        // Log the attributes to determine what is available
-        System.out.println("User Attributes: " + oAuth2User.getAttributes());
 
         return new DefaultOAuth2User(
                 Collections.singletonList(new SimpleGrantedAuthority("ROLE_USER")),
                 oAuth2User.getAttributes(),
-                "sub" // use "sub" if it exists, or replace with appropriate attribute
+                "sub"
         );
     }
 }
