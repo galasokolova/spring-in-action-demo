@@ -14,6 +14,7 @@ configuring access to the H2 console, and setting up an RSocket server.
 - The alias 'tomcat' is used as the identifier for the key.
 - RSA represents the encryption algorithm for the key.
 - The key size is set to 2048 bits.
+- The certificate will be valid for 365 days
 - 'mykeys.jks' is the name of the keystore file.
 
 
