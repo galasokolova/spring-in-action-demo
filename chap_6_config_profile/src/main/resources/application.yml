@@ -14,19 +14,15 @@ spring:
     management:
       default-logging-enabled: true
 
-logging:
-  file:
-    name: chap_6_config_profile/TacoCloud.log
-  logback:
-    rolling policy:
-      file-name-pattern: TacoCloudProfile-%d{yyyy-MM-dd}.%i.log
-  level:
-    root: warn
-    org.springframework.security: warn
 
 taco:
   orders:
     page-size: 10
+logging:
+  level:
+    root: warn
+    org.springframework.security: warn
+
 ---
 
 spring:

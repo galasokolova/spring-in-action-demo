@@ -20,13 +20,14 @@ spring:
 
 logging:
   file:
-    name: chap6-logging-config/logging/TacoCloud.log
-  logback:
-    rolling policy:
-      file-name-pattern: TacoCloud-%d{yyyy-MM-dd}.%i.log
+    name: chap6-logging-config/log/TacoCloud.log
   level:
     root: WARN
     org.springframework.security: DEBUG
+  pattern:
+#    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
 taco:
   orders:
     page-size: 10
