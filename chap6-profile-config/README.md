@@ -1,10 +1,12 @@
 ## Taco Cloud - Chapter 6: 
-## 6.1.4 Configuring logging with application.yml
+* 6.1.4 Configuring logging with logback-spring.xml
+* 6.2 Configuration properties
+* 6.3.1  Defining profile-specific properties
 
 
 ### Build and run the project:
 ```bash
-cd chap6-logging-config
+cd chap6-profile-config
 ./mvnw spring-boot:run
 ```
 

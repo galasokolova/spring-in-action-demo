@@ -32,8 +32,8 @@
         <module>chap5-method-level-security</module>
         <module>chap5-oauth2-client</module>
         <module>chap6-logging-config</module>
+        <module>chap6-profile-config</module>
         <module>chap_6_configuration</module>
-        <module>chap_6_config_profile</module>
         <module>chap_7_restful_controller</module>
         <module>chap_7_spring_data_rest</module>
         <module>chap_8_oauth2</module>

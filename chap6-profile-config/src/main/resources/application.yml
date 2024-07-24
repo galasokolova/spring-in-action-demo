@@ -18,16 +18,18 @@ spring:
     management:
       default-logging-enabled: true
 
-logging:
-  file:
-    name: log/TacoCloud.log
-  level:
-    root: WARN
-    org.springframework.security: DEBUG
-  pattern:
-#    console: "%d{yyyy-MM-dd HH:mm:ss} - %msg%n"
-    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
 
 taco:
   orders:
     page-size: 10
+logging:
+  level:
+    root: warn
+    org.springframework.security: warn
+
+
+---
+
+spring:
+  profiles:
+    active: dev

@@ -1,4 +1,4 @@
-package pt.galina.chap6loggingconfig.config;
+package pt.galina.chap6profileconfig.config;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
