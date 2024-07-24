@@ -28,11 +28,11 @@
         <module>chap4-cassandra</module>
         <module>chap4-mongodb</module>
         <module>chap5-csrf-demo</module>
+        <module>chap5-in-memory-user</module>
         <module>chap5-method-level-security</module>
         <module>chap5-oauth2-client</module>
-        <module>chap_5_user_in_db</module>
+        <module>chap6-logging-config</module>
         <module>chap_6_configuration</module>
-        <module>chap_6_config_logging</module>
         <module>chap_6_config_profile</module>
         <module>chap_7_restful_controller</module>
         <module>chap_7_spring_data_rest</module>

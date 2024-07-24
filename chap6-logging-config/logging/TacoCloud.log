@@ -1,0 +1,61 @@
+2024-07-24T00:11:54.002+01:00  WARN 8636 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-24T00:11:54.050+01:00  INFO 8636 --- [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-07-24T00:11:54.483+01:00 DEBUG 8636 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, CsrfFilter, LogoutFilter, UsernamePasswordAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-07-24T00:12:03.537+01:00 DEBUG 8636 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /
+2024-07-24T00:12:03.558+01:00 DEBUG 8636 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /
+2024-07-24T00:12:03.922+01:00 DEBUG 8636 --- [http-nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$X37yjT7.BpO25vq73hSCaucjh99qbWURWtFdDCPYTQrxGOFhIFawG, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=669A1BC1D69E0B697D8A7593C05E963B], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:12:03.936+01:00 DEBUG 8636 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /images/taco.png
+2024-07-24T00:12:03.936+01:00 DEBUG 8636 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /css/styles.css
+2024-07-24T00:12:03.939+01:00 DEBUG 8636 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /css/styles.css
+2024-07-24T00:12:03.939+01:00 DEBUG 8636 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /images/taco.png
+2024-07-24T00:12:03.939+01:00 DEBUG 8636 --- [http-nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$X37yjT7.BpO25vq73hSCaucjh99qbWURWtFdDCPYTQrxGOFhIFawG, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=669A1BC1D69E0B697D8A7593C05E963B], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:12:03.951+01:00 DEBUG 8636 --- [http-nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$X37yjT7.BpO25vq73hSCaucjh99qbWURWtFdDCPYTQrxGOFhIFawG, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=669A1BC1D69E0B697D8A7593C05E963B], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:12:06.029+01:00 DEBUG 8636 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /logout
+2024-07-24T00:12:06.043+01:00 DEBUG 8636 --- [http-nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$X37yjT7.BpO25vq73hSCaucjh99qbWURWtFdDCPYTQrxGOFhIFawG, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=669A1BC1D69E0B697D8A7593C05E963B], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:12:06.043+01:00 DEBUG 8636 --- [http-nio-8080-exec-3] o.s.s.w.a.logout.LogoutFilter            : Logging out [UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$X37yjT7.BpO25vq73hSCaucjh99qbWURWtFdDCPYTQrxGOFhIFawG, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=127.0.0.1, SessionId=669A1BC1D69E0B697D8A7593C05E963B], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:12:06.045+01:00 DEBUG 8636 --- [http-nio-8080-exec-3] o.s.s.w.a.l.SecurityContextLogoutHandler : Invalidated session FAA0CCD86DEDF707F7A2CFD08C24C367
+2024-07-24T00:12:06.046+01:00 DEBUG 8636 --- [http-nio-8080-exec-3] o.s.s.web.DefaultRedirectStrategy        : Redirecting to /
+2024-07-24T00:12:06.051+01:00 DEBUG 8636 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /
+2024-07-24T00:12:06.052+01:00 DEBUG 8636 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /
+2024-07-24T00:12:06.104+01:00 DEBUG 8636 --- [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:12:06.104+01:00 DEBUG 8636 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /css/styles.css
+2024-07-24T00:12:06.104+01:00 DEBUG 8636 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /images/taco.png
+2024-07-24T00:12:06.104+01:00 DEBUG 8636 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /css/styles.css
+2024-07-24T00:12:06.104+01:00 DEBUG 8636 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /images/taco.png
+2024-07-24T00:12:06.122+01:00 DEBUG 8636 --- [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:12:06.123+01:00 DEBUG 8636 --- [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:12:06.906+01:00 DEBUG 8636 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /design
+2024-07-24T00:12:06.907+01:00 DEBUG 8636 --- [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:12:06.918+01:00 DEBUG 8636 --- [http-nio-8080-exec-10] o.s.s.w.s.HttpSessionRequestCache        : Saved request http://localhost:8080/design?continue to session
+2024-07-24T00:12:06.920+01:00 DEBUG 8636 --- [http-nio-8080-exec-10] o.s.s.web.DefaultRedirectStrategy        : Redirecting to http://localhost:8080/login
+2024-07-24T00:12:06.921+01:00 DEBUG 8636 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /login
+2024-07-24T00:12:06.921+01:00 DEBUG 8636 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /login
+2024-07-24T00:12:06.954+01:00 DEBUG 8636 --- [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:12:06.973+01:00 DEBUG 8636 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /css/styles.css
+2024-07-24T00:12:06.973+01:00 DEBUG 8636 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /images/TacoCloud.png
+2024-07-24T00:12:06.973+01:00 DEBUG 8636 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /css/styles.css
+2024-07-24T00:12:06.973+01:00 DEBUG 8636 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /images/TacoCloud.png
+2024-07-24T00:12:06.973+01:00 DEBUG 8636 --- [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:12:06.991+01:00 DEBUG 8636 --- [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:12:08.399+01:00 DEBUG 8636 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /register
+2024-07-24T00:12:08.401+01:00 DEBUG 8636 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /register
+2024-07-24T00:12:08.408+01:00 DEBUG 8636 --- [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:12:08.417+01:00 DEBUG 8636 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /images/taco.png
+2024-07-24T00:12:08.417+01:00 DEBUG 8636 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /css/styles.css
+2024-07-24T00:12:08.418+01:00 DEBUG 8636 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /css/styles.css
+2024-07-24T00:12:08.418+01:00 DEBUG 8636 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /images/taco.png
+2024-07-24T00:12:08.420+01:00 DEBUG 8636 --- [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:12:08.422+01:00 DEBUG 8636 --- [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:12:20.035+01:00 DEBUG 8636 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /register
+2024-07-24T00:12:20.035+01:00 DEBUG 8636 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /register
+2024-07-24T00:12:20.282+01:00 DEBUG 8636 --- [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:12:20.287+01:00 DEBUG 8636 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /login
+2024-07-24T00:12:20.287+01:00 DEBUG 8636 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /login
+2024-07-24T00:12:20.287+01:00 DEBUG 8636 --- [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:12:20.304+01:00 DEBUG 8636 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /css/styles.css
+2024-07-24T00:12:20.304+01:00 DEBUG 8636 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /images/TacoCloud.png
+2024-07-24T00:12:20.305+01:00 DEBUG 8636 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /images/TacoCloud.png
+2024-07-24T00:12:20.305+01:00 DEBUG 8636 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /css/styles.css
+2024-07-24T00:12:20.308+01:00 DEBUG 8636 --- [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:12:20.312+01:00 DEBUG 8636 --- [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:12:44.427+01:00  WARN 8636 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]

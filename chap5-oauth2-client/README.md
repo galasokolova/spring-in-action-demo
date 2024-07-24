@@ -5,7 +5,7 @@ where the example uses Facebook login.
 In this module, login via Google has been implemented .
 ###
 ### Setting Up Google OAuth2 for Your Application
-    Before build and run the module, follow these steps to configure Google OAuth2:
+Before build and run the module, follow these steps to configure Google OAuth2:
 ###
 #### Step 1: Create a Project in Google Cloud Console:
 1. Navigate to Google Cloud Console 

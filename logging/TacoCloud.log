@@ -1,0 +1,642 @@
+2024-07-24T00:07:44.848+01:00  WARN 9788 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-07-24T00:07:44.913+01:00  INFO 9788 --- [restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name userDetailsService
+2024-07-24T00:07:45.500+01:00 DEBUG 9788 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, CsrfFilter, LogoutFilter, UsernamePasswordAuthenticationFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, ExceptionTranslationFilter, AuthorizationFilter
+2024-07-24T00:07:47.557+01:00 DEBUG 9788 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /
+2024-07-24T00:07:47.570+01:00 DEBUG 9788 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /
+2024-07-24T00:07:47.779+01:00 DEBUG 9788 --- [http-nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:07:47.788+01:00 DEBUG 9788 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /css/styles.css
+2024-07-24T00:07:47.788+01:00 DEBUG 9788 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /images/taco.png
+2024-07-24T00:07:47.792+01:00 DEBUG 9788 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /css/styles.css
+2024-07-24T00:07:47.792+01:00 DEBUG 9788 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /images/taco.png
+2024-07-24T00:07:47.804+01:00 DEBUG 9788 --- [http-nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:07:47.808+01:00 DEBUG 9788 --- [http-nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:07:50.175+01:00 DEBUG 9788 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /design
+2024-07-24T00:07:50.176+01:00 DEBUG 9788 --- [http-nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:07:50.178+01:00 DEBUG 9788 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /design
+2024-07-24T00:07:50.397+01:00 DEBUG 9788 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /images/TacoCloud.png
+2024-07-24T00:07:50.397+01:00 DEBUG 9788 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /css/styles.css
+2024-07-24T00:07:50.398+01:00 DEBUG 9788 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /css/styles.css
+2024-07-24T00:07:50.400+01:00 DEBUG 9788 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /images/TacoCloud.png
+2024-07-24T00:07:50.404+01:00 DEBUG 9788 --- [http-nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:07:50.409+01:00 DEBUG 9788 --- [http-nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:07:54.260+01:00 DEBUG 9788 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing POST /design
+2024-07-24T00:07:54.269+01:00 DEBUG 9788 --- [http-nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:07:54.270+01:00 DEBUG 9788 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured POST /design
+2024-07-24T00:07:54.316+01:00 DEBUG 9788 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /images/TacoCloud.png
+2024-07-24T00:07:54.316+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /css/styles.css
+2024-07-24T00:07:54.317+01:00 DEBUG 9788 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /images/TacoCloud.png
+2024-07-24T00:07:54.317+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /css/styles.css
+2024-07-24T00:07:54.322+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:07:54.326+01:00 DEBUG 9788 --- [http-nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:07:58.652+01:00 DEBUG 9788 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing POST /design
+2024-07-24T00:07:58.653+01:00 DEBUG 9788 --- [http-nio-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:07:58.654+01:00 DEBUG 9788 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured POST /design
+2024-07-24T00:07:58.669+01:00 DEBUG 9788 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /orders/current
+2024-07-24T00:07:58.669+01:00 DEBUG 9788 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /orders/current
+2024-07-24T00:07:58.669+01:00 DEBUG 9788 --- [http-nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:07:58.704+01:00 DEBUG 9788 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /images/taco.png
+2024-07-24T00:07:58.704+01:00 DEBUG 9788 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /css/styles.css
+2024-07-24T00:07:58.706+01:00 DEBUG 9788 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /images/taco.png
+2024-07-24T00:07:58.706+01:00 DEBUG 9788 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /css/styles.css
+2024-07-24T00:07:58.709+01:00 DEBUG 9788 --- [http-nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:07:58.709+01:00 DEBUG 9788 --- [http-nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:08.552+01:00 DEBUG 9788 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /orders
+2024-07-24T00:08:08.554+01:00 DEBUG 9788 --- [http-nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:08.554+01:00 DEBUG 9788 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /orders
+2024-07-24T00:08:08.582+01:00  WARN 9788 --- [http-nio-8080-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23506, SQLState: 23506
+2024-07-24T00:08:08.583+01:00 ERROR 9788 --- [http-nio-8080-exec-4] o.h.engine.jdbc.spi.SqlExceptionHelper   : Referential integrity constraint violation: "FKI4KHWRTVA922O7VJCFK4RLEQV: PUBLIC.TACO_ORDER FOREIGN KEY(USER_ID) REFERENCES PUBLIC.USERS(ID) (CAST(1 AS BIGINT))"; SQL statement:
+insert into taco_order (cc_cvv,cc_expiration,cc_number,delivery_city,delivery_name,delivery_state,delivery_street,delivery_zip,placed_at,user_id,id) values (?,?,?,?,?,?,?,?,?,?,default) [23506-224]
+2024-07-24T00:08:08.595+01:00 ERROR 9788 --- [http-nio-8080-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement [Referential integrity constraint violation: "FKI4KHWRTVA922O7VJCFK4RLEQV: PUBLIC.TACO_ORDER FOREIGN KEY(USER_ID) REFERENCES PUBLIC.USERS(ID) (CAST(1 AS BIGINT))"; SQL statement:
+insert into taco_order (cc_cvv,cc_expiration,cc_number,delivery_city,delivery_name,delivery_state,delivery_street,delivery_zip,placed_at,user_id,id) values (?,?,?,?,?,?,?,?,?,?,default) [23506-224]] [insert into taco_order (cc_cvv,cc_expiration,cc_number,delivery_city,delivery_name,delivery_state,delivery_street,delivery_zip,placed_at,user_id,id) values (?,?,?,?,?,?,?,?,?,?,default)]; SQL [insert into taco_order (cc_cvv,cc_expiration,cc_number,delivery_city,delivery_name,delivery_state,delivery_street,delivery_zip,placed_at,user_id,id) values (?,?,?,?,?,?,?,?,?,?,default)]; constraint [KI4KHWRTVA922O7VJCFK4RLEQV]] with root cause
+
+org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: Referential integrity constraint violation: "FKI4KHWRTVA922O7VJCFK4RLEQV: PUBLIC.TACO_ORDER FOREIGN KEY(USER_ID) REFERENCES PUBLIC.USERS(ID) (CAST(1 AS BIGINT))"; SQL statement:
+insert into taco_order (cc_cvv,cc_expiration,cc_number,delivery_city,delivery_name,delivery_state,delivery_street,delivery_zip,placed_at,user_id,id) values (?,?,?,?,?,?,?,?,?,?,default) [23506-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:520) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.message.DbException.get(DbException.java:223) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.message.DbException.get(DbException.java:199) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.constraint.ConstraintReferential.checkRowOwnTable(ConstraintReferential.java:311) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.constraint.ConstraintReferential.checkRow(ConstraintReferential.java:252) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.table.Table.fireConstraints(Table.java:1200) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.table.Table.fireAfterRow(Table.java:1218) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.dml.Insert.insertRows(Insert.java:188) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.dml.Insert.update(Insert.java:135) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.CommandContainer.executeUpdateWithGeneratedKeys(CommandContainer.java:242) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.CommandContainer.update(CommandContainer.java:163) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.Command.executeUpdate(Command.java:256) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:216) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:174) ~[h2-2.2.224.jar:2.2.224]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.id.insert.GetGeneratedKeysDelegate.performMutation(GetGeneratedKeysDelegate.java:116) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:47) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.doStaticInserts(InsertCoordinatorStandard.java:194) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.coordinateInsert(InsertCoordinatorStandard.java:132) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.insert(InsertCoordinatorStandard.java:95) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:85) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:670) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:291) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:272) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:322) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:391) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:305) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:224) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:137) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:175) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:93) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:77) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:54) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:757) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:741) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:364) ~[spring-orm-6.1.11.jar:6.1.11]
+	at jdk.proxy4/jdk.proxy4.$Proxy159.persist(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:319) ~[spring-orm-6.1.11.jar:6.1.11]
+	at jdk.proxy4/jdk.proxy4.$Proxy159.persist(Unknown Source) ~[na:na]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:629) ~[spring-data-jpa-3.3.2.jar:3.3.2]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277) ~[spring-data-commons-3.3.2.jar:3.3.2]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170) ~[spring-data-commons-3.3.2.jar:3.3.2]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158) ~[spring-data-commons-3.3.2.jar:3.3.2]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516) ~[spring-data-commons-3.3.2.jar:3.3.2]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) ~[spring-data-commons-3.3.2.jar:3.3.2]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628) ~[spring-data-commons-3.3.2.jar:3.3.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:168) ~[spring-data-commons-3.3.2.jar:3.3.2]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143) ~[spring-data-commons-3.3.2.jar:3.3.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379) ~[spring-tx-6.1.11.jar:6.1.11]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.11.jar:6.1.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.1.11.jar:6.1.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165) ~[spring-data-jpa-3.3.2.jar:3.3.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.1.11.jar:6.1.11]
+	at jdk.proxy4/jdk.proxy4.$Proxy167.save(Unknown Source) ~[na:na]
+	at pt.galina.chap6loggingconfig.controller.OrderController.processOrder(OrderController.java:88) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:131) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2024-07-24T00:08:08.617+01:00 DEBUG 9788 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /error
+2024-07-24T00:08:08.617+01:00 DEBUG 9788 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /error
+2024-07-24T00:08:08.650+01:00 DEBUG 9788 --- [http-nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:13.388+01:00 DEBUG 9788 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /
+2024-07-24T00:08:13.389+01:00 DEBUG 9788 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /
+2024-07-24T00:08:13.394+01:00 DEBUG 9788 --- [http-nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:13.403+01:00 DEBUG 9788 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /images/taco.png
+2024-07-24T00:08:13.403+01:00 DEBUG 9788 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /css/styles.css
+2024-07-24T00:08:13.404+01:00 DEBUG 9788 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /images/taco.png
+2024-07-24T00:08:13.404+01:00 DEBUG 9788 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /css/styles.css
+2024-07-24T00:08:13.408+01:00 DEBUG 9788 --- [http-nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:13.409+01:00 DEBUG 9788 --- [http-nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:16.126+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /design
+2024-07-24T00:08:16.127+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:16.127+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /design
+2024-07-24T00:08:16.155+01:00 DEBUG 9788 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /css/styles.css
+2024-07-24T00:08:16.155+01:00 DEBUG 9788 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /images/TacoCloud.png
+2024-07-24T00:08:16.156+01:00 DEBUG 9788 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /css/styles.css
+2024-07-24T00:08:16.156+01:00 DEBUG 9788 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /images/TacoCloud.png
+2024-07-24T00:08:16.158+01:00 DEBUG 9788 --- [http-nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:16.162+01:00 DEBUG 9788 --- [http-nio-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:20.467+01:00 DEBUG 9788 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing POST /design
+2024-07-24T00:08:20.468+01:00 DEBUG 9788 --- [http-nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:20.468+01:00 DEBUG 9788 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured POST /design
+2024-07-24T00:08:20.480+01:00 DEBUG 9788 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /orders/current
+2024-07-24T00:08:20.481+01:00 DEBUG 9788 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /orders/current
+2024-07-24T00:08:20.481+01:00 DEBUG 9788 --- [http-nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:20.501+01:00 DEBUG 9788 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /images/taco.png
+2024-07-24T00:08:20.501+01:00 DEBUG 9788 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /css/styles.css
+2024-07-24T00:08:20.501+01:00 DEBUG 9788 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /images/taco.png
+2024-07-24T00:08:20.501+01:00 DEBUG 9788 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /css/styles.css
+2024-07-24T00:08:20.504+01:00 DEBUG 9788 --- [http-nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:20.504+01:00 DEBUG 9788 --- [http-nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:23.268+01:00 DEBUG 9788 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /orders
+2024-07-24T00:08:23.270+01:00 DEBUG 9788 --- [http-nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:23.270+01:00 DEBUG 9788 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /orders
+2024-07-24T00:08:23.274+01:00  WARN 9788 --- [http-nio-8080-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23506, SQLState: 23506
+2024-07-24T00:08:23.274+01:00 ERROR 9788 --- [http-nio-8080-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : Referential integrity constraint violation: "FKI4KHWRTVA922O7VJCFK4RLEQV: PUBLIC.TACO_ORDER FOREIGN KEY(USER_ID) REFERENCES PUBLIC.USERS(ID) (CAST(1 AS BIGINT))"; SQL statement:
+insert into taco_order (cc_cvv,cc_expiration,cc_number,delivery_city,delivery_name,delivery_state,delivery_street,delivery_zip,placed_at,user_id,id) values (?,?,?,?,?,?,?,?,?,?,default) [23506-224]
+2024-07-24T00:08:23.276+01:00 ERROR 9788 --- [http-nio-8080-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement [Referential integrity constraint violation: "FKI4KHWRTVA922O7VJCFK4RLEQV: PUBLIC.TACO_ORDER FOREIGN KEY(USER_ID) REFERENCES PUBLIC.USERS(ID) (CAST(1 AS BIGINT))"; SQL statement:
+insert into taco_order (cc_cvv,cc_expiration,cc_number,delivery_city,delivery_name,delivery_state,delivery_street,delivery_zip,placed_at,user_id,id) values (?,?,?,?,?,?,?,?,?,?,default) [23506-224]] [insert into taco_order (cc_cvv,cc_expiration,cc_number,delivery_city,delivery_name,delivery_state,delivery_street,delivery_zip,placed_at,user_id,id) values (?,?,?,?,?,?,?,?,?,?,default)]; SQL [insert into taco_order (cc_cvv,cc_expiration,cc_number,delivery_city,delivery_name,delivery_state,delivery_street,delivery_zip,placed_at,user_id,id) values (?,?,?,?,?,?,?,?,?,?,default)]; constraint [KI4KHWRTVA922O7VJCFK4RLEQV]] with root cause
+
+org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: Referential integrity constraint violation: "FKI4KHWRTVA922O7VJCFK4RLEQV: PUBLIC.TACO_ORDER FOREIGN KEY(USER_ID) REFERENCES PUBLIC.USERS(ID) (CAST(1 AS BIGINT))"; SQL statement:
+insert into taco_order (cc_cvv,cc_expiration,cc_number,delivery_city,delivery_name,delivery_state,delivery_street,delivery_zip,placed_at,user_id,id) values (?,?,?,?,?,?,?,?,?,?,default) [23506-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:520) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.message.DbException.get(DbException.java:223) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.message.DbException.get(DbException.java:199) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.constraint.ConstraintReferential.checkRowOwnTable(ConstraintReferential.java:311) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.constraint.ConstraintReferential.checkRow(ConstraintReferential.java:252) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.table.Table.fireConstraints(Table.java:1200) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.table.Table.fireAfterRow(Table.java:1218) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.dml.Insert.insertRows(Insert.java:188) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.dml.Insert.update(Insert.java:135) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.CommandContainer.executeUpdateWithGeneratedKeys(CommandContainer.java:242) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.CommandContainer.update(CommandContainer.java:163) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.command.Command.executeUpdate(Command.java:256) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:216) ~[h2-2.2.224.jar:2.2.224]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:174) ~[h2-2.2.224.jar:2.2.224]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-5.1.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-5.1.0.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:194) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.id.insert.GetGeneratedKeysDelegate.performMutation(GetGeneratedKeysDelegate.java:116) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:47) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:55) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.doStaticInserts(InsertCoordinatorStandard.java:194) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.coordinateInsert(InsertCoordinatorStandard.java:132) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.insert(InsertCoordinatorStandard.java:95) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.action.internal.EntityIdentityInsertAction.execute(EntityIdentityInsertAction.java:85) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.spi.ActionQueue.execute(ActionQueue.java:670) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.spi.ActionQueue.addResolvedEntityInsertAction(ActionQueue.java:291) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.spi.ActionQueue.addInsertAction(ActionQueue.java:272) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.spi.ActionQueue.addAction(ActionQueue.java:322) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.addInsertAction(AbstractSaveEventListener.java:391) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSaveOrReplicate(AbstractSaveEventListener.java:305) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.performSave(AbstractSaveEventListener.java:224) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.AbstractSaveEventListener.saveWithGeneratedId(AbstractSaveEventListener.java:137) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.entityIsTransient(DefaultPersistEventListener.java:175) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.persist(DefaultPersistEventListener.java:93) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:77) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.DefaultPersistEventListener.onPersist(DefaultPersistEventListener.java:54) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.firePersist(SessionImpl.java:757) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.persist(SessionImpl.java:741) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:364) ~[spring-orm-6.1.11.jar:6.1.11]
+	at jdk.proxy4/jdk.proxy4.$Proxy159.persist(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.orm.jpa.SharedEntityManagerCreator$SharedEntityManagerInvocationHandler.invoke(SharedEntityManagerCreator.java:319) ~[spring-orm-6.1.11.jar:6.1.11]
+	at jdk.proxy4/jdk.proxy4.$Proxy159.persist(Unknown Source) ~[na:na]
+	at org.springframework.data.jpa.repository.support.SimpleJpaRepository.save(SimpleJpaRepository.java:629) ~[spring-data-jpa-3.3.2.jar:3.3.2]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker$RepositoryFragmentMethodInvoker.lambda$new$0(RepositoryMethodInvoker.java:277) ~[spring-data-commons-3.3.2.jar:3.3.2]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170) ~[spring-data-commons-3.3.2.jar:3.3.2]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158) ~[spring-data-commons-3.3.2.jar:3.3.2]
+	at org.springframework.data.repository.core.support.RepositoryComposition$RepositoryFragments.invoke(RepositoryComposition.java:516) ~[spring-data-commons-3.3.2.jar:3.3.2]
+	at org.springframework.data.repository.core.support.RepositoryComposition.invoke(RepositoryComposition.java:285) ~[spring-data-commons-3.3.2.jar:3.3.2]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$ImplementationMethodExecutionInterceptor.invoke(RepositoryFactorySupport.java:628) ~[spring-data-commons-3.3.2.jar:3.3.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:168) ~[spring-data-commons-3.3.2.jar:3.3.2]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:143) ~[spring-data-commons-3.3.2.jar:3.3.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379) ~[spring-tx-6.1.11.jar:6.1.11]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.11.jar:6.1.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.1.11.jar:6.1.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165) ~[spring-data-jpa-3.3.2.jar:3.3.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.1.11.jar:6.1.11]
+	at jdk.proxy4/jdk.proxy4.$Proxy167.save(Unknown Source) ~[na:na]
+	at pt.galina.chap6loggingconfig.controller.OrderController.processOrder(OrderController.java:88) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$FilterObservation$SimpleFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:479) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$1(ObservationFilterChainDecorator.java:340) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator.lambda$wrapSecured$0(ObservationFilterChainDecorator.java:82) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:128) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:221) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.csrf.CsrfFilter.doFilterInternal(CsrfFilter.java:131) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:227) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.wrapFilter(ObservationFilterChainDecorator.java:240) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$AroundFilterObservation$SimpleAroundFilterObservation.lambda$wrap$0(ObservationFilterChainDecorator.java:323) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$ObservationFilter.doFilter(ObservationFilterChainDecorator.java:224) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.ObservationFilterChainDecorator$VirtualFilterChain.doFilter(ObservationFilterChainDecorator.java:137) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.ServerHttpObservationFilter.doFilterInternal(ServerHttpObservationFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+
+2024-07-24T00:08:23.279+01:00 DEBUG 9788 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing POST /error
+2024-07-24T00:08:23.280+01:00 DEBUG 9788 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured POST /error
+2024-07-24T00:08:23.294+01:00 DEBUG 9788 --- [http-nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:28.776+01:00 DEBUG 9788 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /
+2024-07-24T00:08:28.777+01:00 DEBUG 9788 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /
+2024-07-24T00:08:28.781+01:00 DEBUG 9788 --- [http-nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:28.793+01:00 DEBUG 9788 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /css/styles.css
+2024-07-24T00:08:28.793+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /images/taco.png
+2024-07-24T00:08:28.794+01:00 DEBUG 9788 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /css/styles.css
+2024-07-24T00:08:28.794+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /images/taco.png
+2024-07-24T00:08:28.797+01:00 DEBUG 9788 --- [http-nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:28.797+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:34.807+01:00 DEBUG 9788 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing POST /logout
+2024-07-24T00:08:34.814+01:00 DEBUG 9788 --- [http-nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:34.815+01:00 DEBUG 9788 --- [http-nio-8080-exec-9] o.s.s.w.a.logout.LogoutFilter            : Logging out [UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$Dc/vRAvxImAZBzot.i0e7Ou5mbAAGmE3Ldlp8DaO6OODDiG0iwwku, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=C6E0F5F9D6EDA7378D34F52FB64F6F32], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:34.816+01:00 DEBUG 9788 --- [http-nio-8080-exec-9] o.s.s.w.a.l.SecurityContextLogoutHandler : Invalidated session 178FF737CCD44EF68AB0C51FB2220508
+2024-07-24T00:08:34.818+01:00 DEBUG 9788 --- [http-nio-8080-exec-9] o.s.s.web.DefaultRedirectStrategy        : Redirecting to /
+2024-07-24T00:08:34.822+01:00 DEBUG 9788 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /
+2024-07-24T00:08:34.823+01:00 DEBUG 9788 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /
+2024-07-24T00:08:34.849+01:00 DEBUG 9788 --- [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:08:34.865+01:00 DEBUG 9788 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /images/taco.png
+2024-07-24T00:08:34.865+01:00 DEBUG 9788 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /css/styles.css
+2024-07-24T00:08:34.865+01:00 DEBUG 9788 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /images/taco.png
+2024-07-24T00:08:34.865+01:00 DEBUG 9788 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /css/styles.css
+2024-07-24T00:08:34.865+01:00 DEBUG 9788 --- [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:08:34.865+01:00 DEBUG 9788 --- [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:08:36.003+01:00 DEBUG 9788 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing POST /logout
+2024-07-24T00:08:36.003+01:00 DEBUG 9788 --- [http-nio-8080-exec-2] o.s.s.w.a.logout.LogoutFilter            : Logging out [null]
+2024-07-24T00:08:36.003+01:00 DEBUG 9788 --- [http-nio-8080-exec-2] o.s.s.w.a.l.SecurityContextLogoutHandler : Invalidated session CA04EEAECF0DD5481E7144FC21EC592B
+2024-07-24T00:08:36.003+01:00 DEBUG 9788 --- [http-nio-8080-exec-2] o.s.s.web.DefaultRedirectStrategy        : Redirecting to /
+2024-07-24T00:08:36.003+01:00 DEBUG 9788 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /
+2024-07-24T00:08:36.014+01:00 DEBUG 9788 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /
+2024-07-24T00:08:36.017+01:00 DEBUG 9788 --- [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:08:36.026+01:00 DEBUG 9788 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /images/taco.png
+2024-07-24T00:08:36.026+01:00 DEBUG 9788 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /css/styles.css
+2024-07-24T00:08:36.027+01:00 DEBUG 9788 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /css/styles.css
+2024-07-24T00:08:36.027+01:00 DEBUG 9788 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /images/taco.png
+2024-07-24T00:08:36.029+01:00 DEBUG 9788 --- [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:08:36.031+01:00 DEBUG 9788 --- [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:08:37.087+01:00 DEBUG 9788 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /design
+2024-07-24T00:08:37.088+01:00 DEBUG 9788 --- [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:08:37.092+01:00 DEBUG 9788 --- [http-nio-8080-exec-7] o.s.s.w.s.HttpSessionRequestCache        : Saved request http://localhost:8080/design?continue to session
+2024-07-24T00:08:37.097+01:00 DEBUG 9788 --- [http-nio-8080-exec-7] o.s.s.web.DefaultRedirectStrategy        : Redirecting to http://localhost:8080/login
+2024-07-24T00:08:37.102+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /login
+2024-07-24T00:08:37.102+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /login
+2024-07-24T00:08:37.106+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:08:37.115+01:00 DEBUG 9788 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /images/TacoCloud.png
+2024-07-24T00:08:37.115+01:00 DEBUG 9788 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /css/styles.css
+2024-07-24T00:08:37.116+01:00 DEBUG 9788 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /images/TacoCloud.png
+2024-07-24T00:08:37.116+01:00 DEBUG 9788 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /css/styles.css
+2024-07-24T00:08:37.119+01:00 DEBUG 9788 --- [http-nio-8080-exec-9] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:08:37.121+01:00 DEBUG 9788 --- [http-nio-8080-exec-10] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:08:38.655+01:00 DEBUG 9788 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /register
+2024-07-24T00:08:38.656+01:00 DEBUG 9788 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /register
+2024-07-24T00:08:38.661+01:00 DEBUG 9788 --- [http-nio-8080-exec-1] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:08:38.670+01:00 DEBUG 9788 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing GET /css/styles.css
+2024-07-24T00:08:38.670+01:00 DEBUG 9788 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /images/taco.png
+2024-07-24T00:08:38.671+01:00 DEBUG 9788 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured GET /css/styles.css
+2024-07-24T00:08:38.671+01:00 DEBUG 9788 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /images/taco.png
+2024-07-24T00:08:38.673+01:00 DEBUG 9788 --- [http-nio-8080-exec-3] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:08:38.674+01:00 DEBUG 9788 --- [http-nio-8080-exec-2] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:08:45.131+01:00 DEBUG 9788 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing POST /register
+2024-07-24T00:08:45.132+01:00 DEBUG 9788 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured POST /register
+2024-07-24T00:08:45.266+01:00 DEBUG 9788 --- [http-nio-8080-exec-4] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:08:45.266+01:00 DEBUG 9788 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /login
+2024-07-24T00:08:45.266+01:00 DEBUG 9788 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /login
+2024-07-24T00:08:45.266+01:00 DEBUG 9788 --- [http-nio-8080-exec-5] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:08:45.287+01:00 DEBUG 9788 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /images/TacoCloud.png
+2024-07-24T00:08:45.287+01:00 DEBUG 9788 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing GET /css/styles.css
+2024-07-24T00:08:45.288+01:00 DEBUG 9788 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /images/TacoCloud.png
+2024-07-24T00:08:45.288+01:00 DEBUG 9788 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured GET /css/styles.css
+2024-07-24T00:08:45.292+01:00 DEBUG 9788 --- [http-nio-8080-exec-6] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:08:45.294+01:00 DEBUG 9788 --- [http-nio-8080-exec-7] o.s.s.w.a.AnonymousAuthenticationFilter  : Set SecurityContextHolder to anonymous SecurityContext
+2024-07-24T00:08:47.957+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing POST /login
+2024-07-24T00:08:48.215+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] o.s.s.a.dao.DaoAuthenticationProvider    : Authenticated user
+2024-07-24T00:08:48.215+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] .s.ChangeSessionIdAuthenticationStrategy : Changed session id from 9177571D98AB47296E5E22A0C4C5C118
+2024-07-24T00:08:48.215+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] o.s.s.w.csrf.CsrfAuthenticationStrategy  : Replaced CSRF Token
+2024-07-24T00:08:48.215+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Stored SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$d2Fhu2Y.mNTiFnPEVrQej.STN3mTjuuJOneC6BnIlVwCY9BVwP4kq, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9177571D98AB47296E5E22A0C4C5C118], Granted Authorities=[ROLE_USER]]] to HttpSession [org.apache.catalina.session.StandardSessionFacade@5ac0f32]
+2024-07-24T00:08:48.215+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] w.a.UsernamePasswordAuthenticationFilter : Set SecurityContextHolder to UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$d2Fhu2Y.mNTiFnPEVrQej.STN3mTjuuJOneC6BnIlVwCY9BVwP4kq, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9177571D98AB47296E5E22A0C4C5C118], Granted Authorities=[ROLE_USER]]
+2024-07-24T00:08:48.215+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] o.s.s.web.DefaultRedirectStrategy        : Redirecting to http://localhost:8080/design?continue
+2024-07-24T00:08:48.232+01:00 DEBUG 9788 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /design?continue
+2024-07-24T00:08:48.232+01:00 DEBUG 9788 --- [http-nio-8080-exec-9] o.s.s.w.s.HttpSessionRequestCache        : Loaded matching saved request http://localhost:8080/design?continue
+2024-07-24T00:08:48.232+01:00 DEBUG 9788 --- [http-nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$d2Fhu2Y.mNTiFnPEVrQej.STN3mTjuuJOneC6BnIlVwCY9BVwP4kq, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9177571D98AB47296E5E22A0C4C5C118], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:48.232+01:00 DEBUG 9788 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /design?continue
+2024-07-24T00:08:48.271+01:00 DEBUG 9788 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /images/TacoCloud.png
+2024-07-24T00:08:48.271+01:00 DEBUG 9788 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Securing GET /css/styles.css
+2024-07-24T00:08:48.280+01:00 DEBUG 9788 --- [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /images/TacoCloud.png
+2024-07-24T00:08:48.280+01:00 DEBUG 9788 --- [http-nio-8080-exec-10] o.s.security.web.FilterChainProxy        : Secured GET /css/styles.css
+2024-07-24T00:08:48.282+01:00 DEBUG 9788 --- [http-nio-8080-exec-10] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$d2Fhu2Y.mNTiFnPEVrQej.STN3mTjuuJOneC6BnIlVwCY9BVwP4kq, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9177571D98AB47296E5E22A0C4C5C118], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:48.286+01:00 DEBUG 9788 --- [http-nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$d2Fhu2Y.mNTiFnPEVrQej.STN3mTjuuJOneC6BnIlVwCY9BVwP4kq, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9177571D98AB47296E5E22A0C4C5C118], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:52.613+01:00 DEBUG 9788 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Securing POST /design
+2024-07-24T00:08:52.614+01:00 DEBUG 9788 --- [http-nio-8080-exec-3] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$d2Fhu2Y.mNTiFnPEVrQej.STN3mTjuuJOneC6BnIlVwCY9BVwP4kq, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9177571D98AB47296E5E22A0C4C5C118], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:52.614+01:00 DEBUG 9788 --- [http-nio-8080-exec-3] o.s.security.web.FilterChainProxy        : Secured POST /design
+2024-07-24T00:08:52.624+01:00 DEBUG 9788 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Securing GET /orders/current
+2024-07-24T00:08:52.625+01:00 DEBUG 9788 --- [http-nio-8080-exec-2] o.s.security.web.FilterChainProxy        : Secured GET /orders/current
+2024-07-24T00:08:52.625+01:00 DEBUG 9788 --- [http-nio-8080-exec-2] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$d2Fhu2Y.mNTiFnPEVrQej.STN3mTjuuJOneC6BnIlVwCY9BVwP4kq, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9177571D98AB47296E5E22A0C4C5C118], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:52.632+01:00 DEBUG 9788 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Securing GET /images/taco.png
+2024-07-24T00:08:52.632+01:00 DEBUG 9788 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Securing GET /css/styles.css
+2024-07-24T00:08:52.632+01:00 DEBUG 9788 --- [http-nio-8080-exec-4] o.s.security.web.FilterChainProxy        : Secured GET /css/styles.css
+2024-07-24T00:08:52.632+01:00 DEBUG 9788 --- [http-nio-8080-exec-5] o.s.security.web.FilterChainProxy        : Secured GET /images/taco.png
+2024-07-24T00:08:52.632+01:00 DEBUG 9788 --- [http-nio-8080-exec-4] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$d2Fhu2Y.mNTiFnPEVrQej.STN3mTjuuJOneC6BnIlVwCY9BVwP4kq, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9177571D98AB47296E5E22A0C4C5C118], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:52.646+01:00 DEBUG 9788 --- [http-nio-8080-exec-5] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$d2Fhu2Y.mNTiFnPEVrQej.STN3mTjuuJOneC6BnIlVwCY9BVwP4kq, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9177571D98AB47296E5E22A0C4C5C118], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:59.996+01:00 DEBUG 9788 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Securing POST /orders
+2024-07-24T00:08:59.997+01:00 DEBUG 9788 --- [http-nio-8080-exec-6] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$d2Fhu2Y.mNTiFnPEVrQej.STN3mTjuuJOneC6BnIlVwCY9BVwP4kq, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9177571D98AB47296E5E22A0C4C5C118], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:08:59.998+01:00 DEBUG 9788 --- [http-nio-8080-exec-6] o.s.security.web.FilterChainProxy        : Secured POST /orders
+2024-07-24T00:09:00.014+01:00 DEBUG 9788 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Securing GET /orders/orderList
+2024-07-24T00:09:00.014+01:00 DEBUG 9788 --- [http-nio-8080-exec-7] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$d2Fhu2Y.mNTiFnPEVrQej.STN3mTjuuJOneC6BnIlVwCY9BVwP4kq, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9177571D98AB47296E5E22A0C4C5C118], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:09:00.014+01:00 DEBUG 9788 --- [http-nio-8080-exec-7] o.s.security.web.FilterChainProxy        : Secured GET /orders/orderList
+2024-07-24T00:09:00.068+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Securing GET /css/styles.css
+2024-07-24T00:09:00.068+01:00 DEBUG 9788 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Securing GET /images/taco_order.png
+2024-07-24T00:09:00.068+01:00 DEBUG 9788 --- [http-nio-8080-exec-9] o.s.security.web.FilterChainProxy        : Secured GET /images/taco_order.png
+2024-07-24T00:09:00.068+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] o.s.security.web.FilterChainProxy        : Secured GET /css/styles.css
+2024-07-24T00:09:00.068+01:00 DEBUG 9788 --- [http-nio-8080-exec-8] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$d2Fhu2Y.mNTiFnPEVrQej.STN3mTjuuJOneC6BnIlVwCY9BVwP4kq, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9177571D98AB47296E5E22A0C4C5C118], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:09:00.080+01:00 DEBUG 9788 --- [http-nio-8080-exec-9] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=User(id=1, username=4061700044887597, password=$2a$10$d2Fhu2Y.mNTiFnPEVrQej.STN3mTjuuJOneC6BnIlVwCY9BVwP4kq, fullname=Galina Sokolova, street=Rua Ary dos Santos 489, city=Cascais, state=4061700044887597, zip=2775-337, phoneNumber=965327346), Credentials=[PROTECTED], Authenticated=true, Details=WebAuthenticationDetails [RemoteIpAddress=0:0:0:0:0:0:0:1, SessionId=9177571D98AB47296E5E22A0C4C5C118], Granted Authorities=[ROLE_USER]]]
+2024-07-24T00:10:01.314+01:00  WARN 9788 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'inMemoryDatabaseShutdownExecutor': org.h2.jdbc.JdbcSQLNonTransientConnectionException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-224]

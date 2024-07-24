@@ -15,6 +15,7 @@ import java.util.List;
 
 @SpringBootApplication
 public class Chap5Oauth2ClientApplication {
+
     private final ResourceLoader resourceLoader;
 
     public Chap5Oauth2ClientApplication(ResourceLoader resourceLoader) {
