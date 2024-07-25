@@ -8,7 +8,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-
 @Configuration
 public class SecurityConfig{
     @Bean
@@ -25,17 +24,12 @@ public class SecurityConfig{
                                  .requestMatchers("/h2-console/**").permitAll() // Разрешение доступа к H2-консоли
                                  .anyRequest().permitAll()
                  )
-                 .formLogin(
-                         form -> form
-                         .loginPage("/login")
-                 )
+                 .formLogin(form -> form.loginPage("/login"))
                  .logout(logout -> logout.logoutSuccessUrl("/").permitAll())
                  .headers(httpSecurityHeadersConfigurer -> httpSecurityHeadersConfigurer
-                         .frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin)
-                 )
+                         .frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin))
                  .csrf(csrf -> csrf
-                         .ignoringRequestMatchers("/h2-console/**") // Отключение CSRF для H2-консоли
-                 )
+                         .ignoringRequestMatchers("/h2-console/**")) // Turning off CSRF for H2-console
                  .requiresChannel(channelRequestMatcherRegistry -> channelRequestMatcherRegistry
                          .anyRequest().requiresSecure()
                  );

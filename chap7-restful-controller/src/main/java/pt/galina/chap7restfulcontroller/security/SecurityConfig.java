@@ -8,7 +8,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
-
 @Configuration
 public class SecurityConfig{
 
@@ -17,29 +16,22 @@ public class SecurityConfig{
         return new BCryptPasswordEncoder();
     }
 
-
-
-
-
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
          http
-                 .authorizeHttpRequests(             //instead of the method authorizeRequests which is deprecated (page 125 part 5.3.1)
+                 .authorizeHttpRequests(
                          authz -> authz
-                                 .requestMatchers("/design", "/orders", "/orders/orderList")
-                                 .hasRole("USER")
+                                 .requestMatchers("/design", "/orders", "/orders/orderList").hasRole("USER")
+                                 .requestMatchers("/h2-console/**").permitAll() // Разрешение доступа к H2-консоли
                                  .anyRequest().permitAll()
                  )
-                 .formLogin(
-                         form -> form
-                         .loginPage("/login")
-                 )
+                 .formLogin(form -> form.loginPage("/login"))
                  .logout(logout -> logout.logoutSuccessUrl("/").permitAll())
-                 .headers(
-                         httpSecurityHeadersConfigurer -> httpSecurityHeadersConfigurer
-                                 .frameOptions(
-                                         HeadersConfigurer.FrameOptionsConfig::sameOrigin)
-                 );
+                 .headers(httpSecurityHeadersConfigurer -> httpSecurityHeadersConfigurer
+                                 .frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin))
+                 .csrf(csrf -> csrf
+                         .ignoringRequestMatchers("/h2-console/**")); // Turning off CSRF for H2-console
+
 
          return http.build();
     }

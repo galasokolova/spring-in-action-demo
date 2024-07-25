@@ -5,6 +5,10 @@ spring:
   datasource:
     generate-unique-name: false
     name: tacocloud
+    url: jdbc:h2:mem:tacocloud
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
   h2:
     console:
       enabled: true
@@ -16,14 +20,10 @@ spring:
 
 logging:
   level:
-    root: warn
-    org.springframework.security: warn
+    root: debug
+    org.springframework.security: debug
 
 taco:
   orders:
     page-size: 10
----
 
-spring:
-  profiles:
-    active: dev
