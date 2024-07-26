@@ -3,11 +3,11 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Taco Cloud</title>
-        <link rel="stylesheet" th:href="@{/styles.css}" />
+        <link rel="stylesheet" th:href="@{/css/styles.css}" />
 </head>
 <body>
 <h1>Design your taco!</h1>
-<img th:src="@{/images/TacoCloud.png}" alt="ImageOfTaco"/>
+<img th:src="@{/images/taco.png}" alt="ImageOfTaco"/>
 <form th:method="POST" th:object="${taco}" th:action="@{/design}" id="tacoForm">
     <div class="grid">
         <div class="ingredient-group" id="wraps">

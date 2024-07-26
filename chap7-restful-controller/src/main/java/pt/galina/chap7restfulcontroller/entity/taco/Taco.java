@@ -1,9 +1,11 @@
-package pt.galina.rest_controller.entity.taco;
+package pt.galina.chap7restfulcontroller.entity.taco;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -29,6 +31,8 @@ public class Taco {
 
     @ManyToOne
     @JoinColumn(name = "taco_order")
+    @JsonBackReference   // for displaying id of orders in json correctly
+    @ToString.Exclude
     private TacoOrder tacoOrder;
 
     @Column(name = "created_at")

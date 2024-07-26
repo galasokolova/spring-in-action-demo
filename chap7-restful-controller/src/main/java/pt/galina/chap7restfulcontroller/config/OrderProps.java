@@ -1,4 +1,4 @@
-package pt.galina.rest_controller.config;
+package pt.galina.chap7restfulcontroller.config;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

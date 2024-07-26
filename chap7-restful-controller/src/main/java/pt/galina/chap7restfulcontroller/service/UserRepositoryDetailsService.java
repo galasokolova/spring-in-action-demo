@@ -1,11 +1,11 @@
-package pt.galina.rest_controller.service;
+package pt.galina.chap7restfulcontroller.service;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import pt.galina.rest_controller.data.UserRepository;
-import pt.galina.rest_controller.entity.user.User;
+import pt.galina.chap7restfulcontroller.data.UserRepository;
+import pt.galina.chap7restfulcontroller.entity.user.User;
 
 @Service
 public class UserRepositoryDetailsService{

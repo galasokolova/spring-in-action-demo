@@ -1,4 +1,4 @@
-package pt.galina.rest_controller.controller;
+package pt.galina.chap7restfulcontroller.controller;
 
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -10,11 +10,10 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
-import pt.galina.rest_controller.config.OrderProps;
-import pt.galina.rest_controller.data.OrderRepository;
-import pt.galina.rest_controller.entity.taco.Taco;
-import pt.galina.rest_controller.entity.taco.TacoOrder;
-import pt.galina.rest_controller.entity.user.User;
+import pt.galina.chap7restfulcontroller.config.OrderProps;
+import pt.galina.chap7restfulcontroller.data.OrderRepository;
+import pt.galina.chap7restfulcontroller.entity.taco.TacoOrder;
+import pt.galina.chap7restfulcontroller.entity.user.User;
 
 
 @Slf4j

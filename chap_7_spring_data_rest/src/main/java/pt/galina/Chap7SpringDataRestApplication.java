@@ -42,7 +42,6 @@ public class Chap7SpringDataRestApplication {
 	}
 
 	@Bean
-	@Profile("!prod")
 	public CommandLineRunner dataLoader(IngredientRepository repo, ObjectMapper objectMapper) {
 		return args -> {
 			InputStream inputStream = resourceLoader.getResource("classpath:ingredient.json").getInputStream();

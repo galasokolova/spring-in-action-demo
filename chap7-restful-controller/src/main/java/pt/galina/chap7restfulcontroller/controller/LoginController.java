@@ -1,4 +1,4 @@
-package pt.galina.rest_controller.controller;
+package pt.galina.chap7restfulcontroller.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

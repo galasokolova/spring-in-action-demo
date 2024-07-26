@@ -35,10 +35,8 @@ public class SecurityConfig{
                          .loginPage("/login")
                  )
                  .logout(logout -> logout.logoutSuccessUrl("/").permitAll())
-                 .headers(
-                         httpSecurityHeadersConfigurer -> httpSecurityHeadersConfigurer
-                                 .frameOptions(
-                                         HeadersConfigurer.FrameOptionsConfig::sameOrigin)
+                 .headers(httpSecurityHeadersConfigurer -> httpSecurityHeadersConfigurer
+                                 .frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin)
                  );
 
          return http.build();

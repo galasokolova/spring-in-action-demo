@@ -1,8 +1,8 @@
-package pt.galina.rest_controller.security;
+package pt.galina.chap7restfulcontroller.security;
 
 import lombok.Data;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import pt.galina.rest_controller.entity.user.User;
+import pt.galina.chap7restfulcontroller.entity.user.User;
 
 @Data
 public class RegistrationForm {

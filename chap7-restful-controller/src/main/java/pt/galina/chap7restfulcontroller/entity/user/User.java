@@ -1,4 +1,4 @@
-package pt.galina.rest_controller.entity.user;
+package pt.galina.chap7restfulcontroller.entity.user;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;

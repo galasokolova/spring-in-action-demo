@@ -1,12 +1,13 @@
-package pt.galina.rest_controller.entity.taco;
+package pt.galina.chap7restfulcontroller.entity.taco;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;
-import pt.galina.rest_controller.entity.user.User;
+import pt.galina.chap7restfulcontroller.entity.user.User;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -66,11 +67,12 @@ public class TacoOrder implements Serializable {
     @JoinColumn(name = "user_id")
     private User user;
 
-
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tacoOrder")
+    @JsonManagedReference     // for displaying id of orders in json correctly
     private List<Taco> tacos = new ArrayList<>();
 
     public void addTaco(Taco taco) {
+        taco.setTacoOrder(this);
         this.tacos.add(taco);
     }
 

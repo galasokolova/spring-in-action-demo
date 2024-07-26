@@ -1,12 +1,12 @@
-package pt.galina.rest_controller.controller;
+package pt.galina.chap7restfulcontroller.controller;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import pt.galina.rest_controller.data.UserRepository;
-import pt.galina.rest_controller.security.RegistrationForm;
+import pt.galina.chap7restfulcontroller.data.UserRepository;
+import pt.galina.chap7restfulcontroller.security.RegistrationForm;
 
 @Controller
 @RequestMapping("/register")

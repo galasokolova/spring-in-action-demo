@@ -1,9 +1,9 @@
-package pt.galina.rest_controller.data;
+package pt.galina.chap7restfulcontroller.data;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;
-import pt.galina.rest_controller.entity.taco.TacoOrder;
-import pt.galina.rest_controller.entity.user.User;
+import pt.galina.chap7restfulcontroller.entity.taco.TacoOrder;
+import pt.galina.chap7restfulcontroller.entity.user.User;
 
 import java.util.List;
 

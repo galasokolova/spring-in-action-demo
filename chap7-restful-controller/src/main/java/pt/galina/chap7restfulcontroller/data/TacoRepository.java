@@ -1,7 +1,7 @@
-package pt.galina.rest_controller.data;
+package pt.galina.chap7restfulcontroller.data;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
-import pt.galina.rest_controller.entity.taco.Taco;
+import pt.galina.chap7restfulcontroller.entity.taco.Taco;
 
 import java.util.Optional;
 

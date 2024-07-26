@@ -1,10 +1,10 @@
-package pt.galina.rest_controller.controller;
+package pt.galina.chap7restfulcontroller.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pt.galina.rest_controller.data.IngredientRepository;
-import pt.galina.rest_controller.entity.taco.Ingredient;
+import pt.galina.chap7restfulcontroller.data.IngredientRepository;
+import pt.galina.chap7restfulcontroller.entity.taco.Ingredient;
 
 import java.util.Optional;
 

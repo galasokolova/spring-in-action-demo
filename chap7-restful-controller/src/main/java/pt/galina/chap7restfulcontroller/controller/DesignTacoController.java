@@ -1,4 +1,4 @@
-package pt.galina.rest_controller.controller;
+package pt.galina.chap7restfulcontroller.controller;
 
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -8,13 +8,13 @@ import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
-import pt.galina.rest_controller.data.IngredientRepository;
-import pt.galina.rest_controller.entity.taco.Ingredient;
-import pt.galina.rest_controller.entity.taco.Ingredient.Type;
-import pt.galina.rest_controller.entity.taco.Taco;
-import pt.galina.rest_controller.entity.taco.TacoOrder;
-import pt.galina.rest_controller.entity.user.User;
-import pt.galina.rest_controller.data.UserRepository;
+import pt.galina.chap7restfulcontroller.data.IngredientRepository;
+import pt.galina.chap7restfulcontroller.data.UserRepository;
+import pt.galina.chap7restfulcontroller.entity.taco.Ingredient;
+import pt.galina.chap7restfulcontroller.entity.taco.Ingredient.Type;
+import pt.galina.chap7restfulcontroller.entity.taco.Taco;
+import pt.galina.chap7restfulcontroller.entity.taco.TacoOrder;
+import pt.galina.chap7restfulcontroller.entity.user.User;
 
 import java.security.Principal;
 import java.util.List;

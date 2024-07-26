@@ -1,11 +1,11 @@
-package pt.galina.rest_controller.converter;
+package pt.galina.chap7restfulcontroller.converter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
-import pt.galina.rest_controller.data.IngredientRepository;
-import pt.galina.rest_controller.entity.taco.Ingredient;
+import pt.galina.chap7restfulcontroller.data.IngredientRepository;
+import pt.galina.chap7restfulcontroller.entity.taco.Ingredient;
 
 
 @Component

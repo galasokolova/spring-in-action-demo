@@ -1,4 +1,4 @@
-package pt.galina.rest_controller.config;
+package pt.galina.chap7restfulcontroller.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;

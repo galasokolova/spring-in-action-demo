@@ -1,4 +1,4 @@
-package pt.galina.rest_controller.controller;
+package pt.galina.chap7restfulcontroller.controller;
 
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.PageRequest;
@@ -7,11 +7,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import pt.galina.rest_controller.data.OrderRepository;
-import pt.galina.rest_controller.data.TacoRepository;
-import pt.galina.rest_controller.entity.taco.Taco;
-import pt.galina.rest_controller.entity.taco.TacoOrder;
-import pt.galina.rest_controller.exception.OrderNotFoundException;
+import pt.galina.chap7restfulcontroller.data.OrderRepository;
+import pt.galina.chap7restfulcontroller.data.TacoRepository;
+import pt.galina.chap7restfulcontroller.entity.taco.Taco;
+import pt.galina.chap7restfulcontroller.entity.taco.TacoOrder;
+import pt.galina.chap7restfulcontroller.exception.OrderNotFoundException;
 
 import java.util.Optional;
 
@@ -94,6 +94,12 @@ public class TacoController {
         } catch (EmptyResultDataAccessException e) {
             throw new OrderNotFoundException(orderId);
         }
+    }
+
+    @ExceptionHandler(OrderNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public String handleOrderNotFound(OrderNotFoundException ex) {
+        return ex.getMessage();
     }
 
     private static void patchCcCVVIfNotNull(TacoOrder patch, TacoOrder order) {

@@ -29,8 +29,4 @@ logging:
 taco:
   orders:
     page-size: 10
----
 
-spring:
-  profiles:
-    active: dev

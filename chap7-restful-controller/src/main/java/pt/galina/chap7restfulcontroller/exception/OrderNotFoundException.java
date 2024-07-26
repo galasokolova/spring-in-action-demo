@@ -1,4 +1,4 @@
-package pt.galina.rest_controller.exception;
+package pt.galina.chap7restfulcontroller.exception;
 
 public class OrderNotFoundException extends RuntimeException {
     public OrderNotFoundException(Long orderId) {

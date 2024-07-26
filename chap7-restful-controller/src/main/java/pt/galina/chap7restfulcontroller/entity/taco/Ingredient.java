@@ -1,4 +1,4 @@
-package pt.galina.rest_controller.entity.taco;
+package pt.galina.chap7restfulcontroller.entity.taco;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
