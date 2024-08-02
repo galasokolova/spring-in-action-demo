@@ -1,0 +1,39 @@
+version: '4.33.1'
+
+services:
+  auth-server:
+    build: ./auth-server
+    image: auth-server-image
+    ports:
+      - "9000:9000"
+    networks:
+      backend_network:
+        aliases:
+          - authserver
+
+  resource-server:
+    build: ./resource-server
+    image: resource-server-image
+    depends_on:
+      - auth-server
+    ports:
+      - "8080:8080"
+    networks:
+      - backend_network
+
+  client-app:
+    build: ./client-app
+    image: client-app-image
+    depends_on:
+      - resource-server
+    ports:
+      - "9090:9090"
+    networks:
+      - backend_network
+#    environment:
+#      - SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI=http://auth-server:9000
+
+
+networks:
+  backend_network:
+    driver: bridge

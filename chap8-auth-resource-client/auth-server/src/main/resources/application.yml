@@ -1,0 +1,45 @@
+server:
+  port: 9000
+
+spring:
+  datasource:
+    generate-unique-name: false
+    name: tacocloud
+    url: jdbc:h2:mem:tacocloud
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  security:
+    oauth2:
+      authorizationserver:
+        client:
+          oidc-client:
+            registration:
+              client-id: "taco-admin-client"
+              client-secret: "secret"
+              client-authentication-methods:
+                - "client_secret_basic"
+              authorization-grant-types:
+                - "authorization_code"
+                - "refresh_token"
+              redirect-uris:
+                - "http://127.0.0.1:9090/login/oauth2/code/taco-admin-client"
+              post-logout-redirect-uris:
+                - "http://127.0.0.1:9090/"
+              scopes:
+                - "writeIngredients"
+                - "deleteIngredients"
+                - "openid"
+            require-authorization-consent: true
+
+  jmx:
+    enabled: false
+
+logging:
+  level:
+    root: warn
+    org.springframework.security: warn
