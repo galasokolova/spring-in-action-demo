@@ -14,9 +14,7 @@ import pt.galina.chap7resttemplatedemo.entity.taco.Ingredient;
 import java.io.InputStream;
 import java.util.List;
 
-/*
 
- */
 @SpringBootApplication
 @ConfigurationPropertiesScan("pt.galina.chap7resttemplatedemo.config")
 public class Chap7RestTemplateDemoApplication {
