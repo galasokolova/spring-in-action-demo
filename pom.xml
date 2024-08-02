@@ -36,8 +36,8 @@
         <module>chap6-profile-config</module>
         <module>chap7-restful-controller</module>
         <module>chap7-rest-template-demo</module>
+        <module>chap8-auth-resource-client</module>
         <module>chap_8_oauth2</module>
-        <module>chap_8_auth_resource_client</module>
         <module>chap_8_authorization_server</module>
         <module>chap_8_resource_server</module>
         <module>chap_8_client_app</module>
