@@ -36,11 +36,11 @@
         <module>chap6-profile-config</module>
         <module>chap7-restful-controller</module>
         <module>chap7-rest-template-demo</module>
+        <module>chap8-admin-preauthorize-demo</module>
         <module>chap8-auth-resource-client</module>
-        <module>chap_8_oauth2</module>
-        <module>chap_8_authorization_server</module>
-        <module>chap_8_resource_server</module>
-        <module>chap_8_client_app</module>
+        <module>chap8-authorization-server</module>
+        <module>chap8-resource-server</module>
+        <module>chap8-client-app</module>
         <module>chap_9_jms_push_model</module>
         <module>chap_9_jms_pull_model</module>
         <module>chap_9_rabbit_push_message</module>
