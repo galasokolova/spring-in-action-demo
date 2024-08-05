@@ -8,18 +8,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import pt.galina.chap8authorizationserver.user.User;
 import pt.galina.chap8authorizationserver.user.UserRepository;
 
-/*
-http://localhost:9000/oauth2/authorize?response_type=code&client_id=taco-admin-client&redirect_uri=http://127.0.0.1:9090/login/oauth2/code/taco-admin-client&scope=writeIngredients+deleteIngredients
 
-
-$ curl localhost:9000/oauth2/token \
- -H"Content-type: application/x-www-form-urlencoded" \
- -d"grant_type=authorization_code" \
- -d"redirect_uri=http://127.0.0.1:9090/login/oauth2/code/taco-admin-client" \
- -d"code=$code" \
- -u taco-admin-client:secret
-
- */
 @SpringBootApplication
 public class Chap8AuthorizationServerApplication {
 
@@ -62,9 +51,7 @@ public class Chap8AuthorizationServerApplication {
 }
 /*
 
-eyJraWQiOiIwNjQyNGIyZC01ODNkLTQ1MWEtYjY5OC1lZjJlOWE3ZDYyNDUiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJ0YWNvY2hlZiIsImF1ZCI6InRhY28tYWRtaW4tY2xpZW50IiwibmJmIjoxNzExMzkyOTE1LCJzY29wZSI6WyJkZWxldGVJbmdyZWRpZW50cyIsIndyaXRlSW5ncmVkaWVudHMiXSwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo5MDAwIiwiZXhwIjoxNzExMzkzMjE1LCJpYXQiOjE3MTEzOTI5MTUsImp0aSI6IjczMTJiNWVmLTkzMzAtNDdlZi1iM2MwLTAwZmFhZGM3NjAzNSJ9.DUfjg_l5xFCazkxXN5N3TGH5b9HYCeq_UMxeXjHPPTSCDodCEhMYkWNqTAbpImoepCE6zG2UUGzFroe6ePWGA1QoNygV4E-DYEgV5Vw0kTgl9IM_eGLnq3QW9eN4q4enNUEowleGq0CTQVRYMJ7DwJL-gcAwpTXdbiq5p9NQGs2y4Wqo68oaiPF9X5hNZtotVF0YvgJcPD8M35AZidhwBZu9TVCrsBA-ZoDvCX58mEHiIxW0XPPPnEzlDy6SqKYe89tpfs65NKqJiXF0q9nsd--in8_CiOH9esPa6ORk697H6QEtkaMJk5uR3ZmHddMBnm7qaHiHLIk0ULHUOSHUpw
-
-
+fEmzgP0oWN3NID2grr8k7T2PZ2Kw70Qz0nJdXIuKC34QlvPHGOEqXz0jA7AS8RQCVKgjcJpTAJfvm-FiOecHbiaHhFcDAVSYdjFyDUUrfN3-Puwxhh1TqndgA7sH4P2d
 
  */
 
