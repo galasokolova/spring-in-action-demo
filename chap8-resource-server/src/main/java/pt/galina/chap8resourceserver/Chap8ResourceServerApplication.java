@@ -17,33 +17,7 @@ import pt.galina.chap8resourceserver.entity.user.User;
 import java.io.InputStream;
 import java.util.List;
 
-/*
-http://localhost:9000/oauth2/authorize?response_type=code&client_id=taco-admin-client&redirect_uri=http://127.0.0.1:9090/login/oauth2/code/taco-admin-client&scope=writeIngredients+deleteIngredients
 
-Request for token:
-$ curl localhost:9000/oauth2/token \
- -H"Content-type: application/x-www-form-urlencoded" \
- -d"grant_type=authorization_code" \
- -d"redirect_uri=http://127.0.0.1:9090/login/oauth2/code/taco-admin-client" \
- -d"code=1S_K3QqsK19uf4KiTzqSEH0lB9vlQNtptwxFmlc4bm3KxHy-MM0Tw4vgfK1amvB9dzuPs77pArGFgBsQuLPvnL7sCwWegQnhebTznbL9kjhPH2Mo6aW-_dXVFEQoYGix" \
- -u taco-admin-client:secret
-
-
-curl -X GET http://localhost:8080/api/ingredients \
--H "Authorization: Bearer "
-
-
-$ curl http://localhost:8080/api/ingredients \
- -H "Content-type: application/json" \
- -d "{\"id\":\"SHMP\", \"name\":\"Coconut Shrimp\", \"type\":\"PROTEIN\"}" \
- -H "Authorization: Bearer "
-
- curl localhost:9000/oauth2/token \
--H "Content-type: application/x-www-form-urlencoded" \
--d "grant_type=refresh_token&refresh_token=<refresh_token>" \
--u taco-admin-client:secret
-
- */
 @SpringBootApplication
 public class Chap8ResourceServerApplication {
 

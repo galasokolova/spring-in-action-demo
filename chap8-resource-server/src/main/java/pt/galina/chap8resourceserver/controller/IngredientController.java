@@ -1,44 +1,37 @@
 package pt.galina.chap8resourceserver.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import pt.galina.chap8resourceserver.data.IngredientRepository;
 import pt.galina.chap8resourceserver.entity.taco.Ingredient;
 
-import java.util.Optional;
-@CrossOrigin
 @RestController
-@RequestMapping("/api/ingredients")
+@RequestMapping(path = "/api/ingredients", produces = "application/json")
+@CrossOrigin(origins = "http://localhost:8080")
 public class IngredientController {
+    private final IngredientRepository repository;
 
-    private final IngredientRepository ingredientRepository;
-
-    public IngredientController(IngredientRepository ingredientRepository) {
-        this.ingredientRepository = ingredientRepository;
+    @Autowired
+    public IngredientController(IngredientRepository repository) {
+        this.repository = repository;
     }
 
-    @Transactional
-    @GetMapping("/{id}")
-    public ResponseEntity<Ingredient> ingredientById(@PathVariable("id") String id) {
-        Optional<Ingredient> optIngredient = ingredientRepository.findById(id);
-        return optIngredient.map(
-                        ingredient -> new ResponseEntity<>(ingredient, HttpStatus.OK)
-                )
-                .orElseGet(() -> new ResponseEntity<>(null, HttpStatus.NOT_FOUND));
+    @GetMapping
+    public Iterable<Ingredient> allIngredients() {
+        return repository.findAll();
     }
 
     @PostMapping
-    public ResponseEntity<Ingredient> addIngredient(@RequestBody Ingredient ingredient) {
-        Ingredient saved = ingredientRepository.save(ingredient);
-        return new ResponseEntity<>(saved, HttpStatus.CREATED);
+    @ResponseStatus(HttpStatus.CREATED)
+    public Ingredient saveIngredient(@RequestBody Ingredient ingredient) {
+        return repository.save(ingredient);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteIngredient(@PathVariable String id) {
-        ingredientRepository.deleteById(id);
+    public void deleteIngredient(@PathVariable("id") String ingredientId) {
+        repository.deleteById(ingredientId);
     }
 }
 
