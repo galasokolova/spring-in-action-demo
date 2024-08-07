@@ -3,14 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Received Orders</title>
-    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <link th:rel="stylesheet" th:href="@{/css/styles.css}" />
 
 </head>
 <body>
 
 <h1>Received Orders</h1>
-<img th:src="@{/images/taco_order.png}" alt="TacoImage"/>
+<img th:src="@{/images/taco_order.png}" alt="ImageOfTaco"/>
 
+<form action="/message/startReceiving" method="get">
+    <button type="submit">Receive Order</button>
+</form>
+
+<form action="/receivedOrder" method="get">
+    <button type="submit">Get Received Orders</button>
+</form>
+
+<form action="/message/stopReceiving" method="get">
+    <button type="submit">Stop Receive</button>
+</form>
 
 <div th:if="${not #lists.isEmpty(orders)}">
     <ul>
