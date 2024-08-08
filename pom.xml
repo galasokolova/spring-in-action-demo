@@ -42,7 +42,7 @@
         <module>chap8-resource-server</module>
         <module>chap8-client-app</module>
         <module>chap9-jms-pull-model</module>
-        <module>chap_9_jms_push_model</module>
+        <module>chap9-jms-push-model</module>
         <module>chap_9_rabbit_push_message</module>
         <module>chap_9_kafka_demo</module>
         <module>chap_10_integrating</module>
