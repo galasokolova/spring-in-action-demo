@@ -1,7 +1,5 @@
-## Taco Cloud - Chapter 9: Sending messages with RabbitMQ
-## *9.1: RabbitMQ Push Model*
-
-
+## Taco Cloud - Chapter 9: Sending messages
+## *9.2: RabbitMQ Push Model*
 
 ### Steps to Run
 ###### ***Note!***
@@ -29,5 +27,4 @@
 2. ### wait-for-it.sh:
     This script is designed to delay the start of the application until RabbitMQ is up and running. This is crucial to ensure that the application doesn’t start before the necessary service is available.
 
-In summary, the scripts directory contains utilities that ensure your applications start correctly and don’t encounter issues due to RabbitMQ being unavailable at the time of startup.
 

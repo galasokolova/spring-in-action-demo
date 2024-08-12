@@ -29,8 +29,8 @@ services:
 
   kafka-producer:
     build:
-      context: ./kafka-producer
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: kafka-producer/Dockerfile
     ports:
       - "8080:8080"
     depends_on:
@@ -40,8 +40,8 @@ services:
 
   kafka-listener:
     build:
-      context: ./kafka-listener
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: kafka-listener/Dockerfile
     ports:
       - "8081:8081"
     depends_on:
@@ -56,4 +56,3 @@ volumes:
 networks:
   backend_network:
     driver: bridge
-
