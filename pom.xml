@@ -44,7 +44,7 @@
         <module>chap9-jms-pull-model</module>
         <module>chap9-jms-push-model</module>
         <module>chap9-rabbitmq-demo</module>
-        <module>chap_9_kafka_demo</module>
+        <module>chap9-kafka-demo</module>
         <module>chap_10_integrating</module>
         <module>chap_11_reactor_demo</module>
         <module>chap_12_spring_webflux_demo</module>

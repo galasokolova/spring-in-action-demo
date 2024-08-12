@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order List</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+
+<h1>Your orders</h1>
+<img th:src="@{/images/taco.png}" alt="TacoImage"/>
+
+<ul>
+    <li th:each="order : ${orders}">
+        <span>DATE: <span th:text="${order.placedAt}">DATE</span></span><br/>
+        <span>Username: <span th:text="${order.deliveryName}">NAME</span></span><br/>
+        <ul>
+            <li th:each="taco : ${order.tacos}">
+                <span>Order ID: <span th:text="${taco.id}">ID</span></span><br/>
+                <span>Masterpiece name: <span th:text="${taco.name}">TACO NAME</span></span><br/>
+                <span>Ingredients:
+                    <span th:each="ingredient, stat : ${taco.ingredients}">
+                        <span th:text="${ingredient.name}">INGREDIENT</span><span th:if="${!stat.last}">, </span>
+                    </span>
+                </span><br/>
+            </li>
+        </ul>
+        <form th:action="@{/api/orders/send/{orderId}(orderId=${order.id})}" method="post">
+            <input type="hidden" name="_csrf" th:value="${_csrf.token}"/>
+            <button type="submit">Send Order</button>
+        </form>
+    </li>
+</ul>
+</body>
+</html>
+<form method="POST" th:action="@{/logout}" id="logoutForm">
+    <input type="submit" value="Logout"/>
+</form>
+
+</body>
+</html>
