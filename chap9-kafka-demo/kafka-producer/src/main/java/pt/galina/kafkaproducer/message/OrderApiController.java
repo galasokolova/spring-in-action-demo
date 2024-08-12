@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import pt.galina.kafkaproducer.data.OrderRepository;
 import pt.galina.kafkaproducer.dto.TacoOrderDTO;
 import pt.galina.kafkaproducer.entity.taco.TacoOrder;
-import pt.galina.kafkaproducer.message.KafkaOrderMessagingService;
 
 import java.util.Optional;
 

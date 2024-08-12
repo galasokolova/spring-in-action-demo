@@ -26,8 +26,6 @@ public class SecurityConfig{
          http
                  .authorizeHttpRequests(
                          authz -> authz
-//                                 .requestMatchers("/design", "/orders", "/orders/orderList")
-//                                 .hasRole("USER")
                                  .anyRequest().permitAll()
                  )
                  .formLogin(

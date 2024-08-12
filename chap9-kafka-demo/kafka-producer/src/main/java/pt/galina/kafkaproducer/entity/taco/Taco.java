@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
-import pt.galina.kafkaproducer.entity.taco.Ingredient;
-import pt.galina.kafkaproducer.entity.taco.TacoOrder;
 
 import java.util.ArrayList;
 import java.util.Date;

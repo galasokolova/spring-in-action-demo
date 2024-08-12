@@ -18,7 +18,7 @@ public class KitchenUI {
 
     public void displayOrder(TacoOrderDTO orderDTO) {
         orders.add(orderDTO);
-        log.info("->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> All orders: {}", orders);
+        log.info("->>>>>> All orders: {}", orders);
     }
 
     public List<TacoOrderDTO> getAllOrders() {
