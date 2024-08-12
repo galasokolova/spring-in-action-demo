@@ -1,0 +1,26 @@
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092  # Typically, for tests, you might use a local or test Kafka instance
+
+  data:
+    rest:
+      base-path: /api
+  integration:
+    management:
+      default-logging-enabled: false  # Reduced logging for tests
+  jpa:
+    open-in-view: false  # Typically disabled in tests for cleaner separation of concerns
+
+logging:
+  level:
+    root: warn  # General log level set to warn to reduce noise during tests
+    org.apache.kafka: error  # Reduce logging for Kafka to error level during tests
+    org.springframework.kafka: error  # Reduce logging for Spring Kafka to error level during tests
+
+taco:
+  orders:
+    page-size: 5  # Use a smaller page size for testing, if applicable
+
+server:
+  port: 0  # Random port for testing to avoid conflicts with other services

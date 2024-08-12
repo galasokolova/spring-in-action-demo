@@ -1,21 +1,25 @@
 spring:
   kafka:
     consumer:
-      bootstrap-servers: kafka:9092  # Используем имя сервиса, определенное в Docker Compose
-      group-id: tacocloud-listeners
+      bootstrap-servers: localhost:9092  # Use localhost for tests to isolate the test environment from production
+      group-id: tacocloud-listeners-test  # Change group-id for tests to avoid conflicts with production data
       auto-offset-reset: earliest
     properties:
-      spring.json.trusted.packages: '*'
+      spring.json.trusted.packages: '*'  # Trust all packages, which is appropriate for tests
+
   integration:
     management:
       default-logging-enabled: false
+
   jpa:
-    open-in-view: false
+    open-in-view: false  # Typically disabled in tests to ensure clean testing practices
+
 logging:
   level:
-    root: warn
-    org.springframework.kafka: warn
+    root: warn  # General logging level is set to warn, which is suitable for tests
+    org.springframework.kafka: error  # Lower Kafka logging level to error to reduce log volume
 
 server:
-  port: 8081
+  port: 0  # Use a random port for tests to avoid conflicts with other services
+
 
