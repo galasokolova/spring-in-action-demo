@@ -3,7 +3,7 @@ tacocloud:
     host: "imap.gmail.com"
     mailbox: "INBOX"
     username: "your_email" #your email without domain name
-    password: "abcd abcd wxyz wxyz"
+    password: "abcd abcd abcd abcd" #your generated App password
     poll-rate: 10000
     port: 993
 
