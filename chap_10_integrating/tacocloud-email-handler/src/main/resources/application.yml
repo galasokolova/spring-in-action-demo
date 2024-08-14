@@ -2,8 +2,8 @@ tacocloud:
   email:
     host: "imap.gmail.com"
     mailbox: "INBOX"
-    username: "testmail29007"
-    password: "ukpk pnvh wvly wlnh"
+    username: "your_email" #your email without domain name
+    password: "abcd abcd wxyz wxyz"
     poll-rate: 10000
     port: 993
 

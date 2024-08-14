@@ -7,14 +7,13 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
-
 @Data
 public class EmailOrder {
 
     private final String email;
     private List<Taco> tacos = new ArrayList<>();
 
-    @JsonCreator // Указываем Jackson использовать этот конструктор для десериализации
+    @JsonCreator
     public EmailOrder(@JsonProperty("email") String email) {
         this.email = email;
     }

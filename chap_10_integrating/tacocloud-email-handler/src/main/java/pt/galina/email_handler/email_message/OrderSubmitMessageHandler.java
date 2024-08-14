@@ -10,8 +10,8 @@ import pt.galina.email_handler.taco.EmailOrder;
 
 @Component
 public class OrderSubmitMessageHandler  implements GenericHandler<EmailOrder> {
-    private final Logger log = LoggerFactory.getLogger(OrderSubmitMessageHandler.class);
 
+    private final Logger log = LoggerFactory.getLogger(OrderSubmitMessageHandler.class);
 
     private final RestTemplate rest;
     private final ApiProperties apiProps;

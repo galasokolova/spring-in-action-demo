@@ -13,7 +13,6 @@ import java.util.List;
 public class OrderController {
     private final Logger log = LoggerFactory.getLogger(OrderController.class);
 
-
     private final OrderService orderService;
 
     public OrderController(OrderService orderService) {

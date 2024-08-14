@@ -14,7 +14,7 @@
 
 <script>
   function fetchOrders() {
-    fetch('/api/orders') // GET-запрос для получения заказов
+    fetch('/api/orders') // GET-request for receiving orders
             .then(response => {
               if (!response.ok) {
                 throw new Error('Network response was not ok.');
@@ -23,7 +23,7 @@
             })
             .then(orders => {
               const ordersDiv = document.getElementById('orders');
-              ordersDiv.innerHTML = ''; // Очищаем предыдущие заказы
+              ordersDiv.innerHTML = ''; // removing the previous orders
 
               if (orders.length === 0) {
                 ordersDiv.innerHTML = '<p>No orders yet.</p>';
@@ -52,8 +52,8 @@
             });
   }
 
-  fetchOrders(); // Загружаем заказы при загрузке страницы
-  setInterval(fetchOrders, 5000); // Обновляем заказы каждые 5 секунд
+  fetchOrders(); // downloading new orders by reloading the webpage
+  setInterval(fetchOrders, 5000); // renew orders every 5 sec
 </script>
 </body>
 </html>
