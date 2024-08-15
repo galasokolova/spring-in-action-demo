@@ -11,16 +11,7 @@ import java.util.List;
 @Service
 public class CombinationServiceImpl implements CombinationService {
 
-    /**
-     * Combines two streams: stream of characters and stream of food.
-     *
-     * @param characters List of characters.
-     * @param foods List of food.
-     * @param characterDelayMillis Delay in milliseconds between elements of characters stream.
-     * @param foodDelayMillis Delay in milliseconds between elements of food stream.
-     * @param foodSubscriptionDelayMillis Delay in milliseconds before subscription on food stream.
-     * @return Combined Flux<String> stream of characters and food.
-     */
+    //Combines two streams: stream of characters and stream of food.
     @Override
     public Flux<String> mergeFluxes(
             List<String> characters,

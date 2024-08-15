@@ -38,8 +38,10 @@ public class CreationServiceImpl implements CreationService {
 
     @Override
     public Flux<Long> createAFluxInterval(Long intervalDuration, int resultsQuantity) {
-        return Flux. interval(Duration.ofSeconds(intervalDuration)) // interval() doesn´t have max value, so it can work forever, that´s why
-                .take(resultsQuantity); //  take() method restricts the quantity of first elements
+        return Flux.interval(Duration.ofSeconds(intervalDuration))
+                //interval() doesn´t have max value, so it can work forever,
+                // that´s why we use take() method to limit the quantity of the first elements
+                .take(resultsQuantity);
 
     }
 
