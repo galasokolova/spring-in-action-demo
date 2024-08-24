@@ -1,0 +1,23 @@
+spring:
+  r2dbc:
+    url: r2dbc:h2:mem:///tacocloud
+    username: sa
+    password: password
+  sql:
+    init:
+      platform: h2
+      mode: always
+  h2:
+    console:
+      enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: none
+
+spring.sql.init.schema-locations: classpath:/schema.sql
+spring.sql.init.data-locations: classpath:/data.sql
+
+
+taco:
+  orders:
+    pageSize: 20
