@@ -14,7 +14,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Data
-@Table("AppUser")  // Указываем имя таблицы для реляционной базы данных
+@Table("app_user")  // Используем имя таблицы в нижнем регистре
 @NoArgsConstructor(access = AccessLevel.PROTECTED, force = true)
 @AllArgsConstructor
 public class AppUser implements UserDetails {
@@ -31,6 +31,7 @@ public class AppUser implements UserDetails {
     private String zip;
     private String phone;
 
+    // Основной конструктор без ID
     public AppUser(String username, String password, String fullname, String street, String city, String state, String zip, String phone) {
         this.username = username;
         this.password = password;
@@ -41,8 +42,6 @@ public class AppUser implements UserDetails {
         this.zip = zip;
         this.phone = phone;
     }
-
-
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

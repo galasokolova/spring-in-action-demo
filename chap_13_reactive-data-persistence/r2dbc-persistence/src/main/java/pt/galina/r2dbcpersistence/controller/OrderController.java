@@ -86,25 +86,28 @@ public class OrderController {
     public Mono<String> ordersForUser(@AuthenticationPrincipal Mono<AppUser> userMono, Model model) {
         return userMono.flatMap(user -> {
             int pageSize = orderProps.getPageSize();
-            Flux<TacoOrder> ordersFlux = orderRepo.findByUserIdOrderByPlacedAtDesc(user.getId(), PageRequest.of(0, pageSize))
+
+            // Collect all orders and tacos, then add them to the model
+            return orderRepo.findByUserIdOrderByPlacedAtDesc(user.getId(), PageRequest.of(0, pageSize))
                     .flatMap(order -> {
-                        // Получаем тако для заказа и их ингредиенты
-                        Flux<Taco> tacosFlux = Flux.fromIterable(order.getTacos())
+                        // Get tacos for each order and their ingredients
+                        return Flux.fromIterable(order.getTacos())
                                 .flatMap(taco -> ingredientRepo.findAllById(taco.getIngredientIds())
                                         .collectList()
                                         .map(ingredients -> {
                                             taco.setIngredients(ingredients);
                                             return taco;
-                                        }));
-
-                        return tacosFlux.collectList().map(tacos -> {
-                            order.setTacos(tacos);
-                            return order;
-                        });
-                    });
-
-            model.addAttribute("orders", ordersFlux);
-            return Mono.just("orderList");
+                                        }))
+                                .collectList()
+                                .map(tacos -> {
+                                    order.setTacos(tacos);
+                                    return order;
+                                });
+                    })
+                    .collectList()  // Collect all orders into a list
+                    .doOnNext(orders -> model.addAttribute("orders", orders))  // Add orders to the model
+                    .then(Mono.just("orderList"));  // Return the view name
         });
     }
+
 }

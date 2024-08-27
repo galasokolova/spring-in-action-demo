@@ -5,15 +5,19 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-import jakarta.persistence.PrePersist;
-import org.springframework.data.annotation.Id;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
-import pt.galina.r2dbcpersistence.entity.user.AppUser; // Импортируем User
+import org.springframework.data.relational.core.mapping.Table;
+import pt.galina.r2dbcpersistence.entity.user.AppUser;
 import java.time.LocalDateTime;
 
 @Data
+@NoArgsConstructor
+@Table("taco_order")  // Указываем таблицу
 public class TacoOrder {
+
     @Id
     private Long id;
 
@@ -32,7 +36,8 @@ public class TacoOrder {
     private LocalDateTime placedAt;
 
     @Transient
-    private transient List<Taco> tacos = new ArrayList<>();
+    private List<Taco> tacos = new ArrayList<>();
+
     public void addTaco(Taco taco) {
         this.tacos.add(taco);
         if (taco.getId() != null) {
@@ -44,8 +49,8 @@ public class TacoOrder {
         this.userId = user.getId();
     }
 
-    @PrePersist
-    void placedAt() {
+    // Этот метод будет вызываться при создании заказа
+    public void setPlacedAt() {
         this.placedAt = LocalDateTime.now();
     }
 }
