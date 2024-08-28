@@ -4,35 +4,30 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <!-- Миграция 1: Создание таблицы app_user -->
     <changeSet id="1" author="your_name">
         <sqlFile
                 path="db/migration/V1__create_app_user_table.sql"
                 relativeToChangelogFile="false"/>
     </changeSet>
 
-    <!-- Миграция 2: Создание таблицы ingredient -->
     <changeSet id="2" author="your_name">
         <sqlFile
                 path="db/migration/V2__create_ingredient_table.sql"
                 relativeToChangelogFile="false"/>
     </changeSet>
 
-    <!-- Миграция 3: Создание таблицы taco -->
     <changeSet id="3" author="your_name">
         <sqlFile
                 path="db/migration/V3__create_taco_table.sql"
                 relativeToChangelogFile="false"/>
     </changeSet>
 
-    <!-- Миграция 4: Создание таблицы taco_order -->
     <changeSet id="4" author="your_name">
         <sqlFile
                 path="db/migration/V4__create_taco_order_table.sql"
                 relativeToChangelogFile="false"/>
     </changeSet>
 
-    <!-- Миграция 5: Вставка данных в таблицу ingredient -->
     <changeSet id="5" author="your_name">
         <sqlFile
                 path="db/migration/V5__insert_ingredients.sql"

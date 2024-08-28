@@ -14,7 +14,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Data
-@Table("app_user")  // Используем имя таблицы в нижнем регистре
+@Table("app_user")
 @NoArgsConstructor(access = AccessLevel.PROTECTED, force = true)
 @AllArgsConstructor
 public class AppUser implements UserDetails {
@@ -31,7 +31,6 @@ public class AppUser implements UserDetails {
     private String zip;
     private String phone;
 
-    // Основной конструктор без ID
     public AppUser(String username, String password, String fullname, String street, String city, String state, String zip, String phone) {
         this.username = username;
         this.password = password;

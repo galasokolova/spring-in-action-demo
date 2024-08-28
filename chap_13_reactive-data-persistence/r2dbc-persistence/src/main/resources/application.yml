@@ -3,9 +3,9 @@ spring:
     url: jdbc:postgresql://localhost:5432/tacocloud
     username: postgres
     password: postgres
-    driver-class-name: org.postgresql.Driver  # Настройки для JDBC, которые требуются Liquibase для выполнения миграций
+    driver-class-name: org.postgresql.Driver  # for migration
 
-  # Настройки для R2DBC
+  # for R2DBC
   r2dbc:
     url: r2dbc:postgresql://localhost:5432/tacocloud
     username: postgres
@@ -16,11 +16,11 @@ spring:
 
   liquibase:
     enabled: true
-    change-log: classpath:db/changelog/changelog-master.xml  # Указываем путь к вашему changelog-файлу
+    change-log: classpath:db/changelog/changelog-master.xml
 
   jpa:
     hibernate:
-      ddl-auto: none  # Liquibase управляет схемой
+      ddl-auto: none
 
 taco:
   orders:

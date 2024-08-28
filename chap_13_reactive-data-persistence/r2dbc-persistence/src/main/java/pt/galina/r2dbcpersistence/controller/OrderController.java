@@ -14,7 +14,6 @@ import pt.galina.r2dbcpersistence.entity.taco.TacoOrder;
 import pt.galina.r2dbcpersistence.entity.taco.data.IngredientRepository;
 import pt.galina.r2dbcpersistence.entity.taco.data.OrderRepository;
 import pt.galina.r2dbcpersistence.entity.taco.data.TacoRepository;
-import pt.galina.r2dbcpersistence.entity.taco.web.TacoOrderAggregateService;
 import pt.galina.r2dbcpersistence.entity.user.AppUser;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -28,14 +27,12 @@ public class OrderController {
 
     private final OrderRepository orderRepo;
     private final OrderProps orderProps;
-    private final TacoOrderAggregateService tacoOrderAggregateService;
     private final TacoRepository tacoRepo;
     private final IngredientRepository ingredientRepo;
 
-    public OrderController(OrderRepository orderRepo, OrderProps orderProps, TacoOrderAggregateService tacoOrderAggregateService, TacoRepository tacoRepo, IngredientRepository ingredientRepo) {
+    public OrderController(OrderRepository orderRepo, OrderProps orderProps, TacoRepository tacoRepo, IngredientRepository ingredientRepo) {
         this.orderRepo = orderRepo;
         this.orderProps = orderProps;
-        this.tacoOrderAggregateService = tacoOrderAggregateService;
         this.tacoRepo = tacoRepo;
         this.ingredientRepo = ingredientRepo;
     }
@@ -62,7 +59,6 @@ public class OrderController {
                 order.setDeliveryZip(user.getZip());
             }
 
-            // Загрузить список Taco по их идентификаторам и передать в модель
             return Flux.fromIterable(order.getTacoIds())
                     .flatMap(tacoRepo::findById)
                     .flatMap(taco -> ingredientRepo.findAllById(taco.getIngredientIds())
@@ -72,7 +68,7 @@ public class OrderController {
                                 return taco;
                             }))
                     .collectList()
-                    .doOnNext(tacos -> model.addAttribute("tacos", tacos)) // Добавляем список тако в модель
+                    .doOnNext(tacos -> model.addAttribute("tacos", tacos))
                     .then(Mono.just("orderForm"));
         });
     }
@@ -95,7 +91,6 @@ public class OrderController {
             order.setUser(user);
             order.setPlacedAt(LocalDateTime.now());
 
-            // Сохранение заказа (без полной логики извлечения всех такосов и ингредиентов)
             return orderRepo.save(order)
                     .doOnSuccess(savedOrder -> {
                         sessionStatus.setComplete();
@@ -111,30 +106,25 @@ public class OrderController {
         return userMono.flatMap(user -> {
             int pageSize = orderProps.getPageSize();
 
-            // Извлечение всех заказов пользователя
             return orderRepo.findByUserIdOrderByPlacedAtDesc(user.getId(), PageRequest.of(0, pageSize))
                     .flatMap(order -> {
-                        // Извлечение всех такосов для каждого заказа
                         return Flux.fromIterable(order.getTacoIds())
                                 .flatMap(tacoRepo::findById)
                                 .flatMap(taco -> ingredientRepo.findAllById(taco.getIngredientIds())
                                         .collectList()
                                         .map(ingredients -> {
-                                            taco.setIngredients(ingredients);  // Присвоение ингредиентов каждому такос
+                                            taco.setIngredients(ingredients);
                                             return taco;
                                         }))
-                                .collectList()  // Собираем все такосы для данного заказа
+                                .collectList()
                                 .map(tacos -> {
-                                    order.setTacos(tacos);  // Присваиваем такосы заказу
+                                    order.setTacos(tacos);
                                     return order;
                                 });
                     })
-                    .collectList()  // Собираем все заказы в список
-                    .doOnNext(orders -> model.addAttribute("orders", orders))  // Добавляем заказы в модель
-                    .then(Mono.just("orderList"));  // Возвращаем название представления
+                    .collectList()
+                    .doOnNext(orders -> model.addAttribute("orders", orders))
+                    .then(Mono.just("orderList"));
         });
     }
-
-
-
 }

@@ -16,7 +16,7 @@
         <span th:text="${order.placedAt}">DATE</span> -
         <span th:text="${order.deliveryName}">NAME</span>
         <ul>
-            <li th:each="taco : ${order.tacos}">  <!-- Обращение к такосам через order -->
+            <li th:each="taco : ${order.tacos}">
                 <span th:text="${taco.name}">Taco Name</span>:
                 <ul>
                     <li th:each="ingredient : ${taco.ingredients}">

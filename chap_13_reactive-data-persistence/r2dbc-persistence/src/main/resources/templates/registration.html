@@ -7,6 +7,12 @@
 <body>
 <h1>Register</h1>
 <img th:src="@{/images/taco.png}"/>
+
+<div style="color: red" th:if="${userExists}">
+    User with this username already exists. Please choose another.
+</div>
+
+
 <form th:method="POST" th:action="@{/register}" id="registerForm">
     <label th:for="username">Username: </label>
     <input type="text" name="username"/><br/>

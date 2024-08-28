@@ -26,12 +26,10 @@ import java.util.stream.Collectors;
 public class DesignTacoController {
 
     private final IngredientRepository ingredientRepo;
-    private final TacoOrderAggregateService tacoOrderAggregateService;
     private final TacoRepository tacoRepo;
 
-    public DesignTacoController(IngredientRepository ingredientRepo, TacoOrderAggregateService tacoOrderAggregateService, TacoRepository tacoRepo) {
+    public DesignTacoController(IngredientRepository ingredientRepo, TacoRepository tacoRepo) {
         this.ingredientRepo = ingredientRepo;
-        this.tacoOrderAggregateService = tacoOrderAggregateService;
         this.tacoRepo = tacoRepo;
     }
 
@@ -71,23 +69,21 @@ public class DesignTacoController {
         if (errors.hasErrors()) {
             return Mono.just("design");
         }
-
-        // Находим ингредиенты по идентификаторам и сохраняем только Taco
         return Flux.fromIterable(taco.getIngredientIds())
                 .flatMap(ingredientRepo::findById)
                 .collectList()
                 .flatMap(ingredients -> {
-                    taco.setIngredients(ingredients);  // Устанавливаем ингредиенты в Taco (для отображения, если нужно)
+                    taco.setIngredients(ingredients);
                     log.info("Taco with ingredients: {}", taco);
 
-                    return tacoRepo.save(taco);  // Сохраняем Taco с ingredientIds
+                    return tacoRepo.save(taco);
                 })
                 .doOnNext(savedTaco -> {
-                    tacoOrder.addTacoId(savedTaco.getId());  // Добавляем ID Taco в заказ для дальнейшего использования
+                    tacoOrder.addTacoId(savedTaco.getId());
                     log.info("Taco saved with ID: {} added to order: {}", savedTaco.getId(), tacoOrder);
                     log.info("Taco saved: {}", savedTaco);
                 })
-                .then(Mono.just("redirect:/orders/current"));  // Перенаправляем на страницу оформления заказа
+                .then(Mono.just("redirect:/orders/current"));
     }
 
 

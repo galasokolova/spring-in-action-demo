@@ -5,6 +5,8 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
@@ -15,19 +17,37 @@ import java.time.LocalDateTime;
 
 @Data
 @NoArgsConstructor
-@Table("taco_order")  // Указываем таблицу
+@Table("taco_order")
 public class TacoOrder {
 
     @Id
     private Long id;
 
+    @NotBlank(message = "Delivery name is required")
     private String deliveryName;
+
+    @NotBlank(message = "Street is required")
     private String deliveryStreet;
+
+    @NotBlank(message = "City is required")
     private String deliveryCity;
+
+    @NotBlank(message = "State is required")
     private String deliveryState;
+
+    @NotBlank(message = "Zip code is required")
     private String deliveryZip;
+
+    @NotBlank(message = "Credit card number is required")
+    @Pattern(regexp = "^[0-9]{16}$", message = "Invalid credit card number")
     private String ccNumber;
+
+    @NotBlank(message = "Expiration date is required")
+    @Pattern(regexp = "^(0[1-9]|1[0-2])/([0-9]{2})$", message = "Must be formatted MM/YY")
     private String ccExpiration;
+
+    @NotBlank(message = "CVV is required")
+    @Pattern(regexp = "^[0-9]{3}$", message = "Invalid CVV")
     private String ccCVV;
 
     private Set<Long> tacoIds = new LinkedHashSet<>();
@@ -50,13 +70,12 @@ public class TacoOrder {
         this.userId = user.getId();
     }
 
-    // Этот метод будет вызываться при создании заказа
     public void setPlacedAt() {
         this.placedAt = LocalDateTime.now();
     }
 
     public void addTacoId(Long id) {
-        this.tacoIds.add(id);  // Добавление идентификатора Taco в Set tacoIds
+        this.tacoIds.add(id);
     }
 
 

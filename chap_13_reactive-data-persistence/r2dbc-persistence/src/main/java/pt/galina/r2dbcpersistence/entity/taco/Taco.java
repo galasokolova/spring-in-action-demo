@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import jakarta.validation.constraints.Size;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
@@ -22,13 +23,15 @@ public class Taco {
 
     @NonNull
     @Column("name")
+    @Size(min=5, message="Name must be at least 5 characters long")
     private String name;
 
     @Column("ingredient_ids")
-    private List<Long> ingredientIds = new ArrayList<>();  // Идентификаторы ингредиентов, сохраняемые в БД
+    @Size(min=1, message="You must choose at least 1 ingredient")
+    private List<Long> ingredientIds = new ArrayList<>();  // saving to DB
 
     @Transient
-    private List<Ingredient> ingredients = new ArrayList<>();  // Используется только в памяти
+    private List<Ingredient> ingredients = new ArrayList<>();  // using only in memory
 
     public void addIngredient(Ingredient ingredient) {
         ingredientIds.add(ingredient.getId());

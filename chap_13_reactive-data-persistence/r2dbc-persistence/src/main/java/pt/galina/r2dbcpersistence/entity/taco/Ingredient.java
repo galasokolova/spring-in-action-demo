@@ -12,16 +12,16 @@ import lombok.RequiredArgsConstructor;
 @NoArgsConstructor
 @RequiredArgsConstructor
 @EqualsAndHashCode(exclude = "id")
-@Table("ingredient")  // Указываем таблицу PostgreSQL
+@Table("ingredient")
 public class Ingredient {
     @Id
-    private Long id;  // Поле для идентификатора, будет автоинкрементировано в PostgreSQL
+    private Long id;
 
-    private @NonNull String slug;  // Используем для уникальной идентификации ингредиента
+    private @NonNull String slug;
 
-    private @NonNull String name;  // Название ингредиента
+    private @NonNull String name;
 
-    private @NonNull Type type;  // Тип ингредиента (WRAP, PROTEIN и т.д.)
+    private @NonNull Type type;
 
     public enum Type {
         WRAP, PROTEIN, VEGGIES, CHEESE, SAUCE

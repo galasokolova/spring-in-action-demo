@@ -17,7 +17,7 @@ public class RegistrationForm {
     public AppUser toUser(PasswordEncoder passwordEncoder) {
         return new AppUser(
                 username,
-                passwordEncoder.encode(password), // Кодируем пароль
+                passwordEncoder.encode(password),
                 fullname,
                 street,
                 city,

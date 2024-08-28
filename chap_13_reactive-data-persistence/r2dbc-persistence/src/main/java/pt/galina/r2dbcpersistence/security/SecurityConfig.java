@@ -7,6 +7,10 @@ import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.server.SecurityWebFilterChain;
+import org.springframework.security.web.server.authentication.AuthenticationWebFilter;
+import org.springframework.security.web.server.authentication.ServerAuthenticationFailureHandler;
+import org.springframework.security.web.server.authentication.ServerFormLoginAuthenticationConverter;
+import org.springframework.security.web.server.authentication.RedirectServerAuthenticationFailureHandler;
 import org.springframework.security.web.server.authentication.logout.RedirectServerLogoutSuccessHandler;
 import org.springframework.security.web.server.util.matcher.PathPatternParserServerWebExchangeMatcher;
 
@@ -26,24 +30,30 @@ public class SecurityConfig {
         http
                 .authorizeExchange(exchange -> exchange
                         .pathMatchers("/design", "/orders", "/orders/orderList").hasRole("USER")
-                        .pathMatchers("/h2-console/**").permitAll() // Allow access to H2 console
+                        .pathMatchers("/h2-console/**").permitAll()
                         .anyExchange().permitAll()
                 )
                 .formLogin(form -> form
                         .loginPage("/login")
+                        .authenticationFailureHandler(authenticationFailureHandler())  // Custom failure handler
                 )
                 .logout(logout -> logout
-                        .logoutUrl("/logout")  // Correct logout URL
-                        .logoutSuccessHandler(logoutSuccessHandler()) // Custom success handler
+                        .logoutUrl("/logout")
+                        .logoutSuccessHandler(logoutSuccessHandler())
                 )
-                .csrf(ServerHttpSecurity.CsrfSpec::disable); // Disable CSRF for simplicity (adjust as needed)
+                .csrf(ServerHttpSecurity.CsrfSpec::disable);
 
         return http.build();
     }
 
+    @Bean
+    public ServerAuthenticationFailureHandler authenticationFailureHandler() {
+        return new RedirectServerAuthenticationFailureHandler("/login?error=true");  // Redirect to login page with error
+    }
+
     private RedirectServerLogoutSuccessHandler logoutSuccessHandler() {
         RedirectServerLogoutSuccessHandler successHandler = new RedirectServerLogoutSuccessHandler();
-        successHandler.setLogoutSuccessUrl(URI.create("/")); // Redirect to home page after logout
+        successHandler.setLogoutSuccessUrl(URI.create("/"));
         return successHandler;
     }
 }
