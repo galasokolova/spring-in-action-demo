@@ -45,6 +45,7 @@ public class TacoOrder {
         }
     }
 
+
     public void setUser(AppUser user) {
         this.userId = user.getId();
     }
@@ -53,4 +54,10 @@ public class TacoOrder {
     public void setPlacedAt() {
         this.placedAt = LocalDateTime.now();
     }
+
+    public void addTacoId(Long id) {
+        this.tacoIds.add(id);  // Добавление идентификатора Taco в Set tacoIds
+    }
+
+
 }

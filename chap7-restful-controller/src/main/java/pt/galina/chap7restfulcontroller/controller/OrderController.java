@@ -63,6 +63,7 @@ public class OrderController {
             log.debug("Validation errors: {}", errors);
             return "orderForm";
         }
+
         order.setUser(user);
         orderRepo.save(order);
         sessionStatus.setComplete();

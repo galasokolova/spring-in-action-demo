@@ -7,31 +7,31 @@ import java.util.Set;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
 @Data
 @NoArgsConstructor
 @RequiredArgsConstructor
-@Table("taco") // Аннотация указывает, что класс отображается на таблицу taco в базе данных PostgreSQL
+@Table("taco")
 public class Taco {
 
     @Id
     private Long id;
 
     @NonNull
-    @Column("name")  // Указание столбца в базе данных
+    @Column("name")
     private String name;
 
-    @Getter
-    @Column("ingredient_ids")  // Сохраняем ingredientIds как массив в PostgreSQL
-    private Set<Long> ingredientIds = new HashSet<>();
+    @Column("ingredient_ids")
+    private List<Long> ingredientIds = new ArrayList<>();  // Идентификаторы ингредиентов, сохраняемые в БД
 
-    @Getter
-    private transient List<Ingredient> ingredients = new ArrayList<>();
+    @Transient
+    private List<Ingredient> ingredients = new ArrayList<>();  // Используется только в памяти
 
     public void addIngredient(Ingredient ingredient) {
         ingredientIds.add(ingredient.getId());
     }
-
 }
+

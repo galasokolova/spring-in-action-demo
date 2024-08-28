@@ -16,11 +16,13 @@
         <span th:text="${order.placedAt}">DATE</span> -
         <span th:text="${order.deliveryName}">NAME</span>
         <ul>
-            <li th:each="taco : ${order.tacos}">
-                <span th:text="${taco.name}"></span> :
-                <span th:each="ingredient : ${taco.ingredients}">
-                    <span th:text="${ingredient.name}">INGREDIENT</span>,
-                </span>
+            <li th:each="taco : ${order.tacos}">  <!-- Обращение к такосам через order -->
+                <span th:text="${taco.name}">Taco Name</span>:
+                <ul>
+                    <li th:each="ingredient : ${taco.ingredients}">
+                        <span th:text="${ingredient.name}">Ingredient Name</span>
+                    </li>
+                </ul>
             </li>
         </ul>
     </li>

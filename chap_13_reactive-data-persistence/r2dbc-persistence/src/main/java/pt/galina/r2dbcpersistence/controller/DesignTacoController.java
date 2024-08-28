@@ -11,6 +11,8 @@ import pt.galina.r2dbcpersistence.entity.taco.Ingredient;
 import pt.galina.r2dbcpersistence.entity.taco.Taco;
 import pt.galina.r2dbcpersistence.entity.taco.TacoOrder;
 import pt.galina.r2dbcpersistence.entity.taco.data.IngredientRepository;
+import pt.galina.r2dbcpersistence.entity.taco.data.TacoRepository;
+import pt.galina.r2dbcpersistence.entity.taco.web.TacoOrderAggregateService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -24,9 +26,13 @@ import java.util.stream.Collectors;
 public class DesignTacoController {
 
     private final IngredientRepository ingredientRepo;
+    private final TacoOrderAggregateService tacoOrderAggregateService;
+    private final TacoRepository tacoRepo;
 
-    public DesignTacoController(IngredientRepository ingredientRepo) {
+    public DesignTacoController(IngredientRepository ingredientRepo, TacoOrderAggregateService tacoOrderAggregateService, TacoRepository tacoRepo) {
         this.ingredientRepo = ingredientRepo;
+        this.tacoOrderAggregateService = tacoOrderAggregateService;
+        this.tacoRepo = tacoRepo;
     }
 
     @ModelAttribute
@@ -60,49 +66,28 @@ public class DesignTacoController {
         return "design";
     }
 
-//    @PostMapping
-//    public Mono<String> processTaco(
-//            @Valid Taco taco, Errors errors,
-//            @ModelAttribute TacoOrder tacoOrder) {
-//
-//        if (errors.hasErrors()) {
-//            return Mono.just("design");
-//        }
-//
-//        tacoOrder.addTaco(taco);
-//        log.info("\uD83C\uDF1F Taco saved: {}", tacoOrder);
-//        log.info("\uD83C\uDF1F Ingredients: {}", taco.getIngredients());
-//        log.info("\uD83C\uDF1F Taco Id: {}", taco.getId());
-//
-//        return Mono.just("redirect:/orders/current");
-//    }
-
     @PostMapping
-    public Mono<String> processTaco(
-            @Valid Taco taco, Errors errors,
-            @ModelAttribute TacoOrder tacoOrder) {
-
+    public Mono<String> processTaco(@Valid Taco taco, Errors errors, @ModelAttribute TacoOrder tacoOrder) {
         if (errors.hasErrors()) {
             return Mono.just("design");
         }
 
-        // Для каждой выбранной пользователем ингредиента ищем его в репозитории
+        // Находим ингредиенты по идентификаторам и сохраняем только Taco
         return Flux.fromIterable(taco.getIngredientIds())
-                .flatMap(ingredientId -> ingredientRepo.findById(ingredientId)
-                        .map(ingredient -> {
-                            taco.addIngredient(ingredient);
-                            return ingredient;
-                        })
-                )
-                .then(Mono.defer(() -> {
-                    // Логирование добавленного тако и его ингредиентов
-                    tacoOrder.addTaco(taco);
-                    log.info("\uD83C\uDF1F Taco saved: {}", tacoOrder);
-                    log.info("\uD83C\uDF1F Ingredients: {}", taco.getIngredients());
-                    log.info("\uD83C\uDF1F Taco Id: {}", taco.getId());
+                .flatMap(ingredientRepo::findById)
+                .collectList()
+                .flatMap(ingredients -> {
+                    taco.setIngredients(ingredients);  // Устанавливаем ингредиенты в Taco (для отображения, если нужно)
+                    log.info("Taco with ingredients: {}", taco);
 
-                    return Mono.just("redirect:/orders/current");
-                }));
+                    return tacoRepo.save(taco);  // Сохраняем Taco с ingredientIds
+                })
+                .doOnNext(savedTaco -> {
+                    tacoOrder.addTacoId(savedTaco.getId());  // Добавляем ID Taco в заказ для дальнейшего использования
+                    log.info("Taco saved with ID: {} added to order: {}", savedTaco.getId(), tacoOrder);
+                    log.info("Taco saved: {}", savedTaco);
+                })
+                .then(Mono.just("redirect:/orders/current"));  // Перенаправляем на страницу оформления заказа
     }
 
 
