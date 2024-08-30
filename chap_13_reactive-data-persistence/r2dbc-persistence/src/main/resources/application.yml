@@ -25,3 +25,8 @@ spring:
 taco:
   orders:
     page-size: 10
+logging:
+  level:
+    sql: info
+
+

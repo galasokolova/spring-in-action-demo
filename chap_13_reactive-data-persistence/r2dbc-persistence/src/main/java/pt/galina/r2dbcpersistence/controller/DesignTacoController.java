@@ -38,14 +38,18 @@ public class DesignTacoController {
         return ingredientRepo.findAll()
                 .collectList()
                 .doOnNext(ingredients -> {
+                    log.info("\uD83C\uDF1F Fetched ingredients: {}", ingredients);
                     Ingredient.Type[] types = Ingredient.Type.values();
                     for (Ingredient.Type type : types) {
                         List<Ingredient> filtered = filterByType(ingredients, type);
+                        log.info("\uD83C\uDF1F Adding ingredients of type {} to model: {}", type, filtered);
                         model.addAttribute(type.toString().toLowerCase(), filtered);
                     }
                 })
+                .doOnError(error -> log.error("\uD83C\uDF1F Error fetching ingredients", error))
                 .then();
     }
+
 
     @ModelAttribute(name = "tacoOrder")
     public TacoOrder order() {
