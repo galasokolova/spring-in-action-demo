@@ -47,6 +47,7 @@
 
     <modules>
         <module>r2dbc-persistence</module>
+        <module>mongodb-reactive-persistence</module>
     </modules>
 
     <build>
