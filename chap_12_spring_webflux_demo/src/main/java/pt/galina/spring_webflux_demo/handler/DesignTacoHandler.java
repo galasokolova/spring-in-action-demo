@@ -96,6 +96,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.BeanPropertyBindingResult;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import pt.galina.spring_webflux_demo.entity.taco.Ingredient;
@@ -141,6 +143,12 @@ public class DesignTacoHandler {
                     taco.setName(formData.getFirst("name"));
 
                     List<String> ingredientIds = formData.get("ingredients");
+
+                    // Validation of ingredients
+                    BindingResult bindingResult = getBindingResult(taco, ingredientIds);
+                    Mono<ServerResponse> ingredientService1 = getErrorForm(bindingResult, taco);
+                    if (ingredientService1 != null) return ingredientService1;
+
                     return ingredientService.findAllById(ingredientIds)
                             .collectList()
                             .flatMap(ingredients -> {
@@ -154,6 +162,41 @@ public class DesignTacoHandler {
                                         .build();
                             });
                 });
+    }
+
+    private static BindingResult getBindingResult(Taco taco, List<String> ingredientIds) {
+        BindingResult bindingResult = new BeanPropertyBindingResult(taco, "taco");
+
+        // If the name is empty or less than 5 characters
+        if (taco.getName() == null || taco.getName().length() < 5) {
+            bindingResult.rejectValue("name", "name", "Name must be at least 5 characters long");
+        }
+
+        // If there are no ingredients
+        if (ingredientIds == null || ingredientIds.isEmpty()) {
+            bindingResult.rejectValue("ingredients", "ingredients", "You must choose at least 1 ingredient");
+        }
+        return bindingResult;
+    }
+
+    private Mono<ServerResponse> getErrorForm(BindingResult bindingResult, Taco taco) {
+        if (bindingResult.hasErrors()) {
+            // If there are errors, return the error form
+            return ingredientService.findAll()
+                    .collectList()
+                    .flatMap(ingredients -> {
+                        Map<String, Object> model = new HashMap<>();
+                        model.put("taco", taco);
+                        model.put("wrap", ingredients.stream().filter(ing -> ing.getType() == Ingredient.Type.WRAP).collect(Collectors.toList()));
+                        model.put("protein", ingredients.stream().filter(ing -> ing.getType() == Ingredient.Type.PROTEIN).collect(Collectors.toList()));
+                        model.put("cheese", ingredients.stream().filter(ing -> ing.getType() == Ingredient.Type.CHEESE).collect(Collectors.toList()));
+                        model.put("veggies", ingredients.stream().filter(ing -> ing.getType() == Ingredient.Type.VEGGIES).collect(Collectors.toList()));
+                        model.put("sauce", ingredients.stream().filter(ing -> ing.getType() == Ingredient.Type.SAUCE).collect(Collectors.toList()));
+                        model.put("org.springframework.validation.BindingResult.taco", bindingResult);
+                        return ServerResponse.ok().contentType(MediaType.TEXT_HTML).render("design", model);
+                    });
+        }
+        return null;
     }
 
     private Mono<Map<String, Object>> createModelForDesign(List<Ingredient> ingredients) {

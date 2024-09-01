@@ -11,7 +11,7 @@
 <img th:src="@{/images/TacoCloud.png}"/>
 
 <div style="color: red" th:if="${error}">
-  Unable to login. Check your username and password.
+  <p th:text="${error}">Unable to login. Check your username and password.</p>
 </div>
 
 <p>New here? Click

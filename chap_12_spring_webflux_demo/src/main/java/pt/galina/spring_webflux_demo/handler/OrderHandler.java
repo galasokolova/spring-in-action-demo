@@ -7,6 +7,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.ReactiveSecurityContextHolder;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.stereotype.Component;
+import org.springframework.validation.BeanPropertyBindingResult;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.Validator;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
 import pt.galina.spring_webflux_demo.entity.taco.TacoOrder;
@@ -21,10 +24,13 @@ import java.util.Map;
 public class OrderHandler {
 
     private final TacoOrderService tacoOrderService;
+    private final Validator validator;
+
 
     @Autowired
-    public OrderHandler(TacoOrderService tacoOrderService) {
+    public OrderHandler(TacoOrderService tacoOrderService, Validator validator) {
         this.tacoOrderService = tacoOrderService;
+        this.validator = validator;
     }
 
     public Mono<ServerResponse> showOrderForm(ServerRequest request) {
@@ -52,26 +58,48 @@ public class OrderHandler {
     }
 
     public Mono<ServerResponse> processOrder(ServerRequest request) {
-        return request.session()
-                .flatMap(session -> {
-                    TacoOrder tacoOrder = session.getAttribute("tacoOrder");
+        return request.formData()
+                .flatMap(formData -> request.session()
+                        .flatMap(session -> {
+                            TacoOrder tacoOrder = session.getAttribute("tacoOrder");
 
-                    if (tacoOrder == null) {
-                        return ServerResponse
-                                .badRequest()
-                                .build();
-                    }
+                            if (tacoOrder == null) {
+                                log.warn("No TacoOrder found in session.");
+                                return ServerResponse.badRequest().build();
+                            }
 
-                    return request.principal()
-                            .flatMap(principal -> tacoOrderService
-                                    .processOrder(principal.getName(), tacoOrder))
-                            .flatMap(savedOrder -> {
-                                session.getAttributes().remove("tacoOrder");
-                                return ServerResponse
-                                        .seeOther(URI.create("/orders/orderList"))
-                                        .build();
-                            });
-                });
+                            tacoOrder.setCcNumber(formData.getFirst("ccNumber"));
+                            tacoOrder.setCcExpiration(formData.getFirst("ccExpiration"));
+                            tacoOrder.setCcCVV(formData.getFirst("ccCVV"));
+
+                            log.info("TacoOrder after binding form data: {}", tacoOrder);
+
+                            BindingResult bindingResult = new BeanPropertyBindingResult(tacoOrder, "tacoOrder");
+
+                            log.info("Validating TacoOrder: {}", tacoOrder);
+                            validator.validate(tacoOrder, bindingResult);
+                            log.info("Validation completed. Errors found: {}", bindingResult.getErrorCount());
+
+                            if (bindingResult.hasErrors()) {
+                                bindingResult.getAllErrors().forEach(error ->
+                                        log.error("Validation error: field={}, message={}", error.getObjectName(), error.getDefaultMessage())
+                                );
+                                return ServerResponse.ok()
+                                        .contentType(MediaType.TEXT_HTML)
+                                        .render("orderForm", Map.of(
+                                                "tacoOrder", tacoOrder,
+                                                "org.springframework.validation.BindingResult.tacoOrder", bindingResult));
+                            }
+
+                            return request.principal()
+                                    .flatMap(principal -> tacoOrderService
+                                            .processOrder(principal.getName(), tacoOrder))
+                                    .flatMap(savedOrder -> {
+                                        session.getAttributes().remove("tacoOrder");
+                                        return ServerResponse.seeOther(URI.create("/orders/orderList")).build();
+                                    });
+                        })
+                );
     }
 
     public Mono<ServerResponse> ordersForUser(ServerRequest request) {

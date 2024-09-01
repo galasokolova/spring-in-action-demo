@@ -1,4 +1,4 @@
-package pt.galina.mongodbreactivepersistence.config.validation;
+package pt.galina.spring_webflux_demo.config.validation;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;

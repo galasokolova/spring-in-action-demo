@@ -69,7 +69,6 @@ public class OrderHandler {
                                 return ServerResponse.badRequest().build();
                             }
 
-                            // Ручная привязка данных из формы к объекту TacoOrder
                             tacoOrder.setCcNumber(formData.getFirst("ccNumber"));
                             tacoOrder.setCcExpiration(formData.getFirst("ccExpiration"));
                             tacoOrder.setCcCVV(formData.getFirst("ccCVV"));

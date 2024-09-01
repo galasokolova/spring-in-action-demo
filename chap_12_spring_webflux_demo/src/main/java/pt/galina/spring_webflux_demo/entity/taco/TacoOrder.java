@@ -1,13 +1,12 @@
 package pt.galina.spring_webflux_demo.entity.taco;
 
-import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.validator.constraints.CreditCardNumber;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import pt.galina.spring_webflux_demo.config.validation.ValidCreditCard;
+import pt.galina.spring_webflux_demo.config.validation.ValidExpirationDate;
 import pt.galina.spring_webflux_demo.entity.user.User;
 
 import java.time.LocalDateTime;
@@ -38,14 +37,16 @@ public class TacoOrder {
     @NotBlank(message="Zip code is required")
     private String deliveryZip;
 
-    @CreditCardNumber(message="Not a valid credit card number")
+    @NotBlank(message = "Credit card number is required")
+    @ValidCreditCard
     private String ccNumber;
 
-    @Pattern(regexp="^(0[1-9]|1[0-2])/(\\d{2})$",
-            message="Must be formatted MM/YY")
+    @NotBlank(message = "Expiration date is required")
+    @ValidExpirationDate
     private String ccExpiration;
 
-    @Digits(integer=3, fraction=0, message="Invalid CVV")
+    @NotBlank(message = "CVV is required")
+    @jakarta.validation.constraints.Digits(integer=3, fraction=0, message="Invalid CVV")
     private String ccCVV;
 
     private User user;

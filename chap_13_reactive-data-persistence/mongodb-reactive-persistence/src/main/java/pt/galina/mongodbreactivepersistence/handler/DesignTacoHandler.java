@@ -55,6 +55,7 @@ public class DesignTacoHandler {
                     BindingResult bindingResult = getBindingResult(taco, ingredientIds);
 
                     Mono<ServerResponse> ingredientService1 = getErrorForm(bindingResult, taco);
+
                     if (ingredientService1 != null) return ingredientService1;
 
                     // If there are no errors, continue creating the order

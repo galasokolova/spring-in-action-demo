@@ -47,15 +47,15 @@ public class TacoOrder implements Serializable {
     @NotBlank(message="Zip code is required")
     private String deliveryZip;
 
-    @NotNull(message = "Credit card number is required")
+    @NotBlank(message = "Credit card number is required")
     @ValidCreditCard
     private String ccNumber;
 
-    @NotNull(message = "Expiration date is required")
+    @NotBlank(message = "Expiration date is required")
     @ValidExpirationDate
     private String ccExpiration;
 
-    @NotNull(message = "CVV is required")
+    @NotBlank(message = "CVV is required")
     @jakarta.validation.constraints.Digits(integer=3, fraction=0, message="Invalid CVV")
     private String ccCVV;
 

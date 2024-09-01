@@ -41,7 +41,7 @@ public class MongodbReactivePersistenceApplication {
                         .thenMany(ingredientRepo.findAll())
                         .subscribe();
             } catch (IOException e) {
-                log.error("⏩⏩⏩ Failed to load ingredients", e);
+                log.error("⏩ Failed to load ingredients", e);
             }
         };
     }

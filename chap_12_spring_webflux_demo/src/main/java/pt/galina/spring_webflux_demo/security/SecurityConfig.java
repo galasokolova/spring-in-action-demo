@@ -52,7 +52,8 @@ public class SecurityConfig {
                         .authenticationFailureHandler((webFilterExchange, exception) -> {
                             log.error("Authentication failed", exception);
                             return Mono.fromRunnable(() -> {
-                                webFilterExchange.getExchange().getResponse().setStatusCode(org.springframework.http.HttpStatus.UNAUTHORIZED);
+                                webFilterExchange.getExchange().getResponse().setStatusCode(org.springframework.http.HttpStatus.FOUND);
+                                webFilterExchange.getExchange().getResponse().getHeaders().setLocation(URI.create("/login?error=true"));
                             });
                         })
                 )

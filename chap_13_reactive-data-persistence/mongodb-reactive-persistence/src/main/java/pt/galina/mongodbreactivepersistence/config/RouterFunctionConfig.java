@@ -23,18 +23,18 @@ public class RouterFunctionConfig {
     private final OrderHandler orderHandler;
     private final RegistrationHandler registrationHandler;
     private final UserHandler userHandler;
-    private final LoginHandler loginHandler;  // Добавляем LoginHandler
+    private final LoginHandler loginHandler;
 
     public RouterFunctionConfig(DesignTacoHandler designTacoHandler,
                                 OrderHandler orderHandler,
                                 RegistrationHandler registrationHandler,
                                 UserHandler userHandler,
-                                LoginHandler loginHandler) {  // Добавляем LoginHandler в конструктор
+                                LoginHandler loginHandler) {
         this.designTacoHandler = designTacoHandler;
         this.orderHandler = orderHandler;
         this.registrationHandler = registrationHandler;
         this.userHandler = userHandler;
-        this.loginHandler = loginHandler;  // Инициализация
+        this.loginHandler = loginHandler;
     }
 
     @Bean
@@ -44,7 +44,7 @@ public class RouterFunctionConfig {
                 .add(orderRoutes())
                 .add(registrationRoutes())
                 .add(userRoutes())
-                .add(loginRoutes())  // Добавляем маршруты для логина
+                .add(loginRoutes())
                 .build();
     }
 
@@ -68,7 +68,6 @@ public class RouterFunctionConfig {
         return route(GET("/users"), userHandler::listUsers);
     }
 
-    // Новый метод для маршрутов логина
     private RouterFunction<ServerResponse> loginRoutes() {
         return route(GET("/login"), loginHandler::login);
     }

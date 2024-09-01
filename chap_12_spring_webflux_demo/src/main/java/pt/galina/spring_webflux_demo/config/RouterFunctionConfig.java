@@ -6,10 +6,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerResponse;
-import pt.galina.spring_webflux_demo.handler.DesignTacoHandler;
-import pt.galina.spring_webflux_demo.handler.OrderHandler;
-import pt.galina.spring_webflux_demo.handler.RegistrationHandler;
-import pt.galina.spring_webflux_demo.handler.UserHandler;
+import pt.galina.spring_webflux_demo.handler.*;
 
 import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
 import static org.springframework.web.reactive.function.server.RequestPredicates.POST;
@@ -22,15 +19,18 @@ public class RouterFunctionConfig {
     private final OrderHandler orderHandler;
     private final RegistrationHandler registrationHandler;
     private final UserHandler userHandler;
+    private final LoginHandler loginHandler;
 
     public RouterFunctionConfig(DesignTacoHandler designTacoHandler,
                                 OrderHandler orderHandler,
                                 RegistrationHandler registrationHandler,
-                                UserHandler userHandler) {
+                                UserHandler userHandler,
+                                LoginHandler loginHandler) {
         this.designTacoHandler = designTacoHandler;
         this.orderHandler = orderHandler;
         this.registrationHandler = registrationHandler;
         this.userHandler = userHandler;
+        this.loginHandler = loginHandler;
     }
 
     @Bean
@@ -40,6 +40,7 @@ public class RouterFunctionConfig {
                 .add(orderRoutes())
                 .add(registrationRoutes())
                 .add(userRoutes())
+                .add(loginRoutes())  // Добавляем маршруты для логина
                 .build();
     }
 
@@ -56,11 +57,15 @@ public class RouterFunctionConfig {
 
     private RouterFunction<ServerResponse> registrationRoutes() {
         return route(POST("/register"), registrationHandler::processRegistration)
-                .andRoute(GET("/register"), request -> ServerResponse.ok().contentType(MediaType.TEXT_HTML).render("registration"))
-                .andRoute(GET("/login"), request -> ServerResponse.ok().contentType(MediaType.TEXT_HTML).render("login"));
+                .andRoute(GET("/register"), request -> ServerResponse.ok().contentType(MediaType.TEXT_HTML).render("registration"));
     }
 
     private RouterFunction<ServerResponse> userRoutes() {
         return route(GET("/users"), userHandler::listUsers);
+    }
+
+    // Новый метод для маршрутов логина
+    private RouterFunction<ServerResponse> loginRoutes() {
+        return route(GET("/login"), loginHandler::login);
     }
 }

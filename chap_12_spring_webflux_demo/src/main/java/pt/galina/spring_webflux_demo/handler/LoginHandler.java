@@ -17,16 +17,15 @@ public class LoginHandler {
 
     public Mono<ServerResponse> login(ServerRequest request) {
         Map<String, Object> model = new HashMap<>();
-        return request.queryParam("error")
-                .map(error -> {
-                    log.error("Login error: Invalid username or password");
-                    model.put("error", "Invalid username or password.");
-                    return Mono.just(model);
-                })
-                .orElseGet(() -> {
-                    log.info("Login page requested");
-                    return Mono.just(model);
-                })
-                .flatMap(m -> ServerResponse.ok().render("login", m));
+        boolean hasError = request.queryParam("error").isPresent();
+
+        if (hasError) {
+            log.error("Login error: Invalid username or password");
+            model.put("error", "Invalid username or password.");
+        } else {
+            log.info("Login page requested");
+        }
+
+        return ServerResponse.ok().render("login", model);
     }
 }
