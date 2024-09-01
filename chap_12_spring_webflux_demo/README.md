@@ -2,7 +2,7 @@
 
 ### Use MongoDB Shell:
 #### 1. Download and install MongoDB Shell: https://www.mongodb.com/try/download/shell
-#### 2. Run MongoDB Shell in docker:
+#### 2. Run MongoDB in docker:
 ```bash
 docker run --rm --name my-mongo-container -p 27017:27017 -d mongo:latest
 ```

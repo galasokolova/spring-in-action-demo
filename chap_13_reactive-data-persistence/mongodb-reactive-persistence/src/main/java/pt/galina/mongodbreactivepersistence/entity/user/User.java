@@ -17,7 +17,7 @@ import java.util.List;
 
 @Data
 @Document(collection = "users")
-@NoArgsConstructor(access = AccessLevel.PROTECTED, force = true)
+@NoArgsConstructor(access = AccessLevel.PUBLIC, force = true)
 @AllArgsConstructor
 public class User implements UserDetails {
     @Id
