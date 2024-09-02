@@ -1,0 +1,22 @@
+spring:
+  data:
+    rest:
+      base-path: /data-api
+  cassandra:
+    keyspace-name: tacocloud
+    schema-action: recreate
+    local-datacenter: datacenter1
+    port: 9042
+  integration:
+    management:
+      default-logging-enabled: true
+
+
+logging:
+  level:
+    root: info
+    org.springframework.security: info
+
+taco:
+  orders:
+    page-size: 10

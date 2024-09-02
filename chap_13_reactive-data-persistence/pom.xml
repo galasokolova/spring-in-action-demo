@@ -48,6 +48,7 @@
     <modules>
         <module>r2dbc-persistence</module>
         <module>mongodb-reactive-persistence</module>
+        <module>cassandra-reactive-persistence</module>
     </modules>
 
     <build>
