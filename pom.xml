@@ -49,6 +49,8 @@
         <module>chap_11_reactor_demo</module>
         <module>chap_12_spring_webflux_demo</module>
         <module>chap_13_reactive-data-persistence</module>
+        <module>chap_14_rsocket_request-response</module>
+        <module>chap_14_rsocket_request-stream</module>
 
         <module>shared-resources</module>
     </modules>
