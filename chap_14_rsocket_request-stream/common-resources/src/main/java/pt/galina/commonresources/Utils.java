@@ -1,4 +1,4 @@
-package pt.galina.requestresponse_client.util;
+package pt.galina.commonresources;
 
 import lombok.extern.slf4j.Slf4j;
 
