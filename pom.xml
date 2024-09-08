@@ -51,6 +51,7 @@
         <module>chap_13_reactive-data-persistence</module>
         <module>chap_14_rsocket_request-response</module>
         <module>chap_14_rsocket_request-stream</module>
+        <module>chap_14_rsocket-fire-and-forget</module>
 
         <module>shared-resources</module>
     </modules>
