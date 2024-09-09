@@ -1,0 +1,8 @@
+spring:
+  rsocket:
+    server:
+      port: 7000
+logging:
+  level:
+    org.springframework.messaging.rsocket: DEBUG
+    io.rsocket: DEBUG

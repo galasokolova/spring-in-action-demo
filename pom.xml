@@ -52,6 +52,7 @@
         <module>chap_14_rsocket_request-response</module>
         <module>chap_14_rsocket_request-stream</module>
         <module>chap_14_rsocket-fire-and-forget</module>
+        <module>chap_14_rsocket-channel</module>
 
         <module>shared-resources</module>
     </modules>
