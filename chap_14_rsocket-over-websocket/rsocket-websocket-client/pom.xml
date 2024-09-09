@@ -4,19 +4,24 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>pt.galina</groupId>
-        <artifactId>chap_14_rsocket-fire-and-forget</artifactId>
+        <artifactId>chap_14_rsocket-over-websocket</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>fire-and-forget-common</artifactId>
+    <artifactId>rsocket-websocket-client</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>fire-and-forget-common</name>
-    <description>fire-and-forget-common</description>
+    <name>rsocket-websocket-client</name>
+    <description>rsocket-websocket-client</description>
 
     <properties>
         <java.version>17</java.version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-rsocket</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -27,6 +32,15 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -35,7 +49,12 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <skip>true</skip> <!-- Отключение поиска главного класса -->
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
                 </configuration>
             </plugin>
         </plugins>

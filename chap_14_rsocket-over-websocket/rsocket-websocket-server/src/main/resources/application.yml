@@ -1,0 +1,10 @@
+spring:
+  rsocket:
+    server:
+      transport: websocket
+      mapping-path: /rsocket
+
+logging:
+  level:
+    org.springframework.rsocket: debug
+    reactor.netty: debug
