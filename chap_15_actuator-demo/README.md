@@ -20,10 +20,11 @@ cd chap_15_actuator-demo
 Open a web browser and navigate to http://localhost:8080 to access the running application.
 
 ### 6. Execute the following requests:
+#### *Some requests may require generating a CSRF token or disabling CSRF protection.*
 
 $ curl -X POST -d "TACOS1234567" -H "Content-type: text/plain" http://localhost:8080/api/discount
 Discount code updated to: TACOS1234
-Generating CSRF token/Turning off CSRF is needed.
+
 
 $ curl 'http://localhost:8080/management/env/tacocloud.discount.code' -i -X GET
 

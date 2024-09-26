@@ -33,7 +33,7 @@ public class SecurityConfig {
     @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
         return http
-                .csrf(ServerHttpSecurity.CsrfSpec::disable) // Turning off CSRF temporary for POST requests
+//                .csrf(ServerHttpSecurity.CsrfSpec::disable) // Turning off CSRF temporary for POST requests
 //                .csrf(csrf -> csrf
 //                        .csrfTokenRepository(CookieServerCsrfTokenRepository.withHttpOnlyFalse()))  // Generating CSRF token in cookies
                 .authorizeExchange(exchanges -> exchanges
