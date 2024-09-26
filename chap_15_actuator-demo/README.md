@@ -1,25 +1,25 @@
 ## Taco Cloud - Chapter 15: 
 ## *Working with Spring Boot Actuator*
 
-#### 1. Run MongoDB in docker:
+### 1. Run MongoDB in docker:
 ```bash
 docker run --rm --name my-mongo -p 27017:27017 -d mongo:latest
 ```
-#### 3. Connect to the container: open your terminal or command prompt and execute the command:
+### 2. Connect to the container: open your terminal or command prompt and execute the command:
 ```bash
 mongosh --host localhost --port 27017
 ```
 
-### 4. Run the project:
+### 3. Run the project:
 ```bash
 cd chap_15_actuator-demo
 ./mvnw spring-boot:run
 ```
 
-### 5. Access the application:
+### 4. Access the application:
 Open a web browser and navigate to http://localhost:8080 to access the running application.
 
-### 6. Execute the following requests:
+### 5. Execute the following requests:
 #### *Some requests may require generating a CSRF token or disabling CSRF protection.*
 
 $ curl -X POST -d "TACOS1234567" -H "Content-type: text/plain" http://localhost:8080/api/discount
