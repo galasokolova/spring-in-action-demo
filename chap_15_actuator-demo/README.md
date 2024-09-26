@@ -1,9 +1,7 @@
 ## Taco Cloud - Chapter 15: 
 ## *Working with Spring Boot Actuator*
 
-### Use MongoDB Shell:
-#### 1. Download and install MongoDB Shell: https://www.mongodb.com/try/download/shell
-#### 2. Run MongoDB in docker:
+#### 1. Run MongoDB in docker:
 ```bash
 docker run --rm --name my-mongo -p 27017:27017 -d mongo:latest
 ```
@@ -11,53 +9,52 @@ docker run --rm --name my-mongo -p 27017:27017 -d mongo:latest
 ```bash
 mongosh --host localhost --port 27017
 ```
-#### 4. Execute commands:
-Here is the link to MongoDB Shell Commands: The Complete Cheat Sheet:
-https://www.slingacademy.com/article/mongodb-shell-commands-the-complete-cheat-sheet/
 
-### Build and run the project:
+### 4. Run the project:
 ```bash
 cd chap_15_actuator-demo
 ./mvnw spring-boot:run
 ```
 
-### Access the application:
+### 5. Access the application:
 Open a web browser and navigate to http://localhost:8080 to access the running application.
+
+### 6. Execute the following requests:
 
 $ curl -X POST -d "TACOS1234567" -H "Content-type: text/plain" http://localhost:8080/api/discount
 Discount code updated to: TACOS1234
 Generating CSRF token/Turning off CSRF is needed.
 
-curl 'http://localhost:8080/management/env/tacocloud.discount.code' -i -X GET
+$ curl 'http://localhost:8080/management/env/tacocloud.discount.code' -i -X GET
 
-curl localhost:8080/management/mappings | jq
+$ curl localhost:8080/management/mappings | jq
 
-curl localhost:8080/management/loggers  | jq
+$ curl localhost:8080/management/loggers  | jq
 
-curl localhost:8080/management/loggers/tacos.ingredients  | jq
+$ curl localhost:8080/management/loggers/tacos.ingredients  | jq
 
-curl localhost:8080/management/threaddump  | jq
+$ curl localhost:8080/management/threaddump  | jq
 
-curl localhost:8080/management/metrics  | jq
+$ curl localhost:8080/management/metrics  | jq
 
-curl localhost:8080/management/metrics/http.server.requests | jq
+$ curl localhost:8080/management/metrics/http.server.requests | jq
 
-curl localhost:8080/management/metrics/http.server.requests?  tag=status:200
+$ curl localhost:8080/management/metrics/http.server.requests?  tag=status:200
+$ curl localhost:8080/management/metrics/http.server.requests?  tag=status:200&tag=uri:/design
 
-curl localhost:8080/management/metrics/http.server.requests?  tag=status:200&tag=uri:/design
-
+```bash
 mvn spring-boot:build-info
-curl localhost:8080/management/info | jq
+```
+$ curl localhost:8080/management/info | jq
 
-curl localhost:8080/management/health | jq
+$ curl localhost:8080/management/health | jq
 
 $ curl localhost:8080/management/env | jq '.propertySources[] | select(.name == "server.ports")'
-
 $ curl localhost:8080/management/env | jq '.propertySources[] | select(.name == "server.ports") | .properties["local.server.port"].value'
 
 
-curl localhost:8080/management/notes |jq
+$ curl localhost:8080/management/notes |jq
 
-curl -X POST localhost:8080/management/notes \
+$ curl -X POST localhost:8080/management/notes \
 -H "Content-Type: application/json" \
 -d '{"text": "First Note"}'
