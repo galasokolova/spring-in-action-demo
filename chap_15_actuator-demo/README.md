@@ -47,4 +47,4 @@ curl localhost:8080/management/metrics/http.server.requests?  tag=status:200
 curl localhost:8080/management/metrics/http.server.requests?  tag=status:200&tag=uri:/design
 
 mvn spring-boot:build-info
-
+curl localhost:8080/management/info | jq
