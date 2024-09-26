@@ -96,7 +96,6 @@
                         </goals>
                     </execution>
                 </executions>
-
                 <configuration>
                     <excludes>
                         <exclude>
@@ -109,11 +108,10 @@
             <plugin>
                 <groupId>pl.project13.maven</groupId>
                 <artifactId>git-commit-id-plugin</artifactId>
-                <version>4.0.0</version>
+                <version>4.9.10</version>
                 <configuration>
                     <failOnNoGitDirectory>false</failOnNoGitDirectory>
                 </configuration>
-
             </plugin>
 
         </plugins>
