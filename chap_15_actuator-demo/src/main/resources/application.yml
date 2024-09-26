@@ -12,7 +12,10 @@ spring:
 
 management:
   info:
+    java:
+      enabled: true
     git:
+      enabled: true
       mode: full
 
     env:
@@ -22,6 +25,7 @@ management:
       show-details: always
     env:
       enabled: true
+      show-values: ALWAYS
     loggers:
       enabled: true
     metrics:
@@ -30,7 +34,7 @@ management:
     web:
       base-path: /management
       exposure:
-        include: health, info, beans, conditions, env, mappings, loggers, metrics
+        include: health, info, beans, conditions, env, mappings, loggers, metrics, notes
 info:
   contact:
     email: support@tacocloud.com

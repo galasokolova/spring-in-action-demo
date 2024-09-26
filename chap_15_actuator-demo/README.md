@@ -48,3 +48,16 @@ curl localhost:8080/management/metrics/http.server.requests?  tag=status:200&tag
 
 mvn spring-boot:build-info
 curl localhost:8080/management/info | jq
+
+curl localhost:8080/management/health | jq
+
+$ curl localhost:8080/management/env | jq '.propertySources[] | select(.name == "server.ports")'
+
+$ curl localhost:8080/management/env | jq '.propertySources[] | select(.name == "server.ports") | .properties["local.server.port"].value'
+
+
+curl localhost:8080/management/notes |jq
+
+curl -X POST localhost:8080/management/notes \
+-H "Content-Type: application/json" \
+-d '{"text": "First Note"}'

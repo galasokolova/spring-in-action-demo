@@ -1,4 +1,4 @@
-package pt.galina.chap_15_actuatordemo.config.actuator;
+package pt.galina.chap_15_actuatordemo.config.actuator.info;
 
 import org.springframework.boot.actuate.info.Info;
 import org.springframework.boot.actuate.info.InfoContributor;
