@@ -55,6 +55,7 @@
         <module>chap_14_rsocket-channel</module>
         <module>chap_14_rsocket-over-websocket</module>
         <module>chap_15_actuator-demo</module>
+        <module>chap_16_admin-system</module>
 
         <module>shared-resources</module>
     </modules>
