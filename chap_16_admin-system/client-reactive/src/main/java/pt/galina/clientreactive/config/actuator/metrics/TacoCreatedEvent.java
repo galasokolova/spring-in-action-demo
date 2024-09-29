@@ -1,6 +1,6 @@
-package pt.galina.chap_15_actuatordemo.config.actuator.metrics;
+package pt.galina.clientreactive.config.actuator.metrics;
 
-import pt.galina.chap_15_actuatordemo.entity.taco.Taco;
+import pt.galina.clientreactive.entity.taco.Taco;
 
 public class TacoCreatedEvent {
     private final Taco taco;

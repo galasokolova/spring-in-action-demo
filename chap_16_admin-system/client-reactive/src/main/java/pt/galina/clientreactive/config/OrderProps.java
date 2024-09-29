@@ -1,4 +1,4 @@
-package pt.galina.chap_15_actuatordemo.config;
+package pt.galina.clientreactive.config;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

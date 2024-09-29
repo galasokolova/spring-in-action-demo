@@ -1,7 +1,8 @@
-package pt.galina.chap_15_actuatordemo.config.validation;
+package pt.galina.clientreactive.config.validation;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
+import pt.galina.clientreactive.config.validation.CreditCardValidator;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

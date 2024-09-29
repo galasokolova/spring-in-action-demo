@@ -1,2 +1,12 @@
 server:
   port: 9090
+
+spring:
+  security:
+    user:
+      name: admin
+      password: admin
+
+logging:
+  level:
+    org.springframework.security: debug

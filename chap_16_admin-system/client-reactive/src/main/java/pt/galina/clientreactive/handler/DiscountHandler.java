@@ -1,9 +1,9 @@
-package pt.galina.chap_15_actuatordemo.handler;
+package pt.galina.clientreactive.handler;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
-import pt.galina.chap_15_actuatordemo.config.actuator.DiscountProperties;
+import pt.galina.clientreactive.config.actuator.DiscountProperties;
 import reactor.core.publisher.Mono;
 
 @Component

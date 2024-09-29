@@ -33,6 +33,7 @@
 
     <modules>
         <module>admin-server</module>
+        <module>client-reactive</module>
     </modules>
 
     <build>

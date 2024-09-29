@@ -1,4 +1,4 @@
-package pt.galina.chap_15_actuatordemo.entity.taco;
+package pt.galina.clientreactive.entity.taco;
 
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotBlank;
@@ -6,9 +6,9 @@ import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import pt.galina.chap_15_actuatordemo.config.validation.ValidCreditCard;
-import pt.galina.chap_15_actuatordemo.config.validation.ValidExpirationDate;
-import pt.galina.chap_15_actuatordemo.entity.user.User;
+import pt.galina.clientreactive.config.validation.ValidCreditCard;
+import pt.galina.clientreactive.config.validation.ValidExpirationDate;
+import pt.galina.clientreactive.entity.user.User;
 
 import java.io.Serial;
 import java.io.Serializable;

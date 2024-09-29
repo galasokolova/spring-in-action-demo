@@ -1,12 +1,12 @@
-package pt.galina.chap_15_actuatordemo.service;
+package pt.galina.clientreactive.service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import pt.galina.chap_15_actuatordemo.entity.taco.TacoOrder;
-import pt.galina.chap_15_actuatordemo.entity.taco.data.OrderRepository;
-import pt.galina.chap_15_actuatordemo.entity.user.data.UserRepository;
+import pt.galina.clientreactive.entity.taco.TacoOrder;
+import pt.galina.clientreactive.entity.taco.data.OrderRepository;
+import pt.galina.clientreactive.entity.user.data.UserRepository;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

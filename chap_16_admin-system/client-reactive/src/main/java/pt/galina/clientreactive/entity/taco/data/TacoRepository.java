@@ -1,7 +1,7 @@
-package pt.galina.chap_15_actuatordemo.entity.taco.data;
+package pt.galina.clientreactive.entity.taco.data;
 
 import org.springframework.data.mongodb.repository.ReactiveMongoRepository;
-import pt.galina.chap_15_actuatordemo.entity.taco.Taco;
+import pt.galina.clientreactive.entity.taco.Taco;
 
 public interface TacoRepository extends ReactiveMongoRepository<Taco, String> {
 }

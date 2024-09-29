@@ -1,11 +1,11 @@
-package pt.galina.chap_15_actuatordemo.config.actuator.metrics;
+package pt.galina.clientreactive.config.actuator.metrics;
 
 import io.micrometer.core.instrument.MeterRegistry;
-import org.springframework.data.mongodb.core.mapping.event.AfterSaveEvent;
-import org.springframework.data.mongodb.core.mapping.event.AbstractMongoEventListener;
-import org.springframework.stereotype.Component;
-import pt.galina.chap_15_actuatordemo.entity.taco.Taco;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.mongodb.core.mapping.event.AbstractMongoEventListener;
+import org.springframework.data.mongodb.core.mapping.event.AfterSaveEvent;
+import org.springframework.stereotype.Component;
+import pt.galina.clientreactive.entity.taco.Taco;
 
 @Slf4j
 @Component

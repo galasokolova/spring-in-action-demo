@@ -1,9 +1,9 @@
-package pt.galina.chap_15_actuatordemo.config.actuator.metrics;
+package pt.galina.clientreactive.config.actuator.metrics;
 
+import io.micrometer.core.instrument.MeterRegistry;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
-import io.micrometer.core.instrument.MeterRegistry;
-import pt.galina.chap_15_actuatordemo.entity.taco.Taco;
+import pt.galina.clientreactive.entity.taco.Taco;
 
 @Component
 public class TacoMetricsListener {

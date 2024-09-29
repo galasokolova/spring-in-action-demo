@@ -1,4 +1,4 @@
-package pt.galina.chap_15_actuatordemo.handler;
+package pt.galina.clientreactive.handler;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;

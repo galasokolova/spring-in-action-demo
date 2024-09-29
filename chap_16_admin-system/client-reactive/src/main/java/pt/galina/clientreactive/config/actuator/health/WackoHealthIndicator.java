@@ -1,9 +1,10 @@
-package pt.galina.chap_15_actuatordemo.config.actuator.health;
+package pt.galina.clientreactive.config.actuator.health;
 
-import java.util.Calendar;
 import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.stereotype.Component;
+
+import java.util.Calendar;
 @Component
 public class WackoHealthIndicator  implements HealthIndicator {
     @Override

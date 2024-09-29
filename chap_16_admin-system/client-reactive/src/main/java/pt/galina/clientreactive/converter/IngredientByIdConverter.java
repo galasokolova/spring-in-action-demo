@@ -1,9 +1,9 @@
-package pt.galina.chap_15_actuatordemo.converter;
+package pt.galina.clientreactive.converter;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
-import pt.galina.chap_15_actuatordemo.entity.taco.Ingredient;
-import pt.galina.chap_15_actuatordemo.service.IngredientService;
+import pt.galina.clientreactive.entity.taco.Ingredient;
+import pt.galina.clientreactive.service.IngredientService;
 
 @Component
 public class IngredientByIdConverter implements Converter<String, Ingredient> {

@@ -1,5 +1,5 @@
-## Taco Cloud - Chapter 15: 
-## *Working with Spring Boot Actuator*
+## Taco Cloud - Chapter 16: 
+## *Administering Spring*
 
 ### 1. Run MongoDB in docker:
 ```bash
@@ -11,10 +11,7 @@ mongosh --host localhost --port 27017
 ```
 
 ### 3. Run the project:
-```bash
-cd chap_15_actuator-demo
-./mvnw spring-boot:run
-```
+
 
 ### 4. Access the application:
 Open a web browser and navigate to http://localhost:8080 to access the running application.

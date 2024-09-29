@@ -1,34 +1,44 @@
-package pt.galina.chap5methodlevelsecurity.entity.admin;
+package pt.galina.clientreactive.entity.admin;
 
-import jakarta.persistence.*;
-import lombok.AccessLevel;
+import lombok.*;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
+import lombok.AccessLevel;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import java.io.Serial;
 import java.util.Collection;
 import java.util.List;
 
-@Entity
 @Data
-@NoArgsConstructor(access= AccessLevel.PROTECTED, force=true)
-@RequiredArgsConstructor
-@Table(name = "admin")
+@Document(collection = "admin")
+@NoArgsConstructor(access = AccessLevel.PUBLIC, force = true)
+@AllArgsConstructor
 public class Admin implements UserDetails {
-    @Serial
-    private static final long serialVersionUID = 1L;
+
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name = "id")
-    private Long id;
-    @Column(name = "username")
+    private String id;
+
+    @Indexed(unique = true)
     private final String username;
-    @Column(name = "password")
+
     private final String password;
+
+    public Admin(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

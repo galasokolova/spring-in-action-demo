@@ -1,4 +1,4 @@
-package pt.galina.chap_15_actuatordemo.config.actuator;
+package pt.galina.clientreactive.config.actuator;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

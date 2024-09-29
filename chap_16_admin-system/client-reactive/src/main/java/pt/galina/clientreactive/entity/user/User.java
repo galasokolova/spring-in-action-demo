@@ -1,4 +1,4 @@
-package pt.galina.chap_15_actuatordemo.entity.user;
+package pt.galina.clientreactive.entity.user;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

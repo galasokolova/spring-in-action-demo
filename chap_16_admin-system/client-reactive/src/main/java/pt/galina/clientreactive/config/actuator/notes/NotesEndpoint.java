@@ -1,8 +1,4 @@
-package pt.galina.chap_15_actuatordemo.config.actuator.notes;
-
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+package pt.galina.clientreactive.config.actuator.notes;
 
 import lombok.Getter;
 import org.springframework.boot.actuate.endpoint.annotation.DeleteOperation;
@@ -10,6 +6,10 @@ import org.springframework.boot.actuate.endpoint.annotation.Endpoint;
 import org.springframework.boot.actuate.endpoint.annotation.ReadOperation;
 import org.springframework.boot.actuate.endpoint.annotation.WriteOperation;
 import org.springframework.stereotype.Component;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 @Component
 @Endpoint(id="notes", enableByDefault=true)

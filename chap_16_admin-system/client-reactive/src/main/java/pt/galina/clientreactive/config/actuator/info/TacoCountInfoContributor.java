@@ -1,9 +1,9 @@
-package pt.galina.chap_15_actuatordemo.config.actuator.info;
+package pt.galina.clientreactive.config.actuator.info;
 
 import org.springframework.boot.actuate.info.Info;
 import org.springframework.boot.actuate.info.InfoContributor;
 import org.springframework.stereotype.Component;
-import pt.galina.chap_15_actuatordemo.entity.taco.data.TacoRepository;
+import pt.galina.clientreactive.entity.taco.data.TacoRepository;
 
 import java.util.HashMap;
 import java.util.Map;

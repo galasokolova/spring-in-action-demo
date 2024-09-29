@@ -1,4 +1,4 @@
-package pt.galina.chap_15_actuatordemo.config.validation;
+package pt.galina.clientreactive.config.validation;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;

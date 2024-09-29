@@ -1,11 +1,11 @@
-package pt.galina.chap_15_actuatordemo.router;
+package pt.galina.clientreactive.router;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerResponse;
-import pt.galina.chap_15_actuatordemo.handler.DesignTacoHandler;
+import pt.galina.clientreactive.handler.DesignTacoHandler;
 
 @Configuration
 public class DesignTacoRouter {

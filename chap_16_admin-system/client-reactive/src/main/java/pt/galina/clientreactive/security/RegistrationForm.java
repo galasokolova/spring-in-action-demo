@@ -1,8 +1,8 @@
-package pt.galina.chap_15_actuatordemo.security;
+package pt.galina.clientreactive.security;
 
 import lombok.Data;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import pt.galina.chap_15_actuatordemo.entity.user.User;
+import pt.galina.clientreactive.entity.user.User;
 
 @Data
 public class RegistrationForm {

@@ -1,4 +1,4 @@
-package pt.galina.chap_15_actuatordemo.handler;
+package pt.galina.clientreactive.handler;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,11 +8,11 @@ import org.springframework.validation.BeanPropertyBindingResult;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.reactive.function.server.ServerRequest;
 import org.springframework.web.reactive.function.server.ServerResponse;
-import pt.galina.chap_15_actuatordemo.entity.taco.Ingredient;
-import pt.galina.chap_15_actuatordemo.entity.taco.Taco;
-import pt.galina.chap_15_actuatordemo.entity.taco.TacoOrder;
-import pt.galina.chap_15_actuatordemo.service.IngredientService;
-import pt.galina.chap_15_actuatordemo.service.TacoOrderService;
+import pt.galina.clientreactive.entity.taco.Ingredient;
+import pt.galina.clientreactive.entity.taco.Taco;
+import pt.galina.clientreactive.entity.taco.TacoOrder;
+import pt.galina.clientreactive.service.IngredientService;
+import pt.galina.clientreactive.service.TacoOrderService;
 import reactor.core.publisher.Mono;
 
 import java.net.URI;

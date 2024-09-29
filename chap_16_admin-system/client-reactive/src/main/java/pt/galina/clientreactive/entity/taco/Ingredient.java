@@ -1,4 +1,4 @@
-package pt.galina.chap_15_actuatordemo.entity.taco;
+package pt.galina.clientreactive.entity.taco;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

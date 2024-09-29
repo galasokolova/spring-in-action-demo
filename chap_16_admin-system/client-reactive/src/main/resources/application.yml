@@ -1,14 +1,25 @@
 spring:
+  application:
+    name: client-reactive
+
   data:
     mongodb:
       host: localhost
       port: 27017
       database: tacoDB
+
   integration:
     management:
       default-logging-enabled: true
+
   jackson:
     time-zone: UTC
+  boot:
+    admin:
+      client:
+        url: http://localhost:9090
+        username: admin
+        password: admin
 
 management:
   info:
@@ -17,9 +28,9 @@ management:
     git:
       enabled: true
       mode: full
-
     env:
       enabled: true
+
   endpoint:
     health:
       show-details: always
@@ -30,24 +41,29 @@ management:
       enabled: true
     metrics:
       enabled: true
+
   endpoints:
     web:
       base-path: /management
       exposure:
         include: health, info, beans, conditions, env, mappings, loggers, metrics, notes
+
 info:
   contact:
     email: support@tacocloud.com
     phone: 822-625-6831
+
 
 logging:
   level:
     org.springframework.security: debug
     tacos.ingredients: info
 
+
 taco:
   orders:
     page-size: 10
+
 
 tacocloud:
   discount:

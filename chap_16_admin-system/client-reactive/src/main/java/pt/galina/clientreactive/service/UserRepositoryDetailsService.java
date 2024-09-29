@@ -1,11 +1,11 @@
-package pt.galina.chap_15_actuatordemo.service;
+package pt.galina.clientreactive.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.ReactiveUserDetailsService;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import pt.galina.chap_15_actuatordemo.entity.user.data.UserRepository;
+import pt.galina.clientreactive.entity.user.data.UserRepository;
 import reactor.core.publisher.Mono;
 
 @Service

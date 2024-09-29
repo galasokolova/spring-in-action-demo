@@ -1,12 +1,11 @@
-package pt.galina.chap_15_actuatordemo.config;
+package pt.galina.clientreactive.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
-import pt.galina.chap_15_actuatordemo.handler.*;
-//import pt.galina.mongodbreactivepersistence.handler.*;
+import pt.galina.clientreactive.handler.*;
 
 import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
 import static org.springframework.web.reactive.function.server.RequestPredicates.POST;

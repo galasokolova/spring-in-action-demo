@@ -1,8 +1,9 @@
-package pt.galina.chap_15_actuatordemo.config.validation;
+package pt.galina.clientreactive.config.validation;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import lombok.extern.slf4j.Slf4j;
+import pt.galina.clientreactive.config.validation.ValidExpirationDate;
 
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;

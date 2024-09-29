@@ -1,10 +1,10 @@
-package pt.galina.chap_15_actuatordemo.service;
+package pt.galina.clientreactive.service;
 
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
-import pt.galina.chap_15_actuatordemo.config.actuator.metrics.TacoCreatedEvent;
-import pt.galina.chap_15_actuatordemo.entity.taco.Taco;
-import pt.galina.chap_15_actuatordemo.entity.taco.data.TacoRepository;
+import pt.galina.clientreactive.config.actuator.metrics.TacoCreatedEvent;
+import pt.galina.clientreactive.entity.taco.Taco;
+import pt.galina.clientreactive.entity.taco.data.TacoRepository;
 import reactor.core.publisher.Mono;
 
 @Component
