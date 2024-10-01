@@ -11,10 +11,3 @@ public class Chap5InMemoryUserApplication {
     }
 
 }
-/*
-password: password
-username: buzz
-or
-password: password
-username: woody
-*/

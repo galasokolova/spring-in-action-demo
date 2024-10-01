@@ -1,7 +1,8 @@
-package pt.galina.clientreactive.config.validation;
+package pt.galina.clientnonreactive.config.validation;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
+import pt.galina.clientnonreactive.config.validation.ExpirationDateValidator;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -10,9 +11,9 @@ import java.lang.annotation.Target;
 
 @Target({ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = CreditCardValidator.class)
-public @interface ValidCreditCard {
-    String message() default "Invalid credit card number";
+@Constraint(validatedBy = ExpirationDateValidator.class)
+public @interface ValidExpirationDate {
+    String message() default "Invalid expiration date";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
 }

@@ -7,6 +7,4 @@ spring:
       name: admin
       password: admin
 
-logging:
-  level:
-    org.springframework.security: debug
+

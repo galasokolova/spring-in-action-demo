@@ -1,8 +1,9 @@
-package pt.galina.clientreactive.config.validation;
+package pt.galina.clientnonreactive.config.validation;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import lombok.extern.slf4j.Slf4j;
+import pt.galina.clientnonreactive.config.validation.ValidExpirationDate;
 
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;

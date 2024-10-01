@@ -1,11 +1,8 @@
 package pt.galina.clientreactive.security;
 
 import lombok.extern.slf4j.Slf4j;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.core.context.SecurityContext;
@@ -48,7 +45,6 @@ public class SecurityConfig {
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .authorizeExchange(exchanges -> exchanges
                         .pathMatchers("/login", "/register", "/", "/static/**", "/css/**", "/images/**").permitAll()
-                        .pathMatchers("/login", "/register", "/", "/static/**").permitAll()
                         .pathMatchers("/design", "/orders").hasRole("USER")
                         .pathMatchers("/applications").hasRole("ADMIN")
                         .pathMatchers("/management/**").permitAll()

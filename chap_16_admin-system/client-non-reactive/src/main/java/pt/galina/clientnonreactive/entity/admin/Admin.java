@@ -1,37 +1,32 @@
-package pt.galina.clientreactive.entity.admin;
+package pt.galina.clientnonreactive.entity.admin;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.Document;
+import jakarta.persistence.*;
+import lombok.AccessLevel;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.AccessLevel;
 
 import java.util.Collection;
 import java.util.List;
 
+@Entity
 @Data
-@Document(collection = "admin")
-@NoArgsConstructor(access = AccessLevel.PUBLIC, force = true)
-@AllArgsConstructor
+@NoArgsConstructor(access= AccessLevel.PROTECTED, force=true)
+@RequiredArgsConstructor
+@Table(name = "admin")
 public class Admin implements UserDetails {
 
     @Id
-    private String id;
-
-    @Indexed(unique = true)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+    @Column(name = "username")
     private final String username;
-
+    @Column(name = "password")
     private final String password;
-
-    public Admin(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

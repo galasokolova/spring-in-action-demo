@@ -1,20 +1,29 @@
 spring:
   application:
-    name: client-reactive
+    name: client-non-reactive
 
+  devtools:
+    restart:
+      enabled: true
+
+  datasource:
+    generate-unique-name: false
+    name: tacocloud
+    url: jdbc:h2:mem:tacocloud;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
   data:
-    mongodb:
-      host: localhost
-      port: 27017
-      database: tacoDB
+    rest:
+      base-path: /api
 
   integration:
     management:
       default-logging-enabled: true
-
-  jackson:
-    time-zone: UTC
-
   boot:
     admin:
       client:
@@ -54,21 +63,19 @@ info:
     email: support@tacocloud.com
     phone: 822-625-6831
 
+tacocloud:
+  discount:
+    code: "TACOS"
 
 logging:
   level:
+    root: info
     org.springframework.security: info
-    tacos.ingredients: info
 
 
 taco:
   orders:
     page-size: 10
 
-
-tacocloud:
-  discount:
-    code: "TACOS"
-
 server:
-  port: 8082
+  port: 8081

@@ -5,7 +5,6 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.rest.core.annotation.RestResource;
-import pt.galina.clientreactive.entity.taco.Ingredient;
 
 import java.util.ArrayList;
 import java.util.Date;
