@@ -13,21 +13,21 @@ import java.util.List;
 
 @Component
 @Endpoint(id="notes", enableByDefault=true)
-// Custom actuator endpoint definition with id "notes" that will be enabled by default.
+// Custom jmx endpoint definition with id "notes" that will be enabled by default.
 public class NotesEndpoint {
 
     // A list to store Note objects, representing a collection of "notes".
     private final List<Note> notes = new ArrayList<>();
 
     @ReadOperation
-    // Marks this method to handle HTTP GET requests on /actuator/notes.
+    // Marks this method to handle HTTP GET requests on /jmx/notes.
     public List<Note> notes() {
         // Returns the list of notes in response to the GET request.
         return notes;
     }
 
     @WriteOperation
-    // Marks this method to handle HTTP POST or PUT requests on /actuator/notes.
+    // Marks this method to handle HTTP POST or PUT requests on /jmx/notes.
     // The request must contain a parameter named 'text' to create a new note.
     public List<Note> addNote(String text) {
         // Adds a new note to the list using the provided 'text'.
@@ -37,7 +37,7 @@ public class NotesEndpoint {
     }
 
     @DeleteOperation
-    // Marks this method to handle HTTP DELETE requests on /actuator/notes.
+    // Marks this method to handle HTTP DELETE requests on /jmx/notes.
     // The request must contain a parameter specifying the 'index' of the note to delete.
     public List<Note> deleteNote(int index) {
         // Checks if the provided index is valid (i.e., within the size of the list).

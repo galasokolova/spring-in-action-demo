@@ -1,0 +1,72 @@
+spring:
+  application:
+    name: chap_17_jmx-monitoring
+
+  jmx:
+    enabled: true
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: tacoDB
+
+  integration:
+    management:
+      default-logging-enabled: true
+
+  jackson:
+    time-zone: UTC
+
+
+
+management:
+  info:
+    java:
+      enabled: true
+    git:
+      enabled: true
+      mode: full
+    env:
+      enabled: true
+
+  endpoint:
+    health:
+      show-details: always
+    env:
+      enabled: true
+      show-values: ALWAYS
+    loggers:
+      enabled: true
+    metrics:
+      enabled: true
+
+  endpoints:
+    jmx:
+      exposure:
+        include: health, info, beans, conditions, env, mappings, loggers, metrics, notes
+    web:
+      base-path: /management
+      exposure:
+        include: health, info, beans, conditions, env, mappings, loggers, metrics, notes
+
+info:
+  contact:
+    email: support@tacocloud.com
+    phone: 822-625-6831
+
+
+logging:
+  level:
+    org.springframework.security: info
+    tacos.ingredients: info
+
+
+taco:
+  orders:
+    page-size: 10
+
+
+tacocloud:
+  discount:
+    code: "TACOS"
