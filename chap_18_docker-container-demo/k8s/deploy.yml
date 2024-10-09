@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: taco-cloud-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: taco-cloud
+  template:
+    metadata:
+      labels:
+        app: taco-cloud
+    spec:
+      containers:
+        - name: taco-cloud-container
+          image: tacocloud/tacocloud:latest
+          imagePullPolicy: Never
+
