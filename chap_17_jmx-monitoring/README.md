@@ -29,11 +29,12 @@ cd chap_17_jmx-monitoring
 
 ### 4. Monitor with JMX:
 * Open JConsole (or any other JMX client) and connect to your process.
-* Find TacoCounter in the org.springframework.boot domain to track the number of tacos 
-and receive notifications.
 ```bash
 jconsole
 ```
+* Find TacoCounter in the org.springframework.boot domain to track the number of tacos 
+and receive notifications.
+
 ### 5. Create a Taco: 
 Go to http://localhost:8080 and create a taco through the web interface. 
 Each new taco will increment the counter and trigger a notification via JMX.
