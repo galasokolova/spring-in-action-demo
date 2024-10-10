@@ -68,33 +68,14 @@ kubectl apply -f k8s/service.yml
 ```
 
 ### 4. Accessing the Application
-
-Option 1: 
 - Using kubectl port-forward
 To access the application locally, you can use kubectl port-forward:
 ```bash
 kubectl port-forward svc/taco-cloud-service 8080:80
 ```
-
 Now you can access the application on:
 ```bash
 http://localhost:8080
-```
-
-Option 2: 
-- Using NodePort
-Alternatively, the application is exposed through NodePort at port 30000:
-```bash
-http://<Node-IP>:30000
-```
-Where <Node-IP> is the IP address of the Kubernetes node. You can find it by inspecting the Kind cluster node:
-```bash
-docker inspect taco-cluster-control-plane | findstr "IPAddress"
-```
-
-Then access the application using the node IP:
-```bash
-http://<IPAddress>:30000
 ```
 
 ### 5. Stopping the Application
@@ -112,12 +93,25 @@ kubectl delete deployment taco-cloud-deploy
 kubectl delete service taco-cloud-service
 ```
 #### Troubleshooting
-```bash
+```
 kind create cluster --name taco-cluster
+```
+```
 kubectl cluster-info
+```
+```
 kubectl get pods
+```
+```
 kubectl get services
+```
+```
 kubectl logs <pod-name>
+```
+```
 kubectl exec -it <pod-name> -- curl mongo:27017
+```
+```
+kubectl get all
 ```
 

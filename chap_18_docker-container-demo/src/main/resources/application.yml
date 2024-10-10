@@ -1,22 +1,22 @@
 spring:
   application:
     name: chap_18_docker-container-demo
-
   jmx:
     enabled: true
-
   data:
     mongodb:
       host: mongo    # Name of service MongoDB in Kubernetes cluster
       port: 27017
       database: tacoDB
-
   integration:
     management:
       default-logging-enabled: true
-
   jackson:
     time-zone: UTC
+  lifecycle.timeout-per-shutdown-phase: 20s
+
+server:
+  shutdown: graceful
 
 management:
   info:
