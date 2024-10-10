@@ -43,16 +43,12 @@ If you are using Kind, load the image into the Kind cluster:
 ```bash
 kind load docker-image tacocloud/tacocloud:latest --name taco-cluster
 ```
-### 2. Deploying MongoDB
+### 2. Deploying MongoDB in Kubernetes using a mongodb-deployment.yml
 Before deploying the application, you need to ensure MongoDB is up and running. Use the following command to run MongoDB locally with Docker:
-```bash
-docker run --rm --name my-mongo-container -p 27017:27017 -d mongo:latest
-```
-
-Alternatively, you can deploy MongoDB in Kubernetes using a mongodb-deployment.yml:
 ```bash
 kubectl apply -f k8s/mongodb-deployment.yml
 ```
+
 ### 3. Deploying the Application to Kubernetes
 
 Once MongoDB is running, you can deploy the Spring Boot application using Kubernetes:
@@ -74,7 +70,7 @@ To access the application locally, you can use kubectl port-forward:
 kubectl port-forward svc/taco-cloud-service 8080:80
 ```
 Now you can access the application on:
-```bash
+```
 http://localhost:8080
 ```
 
