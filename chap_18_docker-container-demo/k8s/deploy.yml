@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: taco-cloud-deploy
+  labels:              #new
+    app: taco-cloud     #new
 spec:
   replicas: 3
   selector:
@@ -16,4 +18,15 @@ spec:
         - name: taco-cloud-container
           image: tacocloud/tacocloud:latest
           imagePullPolicy: Never
-
+          livenessProbe:                   #new
+            httpGet:                       #new
+              path: /actuator/health/liveness #new
+              port: 8080                   #new
+            initialDelaySeconds: 2         #new
+            periodSeconds: 5               #new
+          readinessProbe:                  #new
+            httpGet:                       #new
+              path: /actuator/health/readiness #new
+              port: 8080                   #new
+            initialDelaySeconds: 2         #new
+            periodSeconds: 5               #new

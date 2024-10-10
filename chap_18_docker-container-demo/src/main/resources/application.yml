@@ -31,22 +31,23 @@ management:
   endpoint:
     health:
       show-details: always
-    env:
-      enabled: true
-      show-values: ALWAYS
-    loggers:
-      enabled: true
-    metrics:
-      enabled: true
+      probes:
+        enabled: true  # checking liveness & readiness endpoints
+
+  health:
+    livenessstate:
+      enabled: true   # adding liveness endpoint
+    readinessstate:
+      enabled: true   # adding readiness endpoint
 
   endpoints:
     jmx:
       exposure:
-        include: health, info, beans, conditions, env, mappings, loggers, metrics, notes
+        include: health, info, beans, conditions, env, mappings, loggers, metrics, notes, livenessstate, readinessstate
     web:
       base-path: /management
       exposure:
-        include: health, info, beans, conditions, env, mappings, loggers, metrics, notes
+        include: health, info, beans, conditions, env, mappings, loggers, metrics, notes, livenessstate, readinessstate
 
 info:
   contact:
