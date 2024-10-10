@@ -26,10 +26,20 @@ Ensure you have the following installed and configured on your system:
 
 ## Getting Started
 
-### 1. Building the Docker Image for the Application
+### 1. Creating the Kubernetes Cluster with Kind
+Before deploying the application, you need to create a Kubernetes cluster with Kind. Run the following command to create the cluster:
+
+```bash
+kind create cluster --name taco-cluster
+```
+Once the cluster is created, you can verify its status:
+```bash
+kubectl cluster-info
+```
+
+### 2. Building the Docker Image for the Application
 
 First, make sure you have built the Spring Boot JAR file:
-
 ```bash
 mvn clean package
 ```
@@ -43,27 +53,25 @@ If you are using Kind, load the image into the Kind cluster:
 ```bash
 kind load docker-image tacocloud/tacocloud:latest --name taco-cluster
 ```
-### 2. Deploying MongoDB in Kubernetes using a mongodb-deployment.yml
+### 3. Deploying MongoDB in Kubernetes using a mongodb-deployment.yml
 Before deploying the application, you need to ensure MongoDB is up and running. Use the following command to run MongoDB locally with Docker:
 ```bash
 kubectl apply -f k8s/mongodb-deployment.yml
 ```
 
-### 3. Deploying the Application to Kubernetes
-
+### 4. Deploying the Application to Kubernetes
 Once MongoDB is running, you can deploy the Spring Boot application using Kubernetes:
-
-#### Step 1: Apply Deployment
+* Step 1: Apply Deployment
 ```bash
 kubectl apply -f k8s/deploy.yml
 ```
-#### Step 2: Apply Service
+* Step 2: Apply Service
 
 ```bash
 kubectl apply -f k8s/service.yml
 ```
 
-### 4. Accessing the Application
+### 5. Accessing the Application
 - Using kubectl port-forward
 To access the application locally, you can use kubectl port-forward:
 ```bash
@@ -74,13 +82,12 @@ Now you can access the application on:
 http://localhost:8080
 ```
 
-### 5. Stopping the Application
+### 6. Stopping the Application
 
 If you want to stop the application, you can scale down the deployment or delete the resources:
 ```bash
 kubectl scale deployment taco-cloud-deploy --replicas=0
 ```
-
 Alternatively, to fully remove the deployment:
 ```bash
 kubectl delete deployment taco-cloud-deploy
@@ -88,10 +95,8 @@ kubectl delete deployment taco-cloud-deploy
 ```bash
 kubectl delete service taco-cloud-service
 ```
+
 #### Troubleshooting
-```
-kind create cluster --name taco-cluster
-```
 ```
 kubectl cluster-info
 ```
