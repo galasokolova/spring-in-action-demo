@@ -3,9 +3,9 @@ kind: Service
 metadata:
   name: taco-cloud-service
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
-    app: taco-cloud
+    app: tacocloud18gc
   ports:
     - protocol: TCP
       port: 80

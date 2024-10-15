@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Taco Cloud</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+<h1>Register</h1>
+<img th:src="@{/images/taco.png}"/>
+<form th:method="POST" th:action="@{/register}" id="registerForm">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
+    <label th:for="username">Username: </label>
+    <input type="text" name="username"/><br/>
+    <label th:for="password">Password: </label>
+    <input type="password" name="password"/><br/>
+    <label th:for="confirm">Confirm password: </label>
+    <input type="password" name="confirm"/><br/>
+    <label th:for="fullname">Full name: </label>
+    <input type="text" name="fullname"/><br/>
+    <label th:for="street">Street: </label>
+    <input type="text" name="street"/><br/>
+    <label th:for="city">City: </label>
+    <input type="text" name="city"/><br/>
+    <label th:for="state">State: </label>
+    <input type="text" name="state"/><br/>
+    <label th:for="zip">Zip: </label>
+    <input type="text" name="zip"/><br/>
+    <label th:for="phone">Phone: </label>
+    <input type="text" name="phone"/><br/>
+    <input type="submit" value="Register"/>
+</form>
+</body>
+</html>

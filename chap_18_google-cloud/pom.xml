@@ -9,13 +9,26 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>pt.galina</groupId>
-    <artifactId>chap_18_docker-container-demo</artifactId>
+    <artifactId>chap_18_google-cloud</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>chap_18_docker-container-demo</name>
-    <description>chap_18_docker-container-demo</description>
-
+    <name>chap_18_google-cloud</name>
+    <description>chap_18_google-cloud</description>
+    <url/>
+    <licenses>
+        <license/>
+    </licenses>
+    <developers>
+        <developer/>
+    </developers>
+    <scm>
+        <connection/>
+        <developerConnection/>
+        <tag/>
+        <url/>
+    </scm>
     <properties>
         <java.version>17</java.version>
+        <spring-cloud.version>2023.0.3</spring-cloud.version>
     </properties>
     <dependencies>
         <dependency>
@@ -83,6 +96,17 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>

@@ -58,6 +58,7 @@
         <module>chap_16_admin-system</module>
         <module>chap_17_jmx-monitoring</module>
         <module>chap_18_docker-container-demo</module>
+        <module>chap_18_google-cloud</module>
 
         <module>shared-resources</module>
     </modules>
