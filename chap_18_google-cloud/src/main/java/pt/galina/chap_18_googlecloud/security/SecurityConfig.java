@@ -12,6 +12,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.security.web.server.context.WebSessionServerSecurityContextRepository;
+import pt.galina.chap_18_googlecloud.security.csrf.CustomServerCsrfTokenRepository;
+import pt.galina.chap_18_googlecloud.security.csrf.MongoCsrfTokenRepository;
 import reactor.core.publisher.Mono;
 
 import java.net.URI;
@@ -21,6 +23,12 @@ import java.net.URI;
 @EnableWebFluxSecurity
 public class SecurityConfig {
 
+    private final MongoCsrfTokenRepository csrfTokenRepository;
+
+    public SecurityConfig(MongoCsrfTokenRepository csrfTokenRepository) {
+        this.csrfTokenRepository = csrfTokenRepository;
+    }
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -29,7 +37,7 @@ public class SecurityConfig {
     @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
         return http
-                .csrf(ServerHttpSecurity.CsrfSpec::disable)
+                .csrf(csrfSpec -> csrfSpec.csrfTokenRepository(new CustomServerCsrfTokenRepository(csrfTokenRepository)))
                 .authorizeExchange(exchanges -> exchanges
                         .pathMatchers("/login", "/register", "/", "/static/**", "/css/**", "/images/**").permitAll()
                         .pathMatchers("/design", "/orders").hasRole("USER")
