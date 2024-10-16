@@ -1,5 +1,6 @@
 package pt.galina.chap_18_googlecloud.security.csrf;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.web.server.csrf.CsrfToken;
 import org.springframework.security.web.server.csrf.DefaultCsrfToken;
 import org.springframework.security.web.server.csrf.ServerCsrfTokenRepository;
@@ -8,6 +9,7 @@ import reactor.core.publisher.Mono;
 
 import java.util.UUID;
 
+@Slf4j
 public class CustomServerCsrfTokenRepository implements ServerCsrfTokenRepository {
 
     private final MongoCsrfTokenRepository csrfTokenRepository;
@@ -27,12 +29,20 @@ public class CustomServerCsrfTokenRepository implements ServerCsrfTokenRepositor
     public Mono<Void> saveToken(ServerWebExchange exchange, CsrfToken token) {
         return exchange.getSession().flatMap(session -> {
             if (token != null) {
-                // Сохраняем токен в MongoDB
+                // Persisting token to db
                 MongoCsrfToken mongoToken = new MongoCsrfToken(session.getId(), token.getToken());
-                return csrfTokenRepository.save(mongoToken).then();
+                log.info("Saving CSRF token for sessionId: {}", session.getId());
+                return csrfTokenRepository.save(mongoToken)
+                        .doOnSuccess(savedToken -> log.info("CSRF token successfully saved for sessionId: {}", session.getId()))
+                        .doOnError(error -> log.error("Error saving CSRF token for sessionId: {}", session.getId(), error))
+                        .then(); // Continue only after the token is saved
             } else {
-                // Удаляем токен из MongoDB, если он null
-                return csrfTokenRepository.deleteBySessionId(session.getId());
+                // Deleting token from MongoDB, if null
+                log.info("Deleting CSRF token for sessionId: {}", session.getId());
+                return csrfTokenRepository.deleteBySessionId(session.getId())
+                        .doOnSuccess(aVoid -> log.info("CSRF token successfully deleted for sessionId: {}", session.getId()))
+                        .doOnError(error -> log.error("Error deleting CSRF token for sessionId: {}", session.getId(), error))
+                        .then();
             }
         });
     }

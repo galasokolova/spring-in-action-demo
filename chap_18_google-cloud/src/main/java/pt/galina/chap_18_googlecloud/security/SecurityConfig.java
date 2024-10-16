@@ -13,6 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.csrf.XorCsrfTokenRequestAttributeHandler;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.security.web.server.context.WebSessionServerSecurityContextRepository;
+import org.springframework.security.web.server.csrf.ServerCsrfTokenRequestAttributeHandler;
 import pt.galina.chap_18_googlecloud.security.csrf.CustomServerCsrfTokenRepository;
 import pt.galina.chap_18_googlecloud.security.csrf.MongoCsrfTokenRepository;
 import reactor.core.publisher.Mono;
@@ -38,7 +39,9 @@ public class SecurityConfig {
     @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
         return http
+                //Persisting csrf token in MongoDB database
                 .csrf(csrfSpec -> csrfSpec.csrfTokenRepository(new CustomServerCsrfTokenRepository(csrfTokenRepository)))
+
                         .authorizeExchange(exchanges -> exchanges
                         .pathMatchers("/login", "/register", "/", "/static/**", "/css/**", "/images/**").permitAll()
                         .pathMatchers("/design", "/orders").hasRole("USER")
@@ -96,7 +99,7 @@ public class SecurityConfig {
                             });
                         })
                 )
-                .httpBasic(Customizer.withDefaults())
+//                .csrf(csrfSpec -> csrfSpec.csrfTokenRequestHandler(new ServerCsrfTokenRequestAttributeHandler()))
                 .build();
     }
 }

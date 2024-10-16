@@ -54,15 +54,12 @@ public class RegistrationHandler {
 
                     log.info("👽 Checking if user already exists: {}", username);
 
-                    // Проверка, существует ли пользователь
                     return userService.findByUsername(username)
                             .flatMap(existingUser -> {
-                                // Если пользователь найден, вернуть ошибку
                                 log.warn("⚠️ User already exists: {}", username);
                                 return ServerResponse.badRequest().bodyValue("User already exists");
                             })
                             .switchIfEmpty(
-                                    // Если пользователь не найден, продолжить регистрацию
                                     userService.createUser(form.toUser(passwordEncoder))
                                             .doOnSuccess(user -> log.info("😎 Saved user: {}", user))
                                             .then(ServerResponse.seeOther(URI.create("/login")).build())

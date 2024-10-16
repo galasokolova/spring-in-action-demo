@@ -11,7 +11,7 @@ spring:
       default-logging-enabled: true
   jackson:
     time-zone: UTC
-  lifecycle.timeout-per-shutdown-phase: 20s
+  lifecycle.timeout-per-shutdown-phase: 60s
 
 server:
   shutdown: graceful
