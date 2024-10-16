@@ -1,8 +1,12 @@
 package pt.galina.chap_18_googlecloud.security.csrf;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+@Setter
+@Getter
 @Document(collection = "csrf_tokens")
 public class MongoCsrfToken {
 
@@ -15,20 +19,4 @@ public class MongoCsrfToken {
         this.token = token;
     }
 
-    // Геттеры и сеттеры
-    public String getSessionId() {
-        return sessionId;
-    }
-
-    public void setSessionId(String sessionId) {
-        this.sessionId = sessionId;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
 }

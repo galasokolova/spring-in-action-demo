@@ -1,11 +1,6 @@
 spring:
-  thymeleaf:
-    prefix: classpath:/templates/
-    suffix: .html
   application:
     name: chap_18_google-cloud
-  jmx:
-    enabled: true
   data:
     mongodb:
       host: mongo    # Name of service MongoDB in Kubernetes cluster
@@ -21,42 +16,6 @@ spring:
 server:
   shutdown: graceful
 
-management:
-  info:
-    java:
-      enabled: true
-    git:
-      enabled: true
-      mode: full
-    env:
-      enabled: true
-
-  endpoint:
-    health:
-      show-details: always
-      probes:
-        enabled: true  # checking liveness & readiness endpoints
-
-  health:
-    livenessstate:
-      enabled: true   # adding liveness endpoint
-    readinessstate:
-      enabled: true   # adding readiness endpoint
-
-  endpoints:
-    jmx:
-      exposure:
-        include: health, info, beans, conditions, env, mappings, loggers, metrics, notes, livenessstate, readinessstate
-    web:
-      base-path: /management
-      exposure:
-        include: health, info, beans, conditions, env, mappings, loggers, metrics, notes, livenessstate, readinessstate
-
-info:
-  contact:
-    email: support@tacocloud.com
-    phone: 822-625-6831
-
 logging:
   level:
     org.springframework.security: debug
@@ -66,6 +25,3 @@ taco:
   orders:
     page-size: 10
 
-tacocloud:
-  discount:
-    code: "TACOS"

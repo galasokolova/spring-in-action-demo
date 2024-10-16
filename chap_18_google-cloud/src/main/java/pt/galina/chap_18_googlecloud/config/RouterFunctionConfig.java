@@ -19,20 +19,17 @@ public class RouterFunctionConfig {
     private final RegistrationHandler registrationHandler;
     private final UserHandler userHandler;
     private final LoginHandler loginHandler;
-    private final DiscountHandler discountHandler;
 
     public RouterFunctionConfig(DesignTacoHandler designTacoHandler,
                                 OrderHandler orderHandler,
                                 RegistrationHandler registrationHandler,
                                 UserHandler userHandler,
-                                LoginHandler loginHandler, DiscountHandler discountHandler) {
+                                LoginHandler loginHandler) {
         this.designTacoHandler = designTacoHandler;
         this.orderHandler = orderHandler;
         this.registrationHandler = registrationHandler;
         this.userHandler = userHandler;
         this.loginHandler = loginHandler;
-
-        this.discountHandler = discountHandler;
     }
 
     @Bean
@@ -43,7 +40,6 @@ public class RouterFunctionConfig {
                 .add(registrationRoutes())
                 .add(userRoutes())
                 .add(loginRoutes())
-                .add(discountRoutes(discountHandler)) // Добавляем маршруты для дискаунта
                 .build();
     }
 
@@ -61,11 +57,6 @@ public class RouterFunctionConfig {
     private RouterFunction<ServerResponse> registrationRoutes() {
         return route(POST("/register"), registrationHandler::processRegistration)
                 .andRoute(GET("/register"), request -> ServerResponse.ok().contentType(MediaType.TEXT_HTML).render("registration"));
-    }
-
-    public RouterFunction<ServerResponse> discountRoutes(DiscountHandler discountHandler) {
-        return route(GET("/api/discount"), discountHandler::getDiscount)
-                .andRoute(POST("/api/discount"), discountHandler::updateDiscount);
     }
 
 

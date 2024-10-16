@@ -18,7 +18,6 @@ public class CustomServerCsrfTokenRepository implements ServerCsrfTokenRepositor
 
     @Override
     public Mono<CsrfToken> generateToken(ServerWebExchange exchange) {
-        // Генерация нового CSRF токена
         String tokenValue = UUID.randomUUID().toString();
         CsrfToken token = new DefaultCsrfToken("X-CSRF-TOKEN", "_csrf", tokenValue);
         return Mono.just(token);

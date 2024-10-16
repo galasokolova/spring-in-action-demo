@@ -10,6 +10,7 @@ import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextImpl;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.csrf.XorCsrfTokenRequestAttributeHandler;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.security.web.server.context.WebSessionServerSecurityContextRepository;
 import pt.galina.chap_18_googlecloud.security.csrf.CustomServerCsrfTokenRepository;
@@ -38,10 +39,9 @@ public class SecurityConfig {
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
         return http
                 .csrf(csrfSpec -> csrfSpec.csrfTokenRepository(new CustomServerCsrfTokenRepository(csrfTokenRepository)))
-                .authorizeExchange(exchanges -> exchanges
+                        .authorizeExchange(exchanges -> exchanges
                         .pathMatchers("/login", "/register", "/", "/static/**", "/css/**", "/images/**").permitAll()
                         .pathMatchers("/design", "/orders").hasRole("USER")
-                        .pathMatchers("/management/**").permitAll()
                         .anyExchange().permitAll()
                 )
                 .formLogin(form -> form
