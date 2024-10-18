@@ -3,9 +3,7 @@ spring:
     name: chap_18_google-cloud
   data:
     mongodb:
-      host: mongo    # Name of service MongoDB in Kubernetes cluster
-      port: 27017
-      database: tacoDB
+      uri: mongodb://mongo:27017/tacoDB
   integration:
     management:
       default-logging-enabled: true
@@ -24,4 +22,3 @@ logging:
 taco:
   orders:
     page-size: 10
-

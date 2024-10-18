@@ -20,24 +20,29 @@ public class CustomServerCsrfTokenRepository implements ServerCsrfTokenRepositor
 
     @Override
     public Mono<CsrfToken> generateToken(ServerWebExchange exchange) {
-        String tokenValue = UUID.randomUUID().toString();
-        CsrfToken token = new DefaultCsrfToken("X-CSRF-TOKEN", "_csrf", tokenValue);
-        return Mono.just(token);
+        return exchange.getSession()
+                .flatMap(session -> {
+                    String tokenValue = UUID.randomUUID().toString();
+                    CsrfToken token = new DefaultCsrfToken("X-CSRF-TOKEN", "_csrf", tokenValue);
+                    MongoCsrfToken mongoCsrfToken = new MongoCsrfToken(session.getId(), tokenValue);
+                    return csrfTokenRepository.save(mongoCsrfToken)
+                            .thenReturn(token);
+                });
     }
+
 
     @Override
     public Mono<Void> saveToken(ServerWebExchange exchange, CsrfToken token) {
         return exchange.getSession().flatMap(session -> {
             if (token != null) {
-                // Persisting token to db
+                // Saving new token to db
                 MongoCsrfToken mongoToken = new MongoCsrfToken(session.getId(), token.getToken());
                 log.info("Saving CSRF token for sessionId: {}", session.getId());
                 return csrfTokenRepository.save(mongoToken)
                         .doOnSuccess(savedToken -> log.info("CSRF token successfully saved for sessionId: {}", session.getId()))
                         .doOnError(error -> log.error("Error saving CSRF token for sessionId: {}", session.getId(), error))
-                        .then(); // Continue only after the token is saved
+                        .then();
             } else {
-                // Deleting token from MongoDB, if null
                 log.info("Deleting CSRF token for sessionId: {}", session.getId());
                 return csrfTokenRepository.deleteBySessionId(session.getId())
                         .doOnSuccess(aVoid -> log.info("CSRF token successfully deleted for sessionId: {}", session.getId()))
@@ -49,10 +54,22 @@ public class CustomServerCsrfTokenRepository implements ServerCsrfTokenRepositor
 
     @Override
     public Mono<CsrfToken> loadToken(ServerWebExchange exchange) {
-        // Загружаем токен из MongoDB
         return exchange.getSession().flatMap(session ->
                 csrfTokenRepository.findBySessionId(session.getId())
-                        .map(tokenDoc -> new DefaultCsrfToken("X-CSRF-TOKEN", "_csrf", tokenDoc.getToken()))
+                        .flatMap(mongoToken -> {
+                            CsrfToken token = new DefaultCsrfToken(
+                                    mongoToken.getHeaderName(),
+                                    mongoToken.getParameterName(),
+                                    mongoToken.getToken()
+                            );
+                            return Mono.just(token);
+                        })
+                        .switchIfEmpty(Mono.defer(() -> {
+                            return generateToken(exchange);
+                        }))
         );
     }
+
+
+
 }

@@ -3,6 +3,7 @@ package pt.galina.chap_18_googlecloud.security;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
@@ -14,6 +15,8 @@ import org.springframework.security.web.csrf.XorCsrfTokenRequestAttributeHandler
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.security.web.server.context.WebSessionServerSecurityContextRepository;
 import org.springframework.security.web.server.csrf.ServerCsrfTokenRequestAttributeHandler;
+import org.springframework.security.web.server.csrf.WebSessionServerCsrfTokenRepository;
+import org.springframework.security.web.server.util.matcher.ServerWebExchangeMatchers;
 import pt.galina.chap_18_googlecloud.security.csrf.CustomServerCsrfTokenRepository;
 import pt.galina.chap_18_googlecloud.security.csrf.MongoCsrfTokenRepository;
 import reactor.core.publisher.Mono;
@@ -40,10 +43,10 @@ public class SecurityConfig {
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
         return http
                 //Persisting csrf token in MongoDB database
-                .csrf(csrfSpec -> csrfSpec.csrfTokenRepository(new CustomServerCsrfTokenRepository(csrfTokenRepository)))
-
-                        .authorizeExchange(exchanges -> exchanges
-                        .pathMatchers("/login", "/register", "/", "/static/**", "/css/**", "/images/**").permitAll()
+                .csrf(csrfSpec -> csrfSpec.csrfTokenRepository(new CustomServerCsrfTokenRepository(csrfTokenRepository))
+                )
+                .authorizeExchange(exchanges -> exchanges
+                        .pathMatchers("/", "/login", "/register", "/static/**", "/css/**", "/images/**").permitAll()
                         .pathMatchers("/design", "/orders").hasRole("USER")
                         .anyExchange().permitAll()
                 )
@@ -99,7 +102,6 @@ public class SecurityConfig {
                             });
                         })
                 )
-//                .csrf(csrfSpec -> csrfSpec.csrfTokenRequestHandler(new ServerCsrfTokenRequestAttributeHandler()))
                 .build();
     }
 }
