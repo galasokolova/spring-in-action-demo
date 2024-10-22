@@ -20,7 +20,7 @@ import java.util.List;
 @Slf4j
 @Data
 @Document(collection = "tacoOrder")
-public class TacoOrder implements Serializable {
+public class TacoOrder implements Serializable{
     @Serial
     private static final long serialVersionUID = 1L;
 

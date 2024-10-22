@@ -7,13 +7,17 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.rest.core.annotation.RestResource;
 import pt.galina.chap_18_googlecloud.entity.taco.Ingredient;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Data
 @RestResource(rel = "tacos", path = "tacos")
-public class Taco {
+public class Taco implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
     @Id
     private String id;
     @NotNull

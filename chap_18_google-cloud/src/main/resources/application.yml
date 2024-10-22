@@ -4,6 +4,11 @@ spring:
   data:
     mongodb:
       uri: mongodb://mongo:27017/tacoDB
+    redis:
+      host: redis
+      port: 6379
+      timeout: 60000
+
   integration:
     management:
       default-logging-enabled: true
@@ -12,13 +17,18 @@ spring:
   lifecycle.timeout-per-shutdown-phase: 60s
 
 server:
+  http2:
+    enabled: true
   shutdown: graceful
 
 logging:
   level:
-    org.springframework.security: debug
-    tacos.ingredients: debug
-
+    org:
+      springframework:
+        security: debug  # Для подробных логов безопасности
+    tacos:
+      ingredients: debug  # Для логов приложения
+    root: debug
 taco:
   orders:
     page-size: 10

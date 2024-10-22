@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: tacocloud18gc  # Имя приложения
+  name: tacocloud18gc
   labels:
     app: tacocloud18gc
 spec:
@@ -16,6 +16,23 @@ spec:
     spec:
       containers:
         - name: tacocloud18gc
-          image: gcr.io/tacocloud18gc-438613/tacocloud18gc:latest  # Правильный путь с Project ID
+          image: gcr.io/tacocloud18gc-438613/tacocloud18gc:latest
           imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080  # Добавление порта для приложения
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: taco-cloud-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: tacocloud18gc
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080
+      nodePort: 30000
+
 
