@@ -7,28 +7,36 @@ spring:
     redis:
       host: redis
       port: 6379
-      timeout: 60000
-
+  session:
+    timeout: 30m
+    redis:
+      namespace: taco-cloud
+      flush-mode: immediate
+      repository-type: default
   integration:
     management:
       default-logging-enabled: true
   jackson:
     time-zone: UTC
-  lifecycle.timeout-per-shutdown-phase: 60s
+  lifecycle:
+    timeout-per-shutdown-phase: 60s
 
 server:
-  http2:
-    enabled: true
   shutdown: graceful
 
 logging:
   level:
     org:
       springframework:
-        security: debug  # Для подробных логов безопасности
+        validation: debug
+        data:
+          redis: debug
+        session: debug
+        security: debug
     tacos:
-      ingredients: debug  # Для логов приложения
+      ingredients: debug
     root: debug
+
 taco:
   orders:
     page-size: 10

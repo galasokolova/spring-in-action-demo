@@ -2,7 +2,6 @@ package pt.galina.chap_18_googlecloud.config.validation;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;
-import pt.galina.chap_18_googlecloud.config.validation.CreditCardValidator;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

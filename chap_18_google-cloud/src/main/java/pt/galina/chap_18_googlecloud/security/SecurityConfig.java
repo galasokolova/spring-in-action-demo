@@ -34,7 +34,7 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf
                         .csrfTokenRepository(CookieServerCsrfTokenRepository.withHttpOnlyFalse()))
                 .authorizeExchange(exchanges -> exchanges
-                        .pathMatchers("/", "/login", "/register", "/static/**", "/css/**", "/images/**").permitAll()
+                        .pathMatchers("/api/**", "/orders/**","/", "/login", "/register", "/static/**", "/css/**", "/images/**").permitAll()
                         .pathMatchers("/design", "/orders").hasRole("USER")
                         .anyExchange().permitAll()
                 )

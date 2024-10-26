@@ -5,7 +5,6 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.rest.core.annotation.RestResource;
-import pt.galina.chap_18_googlecloud.entity.taco.Ingredient;
 
 import java.io.Serial;
 import java.io.Serializable;

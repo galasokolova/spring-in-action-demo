@@ -3,7 +3,6 @@ package pt.galina.chap_18_googlecloud.config.validation;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import lombok.extern.slf4j.Slf4j;
-import pt.galina.chap_18_googlecloud.config.validation.ValidExpirationDate;
 
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;

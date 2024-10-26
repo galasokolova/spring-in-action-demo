@@ -12,6 +12,7 @@ import pt.galina.chap_18_googlecloud.service.UserService;
 import reactor.core.publisher.Mono;
 
 import java.net.URI;
+import java.util.Map;
 
 @Slf4j
 @Component
@@ -57,7 +58,12 @@ public class RegistrationHandler {
                     return userService.findByUsername(username)
                             .flatMap(existingUser -> {
                                 log.warn("⚠️ User already exists: {}", username);
-                                return ServerResponse.badRequest().bodyValue("User already exists");
+                                return ServerResponse.ok()
+                                        .contentType(MediaType.TEXT_HTML)
+                                        .render("registration", Map.of(
+                                                "errorMessage", "User already exists",
+                                                "form", form // Для заполнения полей при возврате на страницу
+                                        ));
                             })
                             .switchIfEmpty(
                                     userService.createUser(form.toUser(passwordEncoder))

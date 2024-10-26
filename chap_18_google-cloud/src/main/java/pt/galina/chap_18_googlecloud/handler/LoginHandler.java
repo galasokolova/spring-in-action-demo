@@ -25,8 +25,11 @@ public class LoginHandler {
             log.info("Login page requested");
         }
 
-
-        return ServerResponse.ok().render("login", model);
+        return request.session()
+                .doOnNext(session -> {
+                    // Можно добавить дополнительные данные в сессию, если нужно
+                    session.getAttributes().putIfAbsent("authenticated", false);
+                })
+                .then(ServerResponse.ok().render("login", model));
     }
 }
-

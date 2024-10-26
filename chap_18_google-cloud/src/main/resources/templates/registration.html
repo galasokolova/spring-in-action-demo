@@ -8,15 +8,13 @@
 <h1>Register</h1>
 <img th:src="@{/images/taco.png}"/>
 
-<!-- Вывод сообщения об ошибке, если оно существует -->
-<div th:if="${error}" style="color: red;">
-    <p th:text="${error}">The Username already exists</p>
+<div th:if="${errorMessage}" style="color: red;">
+    <p th:text="${errorMessage}">The Username already exists</p>
 </div>
 
+
 <form th:method="POST" th:action="@{/register}" id="registerForm">
-
     <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
-
 
     <label th:for="username">Username: </label>
     <input type="text" name="username"/><br/>
@@ -37,7 +35,6 @@
     <label th:for="phone">Phone: </label>
     <input type="text" name="phone"/><br/>
     <input type="submit" value="Register"/>
-
 </form>
 </body>
 </html>
