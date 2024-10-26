@@ -28,7 +28,7 @@ public class ExpirationDateValidator implements ConstraintValidator<ValidExpirat
             return valid;
         } catch (DateTimeParseException e) {
             log.info("Invalid expiration date format: {}", value);
-            return false; // Неверный формат даты
+            return false;
         }
     }
 }

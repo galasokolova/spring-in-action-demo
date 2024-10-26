@@ -3,7 +3,7 @@
 
 ## *TacoCloud Application Deployment on Google Cloud Kubernetes*
 
-This project demonstrates deploying a Spring Boot application on Google Cloud Kubernetes with MongoDB integration.
+This project demonstrates deploying a Spring Boot application on Google Cloud Kubernetes with MongoDB and Redis integration.
 
 ## Table of Contents
 
@@ -11,20 +11,17 @@ This project demonstrates deploying a Spring Boot application on Google Cloud Ku
 - [Project Setup](#project-setup)
 - [Building and Pushing Docker Image](#building-and-pushing-docker-image)
 - [Kubernetes Setup](#kubernetes-setup)
-- [MongoDB Setup](#mongodb-setup)
-- [Spring Boot Application Deployment](#spring-boot-application-deployment)
 - [Accessing the Application](#accessing-the-application)
 
 ### Prerequisites
 
 Before starting, ensure you have the following tools and services set up:
 
-- A Google Cloud account and project
-- Google Kubernetes Engine (GKE) cluster setup
+- Google Cloud account and project
+- Google Kubernetes Engine (GKE) cluster
 - Google Cloud SDK (`gcloud`)
 - Docker Desktop installed and running
 - Kubernetes CLI (`kubectl`)
-- Maven (to build the Spring Boot application)
 
 ### Project Setup
 
@@ -34,73 +31,76 @@ gcloud auth login
 ```
 
 #### 2. Set Your Google Cloud Project:
+Replace <your-project-id> with the actual ID of your Google Cloud project.
 ```bash
 gcloud config set project <your-project-id>
 ```
-Replace <your-project-id> with the actual ID of your Google Cloud project. 
+
 You can find this in the Google Cloud Console under the "Project Info" section or using:
 ```bash
 gcloud projects list
 ```
 
-#### 3. Ensure you have a Kubernetes cluster running on Google Cloud. You can create a new GKE cluster using:
+#### 3. Create a Kubernetes Cluster:
+Ensure you have a Kubernetes cluster running on Google Cloud. You can create a new GKE cluster with:
 ```bash
 gcloud container clusters create taco-cloud-cluster --zone us-central1-a
 ```
 #### 4. Connect to the GKE cluster: 
+Link your Kubernetes CLI to the GKE cluster:
 ```bash
 gcloud container clusters get-credentials taco-cloud-cluster --zone us-central1-a --project <your-project-id>
 ```
 ### Building and Pushing Docker Image
 
 #### 1. Build the Docker image:
+Replace <your-project-id> and <your-cluster-name> with your project and cluster names:
 ```bash
-docker build -t gcr.io/<your-project-id>/tacocloud18gc:latest .
+docker build -t gcr.io/<your-project-id>/<your-cluster-name>:latest .
 ```
 
 #### 2. Push the Docker image to Google Container Registry (GCR):
 ```bash
-docker push gcr.io/<your-project-id>/tacocloud18gc:latest
+docker push gcr.io/<your-project-id>/<your-cluster-name>:latest
 ```
 
-#### 3. Ensure the Docker image is correctly uploaded:
+#### 3. Verify the Docker Image in GCR:
 ```bash
 gcloud container images list
 ```
 
 ### Kubernetes Setup
 
-#### 1. Use kubectl to apply Kubernetes deployment and service configurations.
-
-#### 2. Create the deployment and service for MongoDB:
+#### 1. Deploy MongoDB:
 ```bash
 kubectl apply -f k8s/mongodb-deployment.yml
 ```
-#### 3. Check the status of MongoDB deployment:
+#### 2. Deploy Redis:
+```bash
+kubectl apply -f k8s/redis-deployment.yml
+```
+#### 3. Check the status of MongoDB and Redis deployments:
 ```bash
 kubectl get pods
 ```
 
-### MongoDB Setup
-
-#### Ensure that MongoDB is running in the Kubernetes cluster. You can check the logs with:
+#### 4. Deploy the TacoCloud application:
+Once MongoDB and Redis pods are running, apply the application deployment configuration:
 ```bash
-kubectl logs <mongo-pod-name>
+kubectl apply -f k8s/deployment.yml
 ```
 
-### Spring Boot Application Deployment
-
-#### 1. Apply the deployment and service for the TacoCloud application:
-```bash
-kubectl apply -f k8s/deploy.yml
-kubectl apply -f k8s/service.yml
-```
-#### 2. Verify that the application is deployed:
+#### 5. Verify All Pods:
+Check the status of all pods to ensure they’re running:
 ```bash
 kubectl get pods
-kubectl get services
 ```
-#### 3. If the application is successfully deployed, you would see something like:
+
+#### 6. Check the Service:
+```bash
+kubectl get svc taco-cloud-service
+```
+If the application has been successfully deployed, you will see something like:
 ```
 NAME                 TYPE           CLUSTER-IP       EXTERNAL-IP     PORT(S)        AGE
 taco-cloud-service   LoadBalancer   <cluster-ip>     <external-ip>   80:30000/TCP   <time>
@@ -110,4 +110,6 @@ taco-cloud-service   LoadBalancer   <cluster-ip>     <external-ip>   80:30000/TC
 
 To access the application, use the external IP address provided by the kubectl get services command. 
 Open it in your browser to access the app.
-
+```
+http://<external-ip>
+```

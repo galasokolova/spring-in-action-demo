@@ -62,7 +62,7 @@ public class RegistrationHandler {
                                         .contentType(MediaType.TEXT_HTML)
                                         .render("registration", Map.of(
                                                 "errorMessage", "User already exists",
-                                                "form", form // Для заполнения полей при возврате на страницу
+                                                "form", form
                                         ));
                             })
                             .switchIfEmpty(

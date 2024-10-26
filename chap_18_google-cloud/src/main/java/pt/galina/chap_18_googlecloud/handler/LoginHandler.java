@@ -27,7 +27,6 @@ public class LoginHandler {
 
         return request.session()
                 .doOnNext(session -> {
-                    // Можно добавить дополнительные данные в сессию, если нужно
                     session.getAttributes().putIfAbsent("authenticated", false);
                 })
                 .then(ServerResponse.ok().render("login", model));

@@ -97,13 +97,10 @@ public class OrderHandler {
                 .flatMap(principal -> request.session()
                         .flatMap(session -> tacoOrderService.findOrdersForUser(principal.getName(), 20)
                                 .collectList()
-                                .flatMap(orders -> {
-                                    // Завершаем сессию после отображения списка заказов
-                                    return ServerResponse.ok()
-                                            .contentType(MediaType.TEXT_HTML)
-                                            .render("orderList", Map.of("orders", orders))
-                                            .doOnTerminate(session::invalidate);
-                                })));
+                                .flatMap(orders -> ServerResponse.ok()
+                                        .contentType(MediaType.TEXT_HTML)
+                                        .render("orderList", Map.of("orders", orders))
+                                        .doOnTerminate(session::invalidate))));
     }
 
 }

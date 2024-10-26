@@ -86,7 +86,7 @@ public class DesignTacoHandler {
         return request.session()
                 .flatMap(session -> {
                     TacoOrder order = session.getAttribute("tacoOrder");
-                    if (order == null || tacoOrderService.isCompleted(order)) {  // Проверка завершенности заказа
+                    if (order == null || tacoOrderService.isCompleted(order)) {
                         order = new TacoOrder();
                         session.getAttributes().put("tacoOrder", order);
                     }

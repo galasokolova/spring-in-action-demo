@@ -31,8 +31,8 @@ metadata:
 spec:
   ports:
     - port: 27017
-      targetPort: 27017  # Добавлено явное указание targetPort
+      targetPort: 27017
       protocol: TCP
   selector:
     app: mongo
-  clusterIP: None  # Это создаст headless-сервис для лучшего разрешения имени
+  clusterIP: None

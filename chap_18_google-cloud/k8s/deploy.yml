@@ -19,7 +19,7 @@ spec:
           image: gcr.io/tacocloud18gc-438613/tacocloud18gc:latest
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 8080  # Порт приложения
+            - containerPort: 8080  # Port for application
 
 ---
 apiVersion: v1

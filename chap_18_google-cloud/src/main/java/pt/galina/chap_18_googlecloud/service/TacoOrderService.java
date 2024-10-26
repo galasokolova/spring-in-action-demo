@@ -60,14 +60,6 @@ public class TacoOrderService {
                     return Mono.just(order);
                 });
     }
-//public Mono<TacoOrder> findOrCreateOrder(String username, TacoOrder existingOrder) {
-//    return userRepository.findByUsername(username)
-//            .flatMap(user -> {
-//                TacoOrder order = existingOrder != null ? existingOrder : new TacoOrder();
-//                order.setUser(user);
-//                return Mono.just(order);
-//            });
-//}
 
     public Flux<TacoOrder> findOrdersForUser(String username, int pageSize) {
         return userRepository.findByUsername(username)
