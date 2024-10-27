@@ -1,7 +1,9 @@
 ### Spring in Action Tutorials Project
 
-This project was created as a practical guide based on 
-###### "Spring in Action", 6th Edition by Craig Walls. 
+This project was created as a practical guide and code samples based on 
+### *"Spring in Action", 6th Edition by Craig Walls.* 
+https://books.google.pt/books?id=2zVbEAAAQBAJ&printsec=copyright&redir_esc=y#v=onepage&q&f=false
+
 It consists of independent module-based mini-projects, each demonstrating concepts covered in a specific chapter or part of a chapter of the book.
 
 ### About the Project
