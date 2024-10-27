@@ -15,6 +15,16 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-in -action-demo</name>
     <description>spring-in -action-demo</description>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+            <comments>Apache License 2.0</comments>
+        </license>
+    </licenses>
+
     <properties>
         <java.version>17</java.version>
 
