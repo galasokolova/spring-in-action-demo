@@ -9,9 +9,14 @@ import pt.galina.chap_17_jmxmonitoring.handler.DesignTacoHandler;
 
 @Configuration
 public class DesignTacoRouter {
+    private final DesignTacoHandler handler;
+
+    public DesignTacoRouter(DesignTacoHandler handler) {
+        this.handler = handler;
+    }
 
     @Bean
-    public RouterFunction<ServerResponse> designTacoRoutes(DesignTacoHandler handler) {
+    public RouterFunction<ServerResponse> designTacoRoutes() {
         return RouterFunctions.route()
                 .GET("/design", handler::showDesignForm)
                 .POST("/design", handler::processTaco)

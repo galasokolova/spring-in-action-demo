@@ -2,69 +2,43 @@ package pt.galina.cassandrareactivepersistence.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.server.RouterFunction;
+import org.springframework.web.reactive.function.server.RouterFunctions;
 import org.springframework.web.reactive.function.server.ServerResponse;
-import pt.galina.cassandrareactivepersistence.handler.*;
-
-import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
-import static org.springframework.web.reactive.function.server.RequestPredicates.POST;
-import static org.springframework.web.reactive.function.server.RouterFunctions.route;
+import pt.galina.cassandrareactivepersistence.router.*;
 
 @Configuration
 public class RouterFunctionConfig {
 
-    private final DesignTacoHandler designTacoHandler;
-    private final OrderHandler orderHandler;
-    private final RegistrationHandler registrationHandler;
-    private final UserHandler userHandler;
-    private final LoginHandler loginHandler;
+    private final DesignTacoRouter designTacoRouter;
+    private final OrderRouter orderRouter;
+    private final RegistrationRouter registrationRouter;
+    private final UserRouter userRouter;
+    private final LoginRouter loginRouter;
+    private final HomeRouter homeRouter;
 
-    public RouterFunctionConfig(DesignTacoHandler designTacoHandler,
-                                OrderHandler orderHandler,
-                                RegistrationHandler registrationHandler,
-                                UserHandler userHandler,
-                                LoginHandler loginHandler) {
-        this.designTacoHandler = designTacoHandler;
-        this.orderHandler = orderHandler;
-        this.registrationHandler = registrationHandler;
-        this.userHandler = userHandler;
-        this.loginHandler = loginHandler;
+    public RouterFunctionConfig(DesignTacoRouter designTacoRouter,
+                                OrderRouter orderRouter,
+                                RegistrationRouter registrationRouter,
+                                UserRouter userRouter,
+                                LoginRouter loginRouter, HomeRouter homeRouter) {
+        this.designTacoRouter = designTacoRouter;
+        this.orderRouter = orderRouter;
+        this.registrationRouter = registrationRouter;
+        this.userRouter = userRouter;
+        this.loginRouter = loginRouter;
+        this.homeRouter = homeRouter;
     }
 
     @Bean
     public RouterFunction<ServerResponse> routerFunction() {
-        return route()
-                .add(designTacoRoutes())
-                .add(orderRoutes())
-                .add(registrationRoutes())
-                .add(userRoutes())
-                .add(loginRoutes())  // Добавляем маршруты для логина
+        return RouterFunctions.route()
+                .add(designTacoRouter.designTacoRoutes())
+                .add(orderRouter.orderRoutes())
+                .add(registrationRouter.registrationRoutes())
+                .add(userRouter.userRoutes())
+                .add(loginRouter.loginRoute())
+                .add(homeRouter.homeRoute())
                 .build();
-    }
-
-    private RouterFunction<ServerResponse> designTacoRoutes() {
-        return route(GET("/design"), designTacoHandler::showDesignForm)
-                .andRoute(POST("/design"), designTacoHandler::processTaco);
-    }
-
-    private RouterFunction<ServerResponse> orderRoutes() {
-        return route(GET("/orders/current"), orderHandler::showOrderForm)
-                .andRoute(POST("/orders"), orderHandler::processOrder)
-                .andRoute(GET("/orders/orderList"), orderHandler::ordersForUser);
-    }
-
-    private RouterFunction<ServerResponse> registrationRoutes() {
-        return route(POST("/register"), registrationHandler::processRegistration)
-                .andRoute(GET("/register"), request -> ServerResponse.ok().contentType(MediaType.TEXT_HTML).render("registration"));
-    }
-
-    private RouterFunction<ServerResponse> userRoutes() {
-        return route(GET("/users"), userHandler::listUsers);
-    }
-
-    // Новый метод для маршрутов логина
-    private RouterFunction<ServerResponse> loginRoutes() {
-        return route(GET("/login"), loginHandler::login);
     }
 }

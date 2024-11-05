@@ -13,8 +13,14 @@ import static org.springframework.web.reactive.function.server.RequestPredicates
 @Configuration
 public class DiscountRouter {
 
+    private final DiscountHandler discountHandler;
+
+    public DiscountRouter(DiscountHandler discountHandler) {
+        this.discountHandler = discountHandler;
+    }
+
     @Bean
-    public RouterFunction<ServerResponse> route(DiscountHandler discountHandler) {
+    public RouterFunction<ServerResponse> route() {
         return RouterFunctions
                 .route(GET("/api/discount"), discountHandler::getDiscount)
                 .andRoute(POST("/api/discount"), discountHandler::updateDiscount);

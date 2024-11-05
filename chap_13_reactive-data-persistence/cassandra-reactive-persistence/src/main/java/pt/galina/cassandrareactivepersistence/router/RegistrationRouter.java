@@ -12,10 +12,15 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 
 @Configuration
 public class RegistrationRouter {
+    private final RegistrationHandler registrationHandler;
+
+    public RegistrationRouter(RegistrationHandler registrationHandler) {
+        this.registrationHandler = registrationHandler;
+    }
 
     @Bean
-    public RouterFunction<ServerResponse> registrationRoutes(RegistrationHandler handler) {
-        return route(GET("/register"), handler::showRegistrationForm)
-                .andRoute(POST("/register"), handler::processRegistration);
+    public RouterFunction<ServerResponse> registrationRoutes() {
+        return route(GET("/register"), registrationHandler::showRegistrationForm)
+                .andRoute(POST("/register"), registrationHandler::processRegistration);
     }
 }

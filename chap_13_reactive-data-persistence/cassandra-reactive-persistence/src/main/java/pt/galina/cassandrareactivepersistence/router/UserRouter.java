@@ -11,9 +11,14 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 
 @Configuration
 public class UserRouter {
+    private final UserHandler userHandler;
+
+    public UserRouter(UserHandler userHandler) {
+        this.userHandler = userHandler;
+    }
 
     @Bean
-    public RouterFunction<ServerResponse> userRoutes(UserHandler userHandler) {
+    public RouterFunction<ServerResponse> userRoutes() {
         return route(GET("/users"), userHandler::listUsers);
     }
 }

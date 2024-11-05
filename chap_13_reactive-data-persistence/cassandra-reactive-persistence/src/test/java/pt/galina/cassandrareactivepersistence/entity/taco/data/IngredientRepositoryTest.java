@@ -13,6 +13,7 @@ import pt.galina.cassandrareactivepersistence.entity.taco.Ingredient.Type;
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
 
+
 @DataCassandraTest
 @Import(TestConfig.class)
 public class IngredientRepositoryTest {

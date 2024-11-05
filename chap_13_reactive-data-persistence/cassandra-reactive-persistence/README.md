@@ -17,12 +17,12 @@ docker exec -it cassandra cqlsh
 #### Step 3: Create KEYSPACE "taco_cloud":
 Once you are in the CQLSH shell, execute the following CQL command to create the keyspace:
 ```sql
- CREATE KEYSPACE IF NOT EXISTS taco_cloud WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+ CREATE KEYSPACE IF NOT EXISTS tacocloud WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
 ```
 
 #### Step 4: Build and run the project:
 ```bash
-cd cd chap_13_reactive-data-persistence\cassandra-reactive-persistence
+cd .\chap_13_reactive-data-persistence\cassandra-reactive-persistence
 ```
 
 ```bash

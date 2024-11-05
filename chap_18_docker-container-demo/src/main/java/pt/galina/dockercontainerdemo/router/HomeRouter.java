@@ -12,8 +12,14 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 @Configuration
 public class HomeRouter {
 
+    private final HomeHandler homeHandler;
+
+    public HomeRouter(HomeHandler homeHandler) {
+        this.homeHandler = homeHandler;
+    }
+
     @Bean
-    public RouterFunction<ServerResponse> homeRoute(HomeHandler homeHandler) {
+    public RouterFunction<ServerResponse> homeRoute() {
         return route(GET("/"), homeHandler::home);
     }
 }

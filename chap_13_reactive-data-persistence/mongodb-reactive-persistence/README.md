@@ -25,7 +25,7 @@ cd chap_13_reactive-data-persistence/mongodb-reactive-persistence
 Open a web browser and navigate to http://localhost:8080 to access the running application.
 
 ## Submodule Description: mongodb-reactive-persistence
-This submodule is almost identical to the module chap_13_reactive-data-persistence, but there is one key difference in the data model.
+This submodule is almost identical to the module chap_12_spring_webflux_demo, but there is one key difference in the data model.
 
 ### Main Difference:
 * ***chap_13_reactive-data-persistence:*** 

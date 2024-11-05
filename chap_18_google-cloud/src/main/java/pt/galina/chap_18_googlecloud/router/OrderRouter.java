@@ -12,8 +12,14 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 @Configuration
 public class OrderRouter {
 
+    private final OrderHandler orderHandler;
+
+    public OrderRouter(OrderHandler orderHandler) {
+        this.orderHandler = orderHandler;
+    }
+
     @Bean
-    public RouterFunction<ServerResponse> orderRoutes(OrderHandler orderHandler) {
+    public RouterFunction<ServerResponse> orderRoutes() {
         return route()
                 .GET("/orders/current", orderHandler::showOrderForm)
                 .POST("/orders", orderHandler::processOrder)

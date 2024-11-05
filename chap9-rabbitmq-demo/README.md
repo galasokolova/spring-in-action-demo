@@ -5,13 +5,13 @@
 ###### ***Note!***
 ###### ***Ensure you have Docker installed and running.***
 1. Navigate to the module directory:
-    ```
-    cd .\chap9-rabitmq-demo
-    ```
+```bash
+cd .\chap9-rabitmq-demo
+```
 2.  Build and start the Docker containers:  
-    ```bash
-      docker-compose up --build
-    ```
+```bash
+docker-compose up --build
+```
 
 3. Navigate to http://localhost:8080 to start order-sender. 
    Here you can create an order and send it to the Kitchen

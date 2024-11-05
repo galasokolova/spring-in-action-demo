@@ -12,8 +12,14 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 @Configuration
 public class LoginRouter {
 
+    private final LoginHandler loginHandler;
+
+    public LoginRouter(LoginHandler loginHandler) {
+        this.loginHandler = loginHandler;
+    }
+
     @Bean
-    public RouterFunction<ServerResponse> loginRoute(LoginHandler loginHandler) {
+    public RouterFunction<ServerResponse> loginRoute() {
         return route(GET("/login"), loginHandler::login);
     }
 }

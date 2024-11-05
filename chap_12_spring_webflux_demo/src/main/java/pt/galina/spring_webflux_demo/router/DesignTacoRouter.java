@@ -9,12 +9,17 @@ import pt.galina.spring_webflux_demo.handler.DesignTacoHandler;
 
 @Configuration
 public class DesignTacoRouter {
+    private final DesignTacoHandler designTacoHandler;
+
+    public DesignTacoRouter(DesignTacoHandler designTacoHandler) {
+        this.designTacoHandler = designTacoHandler;
+    }
 
     @Bean
-    public RouterFunction<ServerResponse> designTacoRoutes(DesignTacoHandler handler) {
+    public RouterFunction<ServerResponse> designTacoRoutes() {
         return RouterFunctions.route()
-                .GET("/design", handler::showDesignForm)
-                .POST("/design", handler::processTaco)
+                .GET("/design", designTacoHandler::showDesignForm)
+                .POST("/design", designTacoHandler::processTaco)
                 .build();
     }
 }
