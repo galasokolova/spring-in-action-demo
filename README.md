@@ -29,6 +29,21 @@ allowing for a focused study of particular Spring concepts. For instance, the pr
 
 Please refer to the README file of each module for detailed information.
 
+
+## 🗺 Module Overview
+
+| Module | Chapter(s) | Topic | Technologies                            |
+|--------|------------|-------|-----------------------------------------|
+| `chapter-01` | Ch. 1 | Intro to Spring Boot | Spring Boot 3, <br/>Thymeleaf, <br/>MVC |
+| `chapter-02` | Ch. 2 | Controllers and Views | Thymeleaf, Validation                   |
+| `chapter-03-04` | Ch. 3–4 | MongoDB Integration | MongoDB, Spring Data                    |
+| `chapter-05-07` | Ch. 5–7 | Authentication & Authorization | Spring Security, Custom UserDetails     |
+| `chapter-08` | Ch. 8 | RESTful Services | REST, JSON, HTTP methods                |
+| `chapter-09` | Ch. 9 | Messaging & Events | Spring Events, Async                    |
+| `chapter-10` | Ch. 10 | Cloud Deployment | Kubernetes, Google Cloud                |
+| `chapter-11` | Ch. 11 | Redis Integration | Spring Session, Redis                   |
+
+
 ### Getting Started
 To run any module:
 
