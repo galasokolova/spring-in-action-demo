@@ -12,7 +12,7 @@ import java.util.Optional;
 @Repository
 public class JdbcIngredientRepository implements IngredientRepository{
 
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
     public JdbcIngredientRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -40,7 +40,7 @@ public class JdbcIngredientRepository implements IngredientRepository{
                 "select id, name, type from Ingredient where id=?",
                 this::mapRowToIngredient,
                 id);
-        return results.size() == 0 ?
+        return results.isEmpty() ?
                 Optional.empty() :
                 Optional.of(results.get(0));
     }

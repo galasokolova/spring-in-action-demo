@@ -1,4 +1,4 @@
-## 🌮 Taco Cloud – Chapter 2: Basic Setup and Introduction to Spring Boot
+## 🌮 Taco Cloud – Chapter 2 "Developing web applications"
 
 This is the second mini-project from the book *Spring in Action (6th Edition)*.  
 It presents model data and form input in the browser.
