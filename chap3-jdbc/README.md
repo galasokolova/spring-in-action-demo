@@ -1,4 +1,4 @@
-## 🌮 Taco Cloud – Chapter 3: Working with data—JDBC
+## 🌮 Taco Cloud – Chapter 3: Working with data — JDBC
 
 This module implements the following parts of the Chapter 3:
 - **3.1** – Reading and writing data with JDBC
