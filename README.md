@@ -41,6 +41,7 @@ Please refer to the README file of each module for detailed information.
 - Spring Boot 3
 - Spring Data (Cassandra module using CrudRepository) 
 - Spring MVC
+- Spring Security
 - Thymeleaf
 - H2 Database
 - Cassandra
