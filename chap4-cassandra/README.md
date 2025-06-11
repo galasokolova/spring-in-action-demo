@@ -8,7 +8,13 @@ This module implements the following part of the Chapter 4:
 - Docker
 <br> 🧪 This module uses Apache Cassandra as the database, running inside a Docker container for convenience and portability.
 
-
+### 🛠 Technologies used:
+- Spring Boot 3
+- Spring MVC
+- Thymeleaf
+- Cassandra
+- CrudRepository
+- Docker
 
 ### 🚀 How to run the project:
 <div style="margin-left:60px">

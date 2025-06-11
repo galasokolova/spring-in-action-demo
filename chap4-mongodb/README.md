@@ -7,6 +7,12 @@ This module implements the following part of the Chapter 4:
 - Docker
   <br> 🧪 This module uses MongoDB as the database, running inside a Docker container for convenience and portability.
 
+### 🛠 Technologies used:
+- Spring Boot 3
+- Spring MVC
+- Thymeleaf
+- Spring Data MongoDB
+- Docker
 
 ### 🚀 How to run the project:
 <div style="margin-left:60px">
@@ -79,24 +85,16 @@ If you have mongosh installed locally, run:
 #### Step 3: Execute useful commands:
 Examples:
 
-#### 🧰 Brief MongoDB Shell Cheat Sheet
+🧰 Brief MongoDB Shell Cheat Sheet
 
 | 🧩 Task                                                                | 💻 Command                                                                           |
 |------------------------------------------------------------------------|--------------------------------------------------------------------------------------|
 | 🔌 Start MongoDB in Docker                                             | `docker run --rm --name my-mongo-container -p 27017:27017 -d mongo:latest`           |
 | 🔗 Connect to MongoDB (with mongosh)                                   | `mongosh --host localhost --port 27017`                                              |
-| ⛔ Stop MongoDB container                                               | `docker stop my-mongo-container`                                                     |
 | 🔄 Switch to database `tacoDB`                                         | `use tacoDB`                                                                         |
 | 📚 Show all databases                                                  | `show dbs`                                                                           |
 | 📁 Show all collections                                                | `show collections`                                                                   |
 | 🔍 View documents in `ingredients` collection                          | `db.ingredients.find().pretty()`                                                     |
-| 🕒 Add `createdAt` field with current date to all documents in `tacos` | `db.tacos.updateMany({}, { $set: { createdAt: new Date() } })`                       |
-| 📌 Switch to another DB (e.g. `taco_cloud`)                            | `use taco_cloud`                                                                     |
-| 💣 Drop entire DB `tacoDB`                                             | `use tacoDB`<br>`db.dropDatabase()`                                                  |
-| 🧹 Drop collection `collection_name`                                   | `db.collection_name.drop()`                                                          |
-| 🧨 Drop **all** collections in current DB                              | `db.getCollectionNames().forEach(function(collection) { db[collection].drop(); });`  |
-| ❌ Remove `createdAt` field from all documents in `tacos`               | `db.tacos.updateMany({}, { $unset: { createdAt: "" } })`                             |
-| ✅ Confirm deletion (view one document)                                 | `db.tacos.findOne()`                                                                 |
 
 
 For more commands, see **MongoDB Shell Commands — The Complete Cheat Sheet**

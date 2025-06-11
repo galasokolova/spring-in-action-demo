@@ -30,18 +30,21 @@ allowing for a focused study of particular Spring concepts. For instance, the pr
 Please refer to the README file of each module for detailed information.
 
 
-## 🗺 Module Overview
+## 🗺 Modules Overview
 
+✅ Requirements
 - Java 17+
 - Maven 3.8+
 
-Technologies used in the project:
-
-- Spring 6
+🧰 Technologies Used
+- Spring Framework 6
 - Spring Boot 3
+- Spring Data (Cassandra module using CrudRepository) 
 - Spring MVC
 - Thymeleaf
-
+- H2 Database
+- Cassandra
+- MongoDB
 
 ### Getting Started
 To run any module:

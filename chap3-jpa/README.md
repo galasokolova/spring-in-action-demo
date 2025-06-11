@@ -12,9 +12,9 @@ This module implements the following part of the Chapter 3:
 ### 🛠 Technologies used:
 - Spring Boot 3
 - Spring MVC
+- Spring Data JPA 
 - Thymeleaf
-- JPA
-- H2
+- H2 Database
 
 ### 🚀 How to run the project:
 #### Option 1: From terminal
