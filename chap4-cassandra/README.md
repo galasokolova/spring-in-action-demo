@@ -62,7 +62,7 @@ WITH replication = {
 Open a web browser and navigate to http://localhost:8080 to access the running application.
 <br> You’ll see the home page served by the HomeController.
 #### 🚧 Navigation Note
-Since authorization is not covered in Chapter 2, 
+Since authorization is not covered in Chapter 4, 
 this project does not include navigation buttons from the home page to other sections.
 To access the Taco Design page, you'll need to manually enter the following URL in your browser:
 ```
@@ -71,6 +71,8 @@ http://localhost:8080/design
 Once you've selected your ingredients and named your taco, clicking "Submit Your Taco" will redirect you to the order form page.
 
 After completing the order form and clicking "Submit Order", you'll be redirected back to the home page.
+
+## Cassandra
 
 ### Requests to Cassandra DB:
 

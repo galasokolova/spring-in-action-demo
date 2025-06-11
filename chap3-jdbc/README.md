@@ -36,7 +36,7 @@ src/main/java/pt/galina/chap3jdbc/Chap3JdbcApplication.java
 Open a web browser and navigate to http://localhost:8080 to access the running application.
 <br> You’ll see the home page served by the HomeController.
 #### 🚧 Navigation Note
-Since authorization is not covered in Chapter 2, this project does not include navigation buttons from the home page to other sections.
+Since authorization is not covered in Chapter 3, this project does not include navigation buttons from the home page to other sections.
 
 To access the Taco Design page, you'll need to manually enter the following URL in your browser:
 ```

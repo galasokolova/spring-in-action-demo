@@ -32,21 +32,15 @@ Please refer to the README file of each module for detailed information.
 
 ## 🗺 Module Overview
 
-All modules use:
+- Java 17+
+- Maven 3.8+
 
+Technologies used in the project:
+
+- Spring 6
 - Spring Boot 3
 - Spring MVC
 - Thymeleaf
-
-These foundational technologies are used throughout the project and are omitted from the table below to avoid repetition.
-
-| Module            | Chapter(s) | Part     | Topic                                | Additional Technologies |
-|-------------------|------------|----------|--------------------------------------|-------------------------|
-| `chap1`           | Ch. 1      |          | Intro to Spring Boot                 | -                       |
-| `chap2`           | Ch. 2      |          | Controllers and Views                | Validation              |
-| `chap3-jdbc`      | Ch. 3      | 3.1, 3.2 | Working with data—JDBC               | JDBC, H2                |
-| `chap3-jpa`       | Ch. 3      | 3.3      | Working with data — JPA              | JPA, H2                 |
-| `chap4-cassandra` | Ch. 4      | 4.1      | Working with Cassandra repositories  | Docker, Cassandra       |
 
 
 ### Getting Started
