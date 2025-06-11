@@ -46,6 +46,7 @@ Please refer to the README file of each module for detailed information.
 - H2 Database
 - Cassandra
 - MongoDB
+- Docker
 
 ### Getting Started
 To run any module:
