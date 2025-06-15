@@ -1,14 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Admin Panel</title>
 </head>
 <body>
 <h1>Welcome to Admin Panel</h1>
-<!--<form th:action="/admin/deleteOrders" method="post">-->
-    <form method="POST" th:action="@{/admin/deleteOrders}">
+
+<div th:if="${message}" style="color: green;">
+    <p th:text="${message}"></p>
+</div>
+
+<form method="POST" th:action="@{/admin/deleteOrders}">
+    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
     <button type="submit">Delete All Orders</button>
 </form>
+
+<form method="POST" th:action="@{/logout}" id="logoutForm">
+    <input type="submit" value="Logout"/>
+</form>
+
 </body>
+
 </html>

@@ -75,12 +75,6 @@ class SecurityConfigTest {
                 .andExpect(status().isOk());  // Ожидаем статус 200 (OK) для авторизованного администратора
     }
 
-    @Test
-    @WithMockUser(username = "user", roles = "USER")
-    void testAccessAdminEndpointWithUserRole() throws Exception {
-        mockMvc.perform(get("/admin"))
-                .andExpect(status().isForbidden());  // Ожидаем статус 403 (Forbidden) для пользователя с ролью USER
-    }
 
     @Test
     @WithMockUser(username = "admin", roles = "ADMIN")

@@ -16,5 +16,5 @@ public class OrderAdminService {
     @PreAuthorize("hasRole('ADMIN')")
     public void deleteAllOrders(){
         orderRepository.deleteAll();
-    }
+    } // An example of requests only for admin's access
 }
