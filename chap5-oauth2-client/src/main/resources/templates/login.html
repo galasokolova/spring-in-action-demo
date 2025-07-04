@@ -11,16 +11,18 @@
     <img th:src="@{/images/TacoCloud.png}"/>
 
     <div style="color: red" th:if="${error}">
-      Unable to login. Check your username and password.
+      Unable to log in. Check your username and password.
     </div>
 
     <p>New here? Click
        <a th:href="@{/register}">here</a> to register.</p>
-
+      <br>
     <div>
-      <a href="/oauth2/authorization/google">Login with Google</a>
+      <form method="GET" th:action="@{/oauth2/authorization/google}">
+        <button type="submit">Login with Google</button>
+      </form>
     </div>
-
+    <br>
     <form method="POST" th:action="@{/logout}"><br/>
       <input type="submit" value="Logout"/>
     </form><br/>

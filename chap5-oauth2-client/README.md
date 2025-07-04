@@ -1,56 +1,98 @@
-## Taco Cloud - Chapter 5: 5.3.3 Enabling third-party authentication
+## 🌮 Taco Cloud – Chapter 5: Enabling Third-Party Authentication (5.3.3)
 
-This module differs from section 5.3.3 of the book "Spring in Action" 
-where the example uses Facebook login. 
-In this module, login via Google has been implemented .
-###
-### Setting Up Google OAuth2 for Your Application
-Before build and run the module, follow these steps to configure Google OAuth2:
-###
-#### Step 1: Create a Project in Google Cloud Console:
-1. Navigate to Google Cloud Console 
-   * https://console.cloud.google.com/
-2. Create a New Project:
-   * Click on the project dropdown at the top of the page.
-   * Click "New Project".
-   * Enter a project name (e.g., Taco Cloud).
-   * Click "Create".
+This module demonstrates **OAuth2 login with Google** as an alternative to the **Facebook login** example from section 5.3.3 in *Spring in Action*. It integrates Google OAuth2 to authenticate users securely and seamlessly.
 
-#### Step 2: Configure OAuth Consent Screen
+---
 
-1. Navigate to OAuth Consent Screen:
-   * In the left sidebar, go to APIs & Services > OAuth consent screen.
-2. Set Up Consent Screen:
-   * Select "External" for user type and click "Create".
-   * Fill in the required fields (App name, User support email, etc.).
-   * Add your application’s domain and authorized domains.
-   * Save the changes.
-#### Step 3: Create OAuth 2.0 Credentials
-1. Go to APIs & Services > Credentials.
-2. Create Credentials:
-   * Click "Create Credentials" and select "OAuth 2.0 Client IDs".
-   * Select "Web application" as the application type.
-3. Set Authorized URIs:
-   * Under "Authorized JavaScript origins", add: http://localhost:8080.
-   * Under "Authorized redirect URIs", add: http://localhost:8080/login/oauth2/code/google.
-4. Generate Credentials:
-   * Click "Create". 
-   * Copy the Client ID and Client Secret displayed on the screen.
-5. Add your Google OAuth2 credentials to the application.yml file
+### 🛠 Prerequisites: Set Up Google OAuth2
 
-### Build and run the project:
-```bash
-cd chap5-oauth2-client
-./mvnw spring-boot:run
+Before building and running the app, you’ll need to configure OAuth2 credentials in the **Google Cloud Console**.
+
+---
+
+### 🔐 Step-by-Step: Google OAuth2 Setup
+
+#### ✅ Step 1: Create a Project in Google Cloud Console
+
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Click the project dropdown → **New Project**
+3. Enter a project name (e.g., `Taco Cloud`)
+4. Click **Create**
+
+---
+
+#### ✅ Step 2: Configure OAuth Consent Screen
+
+1. In the left sidebar: **APIs & Services > OAuth consent screen**
+2. Select **External** for user type and click **Create**
+3. Fill in the required fields (e.g., App Name, User Support Email)
+4. Add authorized domains (e.g., `localhost`)
+5. Click **Save and Continue** (you can skip scopes and test users for localhost)
+
+---
+
+#### ✅ Step 3: Create OAuth 2.0 Credentials
+
+1. Go to **APIs & Services > Credentials**
+2. Click **Create Credentials → OAuth Client ID**
+3. Choose **Web Application**
+4. Configure URIs:
+
+   * **Authorized JavaScript origins**: `http://localhost:8080`
+   * **Authorized redirect URIs**: `http://localhost:8080/login/oauth2/code/google`
+5. Click **Create**
+6. Copy the generated **Client ID** and **Client Secret**
+
+---
+
+#### ✅ Step 4: Add OAuth2 Credentials to `application.yml`
+
+Update your `application.yml` with the credentials:
+
+```yaml
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: # your client-id
+            client-secret: # your client-secret                                                                                        
 ```
 
-### Access the application:
-* Open a web browser and navigate to http://localhost:8080 to access the running application.
-* Click the "Login with Google" link to initiate the OAuth2 flow.
+---
+
+### ▶️ Run the Application
+#### Option 1: From terminal
+```bash
+cd chap5-oauth2-client
+
+./mvnw spring-boot:run
+```
+#### Option 2: From IDE
+Run the application by executing the `main()` method in:
+
+```
+src/main/java/pt/galina/chap5oauth2client/Chap5Oauth2ClientApplication.java
+```
+
+---
+
+### 🌐 Access the App
+
+* Open: [http://localhost:8080](http://localhost:8080)
+* Click "Design a taco"
+* Click the **“Login with Google”** button to authenticate
+
+---
+
+###  H2 Database Console
+
+* URL: [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
+* **Username**: `sa`
+* **Password**: `password`
+
+---
 
 
-### H2 database console:
-* URL: http://localhost:8080/h2-console
-* Username: sa
-* Password: password
 
