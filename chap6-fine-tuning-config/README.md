@@ -15,7 +15,7 @@ This module demonstrates the key techniques from **Chapter 6 – Section 6.1** o
 Use this to generate a new keystore file (`.jks`) that holds a self-signed certificate.
 
 ```bash
-keytool -genkeypair -alias tomcat -keyalg RSA -keysize 2048 -validity 365 -keystore keystore.jks
+  keytool -genkeypair -alias tomcat -keyalg RSA -keysize 2048 -validity 365 -keystore keystore.jks
 ```
 
 📝 This creates:
@@ -24,6 +24,10 @@ keytool -genkeypair -alias tomcat -keyalg RSA -keysize 2048 -validity 365 -keyst
 - A self-signed certificate
 - Stored in `keystore.jks` using alias `tomcat`
 
+🖼️ After running this command, the file `keystore.jks` should appear in your `resources` directory:
+
+![Keystore Created](src/main/resources/images/KEYSTORE.png)
+
 ---
 
 ### ✅ Step 2: Add a Certificate (Optional)
@@ -31,7 +35,7 @@ keytool -genkeypair -alias tomcat -keyalg RSA -keysize 2048 -validity 365 -keyst
 If you have an external certificate (e.g., from a CA), you can import it into your keystore:
 
 ```bash
-keytool -importcert -alias mycert -file certificate.crt -keystore keystore.jks
+  keytool -importcert -alias mycert -file certificate.crt -keystore keystore.jks
 ```
 
 📝 This adds the signed certificate to your existing keystore.
@@ -43,7 +47,7 @@ keytool -importcert -alias mycert -file certificate.crt -keystore keystore.jks
 Check what's inside your keystore:
 
 ```bash
-keytool -list -keystore keystore.jks
+  keytool -list -keystore keystore.jks
 ```
 
 📝 You’ll see all aliases and certificates stored inside. Use it to verify the keystore was created correctly.
@@ -55,7 +59,7 @@ keytool -list -keystore keystore.jks
 Secure your keystore by changing its password if needed:
 
 ```bash
-keytool -storepasswd -keystore keystore.jks
+  keytool -storepasswd -keystore keystore.jks
 ```
 
 📝 You’ll be prompted to enter the old and new passwords.
