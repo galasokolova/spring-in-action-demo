@@ -18,7 +18,7 @@ target/
 *.iws
 *.iml
 *.ipr
-/keystore.jks
+*.jks
 
 
 ### NetBeans ###

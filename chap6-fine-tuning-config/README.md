@@ -1,64 +1,142 @@
-## Taco Cloud - Chapter 6:
-## 6.1 Fine-tuning autoconfiguration
+# 🌮 Taco Cloud – Chapter 6: Fine-Tuning Spring Boot Configuration
 
-This module demonstrates Spring Boot configurations for running an application using HTTPS, 
-configuring access to the H2 console, and setting up an RSocket server.
+This module demonstrates the key techniques from **Chapter 6 – Section 6.1** of *Spring in Action*:
 
-### Steps to Configure HTTPS
-#### 1. Creating a new keystore:
-* Use the keytool command to generate a key pair (public and private keys) 
-   and a self-signed certificate with the alias 'tomcat'.
-##### Example command:
-    keytool -genkeypair -alias tomcat -keyalg RSA -keysize 2048 -validity 365 -keystore mykeys.jks
-#####
-- The alias 'tomcat' is used as the identifier for the key.
-- RSA represents the encryption algorithm for the key.
-- The key size is set to 2048 bits.
-- The certificate will be valid for 365 days
-- 'mykeys.jks' is the name of the keystore file.
+- How to enable HTTPS using a self-signed certificate.
+- How to configure access to the H2 console.
+- How to expose an RSocket server with SSL.
 
+---
 
-#
-#### 2. Adding a certificate to the keystore:
-If you have an existing certificate, add it like this:
+## 🔐 Steps to Configure HTTPS
 
-      keytool -importcert -alias mycert -file certificate.crt -keystore mykeys.jks
-####
-To create and manage a self-signed certificate using the JDK's keytool utility:
+### ✅ Step 1: Create a Keystore
 
-      keytool -genkeypair -alias mycert -keyalg RSA -keysize 2048 -validity 365 -keystore keystore.jks
+Use this to generate a new keystore file (`.jks`) that holds a self-signed certificate.
 
-####
-- 'mycert' is the alias for the new certificate.
-- The certificate will also be valid for 365 days.
-- 'keystore.jks' is the name of the keystore file to which the certificate will be added.
+```bash
+keytool -genkeypair -alias tomcat -keyalg RSA -keysize 2048 -validity 365 -keystore keystore.jks
+```
 
-#
-#### 3. Retrieving information about the keystore:
-To view the list of keys in the keystore, use:
+📝 This creates:
 
-      keytool -list -keystore keystore.jks
-####
-- You will need to enter the keystore password to access its contents.
+- A key pair (public/private)
+- A self-signed certificate
+- Stored in `keystore.jks` using alias `tomcat`
 
-#
-#### 4. Managing the keystore password:
-To change the password of the keystore, use the following command:
+---
 
-    keytool -storepasswd -keystore mykeys.jks
-####
-- After executing the command, the system will prompt you to enter the old password, 
-then the new password, and its confirmation.
+### ✅ Step 2: Add a Certificate (Optional)
 
-#
-#### 5. Configure application.yml.
-#
-#### 6. Configure Security in Spring Boot.
-#
-#### 7. Run the Application.
-The application will be accessible at https://localhost:8443
+If you have an external certificate (e.g., from a CA), you can import it into your keystore:
 
-### Accessing the H2 Console
-https://localhost:8443/h2-console
+```bash
+keytool -importcert -alias mycert -file certificate.crt -keystore keystore.jks
+```
+
+📝 This adds the signed certificate to your existing keystore.
+
+---
+
+### ✅ Step 3: View Keystore Contents
+
+Check what's inside your keystore:
+
+```bash
+keytool -list -keystore keystore.jks
+```
+
+📝 You’ll see all aliases and certificates stored inside. Use it to verify the keystore was created correctly.
+
+---
+
+### ✅ Step 4: Change Keystore Password
+
+Secure your keystore by changing its password if needed:
+
+```bash
+keytool -storepasswd -keystore keystore.jks
+```
+
+📝 You’ll be prompted to enter the old and new passwords.
+
+---
+
+## ⚙️ Step 5: Configure `application.yml`
+
+Update your Spring Boot config to:
+
+- Enable HTTPS on port 8443
+- Use the keystore for SSL
+- Enable H2 console
+- Configure RSocket with SSL
+
+```yaml
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-store: classpath:keystore.jks
+    key-store-password: your-store-password
+    key-password: your-password
+    key-store-type: PKCS12
+    key-alias: mycert
+
+spring:
+  devtools:
+    restart:
+      enabled: true
+
+  datasource:
+    generate-unique-name: false
+    name: tacocloud
+    url: jdbc:h2:mem:tacocloud
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  rsocket:
+    server:
+      port: 8444
+      ssl:
+        key-store: "classpath:keystore.jks"
+        key-store-password: "your-store-password"
+        key-password: "your-password"
+        key-store-type: PKCS12
+```
+
+---
+
+## ✅ Step 6: Configure Spring Security
+
+Ensure HTTPS and endpoint protection is compatible with the new setup. Update your security config accordingly (not shown here).
+
+---
+
+## ▶️ Step 7: Run the Application
+
+Run the main class:
+
+```bash
+./mvnw spring-boot:run
+```
+
+🔗 App available at: [https://localhost:8443](https://localhost:8443)\
+🧲 H2 Console at: [https://localhost:8443/h2-console](https://localhost:8443/h2-console)
+
+---
+
+## ✅ Summary
+
+This module shows how to:
+
+- Secure a Spring Boot app with HTTPS
+- Manage keystore and certificates
+- Set up secure RSocket communication
 
 
