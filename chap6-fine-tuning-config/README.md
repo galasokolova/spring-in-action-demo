@@ -1,4 +1,6 @@
-# 🌮 Taco Cloud – Chapter 6: Fine-Tuning Spring Boot Configuration
+# 🌮 Taco Cloud – Chapter 6: Working with configuration properties
+# 6.1.3 Configuring the embedded server 
+## HTTPS
 
 This module demonstrates the key techniques from **Chapter 6 – Section 6.1** of *Spring in Action*:
 
