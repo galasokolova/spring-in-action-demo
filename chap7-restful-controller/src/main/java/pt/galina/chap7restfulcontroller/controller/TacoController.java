@@ -17,14 +17,14 @@ import java.util.Optional;
 
 /*
 (p.167 "Spring inAction")
--  the following command line shows how you might fetch recently created tacos with curl:
+- the following command line shows how you might fetch recently created tacos with curl:
                                 $ curl localhost:8080/api/tacos?recent
--  or like this, if you prefer HTTPie:
-                                $ http :8080/api/tacos?recent
+- or like this, if you prefer HTTPie:
+                                http://localhost:8080/api/tacos?recent
  */
 @RestController
 @RequestMapping(path = "/api/tacos", produces = "application/json")
-//@RequestMapping(path = "/api/tacos", produces = {"application/json", "text/xml"})  // to allow for XML output
+//@RequestMapping(path = "/api/tacos", produces = {"application/json", "text/xml"}) // to allow for XML output
 @CrossOrigin(origins = "http://tacocloud:8080")
 //@CrossOrigin(origins = {"http://tacocloud:8080", "http://tacocloud.com"}) // to specify multiple values
 public class TacoController {

@@ -2,8 +2,8 @@
 
 ### Build and run the project:
 ```bash
-cd chap7-rest-template-demo
-./mvnw spring-boot:run
+    cd chap7-rest-template-demo
+    ./mvnw spring-boot:run
 ```
 ### Access the application:
 Open a web browser and navigate to http://localhost:8080 to access the running application.
