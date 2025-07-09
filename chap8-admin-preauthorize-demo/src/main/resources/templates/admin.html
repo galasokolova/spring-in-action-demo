@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Admin Panel</title>
-    <link rel="stylesheet" th:href="@{/css/styles.css}" />
-
 </head>
 <body>
 <h1>Welcome to Admin Panel</h1>
 <img th:src="@{/images/taco.png}" alt="ImageOfTaco"/>
 <!--<form th:action="/admin/deleteOrders" method="post">-->
-    <form method="POST" th:action="@{/admin/deleteOrders}">
-         <button type="submit">Delete All Orders</button>
-    </form>
+<form method="POST" th:action="@{/admin/deleteOrders}">
+    <button type="submit">Delete All Orders</button>
+</form>
 
 </body>
+
 </html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Access Denied</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}" />
+</head>
+<body>
+
+<h1 style="color: red;">🚫 Access Denied</h1>
+
+<div th:if="${status}">
+    <p><strong>Status code:</strong> <span th:text="${status}">403</span></p>
+</div>
+
+<div th:if="${error}">
+    <p><strong>Error:</strong> <span th:text="${error}">Forbidden</span></p>
+</div>
+
+<div th:if="${message}">
+    <p><strong>Message:</strong> <span th:text="${message}"></span></p>
+</div>
+
+<a th:href="@{/}" style="color: blue;">🏠 Home Page</a>
+
+</body>
+</html>
+
