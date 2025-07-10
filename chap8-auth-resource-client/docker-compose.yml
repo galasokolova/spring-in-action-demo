@@ -1,4 +1,4 @@
-version: '4.33.1'
+version: '4.43.1'
 
 services:
   auth-server:

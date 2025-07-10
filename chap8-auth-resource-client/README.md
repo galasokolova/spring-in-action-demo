@@ -1,41 +1,89 @@
-## Taco Cloud - Chapter 8: 
-### parts 8.2, 8.3, 8.4
+# Taco Cloud — Chapter 8: OAuth2 Authorization Flow (Consolidated Setup)
 
-This module demonstrates three stages of a Spring Security OAuth2 implementation and consists of three sub-modules:
+This module demonstrates key concepts from Chapter 8 of *Spring in Action*, covering:
 
-1. ***auth-server:*** The authorization server responsible for handling OAuth2 authorization.
-2. ***resource-server:*** The resource server that serves protected resources.
-3. ***client-app:*** The client application that interacts with both the authorization and resource servers.
+- **8.2 OAuth2 Authorization Code Flow**
+- **8.3 Resource Server Configuration**
+- **8.4 Client Application Integration**
 
-All three modules are run sequentially in Docker containers to ensure proper initialization order. 
-The wait-for-it scripts are added to enforce this sequence.
+Unlike the book, where each server (authorization, resource, client) is run separately, 
+this module combines them using Docker Compose. 
+All three parts are containerized and run together with startup coordination via `wait-for-it.sh`.
 
-### Steps to Run the Application
-####
-###### ***Note!***
-###### ***Ensure you have Docker installed and running.***
-To run the application, follow these steps:
+### 📚 Related Modules Based on the Book
 
-### Navigate to the module directory:
-```
-cd .\chap8-auth-resource-client\
-```
-### Build and start the Docker containers:
+This Docker-based implementation combines all three components (Authorization Server, Resource Server, and Client App) into a unified environment for convenience.
+
+If you want to explore each part independently as described in *Spring in Action*, see the following modules:
+
+- [`chap8-authorization-server`](../chap8-authorization-server): Standalone OAuth2 authorization server
+- [`chap8-client-app`](../chap8-client-app): Client application interacting with both auth and resource servers
+- [`chap8-resource-server`](../chap8-resource-server): Resource server exposing protected endpoints
+
+
+## Module Structure
+
+- `auth-server` – Handles OAuth2 authorization and token issuance.
+- `resource-server` – Provides protected REST endpoints for authenticated users.
+- `client-app` – The web client that authenticates via the auth server and consumes the resource server.
+
+> **Note:** Token acquisition, consent, and access happen internally inside the Docker network. You only interact with the web client on `localhost:9090`.
+
+## 🐳 Run the Application in Docker
+
+### 📦 Prerequisites
+
+- Docker & Docker Compose installed
+- Port 9090 (client), 8080 (resource), and 9000 (auth) are free
+
+### 🚀 Launch
+
 ```bash
-docker-compose up --build
+    cd ./chap8-auth-resource-client
+    docker-compose up --build
 ```
-### Stop containers
+
+### 🛑 Stop & Clean Up
+
 ```bash
-docker-compose down
+    docker-compose down
 ```
-### Access the application:
-Once the containers are up and running, open your browser and go to http://localhost:9090. 
-Follow the on-screen instructions to interact with the application.
 
-##### username: habuma
-##### password: password
-or
-##### username: tacochef
-##### password: password
+---
 
+## 🔐 Login Flow Preview
+
+1. **Sign In with OAuth2 Authorization Server**
+
+    ![Sign In Page](src/main/resources/images/SignInPage.png)
+
+2. **Grant Permissions (Scopes) via Consent Page**
+
+    ![Consent Page](src/main/resources/images/ConsentPage.png)
+
+These steps simulate a secure real-world OAuth2 login and consent process, including scopes like:
+- `writeIngredients`
+- `deleteIngredients`
+
+---
+
+## 👤 Sample Credentials
+
+You can log in using one of the preconfigured users:
+
+| Username    | Password   |
+|-------------|------------|
+| `habuma`    | password   |
+| `tacochef`  | password   |
+
+---
+
+## ⚙️ Implementation Notes
+
+- The project uses **Spring Security 6+**, **OAuth2 Authorization Server**, and **Resource Server**.
+- The `client-app` initiates the authorization code grant flow.
+- **All tokens and redirects stay inside the Docker network**; the user only sees login/consent and final client content.
+- `wait-for-it.sh` scripts ensure the servers start in the proper order.
+
+---
 
