@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Order List</title>
@@ -30,8 +31,7 @@
         </form>
     </li>
 </ul>
-</body>
-</html>
+
 <form method="POST" th:action="@{/logout}" id="logoutForm">
     <input type="submit" value="Logout"/>
 </form>

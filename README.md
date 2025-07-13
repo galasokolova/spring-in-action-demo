@@ -48,6 +48,8 @@ Please refer to the README file of each module for detailed information.
 - MongoDB
 - Docker
 - Java Keytool (Keystore & SSL Configuration)
+- JMS (Java Message Service)
+- ActiveMQ Artemis (message broker)
 
 ### Getting Started
 To run any module:

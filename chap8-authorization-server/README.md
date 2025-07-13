@@ -19,14 +19,14 @@ Navigate to the chap8-client-app directory.
 Ensure both the authorization server and resource server are running.
 Run the client application, which starts on http://localhost:9090.
 
-#### If you run only the authorization server, you can use ***curl*** commands to interact with it directly. 
+#### If you run only the authorization server, you can use ***curl*** commands to interact with it directly as it is described in the book. 
 
 #### Authorize with OAuth2:
 * Open your browser and navigate to:
 ```
 http://localhost:9000/oauth2/authorize?response_type=code&client_id=taco-admin-client&redirect_uri=http://127.0.0.1:9090/login/oauth2/code/taco-admin-client&scope=writeIngredients+deleteIngredients
 ```
-* Follow the authorization steps to obtain an Authorization Code
+* Follow the authorization steps to get an Authorization Code
 * Exchange Authorization Code for Token:
 ```
 curl localhost:9000/oauth2/token \
