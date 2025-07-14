@@ -17,8 +17,8 @@ spring:
 
 logging:
   level:
-    root: warn
-    org.springframework.security: warn
+    root: info
+    org.springframework.security: info
 
 taco:
   orders:

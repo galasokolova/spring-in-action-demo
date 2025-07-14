@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" xml:lang="en">
 <head>
     <title>Taco Cloud</title>
     <link rel="stylesheet" th:href="@{/css/styles.css}" />
@@ -9,23 +10,32 @@
 <img th:src="@{/images/taco.png}" alt="TacoImage"/>
 <form th:method="POST" th:action="@{/register}" id="registerForm">
     <label th:for="username">Username: </label>
-    <input type="text" name="username"/><br/>
+    <input type="text" id="username" name="username"/><br/>
+
     <label th:for="password">Password: </label>
-    <input type="password" name="password"/><br/>
+    <input type="password" id="password" name="password"/><br/>
+
     <label th:for="confirm">Confirm password: </label>
-    <input type="password" name="confirm"/><br/>
+    <input type="password" id="confirm" name="confirm"/><br/>
+
     <label th:for="fullname">Full name: </label>
-    <input type="text" name="fullname"/><br/>
+    <input type="text" id="fullname" name="fullname"/><br/>
+
     <label th:for="street">Street: </label>
-    <input type="text" name="street"/><br/>
+    <input type="text" id="street" name="street"/><br/>
+
     <label th:for="city">City: </label>
-    <input type="text" name="city"/><br/>
+    <input type="text" id="city" name="city"/><br/>
+
     <label th:for="state">State: </label>
-    <input type="text" name="state"/><br/>
+    <input type="text" id="state" name="state"/><br/>
+
     <label th:for="zip">Zip: </label>
-    <input type="text" name="zip"/><br/>
+    <input type="text" id="zip" name="zip"/><br/>
+
     <label th:for="phone">Phone: </label>
-    <input type="text" name="phone"/><br/>
+    <input type="text" id="phone" name="phone"/><br/>
+
     <input type="submit" value="Register"/>
 </form>
 </body>

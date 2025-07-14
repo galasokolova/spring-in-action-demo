@@ -21,8 +21,7 @@ public class OrderReceiverController {
 
     @GetMapping("/receivedOrder")
     public String showAllReceivedOrders(Model model) {
-        List<TacoOrderDTO> allReceivedOrders = ui.getAllOrders(); // предполагаем, что этот метод существует и возвращает список всех полученных заказов в формате DTO
-
+        List<TacoOrderDTO> allReceivedOrders = ui.getAllOrders();
         if (!allReceivedOrders.isEmpty()) {
             model.addAttribute("orders", allReceivedOrders);
             return "receivedOrder";

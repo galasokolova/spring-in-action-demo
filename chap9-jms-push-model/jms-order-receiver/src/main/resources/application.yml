@@ -10,6 +10,8 @@ spring:
     listener:
       min-concurrency: 1
       max-concurrency: 10
+      auto-startup: true
+      pub-sub-domain: false
   integration:
     management:
       default-logging-enabled: true
@@ -19,8 +21,8 @@ spring:
 # spring.profiles.active=jms-listener
 logging:
   level:
-    root: warn
-    org.springframework.security: warn
+    root: info
+    org.springframework.security: info
 
 server:
   port: 8081
