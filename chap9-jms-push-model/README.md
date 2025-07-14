@@ -13,13 +13,14 @@ All components run in Docker containers to ensure isolated and consistent enviro
 
 ## 🧪 How it works
 
-When you create a taco order in the `jms-order-sender` application, the message is immediately pushed
-to the message broker (ActiveMQ Artemis). The `jms-order-receiver` is already subscribed and receives
-the message as soon as it is published.
+When you create a taco order in the `jms-order-sender` application and send it, the message is immediately pushed
+to the message broker (ActiveMQ Artemis). The `jms-order-receiver` is already subscribed and automatically receives
+the message as soon as it's published — no waiting or polling required.
 
-This reflects the **Push Model** of asynchronous messaging, where the server does not need to poll
-for new messages — it is notified as soon as a message arrives.
+Just click the "View Received Orders" button to see the incoming orders.
 
+This demonstrates the Push Model of asynchronous messaging, 
+where the server doesn't need to poll for new messages — it is notified the moment a message arrives.
 ## 🐳 Running the Application
 
 > 💡 **Note:** Make sure Docker is installed and running on your machine.
