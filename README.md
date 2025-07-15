@@ -48,8 +48,11 @@ Please refer to the README file of each module for detailed information.
 - MongoDB
 - Docker
 - Java Keytool (Keystore & SSL Configuration)
+- Shell scripting (wait-for-it.sh)
 - JMS (Java Message Service)
 - ActiveMQ Artemis (message broker)
+- Spring Kafka
+- Zookeeper
 
 ### Getting Started
 To run any module:
