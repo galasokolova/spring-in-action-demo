@@ -34,6 +34,18 @@ The `docker-compose.yml` defines the full system architecture:
 Each app uses a profile named `docker`, which skips tests during image build.
 
 ---
+### Building and Running the Application
+***Note!***
+***Ensure you have Docker installed and running.***
+
+1. Navigate to the module directory:
+    ```
+    cd .\chap9-kafka-demo
+    ```
+2. Build and start the Docker containers:
+    ```bash
+      docker-compose up --build
+    ```
 
 ## 🧪 Messaging Logic (Kafka Push Model)
 
@@ -45,32 +57,7 @@ Once everything is running:
 4. The `kafka-listener` (already subscribed) receives the message and stores it in memory.
 5. Go to [http://localhost:8081](http://localhost:8081) and click **"View Received Orders"** to see them.
 
-There’s no polling involved — the listener reacts as soon as Kafka emits a message.
-
----
-
-### Building and Running the Application
-***Note!***
- ***Ensure you have Docker installed and running.***
-
-1. Navigate to the module directory:
-    ```
-    cd .\chap9-kafka-demo
-    ```
-2. Build and start the Docker containers:  
-    ```bash
-      docker-compose up --build
-    ```
-
-3. Navigate to http://localhost:8080 to start ´kafka-producer´. 
-   Here you can create an order and send it to the Kitchen
-4. Navigate to http://localhost:8081 to start ´kafka-listener´ 
-   and see the received orders
-
-
-*Each submodule (kafka-producer and kafka-listener) contains a scripts directory 
-that includes essential scripts for launching 
-and ensuring the proper functioning of the services*.
+There’s no polling involved — the listener reacts as soon as Kafka emits a message. 
 
 ---
 
