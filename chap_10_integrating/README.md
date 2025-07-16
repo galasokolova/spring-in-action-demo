@@ -1,4 +1,7 @@
 # 🌮 Taco Cloud — Chapter 10: Integrating Spring
+## 10.1 Declaring a simple integration flow
+## 10.2 Surveying the Spring Integration landscape
+## 10.3 Creating an email integration flow
 
 This module demonstrates integrating a mail server with a REST API to process taco orders received via **email**.
 
