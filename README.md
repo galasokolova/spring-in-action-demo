@@ -53,6 +53,12 @@ Please refer to the README file of each module for detailed information.
 - ActiveMQ Artemis (message broker)
 - Spring Kafka
 - Zookeeper
+- Spring Integration
+- Jakarta Mail
+- JSoup (for HTML parsing)
+- Gmail IMAP
+
+
 
 ### Getting Started
 To run any module:
