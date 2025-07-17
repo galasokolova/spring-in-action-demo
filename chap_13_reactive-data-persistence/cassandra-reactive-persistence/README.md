@@ -7,11 +7,11 @@
 ```bash
 docker run --rm -d --name cassandra --hostname cassandra -p 9042:9042 cassandra
 ```
-#### Step 1.1: (Wait for 30-40 seconds or so)
+#### Step 1.1: (Wait for 30–40 seconds or so)
 
 #### Step 2: Open cqlsh:
 ```bash
-docker exec -it cassandra cqlsh
+  docker exec -it cassandra cqlsh
 ```
 
 #### Step 3: Create KEYSPACE "taco_cloud":
@@ -22,11 +22,11 @@ Once you are in the CQLSH shell, execute the following CQL command to create the
 
 #### Step 4: Build and run the project:
 ```bash
-cd .\chap_13_reactive-data-persistence\cassandra-reactive-persistence
+  cd .\chap_13_reactive-data-persistence\cassandra-reactive-persistence
 ```
 
 ```bash
-./mvnw spring-boot:run
+  ./mvnw spring-boot:run
 ```
 #### Access the application:
 Open a web browser and navigate to http://localhost:8080 to access the running application.
@@ -36,6 +36,6 @@ To design a taco, manually navigate to http://localhost:8080/design.
 
 ### Stop Cassandra container:
 ```bash
-docker stop cassandra
+  docker stop cassandra
 ```
 

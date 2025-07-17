@@ -1,14 +1,16 @@
-## Taco Cloud - Chapter 12: Developing reactive APIs
+## Taco Cloud — Chapter 12: Developing reactive APIs
+### 12.1 Working with Spring WebFlux
+### 12.2 Defining functional request handlers
 
 ### Use MongoDB Shell:
 #### 1. Download and install MongoDB Shell: https://www.mongodb.com/try/download/shell
 #### 2. Run MongoDB in docker:
 ```bash
-docker run --rm --name my-mongo-container -p 27017:27017 -d mongo:latest
+  docker run --rm --name my-mongo-container -p 27017:27017 -d mongo:latest
 ```
 #### 3. Connect to the container: open your terminal or command prompt and execute the command:
 ```bash
-mongosh --host localhost --port 27017
+  mongosh --host localhost --port 27017
 ```
 #### 4. Execute commands:
 Here is the link to MongoDB Shell Commands: The Complete Cheat Sheet:
@@ -16,8 +18,8 @@ https://www.slingacademy.com/article/mongodb-shell-commands-the-complete-cheat-s
 
 ### Build and run the project:
 ```bash
-cd chap_12_spring_webflux_demo
-./mvnw spring-boot:run
+    cd chap_12_spring_webflux_demo
+    ./mvnw spring-boot:run
 ```
 
 ### Access the application:
